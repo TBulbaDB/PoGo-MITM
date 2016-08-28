@@ -61,29 +61,12 @@ namespace PoGoMITM.Base.Config
                 TempFolder = Path.Combine(Environment.CurrentDirectory, TempFolder);
             }
 
-            var dumpRaw = ConfigurationManager.AppSettings["DumpRaw"] ?? "true";
-            bool.TryParse(dumpRaw, out _dumpRaw);
+            _dumpRaw = true;
+
             var dumpProcessed = ConfigurationManager.AppSettings["DumpProcessed"] ?? "true";
             bool.TryParse(dumpProcessed, out _dumpProcessed);
 
-            DataDumpers = new List<IDataDumper>();
-            var dumpers = ConfigurationManager.AppSettings["DataDumpers"];
-            if (!string.IsNullOrWhiteSpace(dumpers))
-            {
-                var dumpersArr = dumpers.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (var dumper in dumpersArr.Select(d => d.Trim()))
-                {
-                    switch (dumper.ToLowerInvariant())
-                    {
-                        case "filedumper":
-                            DataDumpers.Add(new FileDataDumper());
-                            break;
-                        case "mongodumper":
-                            DataDumpers.Add(new MongoDataDumper());
-                            break;
-                    }
-                }
-            }
+            DataDumpers = new List<IDataDumper> {new FileDataDumper()};
 
             HostsToDump = new HashSet<string>();
             var hosts = ConfigurationManager.AppSettings["HostsToDump"];

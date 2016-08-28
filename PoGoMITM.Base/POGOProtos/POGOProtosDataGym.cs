@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Data.Gym {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Data.Gym.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosDataGymReflection {
 
     #region Descriptor
@@ -44,30 +43,35 @@ namespace POGOProtos.Data.Gym {
 
   }
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GymMembership : pb::IMessage<GymMembership> {
     private static readonly pb::MessageParser<GymMembership> _parser = new pb::MessageParser<GymMembership>(() => new GymMembership());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GymMembership> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Gym.POGOProtosDataGymReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GymMembership() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GymMembership(GymMembership other) : this() {
       PokemonData = other.pokemonData_ != null ? other.PokemonData.Clone() : null;
       TrainerPublicProfile = other.trainerPublicProfile_ != null ? other.TrainerPublicProfile.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GymMembership Clone() {
       return new GymMembership(this);
     }
@@ -75,6 +79,7 @@ namespace POGOProtos.Data.Gym {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 1;
     private global::POGOProtos.Data.PokemonData pokemonData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -85,6 +90,7 @@ namespace POGOProtos.Data.Gym {
     /// <summary>Field number for the "trainer_public_profile" field.</summary>
     public const int TrainerPublicProfileFieldNumber = 2;
     private global::POGOProtos.Data.Player.PlayerPublicProfile trainerPublicProfile_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.PlayerPublicProfile TrainerPublicProfile {
       get { return trainerPublicProfile_; }
       set {
@@ -92,10 +98,12 @@ namespace POGOProtos.Data.Gym {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GymMembership);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GymMembership other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -108,6 +116,7 @@ namespace POGOProtos.Data.Gym {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (pokemonData_ != null) hash ^= PokemonData.GetHashCode();
@@ -115,10 +124,12 @@ namespace POGOProtos.Data.Gym {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (pokemonData_ != null) {
         output.WriteRawTag(10);
@@ -130,6 +141,7 @@ namespace POGOProtos.Data.Gym {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (pokemonData_ != null) {
@@ -141,6 +153,7 @@ namespace POGOProtos.Data.Gym {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GymMembership other) {
       if (other == null) {
         return;
@@ -159,6 +172,7 @@ namespace POGOProtos.Data.Gym {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -186,30 +200,35 @@ namespace POGOProtos.Data.Gym {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GymState : pb::IMessage<GymState> {
     private static readonly pb::MessageParser<GymState> _parser = new pb::MessageParser<GymState>(() => new GymState());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GymState> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Gym.POGOProtosDataGymReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GymState() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GymState(GymState other) : this() {
       FortData = other.fortData_ != null ? other.FortData.Clone() : null;
       memberships_ = other.memberships_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GymState Clone() {
       return new GymState(this);
     }
@@ -217,6 +236,7 @@ namespace POGOProtos.Data.Gym {
     /// <summary>Field number for the "fort_data" field.</summary>
     public const int FortDataFieldNumber = 1;
     private global::POGOProtos.Map.Fort.FortData fortData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Fort.FortData FortData {
       get { return fortData_; }
       set {
@@ -229,14 +249,17 @@ namespace POGOProtos.Data.Gym {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Gym.GymMembership> _repeated_memberships_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Data.Gym.GymMembership.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Gym.GymMembership> memberships_ = new pbc::RepeatedField<global::POGOProtos.Data.Gym.GymMembership>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Gym.GymMembership> Memberships {
       get { return memberships_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GymState);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GymState other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -249,6 +272,7 @@ namespace POGOProtos.Data.Gym {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (fortData_ != null) hash ^= FortData.GetHashCode();
@@ -256,10 +280,12 @@ namespace POGOProtos.Data.Gym {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (fortData_ != null) {
         output.WriteRawTag(10);
@@ -268,6 +294,7 @@ namespace POGOProtos.Data.Gym {
       memberships_.WriteTo(output, _repeated_memberships_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (fortData_ != null) {
@@ -277,6 +304,7 @@ namespace POGOProtos.Data.Gym {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GymState other) {
       if (other == null) {
         return;
@@ -290,6 +318,7 @@ namespace POGOProtos.Data.Gym {
       memberships_.Add(other.memberships_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

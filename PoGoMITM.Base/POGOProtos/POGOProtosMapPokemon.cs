@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Map.Pokemon {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Map.Pokemon.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosMapPokemonReflection {
 
     #region Descriptor
@@ -50,25 +49,29 @@ namespace POGOProtos.Map.Pokemon {
 
   }
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class MapPokemon : pb::IMessage<MapPokemon> {
     private static readonly pb::MessageParser<MapPokemon> _parser = new pb::MessageParser<MapPokemon>(() => new MapPokemon());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MapPokemon> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Pokemon.POGOProtosMapPokemonReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapPokemon() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapPokemon(MapPokemon other) : this() {
       spawnPointId_ = other.spawnPointId_;
       encounterId_ = other.encounterId_;
@@ -78,6 +81,7 @@ namespace POGOProtos.Map.Pokemon {
       longitude_ = other.longitude_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapPokemon Clone() {
       return new MapPokemon(this);
     }
@@ -85,6 +89,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "spawn_point_id" field.</summary>
     public const int SpawnPointIdFieldNumber = 1;
     private string spawnPointId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SpawnPointId {
       get { return spawnPointId_; }
       set {
@@ -95,6 +100,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 2;
     private ulong encounterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -105,6 +111,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 3;
     private global::POGOProtos.Enums.PokemonId pokemonId_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonId PokemonId {
       get { return pokemonId_; }
       set {
@@ -118,6 +125,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>
     ///  After this timestamp, the pokemon will be gone.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ExpirationTimestampMs {
       get { return expirationTimestampMs_; }
       set {
@@ -128,6 +136,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 5;
     private double latitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -138,6 +147,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 6;
     private double longitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -145,10 +155,12 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MapPokemon);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MapPokemon other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -165,6 +177,7 @@ namespace POGOProtos.Map.Pokemon {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (SpawnPointId.Length != 0) hash ^= SpawnPointId.GetHashCode();
@@ -176,10 +189,12 @@ namespace POGOProtos.Map.Pokemon {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (SpawnPointId.Length != 0) {
         output.WriteRawTag(10);
@@ -207,6 +222,7 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (SpawnPointId.Length != 0) {
@@ -230,6 +246,7 @@ namespace POGOProtos.Map.Pokemon {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MapPokemon other) {
       if (other == null) {
         return;
@@ -254,6 +271,7 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -291,25 +309,29 @@ namespace POGOProtos.Map.Pokemon {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class NearbyPokemon : pb::IMessage<NearbyPokemon> {
     private static readonly pb::MessageParser<NearbyPokemon> _parser = new pb::MessageParser<NearbyPokemon>(() => new NearbyPokemon());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<NearbyPokemon> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Pokemon.POGOProtosMapPokemonReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NearbyPokemon() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NearbyPokemon(NearbyPokemon other) : this() {
       pokemonId_ = other.pokemonId_;
       distanceInMeters_ = other.distanceInMeters_;
@@ -318,6 +340,7 @@ namespace POGOProtos.Map.Pokemon {
       fortImageUrl_ = other.fortImageUrl_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NearbyPokemon Clone() {
       return new NearbyPokemon(this);
     }
@@ -325,6 +348,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private global::POGOProtos.Enums.PokemonId pokemonId_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonId PokemonId {
       get { return pokemonId_; }
       set {
@@ -335,6 +359,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "distance_in_meters" field.</summary>
     public const int DistanceInMetersFieldNumber = 2;
     private float distanceInMeters_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float DistanceInMeters {
       get { return distanceInMeters_; }
       set {
@@ -345,6 +370,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 3;
     private ulong encounterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -355,6 +381,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 4;
     private string fortId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -365,6 +392,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "fort_image_url" field.</summary>
     public const int FortImageUrlFieldNumber = 5;
     private string fortImageUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortImageUrl {
       get { return fortImageUrl_; }
       set {
@@ -372,10 +400,12 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as NearbyPokemon);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(NearbyPokemon other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -391,6 +421,7 @@ namespace POGOProtos.Map.Pokemon {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0) hash ^= PokemonId.GetHashCode();
@@ -401,10 +432,12 @@ namespace POGOProtos.Map.Pokemon {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0) {
         output.WriteRawTag(8);
@@ -428,6 +461,7 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0) {
@@ -448,6 +482,7 @@ namespace POGOProtos.Map.Pokemon {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(NearbyPokemon other) {
       if (other == null) {
         return;
@@ -469,6 +504,7 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -502,25 +538,29 @@ namespace POGOProtos.Map.Pokemon {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class WildPokemon : pb::IMessage<WildPokemon> {
     private static readonly pb::MessageParser<WildPokemon> _parser = new pb::MessageParser<WildPokemon>(() => new WildPokemon());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<WildPokemon> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Pokemon.POGOProtosMapPokemonReflection.Descriptor.MessageTypes[2]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WildPokemon() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WildPokemon(WildPokemon other) : this() {
       encounterId_ = other.encounterId_;
       lastModifiedTimestampMs_ = other.lastModifiedTimestampMs_;
@@ -531,6 +571,7 @@ namespace POGOProtos.Map.Pokemon {
       timeTillHiddenMs_ = other.timeTillHiddenMs_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public WildPokemon Clone() {
       return new WildPokemon(this);
     }
@@ -538,6 +579,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 1;
     private ulong encounterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -548,6 +590,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "last_modified_timestamp_ms" field.</summary>
     public const int LastModifiedTimestampMsFieldNumber = 2;
     private long lastModifiedTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long LastModifiedTimestampMs {
       get { return lastModifiedTimestampMs_; }
       set {
@@ -558,6 +601,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 3;
     private double latitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -568,6 +612,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 4;
     private double longitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -578,6 +623,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "spawn_point_id" field.</summary>
     public const int SpawnPointIdFieldNumber = 5;
     private string spawnPointId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SpawnPointId {
       get { return spawnPointId_; }
       set {
@@ -588,6 +634,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 7;
     private global::POGOProtos.Data.PokemonData pokemonData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -598,6 +645,7 @@ namespace POGOProtos.Map.Pokemon {
     /// <summary>Field number for the "time_till_hidden_ms" field.</summary>
     public const int TimeTillHiddenMsFieldNumber = 11;
     private int timeTillHiddenMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TimeTillHiddenMs {
       get { return timeTillHiddenMs_; }
       set {
@@ -605,10 +653,12 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as WildPokemon);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(WildPokemon other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -626,6 +676,7 @@ namespace POGOProtos.Map.Pokemon {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (EncounterId != 0UL) hash ^= EncounterId.GetHashCode();
@@ -638,10 +689,12 @@ namespace POGOProtos.Map.Pokemon {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncounterId != 0UL) {
         output.WriteRawTag(9);
@@ -673,6 +726,7 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (EncounterId != 0UL) {
@@ -699,6 +753,7 @@ namespace POGOProtos.Map.Pokemon {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(WildPokemon other) {
       if (other == null) {
         return;
@@ -729,6 +784,7 @@ namespace POGOProtos.Map.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

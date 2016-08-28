@@ -78,8 +78,11 @@
     <Compile Include="Dumpers\MongoDataDumper.cs" />
     <Compile Include="Dumpers\FileDataDumper.cs" />
     <Compile Include="Dumpers\IDataDumper.cs" />
+    <Compile Include="Dumpers\RawDumpReader.cs" />
     <Compile Include="Logging\Log4NetHelper.cs" />
+    <Compile Include="Models\IRequestParser.cs" />
     <Compile Include="Models\MessageBlock.cs" />
+    <Compile Include="Models\POGOProtosRequestParser.cs" />
     <Compile Include="Models\RawContext.cs" />
     <Compile Include="Models\RequestContext.cs" />
     <Compile Include="MongoDB\DictionaryRepresentationConvention.cs" />
@@ -97,6 +100,9 @@
     <Compile Include="POGOProtos\POGOProtosMapFort.cs" />
     <Compile Include="POGOProtos\POGOProtosMapPokemon.cs" />
     <Compile Include="POGOProtos\POGOProtosNetworkingEnvelopes.cs" />
+    <Compile Include="POGOProtos\POGOProtosNetworkingPlatform.cs" />
+    <Compile Include="POGOProtos\POGOProtosNetworkingPlatformRequests.cs" />
+    <Compile Include="POGOProtos\POGOProtosNetworkingPlatformResponses.cs" />
     <Compile Include="POGOProtos\POGOProtosNetworkingRequests.cs" />
     <Compile Include="POGOProtos\POGOProtosNetworkingRequestsMessages.cs" />
     <Compile Include="POGOProtos\POGOProtosNetworkingResponses.cs" />
@@ -108,6 +114,7 @@
     <Compile Include="ProtoHelpers\Protoc.cs" />
     <Compile Include="ProxyHandler.cs" />
     <Compile Include="Utils\CertificateHelper.cs" />
+    <Compile Include="Utils\Class1.cs" />
     <Compile Include="Utils\DateHelpers.cs" />
     <Compile Include="Utils\FileAsync.cs" />
   </ItemGroup>

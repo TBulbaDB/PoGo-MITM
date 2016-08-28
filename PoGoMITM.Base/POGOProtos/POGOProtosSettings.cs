@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Settings {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Settings.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosSettingsReflection {
 
     #region Descriptor
@@ -70,29 +69,34 @@ namespace POGOProtos.Settings {
 
   }
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadSettingsAction : pb::IMessage<DownloadSettingsAction> {
     private static readonly pb::MessageParser<DownloadSettingsAction> _parser = new pb::MessageParser<DownloadSettingsAction>(() => new DownloadSettingsAction());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadSettingsAction> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsAction() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsAction(DownloadSettingsAction other) : this() {
       hash_ = other.hash_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsAction Clone() {
       return new DownloadSettingsAction(this);
     }
@@ -100,6 +104,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "hash" field.</summary>
     public const int HashFieldNumber = 1;
     private string hash_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Hash {
       get { return hash_; }
       set {
@@ -107,10 +112,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadSettingsAction);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadSettingsAction other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -122,16 +129,19 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Hash.Length != 0) hash ^= Hash.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Hash.Length != 0) {
         output.WriteRawTag(10);
@@ -139,6 +149,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Hash.Length != 0) {
@@ -147,6 +158,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadSettingsAction other) {
       if (other == null) {
         return;
@@ -156,6 +168,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -173,25 +186,29 @@ namespace POGOProtos.Settings {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortSettings : pb::IMessage<FortSettings> {
     private static readonly pb::MessageParser<FortSettings> _parser = new pb::MessageParser<FortSettings>(() => new FortSettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortSettings> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSettings() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSettings(FortSettings other) : this() {
       interactionRangeMeters_ = other.interactionRangeMeters_;
       maxTotalDeployedPokemon_ = other.maxTotalDeployedPokemon_;
@@ -201,6 +218,7 @@ namespace POGOProtos.Settings {
       farInteractionRangeMeters_ = other.farInteractionRangeMeters_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSettings Clone() {
       return new FortSettings(this);
     }
@@ -208,6 +226,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "interaction_range_meters" field.</summary>
     public const int InteractionRangeMetersFieldNumber = 1;
     private double interactionRangeMeters_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double InteractionRangeMeters {
       get { return interactionRangeMeters_; }
       set {
@@ -218,6 +237,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "max_total_deployed_pokemon" field.</summary>
     public const int MaxTotalDeployedPokemonFieldNumber = 2;
     private int maxTotalDeployedPokemon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int MaxTotalDeployedPokemon {
       get { return maxTotalDeployedPokemon_; }
       set {
@@ -228,6 +248,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "max_player_deployed_pokemon" field.</summary>
     public const int MaxPlayerDeployedPokemonFieldNumber = 3;
     private int maxPlayerDeployedPokemon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int MaxPlayerDeployedPokemon {
       get { return maxPlayerDeployedPokemon_; }
       set {
@@ -238,6 +259,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "deploy_stamina_multiplier" field.</summary>
     public const int DeployStaminaMultiplierFieldNumber = 4;
     private double deployStaminaMultiplier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double DeployStaminaMultiplier {
       get { return deployStaminaMultiplier_; }
       set {
@@ -248,6 +270,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "deploy_attack_multiplier" field.</summary>
     public const int DeployAttackMultiplierFieldNumber = 5;
     private double deployAttackMultiplier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double DeployAttackMultiplier {
       get { return deployAttackMultiplier_; }
       set {
@@ -258,6 +281,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "far_interaction_range_meters" field.</summary>
     public const int FarInteractionRangeMetersFieldNumber = 6;
     private double farInteractionRangeMeters_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double FarInteractionRangeMeters {
       get { return farInteractionRangeMeters_; }
       set {
@@ -265,10 +289,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortSettings);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortSettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -285,6 +311,7 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (InteractionRangeMeters != 0D) hash ^= InteractionRangeMeters.GetHashCode();
@@ -296,10 +323,12 @@ namespace POGOProtos.Settings {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (InteractionRangeMeters != 0D) {
         output.WriteRawTag(9);
@@ -327,6 +356,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (InteractionRangeMeters != 0D) {
@@ -350,6 +380,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortSettings other) {
       if (other == null) {
         return;
@@ -374,6 +405,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -411,25 +443,29 @@ namespace POGOProtos.Settings {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GlobalSettings : pb::IMessage<GlobalSettings> {
     private static readonly pb::MessageParser<GlobalSettings> _parser = new pb::MessageParser<GlobalSettings>(() => new GlobalSettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GlobalSettings> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[2]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GlobalSettings() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GlobalSettings(GlobalSettings other) : this() {
       FortSettings = other.fortSettings_ != null ? other.FortSettings.Clone() : null;
       MapSettings = other.mapSettings_ != null ? other.MapSettings.Clone() : null;
@@ -439,6 +475,7 @@ namespace POGOProtos.Settings {
       GpsSettings = other.gpsSettings_ != null ? other.GpsSettings.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GlobalSettings Clone() {
       return new GlobalSettings(this);
     }
@@ -446,6 +483,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "fort_settings" field.</summary>
     public const int FortSettingsFieldNumber = 2;
     private global::POGOProtos.Settings.FortSettings fortSettings_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Settings.FortSettings FortSettings {
       get { return fortSettings_; }
       set {
@@ -456,6 +494,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "map_settings" field.</summary>
     public const int MapSettingsFieldNumber = 3;
     private global::POGOProtos.Settings.MapSettings mapSettings_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Settings.MapSettings MapSettings {
       get { return mapSettings_; }
       set {
@@ -466,6 +505,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "level_settings" field.</summary>
     public const int LevelSettingsFieldNumber = 4;
     private global::POGOProtos.Settings.LevelSettings levelSettings_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Settings.LevelSettings LevelSettings {
       get { return levelSettings_; }
       set {
@@ -476,6 +516,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "inventory_settings" field.</summary>
     public const int InventorySettingsFieldNumber = 5;
     private global::POGOProtos.Settings.InventorySettings inventorySettings_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Settings.InventorySettings InventorySettings {
       get { return inventorySettings_; }
       set {
@@ -486,6 +527,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "minimum_client_version" field.</summary>
     public const int MinimumClientVersionFieldNumber = 6;
     private string minimumClientVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string MinimumClientVersion {
       get { return minimumClientVersion_; }
       set {
@@ -496,6 +538,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "gps_settings" field.</summary>
     public const int GpsSettingsFieldNumber = 7;
     private global::POGOProtos.Settings.GpsSettings gpsSettings_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Settings.GpsSettings GpsSettings {
       get { return gpsSettings_; }
       set {
@@ -503,10 +546,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GlobalSettings);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GlobalSettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -523,6 +568,7 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (fortSettings_ != null) hash ^= FortSettings.GetHashCode();
@@ -534,10 +580,12 @@ namespace POGOProtos.Settings {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (fortSettings_ != null) {
         output.WriteRawTag(18);
@@ -565,6 +613,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (fortSettings_ != null) {
@@ -588,6 +637,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GlobalSettings other) {
       if (other == null) {
         return;
@@ -627,6 +677,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -679,25 +730,29 @@ namespace POGOProtos.Settings {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GpsSettings : pb::IMessage<GpsSettings> {
     private static readonly pb::MessageParser<GpsSettings> _parser = new pb::MessageParser<GpsSettings>(() => new GpsSettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GpsSettings> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[3]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GpsSettings() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GpsSettings(GpsSettings other) : this() {
       drivingWarningSpeedMetersPerSecond_ = other.drivingWarningSpeedMetersPerSecond_;
       drivingWarningCooldownMinutes_ = other.drivingWarningCooldownMinutes_;
@@ -705,6 +760,7 @@ namespace POGOProtos.Settings {
       drivingSpeedSampleCount_ = other.drivingSpeedSampleCount_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GpsSettings Clone() {
       return new GpsSettings(this);
     }
@@ -712,6 +768,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "driving_warning_speed_meters_per_second" field.</summary>
     public const int DrivingWarningSpeedMetersPerSecondFieldNumber = 1;
     private float drivingWarningSpeedMetersPerSecond_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float DrivingWarningSpeedMetersPerSecond {
       get { return drivingWarningSpeedMetersPerSecond_; }
       set {
@@ -722,6 +779,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "driving_warning_cooldown_minutes" field.</summary>
     public const int DrivingWarningCooldownMinutesFieldNumber = 2;
     private float drivingWarningCooldownMinutes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float DrivingWarningCooldownMinutes {
       get { return drivingWarningCooldownMinutes_; }
       set {
@@ -732,6 +790,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "driving_speed_sample_interval_seconds" field.</summary>
     public const int DrivingSpeedSampleIntervalSecondsFieldNumber = 3;
     private float drivingSpeedSampleIntervalSeconds_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float DrivingSpeedSampleIntervalSeconds {
       get { return drivingSpeedSampleIntervalSeconds_; }
       set {
@@ -742,6 +801,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "driving_speed_sample_count" field.</summary>
     public const int DrivingSpeedSampleCountFieldNumber = 4;
     private int drivingSpeedSampleCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int DrivingSpeedSampleCount {
       get { return drivingSpeedSampleCount_; }
       set {
@@ -749,10 +809,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GpsSettings);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GpsSettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -767,6 +829,7 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (DrivingWarningSpeedMetersPerSecond != 0F) hash ^= DrivingWarningSpeedMetersPerSecond.GetHashCode();
@@ -776,10 +839,12 @@ namespace POGOProtos.Settings {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (DrivingWarningSpeedMetersPerSecond != 0F) {
         output.WriteRawTag(13);
@@ -799,6 +864,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (DrivingWarningSpeedMetersPerSecond != 0F) {
@@ -816,6 +882,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GpsSettings other) {
       if (other == null) {
         return;
@@ -834,6 +901,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -863,25 +931,29 @@ namespace POGOProtos.Settings {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class InventorySettings : pb::IMessage<InventorySettings> {
     private static readonly pb::MessageParser<InventorySettings> _parser = new pb::MessageParser<InventorySettings>(() => new InventorySettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<InventorySettings> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[4]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventorySettings() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventorySettings(InventorySettings other) : this() {
       maxPokemon_ = other.maxPokemon_;
       maxBagItems_ = other.maxBagItems_;
@@ -890,6 +962,7 @@ namespace POGOProtos.Settings {
       baseEggs_ = other.baseEggs_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventorySettings Clone() {
       return new InventorySettings(this);
     }
@@ -897,6 +970,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "max_pokemon" field.</summary>
     public const int MaxPokemonFieldNumber = 1;
     private int maxPokemon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int MaxPokemon {
       get { return maxPokemon_; }
       set {
@@ -907,6 +981,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "max_bag_items" field.</summary>
     public const int MaxBagItemsFieldNumber = 2;
     private int maxBagItems_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int MaxBagItems {
       get { return maxBagItems_; }
       set {
@@ -917,6 +992,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "base_pokemon" field.</summary>
     public const int BasePokemonFieldNumber = 3;
     private int basePokemon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BasePokemon {
       get { return basePokemon_; }
       set {
@@ -927,6 +1003,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "base_bag_items" field.</summary>
     public const int BaseBagItemsFieldNumber = 4;
     private int baseBagItems_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BaseBagItems {
       get { return baseBagItems_; }
       set {
@@ -937,6 +1014,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "base_eggs" field.</summary>
     public const int BaseEggsFieldNumber = 5;
     private int baseEggs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BaseEggs {
       get { return baseEggs_; }
       set {
@@ -944,10 +1022,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InventorySettings);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(InventorySettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -963,6 +1043,7 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (MaxPokemon != 0) hash ^= MaxPokemon.GetHashCode();
@@ -973,10 +1054,12 @@ namespace POGOProtos.Settings {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (MaxPokemon != 0) {
         output.WriteRawTag(8);
@@ -1000,6 +1083,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (MaxPokemon != 0) {
@@ -1020,6 +1104,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(InventorySettings other) {
       if (other == null) {
         return;
@@ -1041,6 +1126,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1074,30 +1160,35 @@ namespace POGOProtos.Settings {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class LevelSettings : pb::IMessage<LevelSettings> {
     private static readonly pb::MessageParser<LevelSettings> _parser = new pb::MessageParser<LevelSettings>(() => new LevelSettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<LevelSettings> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[5]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelSettings() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelSettings(LevelSettings other) : this() {
       trainerCpModifier_ = other.trainerCpModifier_;
       trainerDifficultyModifier_ = other.trainerDifficultyModifier_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelSettings Clone() {
       return new LevelSettings(this);
     }
@@ -1105,6 +1196,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "trainer_cp_modifier" field.</summary>
     public const int TrainerCpModifierFieldNumber = 2;
     private double trainerCpModifier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double TrainerCpModifier {
       get { return trainerCpModifier_; }
       set {
@@ -1115,6 +1207,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "trainer_difficulty_modifier" field.</summary>
     public const int TrainerDifficultyModifierFieldNumber = 3;
     private double trainerDifficultyModifier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double TrainerDifficultyModifier {
       get { return trainerDifficultyModifier_; }
       set {
@@ -1122,10 +1215,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as LevelSettings);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(LevelSettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1138,6 +1233,7 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (TrainerCpModifier != 0D) hash ^= TrainerCpModifier.GetHashCode();
@@ -1145,10 +1241,12 @@ namespace POGOProtos.Settings {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (TrainerCpModifier != 0D) {
         output.WriteRawTag(17);
@@ -1160,6 +1258,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (TrainerCpModifier != 0D) {
@@ -1171,6 +1270,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(LevelSettings other) {
       if (other == null) {
         return;
@@ -1183,6 +1283,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1204,25 +1305,29 @@ namespace POGOProtos.Settings {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class MapSettings : pb::IMessage<MapSettings> {
     private static readonly pb::MessageParser<MapSettings> _parser = new pb::MessageParser<MapSettings>(() => new MapSettings());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MapSettings> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.POGOProtosSettingsReflection.Descriptor.MessageTypes[6]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapSettings() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapSettings(MapSettings other) : this() {
       pokemonVisibleRange_ = other.pokemonVisibleRange_;
       pokeNavRangeMeters_ = other.pokeNavRangeMeters_;
@@ -1233,6 +1338,7 @@ namespace POGOProtos.Settings {
       googleMapsApiKey_ = other.googleMapsApiKey_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapSettings Clone() {
       return new MapSettings(this);
     }
@@ -1240,6 +1346,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "pokemon_visible_range" field.</summary>
     public const int PokemonVisibleRangeFieldNumber = 1;
     private double pokemonVisibleRange_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PokemonVisibleRange {
       get { return pokemonVisibleRange_; }
       set {
@@ -1250,6 +1357,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "poke_nav_range_meters" field.</summary>
     public const int PokeNavRangeMetersFieldNumber = 2;
     private double pokeNavRangeMeters_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PokeNavRangeMeters {
       get { return pokeNavRangeMeters_; }
       set {
@@ -1260,6 +1368,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "encounter_range_meters" field.</summary>
     public const int EncounterRangeMetersFieldNumber = 3;
     private double encounterRangeMeters_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double EncounterRangeMeters {
       get { return encounterRangeMeters_; }
       set {
@@ -1270,6 +1379,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "get_map_objects_min_refresh_seconds" field.</summary>
     public const int GetMapObjectsMinRefreshSecondsFieldNumber = 4;
     private float getMapObjectsMinRefreshSeconds_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float GetMapObjectsMinRefreshSeconds {
       get { return getMapObjectsMinRefreshSeconds_; }
       set {
@@ -1280,6 +1390,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "get_map_objects_max_refresh_seconds" field.</summary>
     public const int GetMapObjectsMaxRefreshSecondsFieldNumber = 5;
     private float getMapObjectsMaxRefreshSeconds_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float GetMapObjectsMaxRefreshSeconds {
       get { return getMapObjectsMaxRefreshSeconds_; }
       set {
@@ -1290,6 +1401,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "get_map_objects_min_distance_meters" field.</summary>
     public const int GetMapObjectsMinDistanceMetersFieldNumber = 6;
     private float getMapObjectsMinDistanceMeters_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float GetMapObjectsMinDistanceMeters {
       get { return getMapObjectsMinDistanceMeters_; }
       set {
@@ -1300,6 +1412,7 @@ namespace POGOProtos.Settings {
     /// <summary>Field number for the "google_maps_api_key" field.</summary>
     public const int GoogleMapsApiKeyFieldNumber = 7;
     private string googleMapsApiKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GoogleMapsApiKey {
       get { return googleMapsApiKey_; }
       set {
@@ -1307,10 +1420,12 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MapSettings);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MapSettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1328,6 +1443,7 @@ namespace POGOProtos.Settings {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonVisibleRange != 0D) hash ^= PokemonVisibleRange.GetHashCode();
@@ -1340,10 +1456,12 @@ namespace POGOProtos.Settings {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonVisibleRange != 0D) {
         output.WriteRawTag(9);
@@ -1375,6 +1493,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonVisibleRange != 0D) {
@@ -1401,6 +1520,7 @@ namespace POGOProtos.Settings {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MapSettings other) {
       if (other == null) {
         return;
@@ -1428,6 +1548,7 @@ namespace POGOProtos.Settings {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

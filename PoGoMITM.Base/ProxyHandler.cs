@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Google.Protobuf;
 using log4net;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
+using POGOProtos.Networking.Envelopes;
+using POGOProtos.Networking.Requests;
+using POGOProtos.Networking.Requests.Messages;
 using Titanium.Web.Proxy;
 using Titanium.Web.Proxy.Exceptions;
 using Titanium.Web.Proxy.Models;
@@ -95,7 +100,21 @@ namespace PoGoMITM.Base
                 catch (BodyNotFoundException)
                 {
                 }
-
+                //var codedRequest = new CodedInputStream(context.RequestBody);
+                //var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
+                //for (int i = 0; i < requestEnvelope.Requests.Count; i++)
+                //{
+                //    var request = requestEnvelope.Requests[i];
+                //    if (request.RequestType == RequestType.CheckChallenge)
+                //    {
+                //        var message = CheckChallengeMessage.Parser.ParseFrom(request.RequestMessage);
+                //        message.DebugRequest = true;
+                //        request.RequestMessage = message.ToByteString();
+                //        var newEnvelope = PrepareRequestEnvelope(requestEnvelope);
+                //        context.RequestBody = await newEnvelope.ReadAsByteArrayAsync();
+                //        await e.SetRequestBody(context.RequestBody);
+                //    }
+                //}
                 OnRequestSent(context);
             }
             catch (Exception ex)
@@ -105,7 +124,14 @@ namespace PoGoMITM.Base
 
         }
 
+        private ByteArrayContent PrepareRequestEnvelope(RequestEnvelope requestEnvelope)
+        {
+            var messageBytes = requestEnvelope.ToByteArray();
 
+            // TODO: Compression?
+
+            return new ByteArrayContent(messageBytes);
+        }
 
         private async Task ProxyServer_BeforeResponse(object sender, Titanium.Web.Proxy.EventArguments.SessionEventArgs e)
         {

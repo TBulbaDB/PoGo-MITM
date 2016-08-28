@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Enums {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Enums.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosEnumsReflection {
 
     #region Descriptor

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
 using Titanium.Web.Proxy.Models;
 
 namespace PoGoMITM.Base.Models
@@ -17,5 +18,8 @@ namespace PoGoMITM.Base.Models
 
         public List<HttpHeader> ResponseHeaders { get; set; }
         public byte[] ResponseBody { get; set; }
+
+        [JsonIgnore]
+        public bool IsLive { get; set; }
     }
 }

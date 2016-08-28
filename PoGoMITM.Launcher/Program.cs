@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using log4net;
 using log4net.Core;
 using Microsoft.AspNet.SignalR.Hubs;
@@ -22,6 +24,7 @@ namespace PoGoMITM.Launcher
 
         private static void Main()
         {
+            RequestContext.Parser = new POGOProtosRequestParser();
             StaticConfiguration.DisableErrorTraces = false;
             JsonConvert.DefaultSettings = () =>
             {
@@ -85,7 +88,7 @@ namespace PoGoMITM.Launcher
             {
 
                 if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
-
+                rawContext.IsLive = true;
                 ContextCache.RawContexts.TryAdd(rawContext.Guid, rawContext);
                 NotificationHub.SendRawContext(RequestContextListModel.FromRawContext(rawContext));
 

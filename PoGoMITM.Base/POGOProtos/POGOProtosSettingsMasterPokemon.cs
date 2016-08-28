@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Settings.Master.Pokemon {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Settings.Master.Pokemon.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosSettingsMasterPokemonReflection {
 
     #region Descriptor
@@ -50,25 +49,29 @@ namespace POGOProtos.Settings.Master.Pokemon {
 
   }
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CameraAttributes : pb::IMessage<CameraAttributes> {
     private static readonly pb::MessageParser<CameraAttributes> _parser = new pb::MessageParser<CameraAttributes>(() => new CameraAttributes());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CameraAttributes> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.Master.Pokemon.POGOProtosSettingsMasterPokemonReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CameraAttributes() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CameraAttributes(CameraAttributes other) : this() {
       diskRadiusM_ = other.diskRadiusM_;
       cylinderRadiusM_ = other.cylinderRadiusM_;
@@ -77,6 +80,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       shoulderModeScale_ = other.shoulderModeScale_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CameraAttributes Clone() {
       return new CameraAttributes(this);
     }
@@ -84,6 +88,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "disk_radius_m" field.</summary>
     public const int DiskRadiusMFieldNumber = 1;
     private float diskRadiusM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float DiskRadiusM {
       get { return diskRadiusM_; }
       set {
@@ -94,6 +99,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "cylinder_radius_m" field.</summary>
     public const int CylinderRadiusMFieldNumber = 2;
     private float cylinderRadiusM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float CylinderRadiusM {
       get { return cylinderRadiusM_; }
       set {
@@ -104,6 +110,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "cylinder_height_m" field.</summary>
     public const int CylinderHeightMFieldNumber = 3;
     private float cylinderHeightM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float CylinderHeightM {
       get { return cylinderHeightM_; }
       set {
@@ -114,6 +121,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "cylinder_ground_m" field.</summary>
     public const int CylinderGroundMFieldNumber = 4;
     private float cylinderGroundM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float CylinderGroundM {
       get { return cylinderGroundM_; }
       set {
@@ -124,6 +132,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "shoulder_mode_scale" field.</summary>
     public const int ShoulderModeScaleFieldNumber = 5;
     private float shoulderModeScale_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float ShoulderModeScale {
       get { return shoulderModeScale_; }
       set {
@@ -131,10 +140,12 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CameraAttributes);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CameraAttributes other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -150,6 +161,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (DiskRadiusM != 0F) hash ^= DiskRadiusM.GetHashCode();
@@ -160,10 +172,12 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (DiskRadiusM != 0F) {
         output.WriteRawTag(13);
@@ -187,6 +201,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (DiskRadiusM != 0F) {
@@ -207,6 +222,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CameraAttributes other) {
       if (other == null) {
         return;
@@ -228,6 +244,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -261,25 +278,29 @@ namespace POGOProtos.Settings.Master.Pokemon {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EncounterAttributes : pb::IMessage<EncounterAttributes> {
     private static readonly pb::MessageParser<EncounterAttributes> _parser = new pb::MessageParser<EncounterAttributes>(() => new EncounterAttributes());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EncounterAttributes> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.Master.Pokemon.POGOProtosSettingsMasterPokemonReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterAttributes() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterAttributes(EncounterAttributes other) : this() {
       baseCaptureRate_ = other.baseCaptureRate_;
       baseFleeRate_ = other.baseFleeRate_;
@@ -292,6 +313,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       attackTimerS_ = other.attackTimerS_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterAttributes Clone() {
       return new EncounterAttributes(this);
     }
@@ -299,6 +321,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "base_capture_rate" field.</summary>
     public const int BaseCaptureRateFieldNumber = 1;
     private float baseCaptureRate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float BaseCaptureRate {
       get { return baseCaptureRate_; }
       set {
@@ -309,6 +332,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "base_flee_rate" field.</summary>
     public const int BaseFleeRateFieldNumber = 2;
     private float baseFleeRate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float BaseFleeRate {
       get { return baseFleeRate_; }
       set {
@@ -319,6 +343,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "collision_radius_m" field.</summary>
     public const int CollisionRadiusMFieldNumber = 3;
     private float collisionRadiusM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float CollisionRadiusM {
       get { return collisionRadiusM_; }
       set {
@@ -329,6 +354,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "collision_height_m" field.</summary>
     public const int CollisionHeightMFieldNumber = 4;
     private float collisionHeightM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float CollisionHeightM {
       get { return collisionHeightM_; }
       set {
@@ -339,6 +365,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "collision_head_radius_m" field.</summary>
     public const int CollisionHeadRadiusMFieldNumber = 5;
     private float collisionHeadRadiusM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float CollisionHeadRadiusM {
       get { return collisionHeadRadiusM_; }
       set {
@@ -349,6 +376,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "movement_type" field.</summary>
     public const int MovementTypeFieldNumber = 6;
     private global::POGOProtos.Enums.PokemonMovementType movementType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonMovementType MovementType {
       get { return movementType_; }
       set {
@@ -359,6 +387,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "movement_timer_s" field.</summary>
     public const int MovementTimerSFieldNumber = 7;
     private float movementTimerS_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float MovementTimerS {
       get { return movementTimerS_; }
       set {
@@ -369,6 +398,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "jump_time_s" field.</summary>
     public const int JumpTimeSFieldNumber = 8;
     private float jumpTimeS_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float JumpTimeS {
       get { return jumpTimeS_; }
       set {
@@ -379,6 +409,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "attack_timer_s" field.</summary>
     public const int AttackTimerSFieldNumber = 9;
     private float attackTimerS_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float AttackTimerS {
       get { return attackTimerS_; }
       set {
@@ -386,10 +417,12 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EncounterAttributes);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EncounterAttributes other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -409,6 +442,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (BaseCaptureRate != 0F) hash ^= BaseCaptureRate.GetHashCode();
@@ -423,10 +457,12 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (BaseCaptureRate != 0F) {
         output.WriteRawTag(13);
@@ -466,6 +502,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (BaseCaptureRate != 0F) {
@@ -498,6 +535,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EncounterAttributes other) {
       if (other == null) {
         return;
@@ -531,6 +569,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -580,25 +619,29 @@ namespace POGOProtos.Settings.Master.Pokemon {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class StatsAttributes : pb::IMessage<StatsAttributes> {
     private static readonly pb::MessageParser<StatsAttributes> _parser = new pb::MessageParser<StatsAttributes>(() => new StatsAttributes());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<StatsAttributes> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Settings.Master.Pokemon.POGOProtosSettingsMasterPokemonReflection.Descriptor.MessageTypes[2]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StatsAttributes() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StatsAttributes(StatsAttributes other) : this() {
       baseStamina_ = other.baseStamina_;
       baseAttack_ = other.baseAttack_;
@@ -606,6 +649,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       dodgeEnergyDelta_ = other.dodgeEnergyDelta_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StatsAttributes Clone() {
       return new StatsAttributes(this);
     }
@@ -613,6 +657,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "base_stamina" field.</summary>
     public const int BaseStaminaFieldNumber = 1;
     private int baseStamina_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BaseStamina {
       get { return baseStamina_; }
       set {
@@ -623,6 +668,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "base_attack" field.</summary>
     public const int BaseAttackFieldNumber = 2;
     private int baseAttack_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BaseAttack {
       get { return baseAttack_; }
       set {
@@ -633,6 +679,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "base_defense" field.</summary>
     public const int BaseDefenseFieldNumber = 3;
     private int baseDefense_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BaseDefense {
       get { return baseDefense_; }
       set {
@@ -643,6 +690,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
     /// <summary>Field number for the "dodge_energy_delta" field.</summary>
     public const int DodgeEnergyDeltaFieldNumber = 8;
     private int dodgeEnergyDelta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int DodgeEnergyDelta {
       get { return dodgeEnergyDelta_; }
       set {
@@ -650,10 +698,12 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as StatsAttributes);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(StatsAttributes other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -668,6 +718,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (BaseStamina != 0) hash ^= BaseStamina.GetHashCode();
@@ -677,10 +728,12 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (BaseStamina != 0) {
         output.WriteRawTag(8);
@@ -700,6 +753,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (BaseStamina != 0) {
@@ -717,6 +771,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(StatsAttributes other) {
       if (other == null) {
         return;
@@ -735,6 +790,7 @@ namespace POGOProtos.Settings.Master.Pokemon {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

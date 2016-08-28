@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using PoGoMITM.Base.Cache;
 using PoGoMITM.Base.ProtoHelpers;
 using POGOProtos.Networking.Envelopes;
+using POGOProtos.Networking.Platform;
 using POGOProtos.Networking.Requests;
 using Titanium.Web.Proxy.Models;
 
@@ -14,6 +15,8 @@ namespace PoGoMITM.Base.Models
 {
     public class RequestContext
     {
+        public static IRequestParser Parser { get; set; }
+
         public Guid Guid { get; set; }
         public DateTime RequestTime { get; set; }
         public Uri RequestUri { get; set; }
@@ -28,6 +31,8 @@ namespace PoGoMITM.Base.Models
         public Dictionary<RequestType, IMessage> Requests { get; set; } = new Dictionary<RequestType, IMessage>();
         public int RequestBodyLength { get; set; }
 
+        public Dictionary<PlatformRequestType, IMessage> PlatformRequests { get; set; } = new Dictionary<PlatformRequestType, IMessage>();
+
         // Response
         public List<HttpHeader> ResponseHeaders { get; set; }
         [JsonIgnore]
@@ -37,6 +42,15 @@ namespace PoGoMITM.Base.Models
         public ResponseEnvelope ResponseEnvelope { get; set; }
         public Dictionary<RequestType, IMessage> Responses { get; set; } = new Dictionary<RequestType, IMessage>();
         public int ResponseBodyLength { get; set; }
+
+        public Dictionary<PlatformRequestType, IMessage> PlatformResponses { get; set; } = new Dictionary<PlatformRequestType, IMessage>();
+
+
+
+        public Signature DecryptedSignature { get; set; }
+
+        [JsonIgnore]
+        public byte[] RawDecryptedSignature { get; set; }
 
         public static async Task<RequestContext> GetInstance(RawContext context)
         {
@@ -61,67 +75,11 @@ namespace PoGoMITM.Base.Models
 
             if (result.RequestUri.Host == "pgorelease.nianticlabs.com")
             {
-
-                result.RawDecodedRequestBody = await Protoc.DecodeRaw(result.RequestBody);
-                result.RawDecodedResponseBody = await Protoc.DecodeRaw(result.ResponseBody);
-
-                var codedRequest = new CodedInputStream(result.RequestBody);
-                result.RequestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
-                if (result.RequestEnvelope?.Requests != null && result.RequestEnvelope.Requests.Count > 0)
+                if (Parser != null)
                 {
-                    foreach (var request in result.RequestEnvelope.Requests)
-                    {
-                        if (Enum.IsDefined(typeof(RequestType), request.RequestType))
-                        {
-                            var type = Type.GetType("POGOProtos.Networking.Requests.Messages." + request.RequestType + "Message");
-                            if (type != null)
-                            {
-                                var instance = (IMessage)Activator.CreateInstance(type);
-                                instance.MergeFrom(request.RequestMessage);
-                                result.Requests.Add(request.RequestType, instance);
-                            }
-                            else
-                            {
-                                result.Requests.Add(request.RequestType, request);
-                            }
-                        }
-                        else
-                        {
-                            result.Requests.Add(request.RequestType, request);
-                        }
-                    }
+                    await Parser.ParseRequest(result);
                 }
-
-                var codedResponse = new CodedInputStream(result.ResponseBody);
-                result.ResponseEnvelope = ResponseEnvelope.Parser.ParseFrom(codedResponse);
-                if (result.ResponseEnvelope?.Returns != null && result.ResponseEnvelope.Returns.Count > 0)
-                {
-                    var index = 0;
-                    foreach (var request in result.Requests)
-                    {
-                        if (Enum.IsDefined(typeof(RequestType), request.Key))
-                        {
-                            var requestType = (RequestType)request.Key;
-                            var typeName = "POGOProtos.Networking.Responses." + requestType + "Response";
-                            var type = Type.GetType(typeName);
-                            if (type != null)
-                            {
-                                var instance = (IMessage)Activator.CreateInstance(type);
-                                instance.MergeFrom(result.ResponseEnvelope.Returns[index]);
-                                result.Responses.Add(requestType, instance);
-                            }
-                            else
-                            {
-                                result.Responses.Add(requestType, null);
-                            }
-                        }
-                        else
-                        {
-                            result.Responses.Add(request.Key, null);
-                        }
-                        index++;
-                    }
-                }
+                
             }
             else
             {

@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Data.Battle {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Data.Battle.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosDataBattleReflection {
 
     #region Descriptor
@@ -113,25 +112,29 @@ namespace POGOProtos.Data.Battle {
   #endregion
 
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BattleAction : pb::IMessage<BattleAction> {
     private static readonly pb::MessageParser<BattleAction> _parser = new pb::MessageParser<BattleAction>(() => new BattleAction());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BattleAction> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleAction() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleAction(BattleAction other) : this() {
       type_ = other.type_;
       actionStartMs_ = other.actionStartMs_;
@@ -148,6 +151,7 @@ namespace POGOProtos.Data.Battle {
       targetPokemonId_ = other.targetPokemonId_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleAction Clone() {
       return new BattleAction(this);
     }
@@ -155,6 +159,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "Type" field.</summary>
     public const int TypeFieldNumber = 1;
     private global::POGOProtos.Data.Battle.BattleActionType type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleActionType Type {
       get { return type_; }
       set {
@@ -165,6 +170,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "action_start_ms" field.</summary>
     public const int ActionStartMsFieldNumber = 2;
     private long actionStartMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ActionStartMs {
       get { return actionStartMs_; }
       set {
@@ -175,6 +181,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "duration_ms" field.</summary>
     public const int DurationMsFieldNumber = 3;
     private int durationMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int DurationMs {
       get { return durationMs_; }
       set {
@@ -185,6 +192,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "energy_delta" field.</summary>
     public const int EnergyDeltaFieldNumber = 5;
     private int energyDelta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int EnergyDelta {
       get { return energyDelta_; }
       set {
@@ -195,6 +203,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "attacker_index" field.</summary>
     public const int AttackerIndexFieldNumber = 6;
     private int attackerIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int AttackerIndex {
       get { return attackerIndex_; }
       set {
@@ -205,6 +214,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "target_index" field.</summary>
     public const int TargetIndexFieldNumber = 7;
     private int targetIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TargetIndex {
       get { return targetIndex_; }
       set {
@@ -215,6 +225,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "active_pokemon_id" field.</summary>
     public const int ActivePokemonIdFieldNumber = 8;
     private ulong activePokemonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong ActivePokemonId {
       get { return activePokemonId_; }
       set {
@@ -225,6 +236,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "player_joined" field.</summary>
     public const int PlayerJoinedFieldNumber = 9;
     private global::POGOProtos.Data.Battle.BattleParticipant playerJoined_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleParticipant PlayerJoined {
       get { return playerJoined_; }
       set {
@@ -235,6 +247,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "battle_results" field.</summary>
     public const int BattleResultsFieldNumber = 10;
     private global::POGOProtos.Data.Battle.BattleResults battleResults_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleResults BattleResults {
       get { return battleResults_; }
       set {
@@ -245,6 +258,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "damage_windows_start_timestamp_mss" field.</summary>
     public const int DamageWindowsStartTimestampMssFieldNumber = 11;
     private long damageWindowsStartTimestampMss_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DamageWindowsStartTimestampMss {
       get { return damageWindowsStartTimestampMss_; }
       set {
@@ -255,6 +269,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "damage_windows_end_timestamp_mss" field.</summary>
     public const int DamageWindowsEndTimestampMssFieldNumber = 12;
     private long damageWindowsEndTimestampMss_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DamageWindowsEndTimestampMss {
       get { return damageWindowsEndTimestampMss_; }
       set {
@@ -265,6 +280,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "player_left" field.</summary>
     public const int PlayerLeftFieldNumber = 13;
     private global::POGOProtos.Data.Battle.BattleParticipant playerLeft_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleParticipant PlayerLeft {
       get { return playerLeft_; }
       set {
@@ -275,6 +291,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "target_pokemon_id" field.</summary>
     public const int TargetPokemonIdFieldNumber = 14;
     private ulong targetPokemonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong TargetPokemonId {
       get { return targetPokemonId_; }
       set {
@@ -282,10 +299,12 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattleAction);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BattleAction other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -309,6 +328,7 @@ namespace POGOProtos.Data.Battle {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Type != 0) hash ^= Type.GetHashCode();
@@ -327,10 +347,12 @@ namespace POGOProtos.Data.Battle {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Type != 0) {
         output.WriteRawTag(8);
@@ -386,6 +408,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Type != 0) {
@@ -430,6 +453,7 @@ namespace POGOProtos.Data.Battle {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BattleAction other) {
       if (other == null) {
         return;
@@ -484,6 +508,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -558,25 +583,29 @@ namespace POGOProtos.Data.Battle {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BattleLog : pb::IMessage<BattleLog> {
     private static readonly pb::MessageParser<BattleLog> _parser = new pb::MessageParser<BattleLog>(() => new BattleLog());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BattleLog> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleLog() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleLog(BattleLog other) : this() {
       state_ = other.state_;
       battleType_ = other.battleType_;
@@ -586,6 +615,7 @@ namespace POGOProtos.Data.Battle {
       battleEndTimestampMs_ = other.battleEndTimestampMs_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleLog Clone() {
       return new BattleLog(this);
     }
@@ -593,6 +623,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 1;
     private global::POGOProtos.Data.Battle.BattleState state_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleState State {
       get { return state_; }
       set {
@@ -603,6 +634,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "battle_type" field.</summary>
     public const int BattleTypeFieldNumber = 2;
     private global::POGOProtos.Data.Battle.BattleType battleType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleType BattleType {
       get { return battleType_; }
       set {
@@ -613,6 +645,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "server_ms" field.</summary>
     public const int ServerMsFieldNumber = 3;
     private long serverMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ServerMs {
       get { return serverMs_; }
       set {
@@ -625,6 +658,7 @@ namespace POGOProtos.Data.Battle {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Battle.BattleAction> _repeated_battleActions_codec
         = pb::FieldCodec.ForMessage(34, global::POGOProtos.Data.Battle.BattleAction.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleAction> battleActions_ = new pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleAction>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleAction> BattleActions {
       get { return battleActions_; }
     }
@@ -632,6 +666,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "battle_start_timestamp_ms" field.</summary>
     public const int BattleStartTimestampMsFieldNumber = 5;
     private long battleStartTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long BattleStartTimestampMs {
       get { return battleStartTimestampMs_; }
       set {
@@ -642,6 +677,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "battle_end_timestamp_ms" field.</summary>
     public const int BattleEndTimestampMsFieldNumber = 6;
     private long battleEndTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long BattleEndTimestampMs {
       get { return battleEndTimestampMs_; }
       set {
@@ -649,10 +685,12 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattleLog);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BattleLog other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -669,6 +707,7 @@ namespace POGOProtos.Data.Battle {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (State != 0) hash ^= State.GetHashCode();
@@ -680,10 +719,12 @@ namespace POGOProtos.Data.Battle {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (State != 0) {
         output.WriteRawTag(8);
@@ -708,6 +749,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (State != 0) {
@@ -729,6 +771,7 @@ namespace POGOProtos.Data.Battle {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BattleLog other) {
       if (other == null) {
         return;
@@ -751,6 +794,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -788,25 +832,29 @@ namespace POGOProtos.Data.Battle {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BattleParticipant : pb::IMessage<BattleParticipant> {
     private static readonly pb::MessageParser<BattleParticipant> _parser = new pb::MessageParser<BattleParticipant>(() => new BattleParticipant());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BattleParticipant> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor.MessageTypes[2]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleParticipant() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleParticipant(BattleParticipant other) : this() {
       ActivePokemon = other.activePokemon_ != null ? other.ActivePokemon.Clone() : null;
       TrainerPublicProfile = other.trainerPublicProfile_ != null ? other.TrainerPublicProfile.Clone() : null;
@@ -814,6 +862,7 @@ namespace POGOProtos.Data.Battle {
       defeatedPokemon_ = other.defeatedPokemon_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleParticipant Clone() {
       return new BattleParticipant(this);
     }
@@ -821,6 +870,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "active_pokemon" field.</summary>
     public const int ActivePokemonFieldNumber = 1;
     private global::POGOProtos.Data.Battle.BattlePokemonInfo activePokemon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattlePokemonInfo ActivePokemon {
       get { return activePokemon_; }
       set {
@@ -831,6 +881,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "trainer_public_profile" field.</summary>
     public const int TrainerPublicProfileFieldNumber = 2;
     private global::POGOProtos.Data.Player.PlayerPublicProfile trainerPublicProfile_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.PlayerPublicProfile TrainerPublicProfile {
       get { return trainerPublicProfile_; }
       set {
@@ -843,6 +894,7 @@ namespace POGOProtos.Data.Battle {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Battle.BattlePokemonInfo> _repeated_reversePokemon_codec
         = pb::FieldCodec.ForMessage(26, global::POGOProtos.Data.Battle.BattlePokemonInfo.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Battle.BattlePokemonInfo> reversePokemon_ = new pbc::RepeatedField<global::POGOProtos.Data.Battle.BattlePokemonInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Battle.BattlePokemonInfo> ReversePokemon {
       get { return reversePokemon_; }
     }
@@ -852,14 +904,17 @@ namespace POGOProtos.Data.Battle {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Battle.BattlePokemonInfo> _repeated_defeatedPokemon_codec
         = pb::FieldCodec.ForMessage(34, global::POGOProtos.Data.Battle.BattlePokemonInfo.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Battle.BattlePokemonInfo> defeatedPokemon_ = new pbc::RepeatedField<global::POGOProtos.Data.Battle.BattlePokemonInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Battle.BattlePokemonInfo> DefeatedPokemon {
       get { return defeatedPokemon_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattleParticipant);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BattleParticipant other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -874,6 +929,7 @@ namespace POGOProtos.Data.Battle {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (activePokemon_ != null) hash ^= ActivePokemon.GetHashCode();
@@ -883,10 +939,12 @@ namespace POGOProtos.Data.Battle {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (activePokemon_ != null) {
         output.WriteRawTag(10);
@@ -900,6 +958,7 @@ namespace POGOProtos.Data.Battle {
       defeatedPokemon_.WriteTo(output, _repeated_defeatedPokemon_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (activePokemon_ != null) {
@@ -913,6 +972,7 @@ namespace POGOProtos.Data.Battle {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BattleParticipant other) {
       if (other == null) {
         return;
@@ -933,6 +993,7 @@ namespace POGOProtos.Data.Battle {
       defeatedPokemon_.Add(other.defeatedPokemon_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -968,31 +1029,36 @@ namespace POGOProtos.Data.Battle {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BattlePokemonInfo : pb::IMessage<BattlePokemonInfo> {
     private static readonly pb::MessageParser<BattlePokemonInfo> _parser = new pb::MessageParser<BattlePokemonInfo>(() => new BattlePokemonInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BattlePokemonInfo> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor.MessageTypes[3]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattlePokemonInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattlePokemonInfo(BattlePokemonInfo other) : this() {
       PokemonData = other.pokemonData_ != null ? other.PokemonData.Clone() : null;
       currentHealth_ = other.currentHealth_;
       currentEnergy_ = other.currentEnergy_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattlePokemonInfo Clone() {
       return new BattlePokemonInfo(this);
     }
@@ -1000,6 +1066,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 1;
     private global::POGOProtos.Data.PokemonData pokemonData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -1010,6 +1077,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "current_health" field.</summary>
     public const int CurrentHealthFieldNumber = 2;
     private int currentHealth_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CurrentHealth {
       get { return currentHealth_; }
       set {
@@ -1020,6 +1088,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "current_energy" field.</summary>
     public const int CurrentEnergyFieldNumber = 3;
     private int currentEnergy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CurrentEnergy {
       get { return currentEnergy_; }
       set {
@@ -1027,10 +1096,12 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattlePokemonInfo);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BattlePokemonInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1044,6 +1115,7 @@ namespace POGOProtos.Data.Battle {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (pokemonData_ != null) hash ^= PokemonData.GetHashCode();
@@ -1052,10 +1124,12 @@ namespace POGOProtos.Data.Battle {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (pokemonData_ != null) {
         output.WriteRawTag(10);
@@ -1071,6 +1145,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (pokemonData_ != null) {
@@ -1085,6 +1160,7 @@ namespace POGOProtos.Data.Battle {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BattlePokemonInfo other) {
       if (other == null) {
         return;
@@ -1103,6 +1179,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1131,25 +1208,29 @@ namespace POGOProtos.Data.Battle {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BattleResults : pb::IMessage<BattleResults> {
     private static readonly pb::MessageParser<BattleResults> _parser = new pb::MessageParser<BattleResults>(() => new BattleResults());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BattleResults> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Battle.POGOProtosDataBattleReflection.Descriptor.MessageTypes[4]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleResults() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleResults(BattleResults other) : this() {
       GymState = other.gymState_ != null ? other.GymState.Clone() : null;
       attackers_ = other.attackers_.Clone();
@@ -1158,6 +1239,7 @@ namespace POGOProtos.Data.Battle {
       gymPointsDelta_ = other.gymPointsDelta_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BattleResults Clone() {
       return new BattleResults(this);
     }
@@ -1165,6 +1247,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "gym_state" field.</summary>
     public const int GymStateFieldNumber = 1;
     private global::POGOProtos.Data.Gym.GymState gymState_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Gym.GymState GymState {
       get { return gymState_; }
       set {
@@ -1177,6 +1260,7 @@ namespace POGOProtos.Data.Battle {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Battle.BattleParticipant> _repeated_attackers_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Data.Battle.BattleParticipant.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleParticipant> attackers_ = new pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleParticipant>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleParticipant> Attackers {
       get { return attackers_; }
     }
@@ -1186,6 +1270,7 @@ namespace POGOProtos.Data.Battle {
     private static readonly pb::FieldCodec<int> _repeated_playerExperienceAwarded_codec
         = pb::FieldCodec.ForInt32(26);
     private readonly pbc::RepeatedField<int> playerExperienceAwarded_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> PlayerExperienceAwarded {
       get { return playerExperienceAwarded_; }
     }
@@ -1193,6 +1278,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "next_defender_pokemon_id" field.</summary>
     public const int NextDefenderPokemonIdFieldNumber = 4;
     private long nextDefenderPokemonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long NextDefenderPokemonId {
       get { return nextDefenderPokemonId_; }
       set {
@@ -1203,6 +1289,7 @@ namespace POGOProtos.Data.Battle {
     /// <summary>Field number for the "gym_points_delta" field.</summary>
     public const int GymPointsDeltaFieldNumber = 5;
     private int gymPointsDelta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int GymPointsDelta {
       get { return gymPointsDelta_; }
       set {
@@ -1210,10 +1297,12 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BattleResults);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BattleResults other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1229,6 +1318,7 @@ namespace POGOProtos.Data.Battle {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (gymState_ != null) hash ^= GymState.GetHashCode();
@@ -1239,10 +1329,12 @@ namespace POGOProtos.Data.Battle {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (gymState_ != null) {
         output.WriteRawTag(10);
@@ -1260,6 +1352,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (gymState_ != null) {
@@ -1276,6 +1369,7 @@ namespace POGOProtos.Data.Battle {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BattleResults other) {
       if (other == null) {
         return;
@@ -1296,6 +1390,7 @@ namespace POGOProtos.Data.Battle {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

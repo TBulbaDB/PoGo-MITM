@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Map.Fort {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Map.Fort.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosMapFortReflection {
 
     #region Descriptor
@@ -84,25 +83,29 @@ namespace POGOProtos.Map.Fort {
   #endregion
 
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortData : pb::IMessage<FortData> {
     private static readonly pb::MessageParser<FortData> _parser = new pb::MessageParser<FortData>(() => new FortData());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortData> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Fort.POGOProtosMapFortReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortData() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortData(FortData other) : this() {
       id_ = other.id_;
       lastModifiedTimestampMs_ = other.lastModifiedTimestampMs_;
@@ -122,6 +125,7 @@ namespace POGOProtos.Map.Fort {
       renderingType_ = other.renderingType_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortData Clone() {
       return new FortData(this);
     }
@@ -129,6 +133,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
       get { return id_; }
       set {
@@ -139,6 +144,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "last_modified_timestamp_ms" field.</summary>
     public const int LastModifiedTimestampMsFieldNumber = 2;
     private long lastModifiedTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long LastModifiedTimestampMs {
       get { return lastModifiedTimestampMs_; }
       set {
@@ -149,6 +155,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 3;
     private double latitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -159,6 +166,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 4;
     private double longitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -169,6 +177,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "enabled" field.</summary>
     public const int EnabledFieldNumber = 8;
     private bool enabled_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Enabled {
       get { return enabled_; }
       set {
@@ -179,6 +188,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 9;
     private global::POGOProtos.Map.Fort.FortType type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Fort.FortType Type {
       get { return type_; }
       set {
@@ -192,6 +202,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>
     ///  Team that owns the gym
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.TeamColor OwnedByTeam {
       get { return ownedByTeam_; }
       set {
@@ -205,6 +216,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>
     ///  Highest CP Pokemon at the gym
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonId GuardPokemonId {
       get { return guardPokemonId_; }
       set {
@@ -215,6 +227,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "guard_pokemon_cp" field.</summary>
     public const int GuardPokemonCpFieldNumber = 7;
     private int guardPokemonCp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int GuardPokemonCp {
       get { return guardPokemonCp_; }
       set {
@@ -228,6 +241,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>
     ///  Prestigate / experience of the gym
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long GymPoints {
       get { return gymPoints_; }
       set {
@@ -241,6 +255,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>
     ///  Whether someone is battling at the gym currently
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInBattle {
       get { return isInBattle_; }
       set {
@@ -256,6 +271,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>
     /// // Fields related to pokestops only
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId> ActiveFortModifier {
       get { return activeFortModifier_; }
     }
@@ -263,6 +279,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "lure_info" field.</summary>
     public const int LureInfoFieldNumber = 13;
     private global::POGOProtos.Map.Fort.FortLureInfo lureInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Fort.FortLureInfo LureInfo {
       get { return lureInfo_; }
       set {
@@ -276,6 +293,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>
     ///  Timestamp when the pokestop can be activated again to get items / xp
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long CooldownCompleteTimestampMs {
       get { return cooldownCompleteTimestampMs_; }
       set {
@@ -286,6 +304,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "sponsor" field.</summary>
     public const int SponsorFieldNumber = 15;
     private global::POGOProtos.Map.Fort.FortSponsor sponsor_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Fort.FortSponsor Sponsor {
       get { return sponsor_; }
       set {
@@ -296,6 +315,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "rendering_type" field.</summary>
     public const int RenderingTypeFieldNumber = 16;
     private global::POGOProtos.Map.Fort.FortRenderingType renderingType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Fort.FortRenderingType RenderingType {
       get { return renderingType_; }
       set {
@@ -303,10 +323,12 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortData);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortData other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -333,6 +355,7 @@ namespace POGOProtos.Map.Fort {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
@@ -354,10 +377,12 @@ namespace POGOProtos.Map.Fort {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Id.Length != 0) {
         output.WriteRawTag(10);
@@ -422,6 +447,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Id.Length != 0) {
@@ -473,6 +499,7 @@ namespace POGOProtos.Map.Fort {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortData other) {
       if (other == null) {
         return;
@@ -528,6 +555,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -609,25 +637,29 @@ namespace POGOProtos.Map.Fort {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortLureInfo : pb::IMessage<FortLureInfo> {
     private static readonly pb::MessageParser<FortLureInfo> _parser = new pb::MessageParser<FortLureInfo>(() => new FortLureInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortLureInfo> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Fort.POGOProtosMapFortReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortLureInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortLureInfo(FortLureInfo other) : this() {
       fortId_ = other.fortId_;
       encounterId_ = other.encounterId_;
@@ -635,6 +667,7 @@ namespace POGOProtos.Map.Fort {
       lureExpiresTimestampMs_ = other.lureExpiresTimestampMs_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortLureInfo Clone() {
       return new FortLureInfo(this);
     }
@@ -642,6 +675,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 1;
     private string fortId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -652,6 +686,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 2;
     private ulong encounterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -662,6 +697,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "active_pokemon_id" field.</summary>
     public const int ActivePokemonIdFieldNumber = 3;
     private global::POGOProtos.Enums.PokemonId activePokemonId_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonId ActivePokemonId {
       get { return activePokemonId_; }
       set {
@@ -672,6 +708,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "lure_expires_timestamp_ms" field.</summary>
     public const int LureExpiresTimestampMsFieldNumber = 4;
     private long lureExpiresTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long LureExpiresTimestampMs {
       get { return lureExpiresTimestampMs_; }
       set {
@@ -679,10 +716,12 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortLureInfo);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortLureInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -697,6 +736,7 @@ namespace POGOProtos.Map.Fort {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortId.Length != 0) hash ^= FortId.GetHashCode();
@@ -706,10 +746,12 @@ namespace POGOProtos.Map.Fort {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortId.Length != 0) {
         output.WriteRawTag(10);
@@ -729,6 +771,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortId.Length != 0) {
@@ -746,6 +789,7 @@ namespace POGOProtos.Map.Fort {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortLureInfo other) {
       if (other == null) {
         return;
@@ -764,6 +808,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -793,31 +838,36 @@ namespace POGOProtos.Map.Fort {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortModifier : pb::IMessage<FortModifier> {
     private static readonly pb::MessageParser<FortModifier> _parser = new pb::MessageParser<FortModifier>(() => new FortModifier());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortModifier> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Fort.POGOProtosMapFortReflection.Descriptor.MessageTypes[2]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortModifier() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortModifier(FortModifier other) : this() {
       itemId_ = other.itemId_;
       expirationTimestampMs_ = other.expirationTimestampMs_;
       deployerPlayerCodename_ = other.deployerPlayerCodename_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortModifier Clone() {
       return new FortModifier(this);
     }
@@ -825,6 +875,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -835,6 +886,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "expiration_timestamp_ms" field.</summary>
     public const int ExpirationTimestampMsFieldNumber = 2;
     private long expirationTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ExpirationTimestampMs {
       get { return expirationTimestampMs_; }
       set {
@@ -845,6 +897,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "deployer_player_codename" field.</summary>
     public const int DeployerPlayerCodenameFieldNumber = 3;
     private string deployerPlayerCodename_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DeployerPlayerCodename {
       get { return deployerPlayerCodename_; }
       set {
@@ -852,10 +905,12 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortModifier);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortModifier other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -869,6 +924,7 @@ namespace POGOProtos.Map.Fort {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -877,10 +933,12 @@ namespace POGOProtos.Map.Fort {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -896,6 +954,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -910,6 +969,7 @@ namespace POGOProtos.Map.Fort {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortModifier other) {
       if (other == null) {
         return;
@@ -925,6 +985,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -950,25 +1011,29 @@ namespace POGOProtos.Map.Fort {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortSummary : pb::IMessage<FortSummary> {
     private static readonly pb::MessageParser<FortSummary> _parser = new pb::MessageParser<FortSummary>(() => new FortSummary());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortSummary> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.Fort.POGOProtosMapFortReflection.Descriptor.MessageTypes[3]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSummary() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSummary(FortSummary other) : this() {
       fortSummaryId_ = other.fortSummaryId_;
       lastModifiedTimestampMs_ = other.lastModifiedTimestampMs_;
@@ -976,6 +1041,7 @@ namespace POGOProtos.Map.Fort {
       longitude_ = other.longitude_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSummary Clone() {
       return new FortSummary(this);
     }
@@ -983,6 +1049,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "fort_summary_id" field.</summary>
     public const int FortSummaryIdFieldNumber = 1;
     private string fortSummaryId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortSummaryId {
       get { return fortSummaryId_; }
       set {
@@ -993,6 +1060,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "last_modified_timestamp_ms" field.</summary>
     public const int LastModifiedTimestampMsFieldNumber = 2;
     private long lastModifiedTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long LastModifiedTimestampMs {
       get { return lastModifiedTimestampMs_; }
       set {
@@ -1003,6 +1071,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 3;
     private double latitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -1013,6 +1082,7 @@ namespace POGOProtos.Map.Fort {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 4;
     private double longitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -1020,10 +1090,12 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortSummary);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortSummary other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1038,6 +1110,7 @@ namespace POGOProtos.Map.Fort {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortSummaryId.Length != 0) hash ^= FortSummaryId.GetHashCode();
@@ -1047,10 +1120,12 @@ namespace POGOProtos.Map.Fort {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortSummaryId.Length != 0) {
         output.WriteRawTag(10);
@@ -1070,6 +1145,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortSummaryId.Length != 0) {
@@ -1087,6 +1163,7 @@ namespace POGOProtos.Map.Fort {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortSummary other) {
       if (other == null) {
         return;
@@ -1105,6 +1182,7 @@ namespace POGOProtos.Map.Fort {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

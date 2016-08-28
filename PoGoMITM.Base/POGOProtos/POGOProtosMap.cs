@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Map {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Map.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosMapReflection {
 
     #region Descriptor
@@ -60,25 +59,29 @@ namespace POGOProtos.Map {
   #endregion
 
   #region Messages
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class MapCell : pb::IMessage<MapCell> {
     private static readonly pb::MessageParser<MapCell> _parser = new pb::MessageParser<MapCell>(() => new MapCell());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MapCell> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.POGOProtosMapReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapCell() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapCell(MapCell other) : this() {
       s2CellId_ = other.s2CellId_;
       currentTimestampMs_ = other.currentTimestampMs_;
@@ -93,6 +96,7 @@ namespace POGOProtos.Map {
       nearbyPokemons_ = other.nearbyPokemons_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MapCell Clone() {
       return new MapCell(this);
     }
@@ -103,6 +107,7 @@ namespace POGOProtos.Map {
     /// <summary>
     ///  S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong S2CellId {
       get { return s2CellId_; }
       set {
@@ -113,6 +118,7 @@ namespace POGOProtos.Map {
     /// <summary>Field number for the "current_timestamp_ms" field.</summary>
     public const int CurrentTimestampMsFieldNumber = 2;
     private long currentTimestampMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long CurrentTimestampMs {
       get { return currentTimestampMs_; }
       set {
@@ -125,6 +131,7 @@ namespace POGOProtos.Map {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.Fort.FortData> _repeated_forts_codec
         = pb::FieldCodec.ForMessage(26, global::POGOProtos.Map.Fort.FortData.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.Fort.FortData> forts_ = new pbc::RepeatedField<global::POGOProtos.Map.Fort.FortData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Fort.FortData> Forts {
       get { return forts_; }
     }
@@ -134,6 +141,7 @@ namespace POGOProtos.Map {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.SpawnPoint> _repeated_spawnPoints_codec
         = pb::FieldCodec.ForMessage(34, global::POGOProtos.Map.SpawnPoint.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.SpawnPoint> spawnPoints_ = new pbc::RepeatedField<global::POGOProtos.Map.SpawnPoint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.SpawnPoint> SpawnPoints {
       get { return spawnPoints_; }
     }
@@ -143,6 +151,7 @@ namespace POGOProtos.Map {
     private static readonly pb::FieldCodec<string> _repeated_deletedObjects_codec
         = pb::FieldCodec.ForString(50);
     private readonly pbc::RepeatedField<string> deletedObjects_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> DeletedObjects {
       get { return deletedObjects_; }
     }
@@ -150,6 +159,7 @@ namespace POGOProtos.Map {
     /// <summary>Field number for the "is_truncated_list" field.</summary>
     public const int IsTruncatedListFieldNumber = 7;
     private bool isTruncatedList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsTruncatedList {
       get { return isTruncatedList_; }
       set {
@@ -162,6 +172,7 @@ namespace POGOProtos.Map {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.Fort.FortSummary> _repeated_fortSummaries_codec
         = pb::FieldCodec.ForMessage(66, global::POGOProtos.Map.Fort.FortSummary.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.Fort.FortSummary> fortSummaries_ = new pbc::RepeatedField<global::POGOProtos.Map.Fort.FortSummary>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Fort.FortSummary> FortSummaries {
       get { return fortSummaries_; }
     }
@@ -171,6 +182,7 @@ namespace POGOProtos.Map {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.SpawnPoint> _repeated_decimatedSpawnPoints_codec
         = pb::FieldCodec.ForMessage(74, global::POGOProtos.Map.SpawnPoint.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.SpawnPoint> decimatedSpawnPoints_ = new pbc::RepeatedField<global::POGOProtos.Map.SpawnPoint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.SpawnPoint> DecimatedSpawnPoints {
       get { return decimatedSpawnPoints_; }
     }
@@ -183,6 +195,7 @@ namespace POGOProtos.Map {
     /// <summary>
     ///  Pokemon within 2 steps or less.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Pokemon.WildPokemon> WildPokemons {
       get { return wildPokemons_; }
     }
@@ -195,6 +208,7 @@ namespace POGOProtos.Map {
     /// <summary>
     ///  Pokemon within 1 step or none.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Pokemon.MapPokemon> CatchablePokemons {
       get { return catchablePokemons_; }
     }
@@ -207,14 +221,17 @@ namespace POGOProtos.Map {
     /// <summary>
     ///  Pokemon farther away than 2 steps, but still in the area.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Pokemon.NearbyPokemon> NearbyPokemons {
       get { return nearbyPokemons_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MapCell);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MapCell other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -236,6 +253,7 @@ namespace POGOProtos.Map {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (S2CellId != 0UL) hash ^= S2CellId.GetHashCode();
@@ -252,10 +270,12 @@ namespace POGOProtos.Map {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (S2CellId != 0UL) {
         output.WriteRawTag(8);
@@ -279,6 +299,7 @@ namespace POGOProtos.Map {
       nearbyPokemons_.WriteTo(output, _repeated_nearbyPokemons_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (S2CellId != 0UL) {
@@ -301,6 +322,7 @@ namespace POGOProtos.Map {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MapCell other) {
       if (other == null) {
         return;
@@ -324,6 +346,7 @@ namespace POGOProtos.Map {
       nearbyPokemons_.Add(other.nearbyPokemons_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -381,30 +404,35 @@ namespace POGOProtos.Map {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SpawnPoint : pb::IMessage<SpawnPoint> {
     private static readonly pb::MessageParser<SpawnPoint> _parser = new pb::MessageParser<SpawnPoint>(() => new SpawnPoint());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SpawnPoint> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Map.POGOProtosMapReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SpawnPoint() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SpawnPoint(SpawnPoint other) : this() {
       latitude_ = other.latitude_;
       longitude_ = other.longitude_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SpawnPoint Clone() {
       return new SpawnPoint(this);
     }
@@ -412,6 +440,7 @@ namespace POGOProtos.Map {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 2;
     private double latitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -422,6 +451,7 @@ namespace POGOProtos.Map {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 3;
     private double longitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -429,10 +459,12 @@ namespace POGOProtos.Map {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SpawnPoint);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SpawnPoint other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -445,6 +477,7 @@ namespace POGOProtos.Map {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Latitude != 0D) hash ^= Latitude.GetHashCode();
@@ -452,10 +485,12 @@ namespace POGOProtos.Map {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Latitude != 0D) {
         output.WriteRawTag(17);
@@ -467,6 +502,7 @@ namespace POGOProtos.Map {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Latitude != 0D) {
@@ -478,6 +514,7 @@ namespace POGOProtos.Map {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SpawnPoint other) {
       if (other == null) {
         return;
@@ -490,6 +527,7 @@ namespace POGOProtos.Map {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
