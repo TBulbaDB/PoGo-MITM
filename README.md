@@ -4,6 +4,10 @@ This project is a .net MITM proxy designed to read all the API messages sent bet
 
 ![PoGoMITM WebUI Screenshot](https://raw.githubusercontent.com/TBulbaDB/PoGoMITM/master/PoGoMITM-WebUI.png)
 
+# Support
+
+Use the [Issues](https://github.com/TBulbaDB/PoGoMITM/issues) or catch me on [Discord](https://discord.gg/3UtF8W6)
+
 # Usage
 
 ## Running for the first time
