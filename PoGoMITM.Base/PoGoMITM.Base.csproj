@@ -82,6 +82,7 @@
     <Compile Include="Dumpers\RawDumpReader.cs" />
     <Compile Include="Logging\Log4NetHelper.cs" />
     <Compile Include="Models\IRequestParser.cs" />
+    <Compile Include="Models\ISignatureDecryptor.cs" />
     <Compile Include="Models\MessageBlock.cs" />
     <Compile Include="Models\POGOProtosRequestParser.cs" />
     <Compile Include="Models\RawContext.cs" />
@@ -116,10 +117,8 @@
     <Compile Include="ProxyHandler.cs" />
     <Compile Include="Utils\CertificateHelper.cs" />
     <Compile Include="Utils\ArrayBuffer.cs" />
-    <Compile Include="Utils\Crypto\Unshuffle.cs" />
     <Compile Include="Utils\DateHelpers.cs" />
     <Compile Include="Utils\FileAsync.cs" />
-    <Compile Include="Utils\PCrypt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

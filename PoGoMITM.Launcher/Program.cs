@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using log4net;
 using log4net.Core;
-using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.Owin.Hosting;
 using Nancy;
 using Newtonsoft.Json;
@@ -15,9 +13,7 @@ using PoGoMITM.Base.Cache;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
-using PoGoMITM.Base.Utils;
 using PoGoMITM.Launcher.Models;
-using POGOProtos.Networking.Envelopes;
 
 namespace PoGoMITM.Launcher
 {
@@ -28,6 +24,17 @@ namespace PoGoMITM.Launcher
         private static void Main()
         {
             RequestContext.Parser = new POGOProtosRequestParser();
+
+            var decryptorPath = Path.Combine(Environment.CurrentDirectory, "PoGo.Crypt.dll");
+            if (File.Exists(decryptorPath))
+            {
+                var assembly = Assembly.LoadFile(decryptorPath);
+                var decryptorType = assembly.GetExportedTypes().FirstOrDefault(t => t.Name == "SignatureDecryptor");
+                if (decryptorType != null)
+                {
+                    RequestContext.Parser.SignatureDecryptor = Activator.CreateInstance(decryptorType);
+                }
+            }
 
             StaticConfiguration.DisableErrorTraces = false;
             JsonConvert.DefaultSettings = () =>

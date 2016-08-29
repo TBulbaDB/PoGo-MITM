@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PoGoMITM.Base.Models
 {
-    public interface IRequestParser
+    public interface ISignatureDecryptor
     {
-        Task ParseRequest(RequestContext requestContext);
-        object SignatureDecryptor { get; set; }
+        byte[] DecryptRawSignature(byte[] encryptedSignature);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
@@ -105,15 +106,32 @@ namespace PoGoMITM.Base.Models
                     }
                 }
             }
-            var sig = result.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
-                pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
-            if (sig != null)
+
+            if (SignatureDecryptor != null)
             {
-                var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
-                req.MergeFrom(sig.RequestMessage);
-                var bytes = req.EncryptedSignature.ToByteArray();
-                result.RawDecryptedSignature = PCrypt.Decrypt(bytes);
-                result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
+                var sig = result.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
+                    pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
+                if (sig != null)
+                {
+                    var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
+                    req.MergeFrom(sig.RequestMessage);
+                    var bytes = req.EncryptedSignature.ToByteArray();
+                    try
+                    {
+                        result.RawDecryptedSignature =
+                            SignatureDecryptor.GetType()
+                                .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
+                                    SignatureDecryptor, new[] { bytes }) as byte[];
+                        if (result.RawDecryptedSignature != null)
+                        {
+                            result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
             }
 
 
@@ -146,5 +164,7 @@ namespace PoGoMITM.Base.Models
                 }
             }
         }
+
+        public object SignatureDecryptor { get; set; }
     }
 }
