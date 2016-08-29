@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Cache\ContextCache.cs" />
     <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Dumpers\PrettyFileDataDumper.cs" />
     <Compile Include="Dumpers\MongoDataDumper.cs" />
     <Compile Include="Dumpers\FileDataDumper.cs" />
     <Compile Include="Dumpers\IDataDumper.cs" />
@@ -114,7 +115,7 @@
     <Compile Include="ProtoHelpers\Protoc.cs" />
     <Compile Include="ProxyHandler.cs" />
     <Compile Include="Utils\CertificateHelper.cs" />
-    <Compile Include="Utils\Class1.cs" />
+    <Compile Include="Utils\ArrayBuffer.cs" />
     <Compile Include="Utils\DateHelpers.cs" />
     <Compile Include="Utils\FileAsync.cs" />
   </ItemGroup>

@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Networking.Responses {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Networking.Responses.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosNetworkingResponsesReflection {
 
     #region Descriptor
@@ -436,35 +437,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class AddFortModifierResponse : pb::IMessage<AddFortModifierResponse> {
     private static readonly pb::MessageParser<AddFortModifierResponse> _parser = new pb::MessageParser<AddFortModifierResponse>(() => new AddFortModifierResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<AddFortModifierResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AddFortModifierResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AddFortModifierResponse(AddFortModifierResponse other) : this() {
       result_ = other.result_;
       FortDetails = other.fortDetails_ != null ? other.FortDetails.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AddFortModifierResponse Clone() {
       return new AddFortModifierResponse(this);
     }
@@ -472,7 +468,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.AddFortModifierResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.AddFortModifierResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -483,7 +478,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "fort_details" field.</summary>
     public const int FortDetailsFieldNumber = 2;
     private global::POGOProtos.Networking.Responses.FortDetailsResponse fortDetails_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.FortDetailsResponse FortDetails {
       get { return fortDetails_; }
       set {
@@ -491,12 +485,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AddFortModifierResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(AddFortModifierResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -509,7 +501,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -517,12 +508,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -534,7 +523,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -546,7 +534,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(AddFortModifierResponse other) {
       if (other == null) {
         return;
@@ -562,7 +549,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -587,7 +573,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the AddFortModifierResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("NO_RESULT_SET")] NoResultSet = 0,
@@ -602,29 +588,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class AttackGymResponse : pb::IMessage<AttackGymResponse> {
     private static readonly pb::MessageParser<AttackGymResponse> _parser = new pb::MessageParser<AttackGymResponse>(() => new AttackGymResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<AttackGymResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[1]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AttackGymResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AttackGymResponse(AttackGymResponse other) : this() {
       result_ = other.result_;
       BattleLog = other.battleLog_ != null ? other.BattleLog.Clone() : null;
@@ -633,7 +615,6 @@ namespace POGOProtos.Networking.Responses {
       ActiveAttacker = other.activeAttacker_ != null ? other.ActiveAttacker.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AttackGymResponse Clone() {
       return new AttackGymResponse(this);
     }
@@ -641,7 +622,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.AttackGymResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.AttackGymResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -652,7 +632,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "battle_log" field.</summary>
     public const int BattleLogFieldNumber = 2;
     private global::POGOProtos.Data.Battle.BattleLog battleLog_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleLog BattleLog {
       get { return battleLog_; }
       set {
@@ -663,7 +642,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "battle_id" field.</summary>
     public const int BattleIdFieldNumber = 3;
     private string battleId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BattleId {
       get { return battleId_; }
       set {
@@ -674,7 +652,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "active_defender" field.</summary>
     public const int ActiveDefenderFieldNumber = 4;
     private global::POGOProtos.Data.Battle.BattlePokemonInfo activeDefender_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattlePokemonInfo ActiveDefender {
       get { return activeDefender_; }
       set {
@@ -685,7 +662,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "active_attacker" field.</summary>
     public const int ActiveAttackerFieldNumber = 5;
     private global::POGOProtos.Data.Battle.BattlePokemonInfo activeAttacker_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattlePokemonInfo ActiveAttacker {
       get { return activeAttacker_; }
       set {
@@ -693,12 +669,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AttackGymResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(AttackGymResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -714,7 +688,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -725,12 +698,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -754,7 +725,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -775,7 +745,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(AttackGymResponse other) {
       if (other == null) {
         return;
@@ -806,7 +775,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -849,7 +817,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the AttackGymResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -863,29 +831,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CatchPokemonResponse : pb::IMessage<CatchPokemonResponse> {
     private static readonly pb::MessageParser<CatchPokemonResponse> _parser = new pb::MessageParser<CatchPokemonResponse>(() => new CatchPokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CatchPokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[2]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CatchPokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CatchPokemonResponse(CatchPokemonResponse other) : this() {
       status_ = other.status_;
       missPercent_ = other.missPercent_;
@@ -893,7 +857,6 @@ namespace POGOProtos.Networking.Responses {
       CaptureAward = other.captureAward_ != null ? other.CaptureAward.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CatchPokemonResponse Clone() {
       return new CatchPokemonResponse(this);
     }
@@ -901,7 +864,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.CatchPokemonResponse.Types.CatchStatus status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.CatchPokemonResponse.Types.CatchStatus Status {
       get { return status_; }
       set {
@@ -912,7 +874,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "miss_percent" field.</summary>
     public const int MissPercentFieldNumber = 2;
     private double missPercent_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double MissPercent {
       get { return missPercent_; }
       set {
@@ -923,7 +884,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "captured_pokemon_id" field.</summary>
     public const int CapturedPokemonIdFieldNumber = 3;
     private ulong capturedPokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong CapturedPokemonId {
       get { return capturedPokemonId_; }
       set {
@@ -934,7 +894,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "capture_award" field.</summary>
     public const int CaptureAwardFieldNumber = 4;
     private global::POGOProtos.Data.Capture.CaptureAward captureAward_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Capture.CaptureAward CaptureAward {
       get { return captureAward_; }
       set {
@@ -942,12 +901,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CatchPokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CatchPokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -962,7 +919,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Status != 0) hash ^= Status.GetHashCode();
@@ -972,12 +928,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Status != 0) {
         output.WriteRawTag(8);
@@ -997,7 +951,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Status != 0) {
@@ -1015,7 +968,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CatchPokemonResponse other) {
       if (other == null) {
         return;
@@ -1037,7 +989,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1070,7 +1021,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the CatchPokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum CatchStatus {
         [pbr::OriginalName("CATCH_ERROR")] CatchError = 0,
@@ -1085,36 +1036,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CheckAwardedBadgesResponse : pb::IMessage<CheckAwardedBadgesResponse> {
     private static readonly pb::MessageParser<CheckAwardedBadgesResponse> _parser = new pb::MessageParser<CheckAwardedBadgesResponse>(() => new CheckAwardedBadgesResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CheckAwardedBadgesResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[3]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckAwardedBadgesResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckAwardedBadgesResponse(CheckAwardedBadgesResponse other) : this() {
       success_ = other.success_;
       awardedBadges_ = other.awardedBadges_.Clone();
       awardedBadgeLevels_ = other.awardedBadgeLevels_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckAwardedBadgesResponse Clone() {
       return new CheckAwardedBadgesResponse(this);
     }
@@ -1122,7 +1068,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -1135,7 +1080,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Enums.BadgeType> _repeated_awardedBadges_codec
         = pb::FieldCodec.ForEnum(18, x => (int) x, x => (global::POGOProtos.Enums.BadgeType) x);
     private readonly pbc::RepeatedField<global::POGOProtos.Enums.BadgeType> awardedBadges_ = new pbc::RepeatedField<global::POGOProtos.Enums.BadgeType>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Enums.BadgeType> AwardedBadges {
       get { return awardedBadges_; }
     }
@@ -1145,17 +1089,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<int> _repeated_awardedBadgeLevels_codec
         = pb::FieldCodec.ForInt32(26);
     private readonly pbc::RepeatedField<int> awardedBadgeLevels_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> AwardedBadgeLevels {
       get { return awardedBadgeLevels_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckAwardedBadgesResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CheckAwardedBadgesResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1169,7 +1110,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -1178,12 +1118,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -1193,7 +1131,6 @@ namespace POGOProtos.Networking.Responses {
       awardedBadgeLevels_.WriteTo(output, _repeated_awardedBadgeLevels_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -1204,7 +1141,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CheckAwardedBadgesResponse other) {
       if (other == null) {
         return;
@@ -1216,7 +1152,6 @@ namespace POGOProtos.Networking.Responses {
       awardedBadgeLevels_.Add(other.awardedBadgeLevels_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1244,35 +1179,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CheckChallengeResponse : pb::IMessage<CheckChallengeResponse> {
     private static readonly pb::MessageParser<CheckChallengeResponse> _parser = new pb::MessageParser<CheckChallengeResponse>(() => new CheckChallengeResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CheckChallengeResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[4]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckChallengeResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckChallengeResponse(CheckChallengeResponse other) : this() {
       showChallenge_ = other.showChallenge_;
       challengeUrl_ = other.challengeUrl_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckChallengeResponse Clone() {
       return new CheckChallengeResponse(this);
     }
@@ -1280,7 +1210,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "show_challenge" field.</summary>
     public const int ShowChallengeFieldNumber = 1;
     private bool showChallenge_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool ShowChallenge {
       get { return showChallenge_; }
       set {
@@ -1291,7 +1220,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "challenge_url" field.</summary>
     public const int ChallengeUrlFieldNumber = 2;
     private string challengeUrl_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ChallengeUrl {
       get { return challengeUrl_; }
       set {
@@ -1299,12 +1227,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckChallengeResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CheckChallengeResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1317,7 +1243,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ShowChallenge != false) hash ^= ShowChallenge.GetHashCode();
@@ -1325,12 +1250,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ShowChallenge != false) {
         output.WriteRawTag(8);
@@ -1342,7 +1265,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ShowChallenge != false) {
@@ -1354,7 +1276,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CheckChallengeResponse other) {
       if (other == null) {
         return;
@@ -1367,7 +1288,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1389,29 +1309,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CheckCodenameAvailableResponse : pb::IMessage<CheckCodenameAvailableResponse> {
     private static readonly pb::MessageParser<CheckCodenameAvailableResponse> _parser = new pb::MessageParser<CheckCodenameAvailableResponse>(() => new CheckCodenameAvailableResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CheckCodenameAvailableResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[5]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckCodenameAvailableResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckCodenameAvailableResponse(CheckCodenameAvailableResponse other) : this() {
       codename_ = other.codename_;
       userMessage_ = other.userMessage_;
@@ -1419,7 +1335,6 @@ namespace POGOProtos.Networking.Responses {
       status_ = other.status_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckCodenameAvailableResponse Clone() {
       return new CheckCodenameAvailableResponse(this);
     }
@@ -1427,7 +1342,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "codename" field.</summary>
     public const int CodenameFieldNumber = 1;
     private string codename_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Codename {
       get { return codename_; }
       set {
@@ -1438,7 +1352,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "user_message" field.</summary>
     public const int UserMessageFieldNumber = 2;
     private string userMessage_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string UserMessage {
       get { return userMessage_; }
       set {
@@ -1449,7 +1362,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "is_assignable" field.</summary>
     public const int IsAssignableFieldNumber = 3;
     private bool isAssignable_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsAssignable {
       get { return isAssignable_; }
       set {
@@ -1460,7 +1372,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 4;
     private global::POGOProtos.Networking.Responses.CheckCodenameAvailableResponse.Types.Status status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.CheckCodenameAvailableResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -1468,12 +1379,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckCodenameAvailableResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CheckCodenameAvailableResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1488,7 +1397,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Codename.Length != 0) hash ^= Codename.GetHashCode();
@@ -1498,12 +1406,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Codename.Length != 0) {
         output.WriteRawTag(10);
@@ -1523,7 +1429,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Codename.Length != 0) {
@@ -1541,7 +1446,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CheckCodenameAvailableResponse other) {
       if (other == null) {
         return;
@@ -1560,7 +1464,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1590,7 +1493,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the CheckCodenameAvailableResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Status {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -1606,29 +1509,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class ClaimCodenameResponse : pb::IMessage<ClaimCodenameResponse> {
     private static readonly pb::MessageParser<ClaimCodenameResponse> _parser = new pb::MessageParser<ClaimCodenameResponse>(() => new ClaimCodenameResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<ClaimCodenameResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[6]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClaimCodenameResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClaimCodenameResponse(ClaimCodenameResponse other) : this() {
       codename_ = other.codename_;
       userMessage_ = other.userMessage_;
@@ -1637,7 +1536,6 @@ namespace POGOProtos.Networking.Responses {
       UpdatedPlayer = other.updatedPlayer_ != null ? other.UpdatedPlayer.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClaimCodenameResponse Clone() {
       return new ClaimCodenameResponse(this);
     }
@@ -1645,7 +1543,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "codename" field.</summary>
     public const int CodenameFieldNumber = 1;
     private string codename_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Codename {
       get { return codename_; }
       set {
@@ -1656,7 +1553,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "user_message" field.</summary>
     public const int UserMessageFieldNumber = 2;
     private string userMessage_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string UserMessage {
       get { return userMessage_; }
       set {
@@ -1667,7 +1563,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "is_assignable" field.</summary>
     public const int IsAssignableFieldNumber = 3;
     private bool isAssignable_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsAssignable {
       get { return isAssignable_; }
       set {
@@ -1678,7 +1573,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 4;
     private global::POGOProtos.Networking.Responses.ClaimCodenameResponse.Types.Status status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.ClaimCodenameResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -1689,7 +1583,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "updated_player" field.</summary>
     public const int UpdatedPlayerFieldNumber = 5;
     private global::POGOProtos.Data.PlayerData updatedPlayer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PlayerData UpdatedPlayer {
       get { return updatedPlayer_; }
       set {
@@ -1697,12 +1590,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ClaimCodenameResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(ClaimCodenameResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1718,7 +1609,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Codename.Length != 0) hash ^= Codename.GetHashCode();
@@ -1729,12 +1619,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Codename.Length != 0) {
         output.WriteRawTag(10);
@@ -1758,7 +1646,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Codename.Length != 0) {
@@ -1779,7 +1666,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(ClaimCodenameResponse other) {
       if (other == null) {
         return;
@@ -1804,7 +1690,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1841,7 +1726,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the ClaimCodenameResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Status {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -1857,34 +1742,29 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CollectDailyBonusResponse : pb::IMessage<CollectDailyBonusResponse> {
     private static readonly pb::MessageParser<CollectDailyBonusResponse> _parser = new pb::MessageParser<CollectDailyBonusResponse>(() => new CollectDailyBonusResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CollectDailyBonusResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[7]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyBonusResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyBonusResponse(CollectDailyBonusResponse other) : this() {
       result_ = other.result_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyBonusResponse Clone() {
       return new CollectDailyBonusResponse(this);
     }
@@ -1892,7 +1772,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.CollectDailyBonusResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.CollectDailyBonusResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -1900,12 +1779,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CollectDailyBonusResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CollectDailyBonusResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1917,19 +1794,16 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -1937,7 +1811,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -1946,7 +1819,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CollectDailyBonusResponse other) {
       if (other == null) {
         return;
@@ -1956,7 +1828,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1974,7 +1845,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the CollectDailyBonusResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -1988,29 +1859,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CollectDailyDefenderBonusResponse : pb::IMessage<CollectDailyDefenderBonusResponse> {
     private static readonly pb::MessageParser<CollectDailyDefenderBonusResponse> _parser = new pb::MessageParser<CollectDailyDefenderBonusResponse>(() => new CollectDailyDefenderBonusResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CollectDailyDefenderBonusResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[8]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyDefenderBonusResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyDefenderBonusResponse(CollectDailyDefenderBonusResponse other) : this() {
       result_ = other.result_;
       currencyType_ = other.currencyType_.Clone();
@@ -2018,7 +1885,6 @@ namespace POGOProtos.Networking.Responses {
       defendersCount_ = other.defendersCount_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyDefenderBonusResponse Clone() {
       return new CollectDailyDefenderBonusResponse(this);
     }
@@ -2026,7 +1892,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.CollectDailyDefenderBonusResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.CollectDailyDefenderBonusResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -2039,7 +1904,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<string> _repeated_currencyType_codec
         = pb::FieldCodec.ForString(18);
     private readonly pbc::RepeatedField<string> currencyType_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> CurrencyType {
       get { return currencyType_; }
     }
@@ -2049,7 +1913,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<int> _repeated_currencyAwarded_codec
         = pb::FieldCodec.ForInt32(26);
     private readonly pbc::RepeatedField<int> currencyAwarded_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> CurrencyAwarded {
       get { return currencyAwarded_; }
     }
@@ -2057,7 +1920,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "defenders_count" field.</summary>
     public const int DefendersCountFieldNumber = 4;
     private int defendersCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int DefendersCount {
       get { return defendersCount_; }
       set {
@@ -2065,12 +1927,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CollectDailyDefenderBonusResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CollectDailyDefenderBonusResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2085,7 +1945,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -2095,12 +1954,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -2114,7 +1971,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -2128,7 +1984,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CollectDailyDefenderBonusResponse other) {
       if (other == null) {
         return;
@@ -2143,7 +1998,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2174,7 +2028,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the CollectDailyDefenderBonusResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -2189,36 +2043,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DiskEncounterResponse : pb::IMessage<DiskEncounterResponse> {
     private static readonly pb::MessageParser<DiskEncounterResponse> _parser = new pb::MessageParser<DiskEncounterResponse>(() => new DiskEncounterResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DiskEncounterResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[9]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DiskEncounterResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DiskEncounterResponse(DiskEncounterResponse other) : this() {
       result_ = other.result_;
       PokemonData = other.pokemonData_ != null ? other.PokemonData.Clone() : null;
       CaptureProbability = other.captureProbability_ != null ? other.CaptureProbability.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DiskEncounterResponse Clone() {
       return new DiskEncounterResponse(this);
     }
@@ -2226,7 +2075,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.DiskEncounterResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.DiskEncounterResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -2237,7 +2085,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 2;
     private global::POGOProtos.Data.PokemonData pokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -2248,7 +2095,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "capture_probability" field.</summary>
     public const int CaptureProbabilityFieldNumber = 3;
     private global::POGOProtos.Data.Capture.CaptureProbability captureProbability_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Capture.CaptureProbability CaptureProbability {
       get { return captureProbability_; }
       set {
@@ -2256,12 +2102,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DiskEncounterResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DiskEncounterResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2275,7 +2119,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -2284,12 +2127,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -2305,7 +2146,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -2320,7 +2160,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DiskEncounterResponse other) {
       if (other == null) {
         return;
@@ -2342,7 +2181,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2374,7 +2212,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the DiskEncounterResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNKNOWN")] Unknown = 0,
@@ -2390,36 +2228,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadItemTemplatesResponse : pb::IMessage<DownloadItemTemplatesResponse> {
     private static readonly pb::MessageParser<DownloadItemTemplatesResponse> _parser = new pb::MessageParser<DownloadItemTemplatesResponse>(() => new DownloadItemTemplatesResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadItemTemplatesResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[10]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadItemTemplatesResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadItemTemplatesResponse(DownloadItemTemplatesResponse other) : this() {
       success_ = other.success_;
       itemTemplates_ = other.itemTemplates_.Clone();
       timestampMs_ = other.timestampMs_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadItemTemplatesResponse Clone() {
       return new DownloadItemTemplatesResponse(this);
     }
@@ -2427,7 +2260,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -2440,7 +2272,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.Types.ItemTemplate> _repeated_itemTemplates_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.Types.ItemTemplate.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.Types.ItemTemplate> itemTemplates_ = new pbc::RepeatedField<global::POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.Types.ItemTemplate>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.Types.ItemTemplate> ItemTemplates {
       get { return itemTemplates_; }
     }
@@ -2448,7 +2279,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "timestamp_ms" field.</summary>
     public const int TimestampMsFieldNumber = 3;
     private ulong timestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong TimestampMs {
       get { return timestampMs_; }
       set {
@@ -2456,12 +2286,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadItemTemplatesResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadItemTemplatesResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2475,7 +2303,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -2484,12 +2311,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -2502,7 +2327,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -2515,7 +2339,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadItemTemplatesResponse other) {
       if (other == null) {
         return;
@@ -2529,7 +2352,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2555,31 +2377,27 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the DownloadItemTemplatesResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       public sealed partial class ItemTemplate : pb::IMessage<ItemTemplate> {
         private static readonly pb::MessageParser<ItemTemplate> _parser = new pb::MessageParser<ItemTemplate>(() => new ItemTemplate());
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<ItemTemplate> Parser { get { return _parser; } }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::POGOProtos.Networking.Responses.DownloadItemTemplatesResponse.Descriptor.NestedTypes[0]; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ItemTemplate() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ItemTemplate(ItemTemplate other) : this() {
           templateId_ = other.templateId_;
           PokemonSettings = other.pokemonSettings_ != null ? other.PokemonSettings.Clone() : null;
@@ -2599,7 +2417,6 @@ namespace POGOProtos.Networking.Responses {
           EquippedBadges = other.equippedBadges_ != null ? other.EquippedBadges.Clone() : null;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ItemTemplate Clone() {
           return new ItemTemplate(this);
         }
@@ -2607,7 +2424,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "template_id" field.</summary>
         public const int TemplateIdFieldNumber = 1;
         private string templateId_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string TemplateId {
           get { return templateId_; }
           set {
@@ -2618,7 +2434,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "pokemon_settings" field.</summary>
         public const int PokemonSettingsFieldNumber = 2;
         private global::POGOProtos.Settings.Master.PokemonSettings pokemonSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.PokemonSettings PokemonSettings {
           get { return pokemonSettings_; }
           set {
@@ -2629,7 +2444,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "item_settings" field.</summary>
         public const int ItemSettingsFieldNumber = 3;
         private global::POGOProtos.Settings.Master.ItemSettings itemSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.ItemSettings ItemSettings {
           get { return itemSettings_; }
           set {
@@ -2640,7 +2454,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "move_settings" field.</summary>
         public const int MoveSettingsFieldNumber = 4;
         private global::POGOProtos.Settings.Master.MoveSettings moveSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.MoveSettings MoveSettings {
           get { return moveSettings_; }
           set {
@@ -2651,7 +2464,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "move_sequence_settings" field.</summary>
         public const int MoveSequenceSettingsFieldNumber = 5;
         private global::POGOProtos.Settings.Master.MoveSequenceSettings moveSequenceSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.MoveSequenceSettings MoveSequenceSettings {
           get { return moveSequenceSettings_; }
           set {
@@ -2662,7 +2474,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "type_effective" field.</summary>
         public const int TypeEffectiveFieldNumber = 8;
         private global::POGOProtos.Settings.Master.TypeEffectiveSettings typeEffective_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.TypeEffectiveSettings TypeEffective {
           get { return typeEffective_; }
           set {
@@ -2673,7 +2484,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "badge_settings" field.</summary>
         public const int BadgeSettingsFieldNumber = 10;
         private global::POGOProtos.Settings.Master.BadgeSettings badgeSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.BadgeSettings BadgeSettings {
           get { return badgeSettings_; }
           set {
@@ -2684,7 +2494,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "camera" field.</summary>
         public const int CameraFieldNumber = 11;
         private global::POGOProtos.Settings.Master.CameraSettings camera_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.CameraSettings Camera {
           get { return camera_; }
           set {
@@ -2695,7 +2504,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "player_level" field.</summary>
         public const int PlayerLevelFieldNumber = 12;
         private global::POGOProtos.Settings.Master.PlayerLevelSettings playerLevel_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.PlayerLevelSettings PlayerLevel {
           get { return playerLevel_; }
           set {
@@ -2706,7 +2514,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "gym_level" field.</summary>
         public const int GymLevelFieldNumber = 13;
         private global::POGOProtos.Settings.Master.GymLevelSettings gymLevel_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.GymLevelSettings GymLevel {
           get { return gymLevel_; }
           set {
@@ -2717,7 +2524,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "battle_settings" field.</summary>
         public const int BattleSettingsFieldNumber = 14;
         private global::POGOProtos.Settings.Master.GymBattleSettings battleSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.GymBattleSettings BattleSettings {
           get { return battleSettings_; }
           set {
@@ -2728,7 +2534,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "encounter_settings" field.</summary>
         public const int EncounterSettingsFieldNumber = 15;
         private global::POGOProtos.Settings.Master.EncounterSettings encounterSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.EncounterSettings EncounterSettings {
           get { return encounterSettings_; }
           set {
@@ -2739,7 +2544,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "iap_item_display" field.</summary>
         public const int IapItemDisplayFieldNumber = 16;
         private global::POGOProtos.Settings.Master.IapItemDisplay iapItemDisplay_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.IapItemDisplay IapItemDisplay {
           get { return iapItemDisplay_; }
           set {
@@ -2750,7 +2554,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "iap_settings" field.</summary>
         public const int IapSettingsFieldNumber = 17;
         private global::POGOProtos.Settings.Master.IapSettings iapSettings_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.IapSettings IapSettings {
           get { return iapSettings_; }
           set {
@@ -2761,7 +2564,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "pokemon_upgrades" field.</summary>
         public const int PokemonUpgradesFieldNumber = 18;
         private global::POGOProtos.Settings.Master.PokemonUpgradeSettings pokemonUpgrades_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.PokemonUpgradeSettings PokemonUpgrades {
           get { return pokemonUpgrades_; }
           set {
@@ -2772,7 +2574,6 @@ namespace POGOProtos.Networking.Responses {
         /// <summary>Field number for the "equipped_badges" field.</summary>
         public const int EquippedBadgesFieldNumber = 19;
         private global::POGOProtos.Settings.Master.EquippedBadgeSettings equippedBadges_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Settings.Master.EquippedBadgeSettings EquippedBadges {
           get { return equippedBadges_; }
           set {
@@ -2780,12 +2581,10 @@ namespace POGOProtos.Networking.Responses {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as ItemTemplate);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(ItemTemplate other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2812,7 +2611,6 @@ namespace POGOProtos.Networking.Responses {
           return true;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (TemplateId.Length != 0) hash ^= TemplateId.GetHashCode();
@@ -2834,12 +2632,10 @@ namespace POGOProtos.Networking.Responses {
           return hash;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (TemplateId.Length != 0) {
             output.WriteRawTag(10);
@@ -2907,7 +2703,6 @@ namespace POGOProtos.Networking.Responses {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (TemplateId.Length != 0) {
@@ -2961,7 +2756,6 @@ namespace POGOProtos.Networking.Responses {
           return size;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(ItemTemplate other) {
           if (other == null) {
             return;
@@ -3061,7 +2855,6 @@ namespace POGOProtos.Networking.Responses {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -3189,36 +2982,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadRemoteConfigVersionResponse : pb::IMessage<DownloadRemoteConfigVersionResponse> {
     private static readonly pb::MessageParser<DownloadRemoteConfigVersionResponse> _parser = new pb::MessageParser<DownloadRemoteConfigVersionResponse>(() => new DownloadRemoteConfigVersionResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadRemoteConfigVersionResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[11]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadRemoteConfigVersionResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadRemoteConfigVersionResponse(DownloadRemoteConfigVersionResponse other) : this() {
       result_ = other.result_;
       itemTemplatesTimestampMs_ = other.itemTemplatesTimestampMs_;
       assetDigestTimestampMs_ = other.assetDigestTimestampMs_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadRemoteConfigVersionResponse Clone() {
       return new DownloadRemoteConfigVersionResponse(this);
     }
@@ -3226,7 +3014,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.DownloadRemoteConfigVersionResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.DownloadRemoteConfigVersionResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -3240,7 +3027,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>
     ///  Latest available?
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong ItemTemplatesTimestampMs {
       get { return itemTemplatesTimestampMs_; }
       set {
@@ -3251,7 +3037,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "asset_digest_timestamp_ms" field.</summary>
     public const int AssetDigestTimestampMsFieldNumber = 3;
     private ulong assetDigestTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong AssetDigestTimestampMs {
       get { return assetDigestTimestampMs_; }
       set {
@@ -3259,12 +3044,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadRemoteConfigVersionResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadRemoteConfigVersionResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3278,7 +3061,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -3287,12 +3069,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -3308,7 +3088,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -3323,7 +3102,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadRemoteConfigVersionResponse other) {
       if (other == null) {
         return;
@@ -3339,7 +3117,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3365,7 +3142,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the DownloadRemoteConfigVersionResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -3377,36 +3154,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadSettingsResponse : pb::IMessage<DownloadSettingsResponse> {
     private static readonly pb::MessageParser<DownloadSettingsResponse> _parser = new pb::MessageParser<DownloadSettingsResponse>(() => new DownloadSettingsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadSettingsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[12]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsResponse(DownloadSettingsResponse other) : this() {
       error_ = other.error_;
       hash_ = other.hash_;
       Settings = other.settings_ != null ? other.Settings.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsResponse Clone() {
       return new DownloadSettingsResponse(this);
     }
@@ -3414,7 +3186,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "error" field.</summary>
     public const int ErrorFieldNumber = 1;
     private string error_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Error {
       get { return error_; }
       set {
@@ -3425,7 +3196,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "hash" field.</summary>
     public const int HashFieldNumber = 2;
     private string hash_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Hash {
       get { return hash_; }
       set {
@@ -3436,7 +3206,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "settings" field.</summary>
     public const int SettingsFieldNumber = 3;
     private global::POGOProtos.Settings.GlobalSettings settings_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Settings.GlobalSettings Settings {
       get { return settings_; }
       set {
@@ -3444,12 +3213,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadSettingsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadSettingsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3463,7 +3230,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Error.Length != 0) hash ^= Error.GetHashCode();
@@ -3472,12 +3238,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Error.Length != 0) {
         output.WriteRawTag(10);
@@ -3493,7 +3257,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Error.Length != 0) {
@@ -3508,7 +3271,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadSettingsResponse other) {
       if (other == null) {
         return;
@@ -3527,7 +3289,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3556,34 +3317,29 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EchoResponse : pb::IMessage<EchoResponse> {
     private static readonly pb::MessageParser<EchoResponse> _parser = new pb::MessageParser<EchoResponse>(() => new EchoResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EchoResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[13]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EchoResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EchoResponse(EchoResponse other) : this() {
       context_ = other.context_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EchoResponse Clone() {
       return new EchoResponse(this);
     }
@@ -3591,7 +3347,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "context" field.</summary>
     public const int ContextFieldNumber = 1;
     private string context_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Context {
       get { return context_; }
       set {
@@ -3599,12 +3354,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EchoResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EchoResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3616,19 +3369,16 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Context.Length != 0) hash ^= Context.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Context.Length != 0) {
         output.WriteRawTag(10);
@@ -3636,7 +3386,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Context.Length != 0) {
@@ -3645,7 +3394,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EchoResponse other) {
       if (other == null) {
         return;
@@ -3655,7 +3403,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3673,29 +3420,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EncounterResponse : pb::IMessage<EncounterResponse> {
     private static readonly pb::MessageParser<EncounterResponse> _parser = new pb::MessageParser<EncounterResponse>(() => new EncounterResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EncounterResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[14]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterResponse(EncounterResponse other) : this() {
       WildPokemon = other.wildPokemon_ != null ? other.WildPokemon.Clone() : null;
       background_ = other.background_;
@@ -3703,7 +3446,6 @@ namespace POGOProtos.Networking.Responses {
       CaptureProbability = other.captureProbability_ != null ? other.CaptureProbability.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterResponse Clone() {
       return new EncounterResponse(this);
     }
@@ -3711,7 +3453,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "wild_pokemon" field.</summary>
     public const int WildPokemonFieldNumber = 1;
     private global::POGOProtos.Map.Pokemon.WildPokemon wildPokemon_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Pokemon.WildPokemon WildPokemon {
       get { return wildPokemon_; }
       set {
@@ -3722,7 +3463,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "background" field.</summary>
     public const int BackgroundFieldNumber = 2;
     private global::POGOProtos.Networking.Responses.EncounterResponse.Types.Background background_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.EncounterResponse.Types.Background Background {
       get { return background_; }
       set {
@@ -3733,7 +3473,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
     private global::POGOProtos.Networking.Responses.EncounterResponse.Types.Status status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.EncounterResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -3744,7 +3483,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "capture_probability" field.</summary>
     public const int CaptureProbabilityFieldNumber = 4;
     private global::POGOProtos.Data.Capture.CaptureProbability captureProbability_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Capture.CaptureProbability CaptureProbability {
       get { return captureProbability_; }
       set {
@@ -3752,12 +3490,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EncounterResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EncounterResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3772,7 +3508,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (wildPokemon_ != null) hash ^= WildPokemon.GetHashCode();
@@ -3782,12 +3517,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (wildPokemon_ != null) {
         output.WriteRawTag(10);
@@ -3807,7 +3540,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (wildPokemon_ != null) {
@@ -3825,7 +3557,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EncounterResponse other) {
       if (other == null) {
         return;
@@ -3850,7 +3581,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3886,7 +3616,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the EncounterResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Background {
         [pbr::OriginalName("PARK")] Park = 0,
@@ -3909,36 +3639,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EncounterTutorialCompleteResponse : pb::IMessage<EncounterTutorialCompleteResponse> {
     private static readonly pb::MessageParser<EncounterTutorialCompleteResponse> _parser = new pb::MessageParser<EncounterTutorialCompleteResponse>(() => new EncounterTutorialCompleteResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EncounterTutorialCompleteResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[15]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterTutorialCompleteResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterTutorialCompleteResponse(EncounterTutorialCompleteResponse other) : this() {
       result_ = other.result_;
       PokemonData = other.pokemonData_ != null ? other.PokemonData.Clone() : null;
       CaptureAward = other.captureAward_ != null ? other.CaptureAward.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterTutorialCompleteResponse Clone() {
       return new EncounterTutorialCompleteResponse(this);
     }
@@ -3946,7 +3671,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.EncounterTutorialCompleteResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.EncounterTutorialCompleteResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -3957,7 +3681,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 2;
     private global::POGOProtos.Data.PokemonData pokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -3968,7 +3691,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "capture_award" field.</summary>
     public const int CaptureAwardFieldNumber = 3;
     private global::POGOProtos.Data.Capture.CaptureAward captureAward_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Capture.CaptureAward CaptureAward {
       get { return captureAward_; }
       set {
@@ -3976,12 +3698,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EncounterTutorialCompleteResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EncounterTutorialCompleteResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3995,7 +3715,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -4004,12 +3723,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -4025,7 +3742,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -4040,7 +3756,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EncounterTutorialCompleteResponse other) {
       if (other == null) {
         return;
@@ -4062,7 +3777,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4094,7 +3808,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the EncounterTutorialCompleteResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -4107,35 +3821,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EquipBadgeResponse : pb::IMessage<EquipBadgeResponse> {
     private static readonly pb::MessageParser<EquipBadgeResponse> _parser = new pb::MessageParser<EquipBadgeResponse>(() => new EquipBadgeResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EquipBadgeResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[16]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EquipBadgeResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EquipBadgeResponse(EquipBadgeResponse other) : this() {
       result_ = other.result_;
       Equipped = other.equipped_ != null ? other.Equipped.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EquipBadgeResponse Clone() {
       return new EquipBadgeResponse(this);
     }
@@ -4143,7 +3852,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.EquipBadgeResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.EquipBadgeResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -4154,7 +3862,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "equipped" field.</summary>
     public const int EquippedFieldNumber = 2;
     private global::POGOProtos.Data.Player.EquippedBadge equipped_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.EquippedBadge Equipped {
       get { return equipped_; }
       set {
@@ -4162,12 +3869,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EquipBadgeResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EquipBadgeResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4180,7 +3885,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -4188,12 +3892,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -4205,7 +3907,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -4217,7 +3918,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EquipBadgeResponse other) {
       if (other == null) {
         return;
@@ -4233,7 +3933,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4258,7 +3957,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the EquipBadgeResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -4272,29 +3971,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EvolvePokemonResponse : pb::IMessage<EvolvePokemonResponse> {
     private static readonly pb::MessageParser<EvolvePokemonResponse> _parser = new pb::MessageParser<EvolvePokemonResponse>(() => new EvolvePokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EvolvePokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[17]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EvolvePokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EvolvePokemonResponse(EvolvePokemonResponse other) : this() {
       result_ = other.result_;
       EvolvedPokemonData = other.evolvedPokemonData_ != null ? other.EvolvedPokemonData.Clone() : null;
@@ -4302,7 +3997,6 @@ namespace POGOProtos.Networking.Responses {
       candyAwarded_ = other.candyAwarded_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EvolvePokemonResponse Clone() {
       return new EvolvePokemonResponse(this);
     }
@@ -4310,7 +4004,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.EvolvePokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.EvolvePokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -4321,7 +4014,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "evolved_pokemon_data" field.</summary>
     public const int EvolvedPokemonDataFieldNumber = 2;
     private global::POGOProtos.Data.PokemonData evolvedPokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData EvolvedPokemonData {
       get { return evolvedPokemonData_; }
       set {
@@ -4332,7 +4024,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "experience_awarded" field.</summary>
     public const int ExperienceAwardedFieldNumber = 3;
     private int experienceAwarded_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ExperienceAwarded {
       get { return experienceAwarded_; }
       set {
@@ -4343,7 +4034,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "candy_awarded" field.</summary>
     public const int CandyAwardedFieldNumber = 4;
     private int candyAwarded_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CandyAwarded {
       get { return candyAwarded_; }
       set {
@@ -4351,12 +4041,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EvolvePokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EvolvePokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4371,7 +4059,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -4381,12 +4068,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -4406,7 +4091,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -4424,7 +4108,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EvolvePokemonResponse other) {
       if (other == null) {
         return;
@@ -4446,7 +4129,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4479,7 +4161,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the EvolvePokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -4495,29 +4177,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortDeployPokemonResponse : pb::IMessage<FortDeployPokemonResponse> {
     private static readonly pb::MessageParser<FortDeployPokemonResponse> _parser = new pb::MessageParser<FortDeployPokemonResponse>(() => new FortDeployPokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortDeployPokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[18]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDeployPokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDeployPokemonResponse(FortDeployPokemonResponse other) : this() {
       result_ = other.result_;
       FortDetails = other.fortDetails_ != null ? other.FortDetails.Clone() : null;
@@ -4525,7 +4203,6 @@ namespace POGOProtos.Networking.Responses {
       GymState = other.gymState_ != null ? other.GymState.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDeployPokemonResponse Clone() {
       return new FortDeployPokemonResponse(this);
     }
@@ -4533,7 +4210,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.FortDeployPokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.FortDeployPokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -4544,7 +4220,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "fort_details" field.</summary>
     public const int FortDetailsFieldNumber = 2;
     private global::POGOProtos.Networking.Responses.FortDetailsResponse fortDetails_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.FortDetailsResponse FortDetails {
       get { return fortDetails_; }
       set {
@@ -4555,7 +4230,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 3;
     private global::POGOProtos.Data.PokemonData pokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -4566,7 +4240,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "gym_state" field.</summary>
     public const int GymStateFieldNumber = 4;
     private global::POGOProtos.Data.Gym.GymState gymState_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Gym.GymState GymState {
       get { return gymState_; }
       set {
@@ -4574,12 +4247,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortDeployPokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortDeployPokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4594,7 +4265,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -4604,12 +4274,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -4629,7 +4297,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -4647,7 +4314,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortDeployPokemonResponse other) {
       if (other == null) {
         return;
@@ -4675,7 +4341,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4714,7 +4379,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the FortDeployPokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("NO_RESULT_SET")] NoResultSet = 0,
@@ -4734,29 +4399,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortDetailsResponse : pb::IMessage<FortDetailsResponse> {
     private static readonly pb::MessageParser<FortDetailsResponse> _parser = new pb::MessageParser<FortDetailsResponse>(() => new FortDetailsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortDetailsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[19]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDetailsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDetailsResponse(FortDetailsResponse other) : this() {
       fortId_ = other.fortId_;
       teamColor_ = other.teamColor_;
@@ -4773,7 +4434,6 @@ namespace POGOProtos.Networking.Responses {
       modifiers_ = other.modifiers_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDetailsResponse Clone() {
       return new FortDetailsResponse(this);
     }
@@ -4781,7 +4441,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 1;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -4792,7 +4451,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "team_color" field.</summary>
     public const int TeamColorFieldNumber = 2;
     private global::POGOProtos.Enums.TeamColor teamColor_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.TeamColor TeamColor {
       get { return teamColor_; }
       set {
@@ -4803,7 +4461,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 3;
     private global::POGOProtos.Data.PokemonData pokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -4814,7 +4471,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 4;
     private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -4827,7 +4483,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<string> _repeated_imageUrls_codec
         = pb::FieldCodec.ForString(42);
     private readonly pbc::RepeatedField<string> imageUrls_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> ImageUrls {
       get { return imageUrls_; }
     }
@@ -4835,7 +4490,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "fp" field.</summary>
     public const int FpFieldNumber = 6;
     private int fp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Fp {
       get { return fp_; }
       set {
@@ -4846,7 +4500,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "stamina" field.</summary>
     public const int StaminaFieldNumber = 7;
     private int stamina_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Stamina {
       get { return stamina_; }
       set {
@@ -4857,7 +4510,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "max_stamina" field.</summary>
     public const int MaxStaminaFieldNumber = 8;
     private int maxStamina_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int MaxStamina {
       get { return maxStamina_; }
       set {
@@ -4868,7 +4520,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 9;
     private global::POGOProtos.Map.Fort.FortType type_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.Fort.FortType Type {
       get { return type_; }
       set {
@@ -4879,7 +4530,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 10;
     private double latitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -4890,7 +4540,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 11;
     private double longitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -4901,7 +4550,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 12;
     private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
       get { return description_; }
       set {
@@ -4914,17 +4562,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.Fort.FortModifier> _repeated_modifiers_codec
         = pb::FieldCodec.ForMessage(106, global::POGOProtos.Map.Fort.FortModifier.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.Fort.FortModifier> modifiers_ = new pbc::RepeatedField<global::POGOProtos.Map.Fort.FortModifier>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Fort.FortModifier> Modifiers {
       get { return modifiers_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortDetailsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortDetailsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4948,7 +4593,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortId.Length != 0) hash ^= FortId.GetHashCode();
@@ -4967,12 +4611,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortId.Length != 0) {
         output.WriteRawTag(10);
@@ -5022,7 +4664,6 @@ namespace POGOProtos.Networking.Responses {
       modifiers_.WriteTo(output, _repeated_modifiers_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortId.Length != 0) {
@@ -5063,7 +4704,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortDetailsResponse other) {
       if (other == null) {
         return;
@@ -5108,7 +4748,6 @@ namespace POGOProtos.Networking.Responses {
       modifiers_.Add(other.modifiers_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5177,35 +4816,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortRecallPokemonResponse : pb::IMessage<FortRecallPokemonResponse> {
     private static readonly pb::MessageParser<FortRecallPokemonResponse> _parser = new pb::MessageParser<FortRecallPokemonResponse>(() => new FortRecallPokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortRecallPokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[20]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortRecallPokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortRecallPokemonResponse(FortRecallPokemonResponse other) : this() {
       result_ = other.result_;
       FortDetails = other.fortDetails_ != null ? other.FortDetails.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortRecallPokemonResponse Clone() {
       return new FortRecallPokemonResponse(this);
     }
@@ -5213,7 +4847,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.FortRecallPokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.FortRecallPokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -5224,7 +4857,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "fort_details" field.</summary>
     public const int FortDetailsFieldNumber = 2;
     private global::POGOProtos.Networking.Responses.FortDetailsResponse fortDetails_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.FortDetailsResponse FortDetails {
       get { return fortDetails_; }
       set {
@@ -5232,12 +4864,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortRecallPokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortRecallPokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5250,7 +4880,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -5258,12 +4887,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -5275,7 +4902,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -5287,7 +4913,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortRecallPokemonResponse other) {
       if (other == null) {
         return;
@@ -5303,7 +4928,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5328,7 +4952,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the FortRecallPokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("NO_RESULT_SET")] NoResultSet = 0,
@@ -5343,29 +4967,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortSearchResponse : pb::IMessage<FortSearchResponse> {
     private static readonly pb::MessageParser<FortSearchResponse> _parser = new pb::MessageParser<FortSearchResponse>(() => new FortSearchResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortSearchResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[21]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSearchResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSearchResponse(FortSearchResponse other) : this() {
       result_ = other.result_;
       itemsAwarded_ = other.itemsAwarded_.Clone();
@@ -5376,7 +4996,6 @@ namespace POGOProtos.Networking.Responses {
       chainHackSequenceNumber_ = other.chainHackSequenceNumber_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSearchResponse Clone() {
       return new FortSearchResponse(this);
     }
@@ -5384,7 +5003,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.FortSearchResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.FortSearchResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -5397,7 +5015,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.Item.ItemAward> _repeated_itemsAwarded_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Inventory.Item.ItemAward.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemAward> itemsAwarded_ = new pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemAward>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemAward> ItemsAwarded {
       get { return itemsAwarded_; }
     }
@@ -5405,7 +5022,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "gems_awarded" field.</summary>
     public const int GemsAwardedFieldNumber = 3;
     private int gemsAwarded_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int GemsAwarded {
       get { return gemsAwarded_; }
       set {
@@ -5416,7 +5032,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_data_egg" field.</summary>
     public const int PokemonDataEggFieldNumber = 4;
     private global::POGOProtos.Data.PokemonData pokemonDataEgg_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonDataEgg {
       get { return pokemonDataEgg_; }
       set {
@@ -5427,7 +5042,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "experience_awarded" field.</summary>
     public const int ExperienceAwardedFieldNumber = 5;
     private int experienceAwarded_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ExperienceAwarded {
       get { return experienceAwarded_; }
       set {
@@ -5438,7 +5052,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "cooldown_complete_timestamp_ms" field.</summary>
     public const int CooldownCompleteTimestampMsFieldNumber = 6;
     private long cooldownCompleteTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long CooldownCompleteTimestampMs {
       get { return cooldownCompleteTimestampMs_; }
       set {
@@ -5449,7 +5062,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "chain_hack_sequence_number" field.</summary>
     public const int ChainHackSequenceNumberFieldNumber = 7;
     private int chainHackSequenceNumber_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ChainHackSequenceNumber {
       get { return chainHackSequenceNumber_; }
       set {
@@ -5457,12 +5069,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortSearchResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortSearchResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5480,7 +5090,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -5493,12 +5102,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -5527,7 +5134,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -5552,7 +5158,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortSearchResponse other) {
       if (other == null) {
         return;
@@ -5581,7 +5186,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5626,7 +5230,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the FortSearchResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("NO_RESULT_SET")] NoResultSet = 0,
@@ -5642,35 +5246,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetAssetDigestResponse : pb::IMessage<GetAssetDigestResponse> {
     private static readonly pb::MessageParser<GetAssetDigestResponse> _parser = new pb::MessageParser<GetAssetDigestResponse>(() => new GetAssetDigestResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetAssetDigestResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[22]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetAssetDigestResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetAssetDigestResponse(GetAssetDigestResponse other) : this() {
       digest_ = other.digest_.Clone();
       timestampMs_ = other.timestampMs_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetAssetDigestResponse Clone() {
       return new GetAssetDigestResponse(this);
     }
@@ -5680,7 +5279,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.AssetDigestEntry> _repeated_digest_codec
         = pb::FieldCodec.ForMessage(10, global::POGOProtos.Data.AssetDigestEntry.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.AssetDigestEntry> digest_ = new pbc::RepeatedField<global::POGOProtos.Data.AssetDigestEntry>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.AssetDigestEntry> Digest {
       get { return digest_; }
     }
@@ -5688,7 +5286,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "timestamp_ms" field.</summary>
     public const int TimestampMsFieldNumber = 2;
     private ulong timestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong TimestampMs {
       get { return timestampMs_; }
       set {
@@ -5696,12 +5293,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetAssetDigestResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetAssetDigestResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5714,7 +5309,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= digest_.GetHashCode();
@@ -5722,12 +5316,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       digest_.WriteTo(output, _repeated_digest_codec);
       if (TimestampMs != 0UL) {
@@ -5736,7 +5328,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += digest_.CalculateSize(_repeated_digest_codec);
@@ -5746,7 +5337,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetAssetDigestResponse other) {
       if (other == null) {
         return;
@@ -5757,7 +5347,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5779,36 +5368,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetBuddyWalkedResponse : pb::IMessage<GetBuddyWalkedResponse> {
     private static readonly pb::MessageParser<GetBuddyWalkedResponse> _parser = new pb::MessageParser<GetBuddyWalkedResponse>(() => new GetBuddyWalkedResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetBuddyWalkedResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[23]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetBuddyWalkedResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetBuddyWalkedResponse(GetBuddyWalkedResponse other) : this() {
       success_ = other.success_;
       familyCandyId_ = other.familyCandyId_;
       candyEarnedCount_ = other.candyEarnedCount_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetBuddyWalkedResponse Clone() {
       return new GetBuddyWalkedResponse(this);
     }
@@ -5816,7 +5400,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -5827,7 +5410,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "family_candy_id" field.</summary>
     public const int FamilyCandyIdFieldNumber = 2;
     private global::POGOProtos.Enums.PokemonFamilyId familyCandyId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonFamilyId FamilyCandyId {
       get { return familyCandyId_; }
       set {
@@ -5838,7 +5420,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "candy_earned_count" field.</summary>
     public const int CandyEarnedCountFieldNumber = 3;
     private int candyEarnedCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CandyEarnedCount {
       get { return candyEarnedCount_; }
       set {
@@ -5846,12 +5427,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetBuddyWalkedResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetBuddyWalkedResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5865,7 +5444,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -5874,12 +5452,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -5895,7 +5471,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -5910,7 +5485,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetBuddyWalkedResponse other) {
       if (other == null) {
         return;
@@ -5926,7 +5500,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5952,34 +5525,29 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetDownloadUrlsResponse : pb::IMessage<GetDownloadUrlsResponse> {
     private static readonly pb::MessageParser<GetDownloadUrlsResponse> _parser = new pb::MessageParser<GetDownloadUrlsResponse>(() => new GetDownloadUrlsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetDownloadUrlsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[24]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetDownloadUrlsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetDownloadUrlsResponse(GetDownloadUrlsResponse other) : this() {
       downloadUrls_ = other.downloadUrls_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetDownloadUrlsResponse Clone() {
       return new GetDownloadUrlsResponse(this);
     }
@@ -5989,17 +5557,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.DownloadUrlEntry> _repeated_downloadUrls_codec
         = pb::FieldCodec.ForMessage(10, global::POGOProtos.Data.DownloadUrlEntry.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.DownloadUrlEntry> downloadUrls_ = new pbc::RepeatedField<global::POGOProtos.Data.DownloadUrlEntry>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.DownloadUrlEntry> DownloadUrls {
       get { return downloadUrls_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetDownloadUrlsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetDownloadUrlsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6011,31 +5576,26 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= downloadUrls_.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       downloadUrls_.WriteTo(output, _repeated_downloadUrls_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += downloadUrls_.CalculateSize(_repeated_downloadUrls_codec);
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetDownloadUrlsResponse other) {
       if (other == null) {
         return;
@@ -6043,7 +5603,6 @@ namespace POGOProtos.Networking.Responses {
       downloadUrls_.Add(other.downloadUrls_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6061,29 +5620,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetGymDetailsResponse : pb::IMessage<GetGymDetailsResponse> {
     private static readonly pb::MessageParser<GetGymDetailsResponse> _parser = new pb::MessageParser<GetGymDetailsResponse>(() => new GetGymDetailsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetGymDetailsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[25]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetGymDetailsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetGymDetailsResponse(GetGymDetailsResponse other) : this() {
       GymState = other.gymState_ != null ? other.GymState.Clone() : null;
       name_ = other.name_;
@@ -6092,7 +5647,6 @@ namespace POGOProtos.Networking.Responses {
       description_ = other.description_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetGymDetailsResponse Clone() {
       return new GetGymDetailsResponse(this);
     }
@@ -6100,7 +5654,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "gym_state" field.</summary>
     public const int GymStateFieldNumber = 1;
     private global::POGOProtos.Data.Gym.GymState gymState_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Gym.GymState GymState {
       get { return gymState_; }
       set {
@@ -6111,7 +5664,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -6124,7 +5676,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<string> _repeated_urls_codec
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> urls_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Urls {
       get { return urls_; }
     }
@@ -6132,7 +5683,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 4;
     private global::POGOProtos.Networking.Responses.GetGymDetailsResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.GetGymDetailsResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -6143,7 +5693,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 5;
     private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
       get { return description_; }
       set {
@@ -6151,12 +5700,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetGymDetailsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetGymDetailsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6172,7 +5719,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (gymState_ != null) hash ^= GymState.GetHashCode();
@@ -6183,12 +5729,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (gymState_ != null) {
         output.WriteRawTag(10);
@@ -6209,7 +5753,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (gymState_ != null) {
@@ -6228,7 +5771,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetGymDetailsResponse other) {
       if (other == null) {
         return;
@@ -6251,7 +5793,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6288,7 +5829,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the GetGymDetailsResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -6301,29 +5842,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetHatchedEggsResponse : pb::IMessage<GetHatchedEggsResponse> {
     private static readonly pb::MessageParser<GetHatchedEggsResponse> _parser = new pb::MessageParser<GetHatchedEggsResponse>(() => new GetHatchedEggsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetHatchedEggsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[26]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetHatchedEggsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetHatchedEggsResponse(GetHatchedEggsResponse other) : this() {
       success_ = other.success_;
       pokemonId_ = other.pokemonId_.Clone();
@@ -6332,7 +5869,6 @@ namespace POGOProtos.Networking.Responses {
       stardustAwarded_ = other.stardustAwarded_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetHatchedEggsResponse Clone() {
       return new GetHatchedEggsResponse(this);
     }
@@ -6340,7 +5876,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -6353,7 +5888,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<ulong> _repeated_pokemonId_codec
         = pb::FieldCodec.ForFixed64(18);
     private readonly pbc::RepeatedField<ulong> pokemonId_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<ulong> PokemonId {
       get { return pokemonId_; }
     }
@@ -6363,7 +5897,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<int> _repeated_experienceAwarded_codec
         = pb::FieldCodec.ForInt32(26);
     private readonly pbc::RepeatedField<int> experienceAwarded_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> ExperienceAwarded {
       get { return experienceAwarded_; }
     }
@@ -6373,7 +5906,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<int> _repeated_candyAwarded_codec
         = pb::FieldCodec.ForInt32(34);
     private readonly pbc::RepeatedField<int> candyAwarded_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> CandyAwarded {
       get { return candyAwarded_; }
     }
@@ -6383,17 +5915,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<int> _repeated_stardustAwarded_codec
         = pb::FieldCodec.ForInt32(42);
     private readonly pbc::RepeatedField<int> stardustAwarded_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> StardustAwarded {
       get { return stardustAwarded_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetHatchedEggsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetHatchedEggsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6409,7 +5938,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -6420,12 +5948,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -6437,7 +5963,6 @@ namespace POGOProtos.Networking.Responses {
       stardustAwarded_.WriteTo(output, _repeated_stardustAwarded_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -6450,7 +5975,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetHatchedEggsResponse other) {
       if (other == null) {
         return;
@@ -6464,7 +5988,6 @@ namespace POGOProtos.Networking.Responses {
       stardustAwarded_.Add(other.stardustAwarded_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6502,29 +6025,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetIncensePokemonResponse : pb::IMessage<GetIncensePokemonResponse> {
     private static readonly pb::MessageParser<GetIncensePokemonResponse> _parser = new pb::MessageParser<GetIncensePokemonResponse>(() => new GetIncensePokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetIncensePokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[27]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetIncensePokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetIncensePokemonResponse(GetIncensePokemonResponse other) : this() {
       result_ = other.result_;
       pokemonId_ = other.pokemonId_;
@@ -6535,7 +6054,6 @@ namespace POGOProtos.Networking.Responses {
       disappearTimestampMs_ = other.disappearTimestampMs_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetIncensePokemonResponse Clone() {
       return new GetIncensePokemonResponse(this);
     }
@@ -6543,7 +6061,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.GetIncensePokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.GetIncensePokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -6554,7 +6071,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 2;
     private global::POGOProtos.Enums.PokemonId pokemonId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonId PokemonId {
       get { return pokemonId_; }
       set {
@@ -6565,7 +6081,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 3;
     private double latitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -6576,7 +6091,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 4;
     private double longitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -6587,7 +6101,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "encounter_location" field.</summary>
     public const int EncounterLocationFieldNumber = 5;
     private string encounterLocation_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string EncounterLocation {
       get { return encounterLocation_; }
       set {
@@ -6598,7 +6111,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 6;
     private ulong encounterId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -6609,7 +6121,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "disappear_timestamp_ms" field.</summary>
     public const int DisappearTimestampMsFieldNumber = 7;
     private long disappearTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DisappearTimestampMs {
       get { return disappearTimestampMs_; }
       set {
@@ -6617,12 +6128,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetIncensePokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetIncensePokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6640,7 +6149,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -6653,12 +6161,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -6690,7 +6196,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -6717,7 +6222,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetIncensePokemonResponse other) {
       if (other == null) {
         return;
@@ -6745,7 +6249,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6787,7 +6290,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the GetIncensePokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("INCENSE_ENCOUNTER_UNKNOWN")] IncenseEncounterUnknown = 0,
@@ -6800,35 +6303,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetInventoryResponse : pb::IMessage<GetInventoryResponse> {
     private static readonly pb::MessageParser<GetInventoryResponse> _parser = new pb::MessageParser<GetInventoryResponse>(() => new GetInventoryResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetInventoryResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[28]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetInventoryResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetInventoryResponse(GetInventoryResponse other) : this() {
       success_ = other.success_;
       InventoryDelta = other.inventoryDelta_ != null ? other.InventoryDelta.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetInventoryResponse Clone() {
       return new GetInventoryResponse(this);
     }
@@ -6836,7 +6334,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -6847,7 +6344,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "inventory_delta" field.</summary>
     public const int InventoryDeltaFieldNumber = 2;
     private global::POGOProtos.Inventory.InventoryDelta inventoryDelta_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.InventoryDelta InventoryDelta {
       get { return inventoryDelta_; }
       set {
@@ -6855,12 +6351,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetInventoryResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetInventoryResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6873,7 +6367,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -6881,12 +6374,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -6898,7 +6389,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -6910,7 +6400,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetInventoryResponse other) {
       if (other == null) {
         return;
@@ -6926,7 +6415,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6951,35 +6439,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetMapObjectsResponse : pb::IMessage<GetMapObjectsResponse> {
     private static readonly pb::MessageParser<GetMapObjectsResponse> _parser = new pb::MessageParser<GetMapObjectsResponse>(() => new GetMapObjectsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetMapObjectsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[29]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetMapObjectsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetMapObjectsResponse(GetMapObjectsResponse other) : this() {
       mapCells_ = other.mapCells_.Clone();
       status_ = other.status_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetMapObjectsResponse Clone() {
       return new GetMapObjectsResponse(this);
     }
@@ -6989,7 +6472,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.MapCell> _repeated_mapCells_codec
         = pb::FieldCodec.ForMessage(10, global::POGOProtos.Map.MapCell.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.MapCell> mapCells_ = new pbc::RepeatedField<global::POGOProtos.Map.MapCell>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.MapCell> MapCells {
       get { return mapCells_; }
     }
@@ -6997,7 +6479,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::POGOProtos.Map.MapObjectsStatus status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Map.MapObjectsStatus Status {
       get { return status_; }
       set {
@@ -7005,12 +6486,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetMapObjectsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetMapObjectsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7023,7 +6502,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= mapCells_.GetHashCode();
@@ -7031,12 +6509,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       mapCells_.WriteTo(output, _repeated_mapCells_codec);
       if (Status != 0) {
@@ -7045,7 +6521,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += mapCells_.CalculateSize(_repeated_mapCells_codec);
@@ -7055,7 +6530,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetMapObjectsResponse other) {
       if (other == null) {
         return;
@@ -7066,7 +6540,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7088,36 +6561,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetPlayerProfileResponse : pb::IMessage<GetPlayerProfileResponse> {
     private static readonly pb::MessageParser<GetPlayerProfileResponse> _parser = new pb::MessageParser<GetPlayerProfileResponse>(() => new GetPlayerProfileResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetPlayerProfileResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[30]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerProfileResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerProfileResponse(GetPlayerProfileResponse other) : this() {
       result_ = other.result_;
       startTime_ = other.startTime_;
       badges_ = other.badges_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerProfileResponse Clone() {
       return new GetPlayerProfileResponse(this);
     }
@@ -7125,7 +6593,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.GetPlayerProfileResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.GetPlayerProfileResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -7136,7 +6603,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "start_time" field.</summary>
     public const int StartTimeFieldNumber = 2;
     private long startTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long StartTime {
       get { return startTime_; }
       set {
@@ -7149,17 +6615,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.PlayerBadge> _repeated_badges_codec
         = pb::FieldCodec.ForMessage(26, global::POGOProtos.Data.PlayerBadge.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.PlayerBadge> badges_ = new pbc::RepeatedField<global::POGOProtos.Data.PlayerBadge>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.PlayerBadge> Badges {
       get { return badges_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetPlayerProfileResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetPlayerProfileResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7173,7 +6636,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -7182,12 +6644,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -7200,7 +6660,6 @@ namespace POGOProtos.Networking.Responses {
       badges_.WriteTo(output, _repeated_badges_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -7213,7 +6672,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetPlayerProfileResponse other) {
       if (other == null) {
         return;
@@ -7227,7 +6685,6 @@ namespace POGOProtos.Networking.Responses {
       badges_.Add(other.badges_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7253,7 +6710,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the GetPlayerProfileResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -7265,35 +6722,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetPlayerResponse : pb::IMessage<GetPlayerResponse> {
     private static readonly pb::MessageParser<GetPlayerResponse> _parser = new pb::MessageParser<GetPlayerResponse>(() => new GetPlayerResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetPlayerResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[31]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerResponse(GetPlayerResponse other) : this() {
       success_ = other.success_;
       PlayerData = other.playerData_ != null ? other.PlayerData.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerResponse Clone() {
       return new GetPlayerResponse(this);
     }
@@ -7301,7 +6753,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -7312,7 +6763,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "player_data" field.</summary>
     public const int PlayerDataFieldNumber = 2;
     private global::POGOProtos.Data.PlayerData playerData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PlayerData PlayerData {
       get { return playerData_; }
       set {
@@ -7320,12 +6770,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetPlayerResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetPlayerResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7338,7 +6786,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -7346,12 +6793,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -7363,7 +6808,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -7375,7 +6819,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetPlayerResponse other) {
       if (other == null) {
         return;
@@ -7391,7 +6834,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7416,35 +6858,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetSuggestedCodenamesResponse : pb::IMessage<GetSuggestedCodenamesResponse> {
     private static readonly pb::MessageParser<GetSuggestedCodenamesResponse> _parser = new pb::MessageParser<GetSuggestedCodenamesResponse>(() => new GetSuggestedCodenamesResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetSuggestedCodenamesResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[32]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetSuggestedCodenamesResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetSuggestedCodenamesResponse(GetSuggestedCodenamesResponse other) : this() {
       codenames_ = other.codenames_.Clone();
       success_ = other.success_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetSuggestedCodenamesResponse Clone() {
       return new GetSuggestedCodenamesResponse(this);
     }
@@ -7454,7 +6891,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<string> _repeated_codenames_codec
         = pb::FieldCodec.ForString(10);
     private readonly pbc::RepeatedField<string> codenames_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Codenames {
       get { return codenames_; }
     }
@@ -7462,7 +6898,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 2;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -7470,12 +6905,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetSuggestedCodenamesResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetSuggestedCodenamesResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7488,7 +6921,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= codenames_.GetHashCode();
@@ -7496,12 +6928,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       codenames_.WriteTo(output, _repeated_codenames_codec);
       if (Success != false) {
@@ -7510,7 +6940,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += codenames_.CalculateSize(_repeated_codenames_codec);
@@ -7520,7 +6949,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetSuggestedCodenamesResponse other) {
       if (other == null) {
         return;
@@ -7531,7 +6959,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7553,36 +6980,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class IncenseEncounterResponse : pb::IMessage<IncenseEncounterResponse> {
     private static readonly pb::MessageParser<IncenseEncounterResponse> _parser = new pb::MessageParser<IncenseEncounterResponse>(() => new IncenseEncounterResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<IncenseEncounterResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[33]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IncenseEncounterResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IncenseEncounterResponse(IncenseEncounterResponse other) : this() {
       result_ = other.result_;
       PokemonData = other.pokemonData_ != null ? other.PokemonData.Clone() : null;
       CaptureProbability = other.captureProbability_ != null ? other.CaptureProbability.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IncenseEncounterResponse Clone() {
       return new IncenseEncounterResponse(this);
     }
@@ -7590,7 +7012,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.IncenseEncounterResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.IncenseEncounterResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -7601,7 +7022,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 2;
     private global::POGOProtos.Data.PokemonData pokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -7612,7 +7032,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "capture_probability" field.</summary>
     public const int CaptureProbabilityFieldNumber = 3;
     private global::POGOProtos.Data.Capture.CaptureProbability captureProbability_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Capture.CaptureProbability CaptureProbability {
       get { return captureProbability_; }
       set {
@@ -7620,12 +7039,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as IncenseEncounterResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(IncenseEncounterResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7639,7 +7056,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -7648,12 +7064,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -7669,7 +7083,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -7684,7 +7097,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(IncenseEncounterResponse other) {
       if (other == null) {
         return;
@@ -7706,7 +7118,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7738,7 +7149,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the IncenseEncounterResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("INCENSE_ENCOUNTER_UNKNOWN")] IncenseEncounterUnknown = 0,
@@ -7752,36 +7163,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class LevelUpRewardsResponse : pb::IMessage<LevelUpRewardsResponse> {
     private static readonly pb::MessageParser<LevelUpRewardsResponse> _parser = new pb::MessageParser<LevelUpRewardsResponse>(() => new LevelUpRewardsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<LevelUpRewardsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[34]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelUpRewardsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelUpRewardsResponse(LevelUpRewardsResponse other) : this() {
       result_ = other.result_;
       itemsAwarded_ = other.itemsAwarded_.Clone();
       itemsUnlocked_ = other.itemsUnlocked_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelUpRewardsResponse Clone() {
       return new LevelUpRewardsResponse(this);
     }
@@ -7789,7 +7195,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.LevelUpRewardsResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.LevelUpRewardsResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -7802,7 +7207,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.Item.ItemAward> _repeated_itemsAwarded_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Inventory.Item.ItemAward.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemAward> itemsAwarded_ = new pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemAward>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemAward> ItemsAwarded {
       get { return itemsAwarded_; }
     }
@@ -7812,17 +7216,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.Item.ItemId> _repeated_itemsUnlocked_codec
         = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::POGOProtos.Inventory.Item.ItemId) x);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId> itemsUnlocked_ = new pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId> ItemsUnlocked {
       get { return itemsUnlocked_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as LevelUpRewardsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(LevelUpRewardsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7836,7 +7237,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -7845,12 +7245,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -7860,7 +7258,6 @@ namespace POGOProtos.Networking.Responses {
       itemsUnlocked_.WriteTo(output, _repeated_itemsUnlocked_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -7871,7 +7268,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(LevelUpRewardsResponse other) {
       if (other == null) {
         return;
@@ -7883,7 +7279,6 @@ namespace POGOProtos.Networking.Responses {
       itemsUnlocked_.Add(other.itemsUnlocked_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7910,7 +7305,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the LevelUpRewardsResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -7923,35 +7318,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class MarkTutorialCompleteResponse : pb::IMessage<MarkTutorialCompleteResponse> {
     private static readonly pb::MessageParser<MarkTutorialCompleteResponse> _parser = new pb::MessageParser<MarkTutorialCompleteResponse>(() => new MarkTutorialCompleteResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MarkTutorialCompleteResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[35]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MarkTutorialCompleteResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MarkTutorialCompleteResponse(MarkTutorialCompleteResponse other) : this() {
       success_ = other.success_;
       PlayerData = other.playerData_ != null ? other.PlayerData.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MarkTutorialCompleteResponse Clone() {
       return new MarkTutorialCompleteResponse(this);
     }
@@ -7959,7 +7349,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -7970,7 +7359,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "player_data" field.</summary>
     public const int PlayerDataFieldNumber = 2;
     private global::POGOProtos.Data.PlayerData playerData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PlayerData PlayerData {
       get { return playerData_; }
       set {
@@ -7978,12 +7366,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MarkTutorialCompleteResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MarkTutorialCompleteResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7996,7 +7382,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -8004,12 +7389,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -8021,7 +7404,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -8033,7 +7415,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MarkTutorialCompleteResponse other) {
       if (other == null) {
         return;
@@ -8049,7 +7430,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8074,34 +7454,29 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class NicknamePokemonResponse : pb::IMessage<NicknamePokemonResponse> {
     private static readonly pb::MessageParser<NicknamePokemonResponse> _parser = new pb::MessageParser<NicknamePokemonResponse>(() => new NicknamePokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<NicknamePokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[36]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NicknamePokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NicknamePokemonResponse(NicknamePokemonResponse other) : this() {
       result_ = other.result_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NicknamePokemonResponse Clone() {
       return new NicknamePokemonResponse(this);
     }
@@ -8109,7 +7484,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.NicknamePokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.NicknamePokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -8117,12 +7491,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as NicknamePokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(NicknamePokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8134,19 +7506,16 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -8154,7 +7523,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -8163,7 +7531,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(NicknamePokemonResponse other) {
       if (other == null) {
         return;
@@ -8173,7 +7540,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8191,7 +7557,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the NicknamePokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -8206,36 +7572,31 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class PlayerUpdateResponse : pb::IMessage<PlayerUpdateResponse> {
     private static readonly pb::MessageParser<PlayerUpdateResponse> _parser = new pb::MessageParser<PlayerUpdateResponse>(() => new PlayerUpdateResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<PlayerUpdateResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[37]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerUpdateResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerUpdateResponse(PlayerUpdateResponse other) : this() {
       wildPokemons_ = other.wildPokemons_.Clone();
       forts_ = other.forts_.Clone();
       fortsNearby_ = other.fortsNearby_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerUpdateResponse Clone() {
       return new PlayerUpdateResponse(this);
     }
@@ -8245,7 +7606,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.Pokemon.WildPokemon> _repeated_wildPokemons_codec
         = pb::FieldCodec.ForMessage(10, global::POGOProtos.Map.Pokemon.WildPokemon.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.Pokemon.WildPokemon> wildPokemons_ = new pbc::RepeatedField<global::POGOProtos.Map.Pokemon.WildPokemon>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Pokemon.WildPokemon> WildPokemons {
       get { return wildPokemons_; }
     }
@@ -8255,7 +7615,6 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Map.Fort.FortData> _repeated_forts_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Map.Fort.FortData.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Map.Fort.FortData> forts_ = new pbc::RepeatedField<global::POGOProtos.Map.Fort.FortData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Map.Fort.FortData> Forts {
       get { return forts_; }
     }
@@ -8263,7 +7622,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "forts_nearby" field.</summary>
     public const int FortsNearbyFieldNumber = 3;
     private int fortsNearby_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FortsNearby {
       get { return fortsNearby_; }
       set {
@@ -8271,12 +7629,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PlayerUpdateResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(PlayerUpdateResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8290,7 +7646,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= wildPokemons_.GetHashCode();
@@ -8299,12 +7654,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       wildPokemons_.WriteTo(output, _repeated_wildPokemons_codec);
       forts_.WriteTo(output, _repeated_forts_codec);
@@ -8314,7 +7667,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += wildPokemons_.CalculateSize(_repeated_wildPokemons_codec);
@@ -8325,7 +7677,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(PlayerUpdateResponse other) {
       if (other == null) {
         return;
@@ -8337,7 +7688,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8363,35 +7713,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class RecycleInventoryItemResponse : pb::IMessage<RecycleInventoryItemResponse> {
     private static readonly pb::MessageParser<RecycleInventoryItemResponse> _parser = new pb::MessageParser<RecycleInventoryItemResponse>(() => new RecycleInventoryItemResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<RecycleInventoryItemResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[38]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RecycleInventoryItemResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RecycleInventoryItemResponse(RecycleInventoryItemResponse other) : this() {
       result_ = other.result_;
       newCount_ = other.newCount_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RecycleInventoryItemResponse Clone() {
       return new RecycleInventoryItemResponse(this);
     }
@@ -8399,7 +7744,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.RecycleInventoryItemResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.RecycleInventoryItemResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -8410,7 +7754,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "new_count" field.</summary>
     public const int NewCountFieldNumber = 2;
     private int newCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int NewCount {
       get { return newCount_; }
       set {
@@ -8418,12 +7761,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as RecycleInventoryItemResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(RecycleInventoryItemResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8436,7 +7777,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -8444,12 +7784,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -8461,7 +7799,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -8473,7 +7810,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(RecycleInventoryItemResponse other) {
       if (other == null) {
         return;
@@ -8486,7 +7822,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8508,7 +7843,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the RecycleInventoryItemResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -8522,35 +7857,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class ReleasePokemonResponse : pb::IMessage<ReleasePokemonResponse> {
     private static readonly pb::MessageParser<ReleasePokemonResponse> _parser = new pb::MessageParser<ReleasePokemonResponse>(() => new ReleasePokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<ReleasePokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[39]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReleasePokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReleasePokemonResponse(ReleasePokemonResponse other) : this() {
       result_ = other.result_;
       candyAwarded_ = other.candyAwarded_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReleasePokemonResponse Clone() {
       return new ReleasePokemonResponse(this);
     }
@@ -8558,7 +7888,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.ReleasePokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.ReleasePokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -8569,7 +7898,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "candy_awarded" field.</summary>
     public const int CandyAwardedFieldNumber = 2;
     private int candyAwarded_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CandyAwarded {
       get { return candyAwarded_; }
       set {
@@ -8577,12 +7905,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReleasePokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(ReleasePokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8595,7 +7921,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -8603,12 +7928,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -8620,7 +7943,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -8632,7 +7954,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(ReleasePokemonResponse other) {
       if (other == null) {
         return;
@@ -8645,7 +7966,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8667,7 +7987,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the ReleasePokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -8683,35 +8003,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetAvatarResponse : pb::IMessage<SetAvatarResponse> {
     private static readonly pb::MessageParser<SetAvatarResponse> _parser = new pb::MessageParser<SetAvatarResponse>(() => new SetAvatarResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetAvatarResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[40]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetAvatarResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetAvatarResponse(SetAvatarResponse other) : this() {
       status_ = other.status_;
       PlayerData = other.playerData_ != null ? other.PlayerData.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetAvatarResponse Clone() {
       return new SetAvatarResponse(this);
     }
@@ -8719,7 +8034,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.SetAvatarResponse.Types.Status status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.SetAvatarResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -8730,7 +8044,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "player_data" field.</summary>
     public const int PlayerDataFieldNumber = 2;
     private global::POGOProtos.Data.PlayerData playerData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PlayerData PlayerData {
       get { return playerData_; }
       set {
@@ -8738,12 +8051,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetAvatarResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetAvatarResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8756,7 +8067,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Status != 0) hash ^= Status.GetHashCode();
@@ -8764,12 +8074,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Status != 0) {
         output.WriteRawTag(8);
@@ -8781,7 +8089,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Status != 0) {
@@ -8793,7 +8100,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetAvatarResponse other) {
       if (other == null) {
         return;
@@ -8809,7 +8115,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8834,7 +8139,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SetAvatarResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Status {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -8848,35 +8153,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetBuddyPokemonResponse : pb::IMessage<SetBuddyPokemonResponse> {
     private static readonly pb::MessageParser<SetBuddyPokemonResponse> _parser = new pb::MessageParser<SetBuddyPokemonResponse>(() => new SetBuddyPokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetBuddyPokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[41]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetBuddyPokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetBuddyPokemonResponse(SetBuddyPokemonResponse other) : this() {
       result_ = other.result_;
       UpdatedBuddy = other.updatedBuddy_ != null ? other.UpdatedBuddy.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetBuddyPokemonResponse Clone() {
       return new SetBuddyPokemonResponse(this);
     }
@@ -8884,7 +8184,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.SetBuddyPokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.SetBuddyPokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -8895,7 +8194,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "updated_buddy" field.</summary>
     public const int UpdatedBuddyFieldNumber = 2;
     private global::POGOProtos.Data.BuddyPokemon updatedBuddy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.BuddyPokemon UpdatedBuddy {
       get { return updatedBuddy_; }
       set {
@@ -8903,12 +8201,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetBuddyPokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetBuddyPokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8921,7 +8217,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -8929,12 +8224,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -8946,7 +8239,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -8958,7 +8250,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetBuddyPokemonResponse other) {
       if (other == null) {
         return;
@@ -8974,7 +8265,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8999,7 +8289,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SetBuddyPokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNEST")] Unest = 0,
@@ -9014,35 +8304,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetContactSettingsResponse : pb::IMessage<SetContactSettingsResponse> {
     private static readonly pb::MessageParser<SetContactSettingsResponse> _parser = new pb::MessageParser<SetContactSettingsResponse>(() => new SetContactSettingsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetContactSettingsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[42]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetContactSettingsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetContactSettingsResponse(SetContactSettingsResponse other) : this() {
       status_ = other.status_;
       PlayerData = other.playerData_ != null ? other.PlayerData.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetContactSettingsResponse Clone() {
       return new SetContactSettingsResponse(this);
     }
@@ -9050,7 +8335,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.SetContactSettingsResponse.Types.Status status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.SetContactSettingsResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -9061,7 +8345,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "player_data" field.</summary>
     public const int PlayerDataFieldNumber = 2;
     private global::POGOProtos.Data.PlayerData playerData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PlayerData PlayerData {
       get { return playerData_; }
       set {
@@ -9069,12 +8352,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetContactSettingsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetContactSettingsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9087,7 +8368,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Status != 0) hash ^= Status.GetHashCode();
@@ -9095,12 +8375,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Status != 0) {
         output.WriteRawTag(8);
@@ -9112,7 +8390,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Status != 0) {
@@ -9124,7 +8401,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetContactSettingsResponse other) {
       if (other == null) {
         return;
@@ -9140,7 +8416,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9165,7 +8440,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SetContactSettingsResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Status {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -9178,34 +8453,29 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetFavoritePokemonResponse : pb::IMessage<SetFavoritePokemonResponse> {
     private static readonly pb::MessageParser<SetFavoritePokemonResponse> _parser = new pb::MessageParser<SetFavoritePokemonResponse>(() => new SetFavoritePokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetFavoritePokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[43]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetFavoritePokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetFavoritePokemonResponse(SetFavoritePokemonResponse other) : this() {
       result_ = other.result_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetFavoritePokemonResponse Clone() {
       return new SetFavoritePokemonResponse(this);
     }
@@ -9213,7 +8483,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.SetFavoritePokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.SetFavoritePokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -9221,12 +8490,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetFavoritePokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetFavoritePokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9238,19 +8505,16 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -9258,7 +8522,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -9267,7 +8530,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetFavoritePokemonResponse other) {
       if (other == null) {
         return;
@@ -9277,7 +8539,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9295,7 +8556,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SetFavoritePokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -9309,35 +8570,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetPlayerTeamResponse : pb::IMessage<SetPlayerTeamResponse> {
     private static readonly pb::MessageParser<SetPlayerTeamResponse> _parser = new pb::MessageParser<SetPlayerTeamResponse>(() => new SetPlayerTeamResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetPlayerTeamResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[44]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetPlayerTeamResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetPlayerTeamResponse(SetPlayerTeamResponse other) : this() {
       status_ = other.status_;
       PlayerData = other.playerData_ != null ? other.PlayerData.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetPlayerTeamResponse Clone() {
       return new SetPlayerTeamResponse(this);
     }
@@ -9345,7 +8601,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.SetPlayerTeamResponse.Types.Status status_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.SetPlayerTeamResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -9356,7 +8611,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "player_data" field.</summary>
     public const int PlayerDataFieldNumber = 2;
     private global::POGOProtos.Data.PlayerData playerData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PlayerData PlayerData {
       get { return playerData_; }
       set {
@@ -9364,12 +8618,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetPlayerTeamResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetPlayerTeamResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9382,7 +8634,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Status != 0) hash ^= Status.GetHashCode();
@@ -9390,12 +8641,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Status != 0) {
         output.WriteRawTag(8);
@@ -9407,7 +8656,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Status != 0) {
@@ -9419,7 +8667,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetPlayerTeamResponse other) {
       if (other == null) {
         return;
@@ -9435,7 +8682,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9460,7 +8706,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SetPlayerTeamResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Status {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -9474,35 +8720,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SfidaActionLogResponse : pb::IMessage<SfidaActionLogResponse> {
     private static readonly pb::MessageParser<SfidaActionLogResponse> _parser = new pb::MessageParser<SfidaActionLogResponse>(() => new SfidaActionLogResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SfidaActionLogResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[45]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SfidaActionLogResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SfidaActionLogResponse(SfidaActionLogResponse other) : this() {
       result_ = other.result_;
       logEntries_ = other.logEntries_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SfidaActionLogResponse Clone() {
       return new SfidaActionLogResponse(this);
     }
@@ -9510,7 +8751,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.SfidaActionLogResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.SfidaActionLogResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -9523,17 +8763,14 @@ namespace POGOProtos.Networking.Responses {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Logs.ActionLogEntry> _repeated_logEntries_codec
         = pb::FieldCodec.ForMessage(18, global::POGOProtos.Data.Logs.ActionLogEntry.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Logs.ActionLogEntry> logEntries_ = new pbc::RepeatedField<global::POGOProtos.Data.Logs.ActionLogEntry>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Logs.ActionLogEntry> LogEntries {
       get { return logEntries_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SfidaActionLogResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SfidaActionLogResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9546,7 +8783,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -9554,12 +8790,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -9568,7 +8802,6 @@ namespace POGOProtos.Networking.Responses {
       logEntries_.WriteTo(output, _repeated_logEntries_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -9578,7 +8811,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SfidaActionLogResponse other) {
       if (other == null) {
         return;
@@ -9589,7 +8821,6 @@ namespace POGOProtos.Networking.Responses {
       logEntries_.Add(other.logEntries_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9611,7 +8842,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SfidaActionLogResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -9623,29 +8854,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class StartGymBattleResponse : pb::IMessage<StartGymBattleResponse> {
     private static readonly pb::MessageParser<StartGymBattleResponse> _parser = new pb::MessageParser<StartGymBattleResponse>(() => new StartGymBattleResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<StartGymBattleResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[46]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StartGymBattleResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StartGymBattleResponse(StartGymBattleResponse other) : this() {
       result_ = other.result_;
       battleStartTimestampMs_ = other.battleStartTimestampMs_;
@@ -9655,7 +8882,6 @@ namespace POGOProtos.Networking.Responses {
       BattleLog = other.battleLog_ != null ? other.BattleLog.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StartGymBattleResponse Clone() {
       return new StartGymBattleResponse(this);
     }
@@ -9663,7 +8889,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.StartGymBattleResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.StartGymBattleResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -9674,7 +8899,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "battle_start_timestamp_ms" field.</summary>
     public const int BattleStartTimestampMsFieldNumber = 2;
     private long battleStartTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long BattleStartTimestampMs {
       get { return battleStartTimestampMs_; }
       set {
@@ -9685,7 +8909,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "battle_end_timestamp_ms" field.</summary>
     public const int BattleEndTimestampMsFieldNumber = 3;
     private long battleEndTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long BattleEndTimestampMs {
       get { return battleEndTimestampMs_; }
       set {
@@ -9696,7 +8919,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "battle_id" field.</summary>
     public const int BattleIdFieldNumber = 4;
     private string battleId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BattleId {
       get { return battleId_; }
       set {
@@ -9707,7 +8929,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "defender" field.</summary>
     public const int DefenderFieldNumber = 5;
     private global::POGOProtos.Data.Battle.BattleParticipant defender_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleParticipant Defender {
       get { return defender_; }
       set {
@@ -9718,7 +8939,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "battle_log" field.</summary>
     public const int BattleLogFieldNumber = 6;
     private global::POGOProtos.Data.Battle.BattleLog battleLog_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleLog BattleLog {
       get { return battleLog_; }
       set {
@@ -9726,12 +8946,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as StartGymBattleResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(StartGymBattleResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9748,7 +8966,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -9760,12 +8977,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -9793,7 +9008,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -9817,7 +9031,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(StartGymBattleResponse other) {
       if (other == null) {
         return;
@@ -9848,7 +9061,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -9892,7 +9104,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the StartGymBattleResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -9916,35 +9128,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UpgradePokemonResponse : pb::IMessage<UpgradePokemonResponse> {
     private static readonly pb::MessageParser<UpgradePokemonResponse> _parser = new pb::MessageParser<UpgradePokemonResponse>(() => new UpgradePokemonResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UpgradePokemonResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[47]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpgradePokemonResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpgradePokemonResponse(UpgradePokemonResponse other) : this() {
       result_ = other.result_;
       UpgradedPokemon = other.upgradedPokemon_ != null ? other.UpgradedPokemon.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpgradePokemonResponse Clone() {
       return new UpgradePokemonResponse(this);
     }
@@ -9952,7 +9159,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UpgradePokemonResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UpgradePokemonResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -9963,7 +9169,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "upgraded_pokemon" field.</summary>
     public const int UpgradedPokemonFieldNumber = 2;
     private global::POGOProtos.Data.PokemonData upgradedPokemon_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData UpgradedPokemon {
       get { return upgradedPokemon_; }
       set {
@@ -9971,12 +9176,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UpgradePokemonResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UpgradePokemonResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -9989,7 +9192,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -9997,12 +9199,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -10014,7 +9214,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -10026,7 +9225,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UpgradePokemonResponse other) {
       if (other == null) {
         return;
@@ -10042,7 +9240,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10067,7 +9264,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UpgradePokemonResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -10083,35 +9280,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseIncenseResponse : pb::IMessage<UseIncenseResponse> {
     private static readonly pb::MessageParser<UseIncenseResponse> _parser = new pb::MessageParser<UseIncenseResponse>(() => new UseIncenseResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseIncenseResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[48]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseIncenseResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseIncenseResponse(UseIncenseResponse other) : this() {
       result_ = other.result_;
       AppliedIncense = other.appliedIncense_ != null ? other.AppliedIncense.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseIncenseResponse Clone() {
       return new UseIncenseResponse(this);
     }
@@ -10119,7 +9311,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UseIncenseResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UseIncenseResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -10130,7 +9321,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "applied_incense" field.</summary>
     public const int AppliedIncenseFieldNumber = 2;
     private global::POGOProtos.Inventory.AppliedItem appliedIncense_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.AppliedItem AppliedIncense {
       get { return appliedIncense_; }
       set {
@@ -10138,12 +9328,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseIncenseResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseIncenseResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10156,7 +9344,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -10164,12 +9351,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -10181,7 +9366,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -10193,7 +9377,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseIncenseResponse other) {
       if (other == null) {
         return;
@@ -10209,7 +9392,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10234,7 +9416,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UseIncenseResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNKNOWN")] Unknown = 0,
@@ -10249,29 +9431,25 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemCaptureResponse : pb::IMessage<UseItemCaptureResponse> {
     private static readonly pb::MessageParser<UseItemCaptureResponse> _parser = new pb::MessageParser<UseItemCaptureResponse>(() => new UseItemCaptureResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemCaptureResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[49]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemCaptureResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemCaptureResponse(UseItemCaptureResponse other) : this() {
       success_ = other.success_;
       itemCaptureMult_ = other.itemCaptureMult_;
@@ -10282,7 +9460,6 @@ namespace POGOProtos.Networking.Responses {
       targetSlow_ = other.targetSlow_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemCaptureResponse Clone() {
       return new UseItemCaptureResponse(this);
     }
@@ -10290,7 +9467,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -10301,7 +9477,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "item_capture_mult" field.</summary>
     public const int ItemCaptureMultFieldNumber = 2;
     private double itemCaptureMult_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double ItemCaptureMult {
       get { return itemCaptureMult_; }
       set {
@@ -10312,7 +9487,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "item_flee_mult" field.</summary>
     public const int ItemFleeMultFieldNumber = 3;
     private double itemFleeMult_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double ItemFleeMult {
       get { return itemFleeMult_; }
       set {
@@ -10323,7 +9497,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "stop_movement" field.</summary>
     public const int StopMovementFieldNumber = 4;
     private bool stopMovement_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool StopMovement {
       get { return stopMovement_; }
       set {
@@ -10334,7 +9507,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "stop_attack" field.</summary>
     public const int StopAttackFieldNumber = 5;
     private bool stopAttack_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool StopAttack {
       get { return stopAttack_; }
       set {
@@ -10345,7 +9517,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "target_max" field.</summary>
     public const int TargetMaxFieldNumber = 6;
     private bool targetMax_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool TargetMax {
       get { return targetMax_; }
       set {
@@ -10356,7 +9527,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "target_slow" field.</summary>
     public const int TargetSlowFieldNumber = 7;
     private bool targetSlow_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool TargetSlow {
       get { return targetSlow_; }
       set {
@@ -10364,12 +9534,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemCaptureResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemCaptureResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10387,7 +9555,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
@@ -10400,12 +9567,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -10437,7 +9602,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -10464,7 +9628,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemCaptureResponse other) {
       if (other == null) {
         return;
@@ -10492,7 +9655,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10534,35 +9696,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemEggIncubatorResponse : pb::IMessage<UseItemEggIncubatorResponse> {
     private static readonly pb::MessageParser<UseItemEggIncubatorResponse> _parser = new pb::MessageParser<UseItemEggIncubatorResponse>(() => new UseItemEggIncubatorResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemEggIncubatorResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[50]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemEggIncubatorResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemEggIncubatorResponse(UseItemEggIncubatorResponse other) : this() {
       result_ = other.result_;
       EggIncubator = other.eggIncubator_ != null ? other.EggIncubator.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemEggIncubatorResponse Clone() {
       return new UseItemEggIncubatorResponse(this);
     }
@@ -10570,7 +9727,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UseItemEggIncubatorResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UseItemEggIncubatorResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -10581,7 +9737,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "egg_incubator" field.</summary>
     public const int EggIncubatorFieldNumber = 2;
     private global::POGOProtos.Inventory.EggIncubator eggIncubator_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.EggIncubator EggIncubator {
       get { return eggIncubator_; }
       set {
@@ -10589,12 +9744,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemEggIncubatorResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemEggIncubatorResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10607,7 +9760,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -10615,12 +9767,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -10632,7 +9782,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -10644,7 +9793,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemEggIncubatorResponse other) {
       if (other == null) {
         return;
@@ -10660,7 +9808,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10685,7 +9832,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UseItemEggIncubatorResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -10703,35 +9850,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemGymResponse : pb::IMessage<UseItemGymResponse> {
     private static readonly pb::MessageParser<UseItemGymResponse> _parser = new pb::MessageParser<UseItemGymResponse>(() => new UseItemGymResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemGymResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[51]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemGymResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemGymResponse(UseItemGymResponse other) : this() {
       result_ = other.result_;
       updatedGp_ = other.updatedGp_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemGymResponse Clone() {
       return new UseItemGymResponse(this);
     }
@@ -10739,7 +9881,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UseItemGymResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UseItemGymResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -10753,7 +9894,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>
     ///  Gym Points (?)
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long UpdatedGp {
       get { return updatedGp_; }
       set {
@@ -10761,12 +9901,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemGymResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemGymResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10779,7 +9917,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -10787,12 +9924,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -10804,7 +9939,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -10816,7 +9950,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemGymResponse other) {
       if (other == null) {
         return;
@@ -10829,7 +9962,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -10851,7 +9983,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UseItemGymResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -10865,35 +9997,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemPotionResponse : pb::IMessage<UseItemPotionResponse> {
     private static readonly pb::MessageParser<UseItemPotionResponse> _parser = new pb::MessageParser<UseItemPotionResponse>(() => new UseItemPotionResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemPotionResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[52]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemPotionResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemPotionResponse(UseItemPotionResponse other) : this() {
       result_ = other.result_;
       stamina_ = other.stamina_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemPotionResponse Clone() {
       return new UseItemPotionResponse(this);
     }
@@ -10901,7 +10028,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UseItemPotionResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UseItemPotionResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -10912,7 +10038,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "stamina" field.</summary>
     public const int StaminaFieldNumber = 2;
     private int stamina_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Stamina {
       get { return stamina_; }
       set {
@@ -10920,12 +10045,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemPotionResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemPotionResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -10938,7 +10061,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -10946,12 +10068,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -10963,7 +10083,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -10975,7 +10094,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemPotionResponse other) {
       if (other == null) {
         return;
@@ -10988,7 +10106,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -11010,7 +10127,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UseItemPotionResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -11025,35 +10142,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemReviveResponse : pb::IMessage<UseItemReviveResponse> {
     private static readonly pb::MessageParser<UseItemReviveResponse> _parser = new pb::MessageParser<UseItemReviveResponse>(() => new UseItemReviveResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemReviveResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[53]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemReviveResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemReviveResponse(UseItemReviveResponse other) : this() {
       result_ = other.result_;
       stamina_ = other.stamina_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemReviveResponse Clone() {
       return new UseItemReviveResponse(this);
     }
@@ -11061,7 +10173,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UseItemReviveResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UseItemReviveResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -11072,7 +10183,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "stamina" field.</summary>
     public const int StaminaFieldNumber = 2;
     private int stamina_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Stamina {
       get { return stamina_; }
       set {
@@ -11080,12 +10190,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemReviveResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemReviveResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -11098,7 +10206,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -11106,12 +10213,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -11123,7 +10228,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -11135,7 +10239,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemReviveResponse other) {
       if (other == null) {
         return;
@@ -11148,7 +10251,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -11170,7 +10272,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UseItemReviveResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -11185,35 +10287,30 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemXpBoostResponse : pb::IMessage<UseItemXpBoostResponse> {
     private static readonly pb::MessageParser<UseItemXpBoostResponse> _parser = new pb::MessageParser<UseItemXpBoostResponse>(() => new UseItemXpBoostResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemXpBoostResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[54]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemXpBoostResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemXpBoostResponse(UseItemXpBoostResponse other) : this() {
       result_ = other.result_;
       AppliedItems = other.appliedItems_ != null ? other.AppliedItems.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemXpBoostResponse Clone() {
       return new UseItemXpBoostResponse(this);
     }
@@ -11221,7 +10318,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::POGOProtos.Networking.Responses.UseItemXpBoostResponse.Types.Result result_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Responses.UseItemXpBoostResponse.Types.Result Result {
       get { return result_; }
       set {
@@ -11232,7 +10328,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "applied_items" field.</summary>
     public const int AppliedItemsFieldNumber = 2;
     private global::POGOProtos.Inventory.AppliedItems appliedItems_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.AppliedItems AppliedItems {
       get { return appliedItems_; }
       set {
@@ -11240,12 +10335,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemXpBoostResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemXpBoostResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -11258,7 +10351,6 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -11266,12 +10358,10 @@ namespace POGOProtos.Networking.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -11283,7 +10373,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -11295,7 +10384,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemXpBoostResponse other) {
       if (other == null) {
         return;
@@ -11311,7 +10399,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -11336,7 +10423,7 @@ namespace POGOProtos.Networking.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UseItemXpBoostResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Result {
         [pbr::OriginalName("UNSET")] Unset = 0,
@@ -11352,34 +10439,29 @@ namespace POGOProtos.Networking.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class VerifyChallengeResponse : pb::IMessage<VerifyChallengeResponse> {
     private static readonly pb::MessageParser<VerifyChallengeResponse> _parser = new pb::MessageParser<VerifyChallengeResponse>(() => new VerifyChallengeResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<VerifyChallengeResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Responses.POGOProtosNetworkingResponsesReflection.Descriptor.MessageTypes[55]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public VerifyChallengeResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public VerifyChallengeResponse(VerifyChallengeResponse other) : this() {
       success_ = other.success_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public VerifyChallengeResponse Clone() {
       return new VerifyChallengeResponse(this);
     }
@@ -11387,7 +10469,6 @@ namespace POGOProtos.Networking.Responses {
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
     private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Success {
       get { return success_; }
       set {
@@ -11395,12 +10476,10 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as VerifyChallengeResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(VerifyChallengeResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -11412,19 +10491,16 @@ namespace POGOProtos.Networking.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Success != false) {
         output.WriteRawTag(8);
@@ -11432,7 +10508,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Success != false) {
@@ -11441,7 +10516,6 @@ namespace POGOProtos.Networking.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(VerifyChallengeResponse other) {
       if (other == null) {
         return;
@@ -11451,7 +10525,6 @@ namespace POGOProtos.Networking.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

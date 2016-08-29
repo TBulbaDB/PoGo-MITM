@@ -13,6 +13,7 @@ using PoGoMITM.Base.Models;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Requests;
 using POGOProtos.Networking.Requests.Messages;
+using POGOProtos.Networking.Responses;
 using Titanium.Web.Proxy;
 using Titanium.Web.Proxy.Exceptions;
 using Titanium.Web.Proxy.Models;
@@ -100,19 +101,22 @@ namespace PoGoMITM.Base
                 catch (BodyNotFoundException)
                 {
                 }
-                //var codedRequest = new CodedInputStream(context.RequestBody);
-                //var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
-                //for (int i = 0; i < requestEnvelope.Requests.Count; i++)
+                //if (e.WebSession.Request.RequestUri.Host == "pgorelease.nianticlabs.com")
                 //{
-                //    var request = requestEnvelope.Requests[i];
-                //    if (request.RequestType == RequestType.CheckChallenge)
+                //    var codedRequest = new CodedInputStream(context.RequestBody);
+                //    var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
+                //    for (int i = 0; i < requestEnvelope.Requests.Count; i++)
                 //    {
-                //        var message = CheckChallengeMessage.Parser.ParseFrom(request.RequestMessage);
-                //        message.DebugRequest = true;
-                //        request.RequestMessage = message.ToByteString();
-                //        var newEnvelope = PrepareRequestEnvelope(requestEnvelope);
-                //        context.RequestBody = await newEnvelope.ReadAsByteArrayAsync();
-                //        await e.SetRequestBody(context.RequestBody);
+                //        var request = requestEnvelope.Requests[i];
+                //        if (request.RequestType == RequestType.CheckChallenge)
+                //        {
+                //            var message = CheckChallengeMessage.Parser.ParseFrom(request.RequestMessage);
+                //            message.DebugRequest = true;
+                //            request.RequestMessage = message.ToByteString();
+                //            var newEnvelope = PrepareRequestEnvelope(requestEnvelope);
+                //            context.RequestBody = await newEnvelope.ReadAsByteArrayAsync();
+                //            await e.SetRequestBody(context.RequestBody);
+                //        }
                 //    }
                 //}
                 OnRequestSent(context);
@@ -127,6 +131,15 @@ namespace PoGoMITM.Base
         private ByteArrayContent PrepareRequestEnvelope(RequestEnvelope requestEnvelope)
         {
             var messageBytes = requestEnvelope.ToByteArray();
+
+            // TODO: Compression?
+
+            return new ByteArrayContent(messageBytes);
+        }
+
+        private ByteArrayContent PrepareResponseEnvelope(ResponseEnvelope responseEnvelope)
+        {
+            var messageBytes = responseEnvelope.ToByteArray();
 
             // TODO: Compression?
 
@@ -164,6 +177,28 @@ namespace PoGoMITM.Base
                 {
                 }
 
+                //if (e.WebSession.Request.RequestUri.Host == "pgorelease.nianticlabs.com")
+                //{
+                //    var codedRequest = new CodedInputStream(context.RequestBody);
+                //    var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
+                //    var codedResponse = new CodedInputStream(context.ResponseBody);
+                //    var responseEnvelope = ResponseEnvelope.Parser.ParseFrom(codedResponse);
+                //    for (int i = 0; i < responseEnvelope.Returns.Count; i++)
+                //    {
+                //        var request = requestEnvelope.Requests[i];
+                //        var response = responseEnvelope.Returns[i];
+                //        if (request.RequestType == RequestType.CheckChallenge)
+                //        {
+                //            var message = CheckChallengeResponse.Parser.ParseFrom(response.ToByteArray());
+                //            message.ShowChallenge = true;
+                //            message.ChallengeUrl = "http://www.google.com";
+                //            response = message.ToByteString();
+                //            var newEnvelope = PrepareResponseEnvelope(responseEnvelope);
+                //            context.RequestBody = await newEnvelope.ReadAsByteArrayAsync();
+                //            await e.SetResponseBody(context.RequestBody);
+                //        }
+                //    }
+                //}
 
                 _contexts.Remove(context.Guid.ToString());
 

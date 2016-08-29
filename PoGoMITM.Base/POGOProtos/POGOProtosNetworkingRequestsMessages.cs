@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Networking.Requests.Messages {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Networking.Requests.Messages.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosNetworkingRequestsMessagesReflection {
 
     #region Descriptor
@@ -198,29 +199,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class AddFortModifierMessage : pb::IMessage<AddFortModifierMessage> {
     private static readonly pb::MessageParser<AddFortModifierMessage> _parser = new pb::MessageParser<AddFortModifierMessage>(() => new AddFortModifierMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<AddFortModifierMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AddFortModifierMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AddFortModifierMessage(AddFortModifierMessage other) : this() {
       modifierType_ = other.modifierType_;
       fortId_ = other.fortId_;
@@ -228,7 +225,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AddFortModifierMessage Clone() {
       return new AddFortModifierMessage(this);
     }
@@ -236,7 +232,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "modifier_type" field.</summary>
     public const int ModifierTypeFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId modifierType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ModifierType {
       get { return modifierType_; }
       set {
@@ -247,7 +242,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 2;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -258,7 +252,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 3;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -269,7 +262,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 4;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -277,12 +269,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AddFortModifierMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(AddFortModifierMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -297,7 +287,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ModifierType != 0) hash ^= ModifierType.GetHashCode();
@@ -307,12 +296,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ModifierType != 0) {
         output.WriteRawTag(8);
@@ -332,7 +319,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ModifierType != 0) {
@@ -350,7 +336,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(AddFortModifierMessage other) {
       if (other == null) {
         return;
@@ -369,7 +354,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -399,29 +383,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class AttackGymMessage : pb::IMessage<AttackGymMessage> {
     private static readonly pb::MessageParser<AttackGymMessage> _parser = new pb::MessageParser<AttackGymMessage>(() => new AttackGymMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<AttackGymMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[1]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AttackGymMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AttackGymMessage(AttackGymMessage other) : this() {
       gymId_ = other.gymId_;
       battleId_ = other.battleId_;
@@ -431,7 +411,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AttackGymMessage Clone() {
       return new AttackGymMessage(this);
     }
@@ -439,7 +418,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "gym_id" field.</summary>
     public const int GymIdFieldNumber = 1;
     private string gymId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GymId {
       get { return gymId_; }
       set {
@@ -450,7 +428,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "battle_id" field.</summary>
     public const int BattleIdFieldNumber = 2;
     private string battleId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BattleId {
       get { return battleId_; }
       set {
@@ -463,7 +440,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     private static readonly pb::FieldCodec<global::POGOProtos.Data.Battle.BattleAction> _repeated_attackActions_codec
         = pb::FieldCodec.ForMessage(26, global::POGOProtos.Data.Battle.BattleAction.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleAction> attackActions_ = new pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleAction>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Battle.BattleAction> AttackActions {
       get { return attackActions_; }
     }
@@ -471,7 +447,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "last_retrieved_actions" field.</summary>
     public const int LastRetrievedActionsFieldNumber = 4;
     private global::POGOProtos.Data.Battle.BattleAction lastRetrievedActions_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Battle.BattleAction LastRetrievedActions {
       get { return lastRetrievedActions_; }
       set {
@@ -482,7 +457,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 5;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -493,7 +467,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 6;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -501,12 +474,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AttackGymMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(AttackGymMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -523,7 +494,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (GymId.Length != 0) hash ^= GymId.GetHashCode();
@@ -535,12 +505,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (GymId.Length != 0) {
         output.WriteRawTag(10);
@@ -565,7 +533,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (GymId.Length != 0) {
@@ -587,7 +554,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(AttackGymMessage other) {
       if (other == null) {
         return;
@@ -613,7 +579,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -654,29 +619,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CatchPokemonMessage : pb::IMessage<CatchPokemonMessage> {
     private static readonly pb::MessageParser<CatchPokemonMessage> _parser = new pb::MessageParser<CatchPokemonMessage>(() => new CatchPokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CatchPokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[2]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CatchPokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CatchPokemonMessage(CatchPokemonMessage other) : this() {
       encounterId_ = other.encounterId_;
       pokeball_ = other.pokeball_;
@@ -687,7 +648,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       normalizedHitPosition_ = other.normalizedHitPosition_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CatchPokemonMessage Clone() {
       return new CatchPokemonMessage(this);
     }
@@ -695,7 +655,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 1;
     private ulong encounterId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -706,7 +665,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokeball" field.</summary>
     public const int PokeballFieldNumber = 2;
     private global::POGOProtos.Inventory.Item.ItemId pokeball_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId Pokeball {
       get { return pokeball_; }
       set {
@@ -717,7 +675,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "normalized_reticle_size" field.</summary>
     public const int NormalizedReticleSizeFieldNumber = 3;
     private double normalizedReticleSize_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double NormalizedReticleSize {
       get { return normalizedReticleSize_; }
       set {
@@ -728,7 +685,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "spawn_point_id" field.</summary>
     public const int SpawnPointIdFieldNumber = 4;
     private string spawnPointId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SpawnPointId {
       get { return spawnPointId_; }
       set {
@@ -739,7 +695,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "hit_pokemon" field.</summary>
     public const int HitPokemonFieldNumber = 5;
     private bool hitPokemon_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HitPokemon {
       get { return hitPokemon_; }
       set {
@@ -750,7 +705,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "spin_modifier" field.</summary>
     public const int SpinModifierFieldNumber = 6;
     private double spinModifier_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double SpinModifier {
       get { return spinModifier_; }
       set {
@@ -761,7 +715,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "normalized_hit_position" field.</summary>
     public const int NormalizedHitPositionFieldNumber = 7;
     private double normalizedHitPosition_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double NormalizedHitPosition {
       get { return normalizedHitPosition_; }
       set {
@@ -769,12 +722,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CatchPokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CatchPokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -792,7 +743,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (EncounterId != 0UL) hash ^= EncounterId.GetHashCode();
@@ -805,12 +755,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncounterId != 0UL) {
         output.WriteRawTag(9);
@@ -842,7 +790,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (EncounterId != 0UL) {
@@ -869,7 +816,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CatchPokemonMessage other) {
       if (other == null) {
         return;
@@ -897,7 +843,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -942,43 +887,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CheckAwardedBadgesMessage : pb::IMessage<CheckAwardedBadgesMessage> {
     private static readonly pb::MessageParser<CheckAwardedBadgesMessage> _parser = new pb::MessageParser<CheckAwardedBadgesMessage>(() => new CheckAwardedBadgesMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CheckAwardedBadgesMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[3]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckAwardedBadgesMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckAwardedBadgesMessage(CheckAwardedBadgesMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckAwardedBadgesMessage Clone() {
       return new CheckAwardedBadgesMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckAwardedBadgesMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CheckAwardedBadgesMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -989,35 +927,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CheckAwardedBadgesMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1031,34 +963,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CheckChallengeMessage : pb::IMessage<CheckChallengeMessage> {
     private static readonly pb::MessageParser<CheckChallengeMessage> _parser = new pb::MessageParser<CheckChallengeMessage>(() => new CheckChallengeMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CheckChallengeMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[4]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckChallengeMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckChallengeMessage(CheckChallengeMessage other) : this() {
       debugRequest_ = other.debugRequest_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckChallengeMessage Clone() {
       return new CheckChallengeMessage(this);
     }
@@ -1066,7 +993,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "debug_request" field.</summary>
     public const int DebugRequestFieldNumber = 1;
     private bool debugRequest_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool DebugRequest {
       get { return debugRequest_; }
       set {
@@ -1074,12 +1000,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckChallengeMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CheckChallengeMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1091,19 +1015,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (DebugRequest != false) hash ^= DebugRequest.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (DebugRequest != false) {
         output.WriteRawTag(8);
@@ -1111,7 +1032,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (DebugRequest != false) {
@@ -1120,7 +1040,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CheckChallengeMessage other) {
       if (other == null) {
         return;
@@ -1130,7 +1049,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1148,34 +1066,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CheckCodenameAvailableMessage : pb::IMessage<CheckCodenameAvailableMessage> {
     private static readonly pb::MessageParser<CheckCodenameAvailableMessage> _parser = new pb::MessageParser<CheckCodenameAvailableMessage>(() => new CheckCodenameAvailableMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CheckCodenameAvailableMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[5]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckCodenameAvailableMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckCodenameAvailableMessage(CheckCodenameAvailableMessage other) : this() {
       codename_ = other.codename_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckCodenameAvailableMessage Clone() {
       return new CheckCodenameAvailableMessage(this);
     }
@@ -1183,7 +1096,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "codename" field.</summary>
     public const int CodenameFieldNumber = 1;
     private string codename_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Codename {
       get { return codename_; }
       set {
@@ -1191,12 +1103,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckCodenameAvailableMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CheckCodenameAvailableMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1208,19 +1118,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Codename.Length != 0) hash ^= Codename.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Codename.Length != 0) {
         output.WriteRawTag(10);
@@ -1228,7 +1135,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Codename.Length != 0) {
@@ -1237,7 +1143,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CheckCodenameAvailableMessage other) {
       if (other == null) {
         return;
@@ -1247,7 +1152,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1265,34 +1169,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class ClaimCodenameMessage : pb::IMessage<ClaimCodenameMessage> {
     private static readonly pb::MessageParser<ClaimCodenameMessage> _parser = new pb::MessageParser<ClaimCodenameMessage>(() => new ClaimCodenameMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<ClaimCodenameMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[6]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClaimCodenameMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClaimCodenameMessage(ClaimCodenameMessage other) : this() {
       codename_ = other.codename_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ClaimCodenameMessage Clone() {
       return new ClaimCodenameMessage(this);
     }
@@ -1300,7 +1199,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "codename" field.</summary>
     public const int CodenameFieldNumber = 1;
     private string codename_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Codename {
       get { return codename_; }
       set {
@@ -1308,12 +1206,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ClaimCodenameMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(ClaimCodenameMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1325,19 +1221,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Codename.Length != 0) hash ^= Codename.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Codename.Length != 0) {
         output.WriteRawTag(10);
@@ -1345,7 +1238,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Codename.Length != 0) {
@@ -1354,7 +1246,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(ClaimCodenameMessage other) {
       if (other == null) {
         return;
@@ -1364,7 +1255,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1385,43 +1275,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CollectDailyBonusMessage : pb::IMessage<CollectDailyBonusMessage> {
     private static readonly pb::MessageParser<CollectDailyBonusMessage> _parser = new pb::MessageParser<CollectDailyBonusMessage>(() => new CollectDailyBonusMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CollectDailyBonusMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[7]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyBonusMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyBonusMessage(CollectDailyBonusMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyBonusMessage Clone() {
       return new CollectDailyBonusMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CollectDailyBonusMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CollectDailyBonusMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1432,35 +1315,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CollectDailyBonusMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1477,43 +1354,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CollectDailyDefenderBonusMessage : pb::IMessage<CollectDailyDefenderBonusMessage> {
     private static readonly pb::MessageParser<CollectDailyDefenderBonusMessage> _parser = new pb::MessageParser<CollectDailyDefenderBonusMessage>(() => new CollectDailyDefenderBonusMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CollectDailyDefenderBonusMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[8]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyDefenderBonusMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyDefenderBonusMessage(CollectDailyDefenderBonusMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CollectDailyDefenderBonusMessage Clone() {
       return new CollectDailyDefenderBonusMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CollectDailyDefenderBonusMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CollectDailyDefenderBonusMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1524,35 +1394,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CollectDailyDefenderBonusMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1566,29 +1430,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DiskEncounterMessage : pb::IMessage<DiskEncounterMessage> {
     private static readonly pb::MessageParser<DiskEncounterMessage> _parser = new pb::MessageParser<DiskEncounterMessage>(() => new DiskEncounterMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DiskEncounterMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[9]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DiskEncounterMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DiskEncounterMessage(DiskEncounterMessage other) : this() {
       encounterId_ = other.encounterId_;
       fortId_ = other.fortId_;
@@ -1596,7 +1456,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DiskEncounterMessage Clone() {
       return new DiskEncounterMessage(this);
     }
@@ -1604,7 +1463,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 1;
     private ulong encounterId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -1615,7 +1473,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 2;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -1626,7 +1483,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 3;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -1637,7 +1493,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 4;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -1645,12 +1500,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DiskEncounterMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DiskEncounterMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1665,7 +1518,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (EncounterId != 0UL) hash ^= EncounterId.GetHashCode();
@@ -1675,12 +1527,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncounterId != 0UL) {
         output.WriteRawTag(8);
@@ -1700,7 +1550,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (EncounterId != 0UL) {
@@ -1718,7 +1567,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DiskEncounterMessage other) {
       if (other == null) {
         return;
@@ -1737,7 +1585,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1770,43 +1617,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadItemTemplatesMessage : pb::IMessage<DownloadItemTemplatesMessage> {
     private static readonly pb::MessageParser<DownloadItemTemplatesMessage> _parser = new pb::MessageParser<DownloadItemTemplatesMessage>(() => new DownloadItemTemplatesMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadItemTemplatesMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[10]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadItemTemplatesMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadItemTemplatesMessage(DownloadItemTemplatesMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadItemTemplatesMessage Clone() {
       return new DownloadItemTemplatesMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadItemTemplatesMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadItemTemplatesMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1817,35 +1657,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadItemTemplatesMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1859,29 +1693,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadRemoteConfigVersionMessage : pb::IMessage<DownloadRemoteConfigVersionMessage> {
     private static readonly pb::MessageParser<DownloadRemoteConfigVersionMessage> _parser = new pb::MessageParser<DownloadRemoteConfigVersionMessage>(() => new DownloadRemoteConfigVersionMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadRemoteConfigVersionMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[11]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadRemoteConfigVersionMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadRemoteConfigVersionMessage(DownloadRemoteConfigVersionMessage other) : this() {
       platform_ = other.platform_;
       deviceManufacturer_ = other.deviceManufacturer_;
@@ -1890,7 +1720,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       appVersion_ = other.appVersion_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadRemoteConfigVersionMessage Clone() {
       return new DownloadRemoteConfigVersionMessage(this);
     }
@@ -1898,7 +1727,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 1;
     private global::POGOProtos.Enums.Platform platform_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.Platform Platform {
       get { return platform_; }
       set {
@@ -1909,7 +1737,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "device_manufacturer" field.</summary>
     public const int DeviceManufacturerFieldNumber = 2;
     private string deviceManufacturer_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DeviceManufacturer {
       get { return deviceManufacturer_; }
       set {
@@ -1920,7 +1747,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "device_model" field.</summary>
     public const int DeviceModelFieldNumber = 3;
     private string deviceModel_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DeviceModel {
       get { return deviceModel_; }
       set {
@@ -1931,7 +1757,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "locale" field.</summary>
     public const int LocaleFieldNumber = 4;
     private string locale_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Locale {
       get { return locale_; }
       set {
@@ -1942,7 +1767,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "app_version" field.</summary>
     public const int AppVersionFieldNumber = 5;
     private uint appVersion_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint AppVersion {
       get { return appVersion_; }
       set {
@@ -1950,12 +1774,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadRemoteConfigVersionMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadRemoteConfigVersionMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1971,7 +1793,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Platform != 0) hash ^= Platform.GetHashCode();
@@ -1982,12 +1803,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Platform != 0) {
         output.WriteRawTag(8);
@@ -2011,7 +1830,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Platform != 0) {
@@ -2032,7 +1850,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadRemoteConfigVersionMessage other) {
       if (other == null) {
         return;
@@ -2054,7 +1871,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2088,34 +1904,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class DownloadSettingsMessage : pb::IMessage<DownloadSettingsMessage> {
     private static readonly pb::MessageParser<DownloadSettingsMessage> _parser = new pb::MessageParser<DownloadSettingsMessage>(() => new DownloadSettingsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DownloadSettingsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[12]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsMessage(DownloadSettingsMessage other) : this() {
       hash_ = other.hash_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DownloadSettingsMessage Clone() {
       return new DownloadSettingsMessage(this);
     }
@@ -2123,7 +1934,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "hash" field.</summary>
     public const int HashFieldNumber = 1;
     private string hash_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Hash {
       get { return hash_; }
       set {
@@ -2131,12 +1941,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DownloadSettingsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DownloadSettingsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2148,19 +1956,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Hash.Length != 0) hash ^= Hash.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Hash.Length != 0) {
         output.WriteRawTag(10);
@@ -2168,7 +1973,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Hash.Length != 0) {
@@ -2177,7 +1981,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DownloadSettingsMessage other) {
       if (other == null) {
         return;
@@ -2187,7 +1990,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2208,43 +2010,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EchoMessage : pb::IMessage<EchoMessage> {
     private static readonly pb::MessageParser<EchoMessage> _parser = new pb::MessageParser<EchoMessage>(() => new EchoMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EchoMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[13]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EchoMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EchoMessage(EchoMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EchoMessage Clone() {
       return new EchoMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EchoMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EchoMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2255,35 +2050,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EchoMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2297,29 +2086,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EncounterMessage : pb::IMessage<EncounterMessage> {
     private static readonly pb::MessageParser<EncounterMessage> _parser = new pb::MessageParser<EncounterMessage>(() => new EncounterMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EncounterMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[14]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterMessage(EncounterMessage other) : this() {
       encounterId_ = other.encounterId_;
       spawnPointId_ = other.spawnPointId_;
@@ -2327,7 +2112,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterMessage Clone() {
       return new EncounterMessage(this);
     }
@@ -2335,7 +2119,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 1;
     private ulong encounterId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -2346,7 +2129,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "spawn_point_id" field.</summary>
     public const int SpawnPointIdFieldNumber = 2;
     private string spawnPointId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SpawnPointId {
       get { return spawnPointId_; }
       set {
@@ -2357,7 +2139,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 3;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -2368,7 +2149,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 4;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -2376,12 +2156,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EncounterMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EncounterMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2396,7 +2174,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (EncounterId != 0UL) hash ^= EncounterId.GetHashCode();
@@ -2406,12 +2183,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncounterId != 0UL) {
         output.WriteRawTag(9);
@@ -2431,7 +2206,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (EncounterId != 0UL) {
@@ -2449,7 +2223,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EncounterMessage other) {
       if (other == null) {
         return;
@@ -2468,7 +2241,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2498,34 +2270,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EncounterTutorialCompleteMessage : pb::IMessage<EncounterTutorialCompleteMessage> {
     private static readonly pb::MessageParser<EncounterTutorialCompleteMessage> _parser = new pb::MessageParser<EncounterTutorialCompleteMessage>(() => new EncounterTutorialCompleteMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EncounterTutorialCompleteMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[15]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterTutorialCompleteMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterTutorialCompleteMessage(EncounterTutorialCompleteMessage other) : this() {
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EncounterTutorialCompleteMessage Clone() {
       return new EncounterTutorialCompleteMessage(this);
     }
@@ -2533,7 +2300,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private global::POGOProtos.Enums.PokemonId pokemonId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonId PokemonId {
       get { return pokemonId_; }
       set {
@@ -2541,12 +2307,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EncounterTutorialCompleteMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EncounterTutorialCompleteMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2558,19 +2322,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0) hash ^= PokemonId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0) {
         output.WriteRawTag(8);
@@ -2578,7 +2339,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0) {
@@ -2587,7 +2347,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EncounterTutorialCompleteMessage other) {
       if (other == null) {
         return;
@@ -2597,7 +2356,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2615,34 +2373,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EquipBadgeMessage : pb::IMessage<EquipBadgeMessage> {
     private static readonly pb::MessageParser<EquipBadgeMessage> _parser = new pb::MessageParser<EquipBadgeMessage>(() => new EquipBadgeMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EquipBadgeMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[16]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EquipBadgeMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EquipBadgeMessage(EquipBadgeMessage other) : this() {
       badgeType_ = other.badgeType_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EquipBadgeMessage Clone() {
       return new EquipBadgeMessage(this);
     }
@@ -2650,7 +2403,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "badge_type" field.</summary>
     public const int BadgeTypeFieldNumber = 1;
     private global::POGOProtos.Enums.BadgeType badgeType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.BadgeType BadgeType {
       get { return badgeType_; }
       set {
@@ -2658,12 +2410,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EquipBadgeMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EquipBadgeMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2675,19 +2425,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (BadgeType != 0) hash ^= BadgeType.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (BadgeType != 0) {
         output.WriteRawTag(8);
@@ -2695,7 +2442,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (BadgeType != 0) {
@@ -2704,7 +2450,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EquipBadgeMessage other) {
       if (other == null) {
         return;
@@ -2714,7 +2459,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2732,34 +2476,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EvolvePokemonMessage : pb::IMessage<EvolvePokemonMessage> {
     private static readonly pb::MessageParser<EvolvePokemonMessage> _parser = new pb::MessageParser<EvolvePokemonMessage>(() => new EvolvePokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EvolvePokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[17]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EvolvePokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EvolvePokemonMessage(EvolvePokemonMessage other) : this() {
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EvolvePokemonMessage Clone() {
       return new EvolvePokemonMessage(this);
     }
@@ -2767,7 +2506,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -2775,12 +2513,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EvolvePokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EvolvePokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2792,19 +2528,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0UL) hash ^= PokemonId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0UL) {
         output.WriteRawTag(9);
@@ -2812,7 +2545,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0UL) {
@@ -2821,7 +2553,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EvolvePokemonMessage other) {
       if (other == null) {
         return;
@@ -2831,7 +2562,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2849,29 +2579,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortDeployPokemonMessage : pb::IMessage<FortDeployPokemonMessage> {
     private static readonly pb::MessageParser<FortDeployPokemonMessage> _parser = new pb::MessageParser<FortDeployPokemonMessage>(() => new FortDeployPokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortDeployPokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[18]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDeployPokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDeployPokemonMessage(FortDeployPokemonMessage other) : this() {
       fortId_ = other.fortId_;
       pokemonId_ = other.pokemonId_;
@@ -2879,7 +2605,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDeployPokemonMessage Clone() {
       return new FortDeployPokemonMessage(this);
     }
@@ -2887,7 +2612,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 1;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -2898,7 +2622,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 2;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -2909,7 +2632,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 3;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -2920,7 +2642,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 4;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -2928,12 +2649,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortDeployPokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortDeployPokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2948,7 +2667,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortId.Length != 0) hash ^= FortId.GetHashCode();
@@ -2958,12 +2676,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortId.Length != 0) {
         output.WriteRawTag(10);
@@ -2983,7 +2699,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortId.Length != 0) {
@@ -3001,7 +2716,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortDeployPokemonMessage other) {
       if (other == null) {
         return;
@@ -3020,7 +2734,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3050,36 +2763,31 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortDetailsMessage : pb::IMessage<FortDetailsMessage> {
     private static readonly pb::MessageParser<FortDetailsMessage> _parser = new pb::MessageParser<FortDetailsMessage>(() => new FortDetailsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortDetailsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[19]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDetailsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDetailsMessage(FortDetailsMessage other) : this() {
       fortId_ = other.fortId_;
       latitude_ = other.latitude_;
       longitude_ = other.longitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortDetailsMessage Clone() {
       return new FortDetailsMessage(this);
     }
@@ -3087,7 +2795,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 1;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -3098,7 +2805,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 2;
     private double latitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -3109,7 +2815,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 3;
     private double longitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -3117,12 +2822,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortDetailsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortDetailsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3136,7 +2839,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortId.Length != 0) hash ^= FortId.GetHashCode();
@@ -3145,12 +2847,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortId.Length != 0) {
         output.WriteRawTag(10);
@@ -3166,7 +2866,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortId.Length != 0) {
@@ -3181,7 +2880,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortDetailsMessage other) {
       if (other == null) {
         return;
@@ -3197,7 +2895,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3223,29 +2920,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortRecallPokemonMessage : pb::IMessage<FortRecallPokemonMessage> {
     private static readonly pb::MessageParser<FortRecallPokemonMessage> _parser = new pb::MessageParser<FortRecallPokemonMessage>(() => new FortRecallPokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortRecallPokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[20]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortRecallPokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortRecallPokemonMessage(FortRecallPokemonMessage other) : this() {
       fortId_ = other.fortId_;
       pokemonId_ = other.pokemonId_;
@@ -3253,7 +2946,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortRecallPokemonMessage Clone() {
       return new FortRecallPokemonMessage(this);
     }
@@ -3261,7 +2953,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 1;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -3272,7 +2963,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 2;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -3283,7 +2973,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 3;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -3294,7 +2983,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 4;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -3302,12 +2990,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortRecallPokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortRecallPokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3322,7 +3008,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortId.Length != 0) hash ^= FortId.GetHashCode();
@@ -3332,12 +3017,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortId.Length != 0) {
         output.WriteRawTag(10);
@@ -3357,7 +3040,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortId.Length != 0) {
@@ -3375,7 +3057,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortRecallPokemonMessage other) {
       if (other == null) {
         return;
@@ -3394,7 +3075,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3424,29 +3104,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class FortSearchMessage : pb::IMessage<FortSearchMessage> {
     private static readonly pb::MessageParser<FortSearchMessage> _parser = new pb::MessageParser<FortSearchMessage>(() => new FortSearchMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FortSearchMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[21]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSearchMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSearchMessage(FortSearchMessage other) : this() {
       fortId_ = other.fortId_;
       playerLatitude_ = other.playerLatitude_;
@@ -3455,7 +3131,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       fortLongitude_ = other.fortLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FortSearchMessage Clone() {
       return new FortSearchMessage(this);
     }
@@ -3463,7 +3138,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_id" field.</summary>
     public const int FortIdFieldNumber = 1;
     private string fortId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FortId {
       get { return fortId_; }
       set {
@@ -3474,7 +3148,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 2;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -3485,7 +3158,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 3;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -3496,7 +3168,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_latitude" field.</summary>
     public const int FortLatitudeFieldNumber = 4;
     private double fortLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double FortLatitude {
       get { return fortLatitude_; }
       set {
@@ -3507,7 +3178,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "fort_longitude" field.</summary>
     public const int FortLongitudeFieldNumber = 5;
     private double fortLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double FortLongitude {
       get { return fortLongitude_; }
       set {
@@ -3515,12 +3185,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FortSearchMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FortSearchMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3536,7 +3204,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FortId.Length != 0) hash ^= FortId.GetHashCode();
@@ -3547,12 +3214,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FortId.Length != 0) {
         output.WriteRawTag(10);
@@ -3576,7 +3241,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FortId.Length != 0) {
@@ -3597,7 +3261,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FortSearchMessage other) {
       if (other == null) {
         return;
@@ -3619,7 +3282,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3653,29 +3315,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetAssetDigestMessage : pb::IMessage<GetAssetDigestMessage> {
     private static readonly pb::MessageParser<GetAssetDigestMessage> _parser = new pb::MessageParser<GetAssetDigestMessage>(() => new GetAssetDigestMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetAssetDigestMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[22]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetAssetDigestMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetAssetDigestMessage(GetAssetDigestMessage other) : this() {
       platform_ = other.platform_;
       deviceManufacturer_ = other.deviceManufacturer_;
@@ -3684,7 +3342,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       appVersion_ = other.appVersion_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetAssetDigestMessage Clone() {
       return new GetAssetDigestMessage(this);
     }
@@ -3692,7 +3349,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 1;
     private global::POGOProtos.Enums.Platform platform_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.Platform Platform {
       get { return platform_; }
       set {
@@ -3703,7 +3359,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "device_manufacturer" field.</summary>
     public const int DeviceManufacturerFieldNumber = 2;
     private string deviceManufacturer_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DeviceManufacturer {
       get { return deviceManufacturer_; }
       set {
@@ -3714,7 +3369,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "device_model" field.</summary>
     public const int DeviceModelFieldNumber = 3;
     private string deviceModel_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DeviceModel {
       get { return deviceModel_; }
       set {
@@ -3725,7 +3379,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "locale" field.</summary>
     public const int LocaleFieldNumber = 4;
     private string locale_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Locale {
       get { return locale_; }
       set {
@@ -3736,7 +3389,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "app_version" field.</summary>
     public const int AppVersionFieldNumber = 5;
     private uint appVersion_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint AppVersion {
       get { return appVersion_; }
       set {
@@ -3744,12 +3396,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetAssetDigestMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetAssetDigestMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3765,7 +3415,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Platform != 0) hash ^= Platform.GetHashCode();
@@ -3776,12 +3425,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Platform != 0) {
         output.WriteRawTag(8);
@@ -3805,7 +3452,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Platform != 0) {
@@ -3826,7 +3472,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetAssetDigestMessage other) {
       if (other == null) {
         return;
@@ -3848,7 +3493,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3882,43 +3526,36 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetBuddyWalkedMessage : pb::IMessage<GetBuddyWalkedMessage> {
     private static readonly pb::MessageParser<GetBuddyWalkedMessage> _parser = new pb::MessageParser<GetBuddyWalkedMessage>(() => new GetBuddyWalkedMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetBuddyWalkedMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[23]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetBuddyWalkedMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetBuddyWalkedMessage(GetBuddyWalkedMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetBuddyWalkedMessage Clone() {
       return new GetBuddyWalkedMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetBuddyWalkedMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetBuddyWalkedMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3929,35 +3566,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetBuddyWalkedMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -3971,34 +3602,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetDownloadUrlsMessage : pb::IMessage<GetDownloadUrlsMessage> {
     private static readonly pb::MessageParser<GetDownloadUrlsMessage> _parser = new pb::MessageParser<GetDownloadUrlsMessage>(() => new GetDownloadUrlsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetDownloadUrlsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[24]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetDownloadUrlsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetDownloadUrlsMessage(GetDownloadUrlsMessage other) : this() {
       assetId_ = other.assetId_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetDownloadUrlsMessage Clone() {
       return new GetDownloadUrlsMessage(this);
     }
@@ -4008,17 +3634,14 @@ namespace POGOProtos.Networking.Requests.Messages {
     private static readonly pb::FieldCodec<string> _repeated_assetId_codec
         = pb::FieldCodec.ForString(10);
     private readonly pbc::RepeatedField<string> assetId_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> AssetId {
       get { return assetId_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetDownloadUrlsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetDownloadUrlsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4030,31 +3653,26 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= assetId_.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       assetId_.WriteTo(output, _repeated_assetId_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += assetId_.CalculateSize(_repeated_assetId_codec);
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetDownloadUrlsMessage other) {
       if (other == null) {
         return;
@@ -4062,7 +3680,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       assetId_.Add(other.assetId_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4080,29 +3697,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetGymDetailsMessage : pb::IMessage<GetGymDetailsMessage> {
     private static readonly pb::MessageParser<GetGymDetailsMessage> _parser = new pb::MessageParser<GetGymDetailsMessage>(() => new GetGymDetailsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetGymDetailsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[25]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetGymDetailsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetGymDetailsMessage(GetGymDetailsMessage other) : this() {
       gymId_ = other.gymId_;
       playerLatitude_ = other.playerLatitude_;
@@ -4112,7 +3725,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       clientVersion_ = other.clientVersion_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetGymDetailsMessage Clone() {
       return new GetGymDetailsMessage(this);
     }
@@ -4120,7 +3732,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "gym_id" field.</summary>
     public const int GymIdFieldNumber = 1;
     private string gymId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GymId {
       get { return gymId_; }
       set {
@@ -4131,7 +3742,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 2;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -4142,7 +3752,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 3;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -4153,7 +3762,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "gym_latitude" field.</summary>
     public const int GymLatitudeFieldNumber = 4;
     private double gymLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double GymLatitude {
       get { return gymLatitude_; }
       set {
@@ -4164,7 +3772,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "gym_longitude" field.</summary>
     public const int GymLongitudeFieldNumber = 5;
     private double gymLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double GymLongitude {
       get { return gymLongitude_; }
       set {
@@ -4175,7 +3782,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "client_version" field.</summary>
     public const int ClientVersionFieldNumber = 6;
     private string clientVersion_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ClientVersion {
       get { return clientVersion_; }
       set {
@@ -4183,12 +3789,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetGymDetailsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetGymDetailsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4205,7 +3809,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (GymId.Length != 0) hash ^= GymId.GetHashCode();
@@ -4217,12 +3820,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (GymId.Length != 0) {
         output.WriteRawTag(10);
@@ -4250,7 +3851,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (GymId.Length != 0) {
@@ -4274,7 +3874,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetGymDetailsMessage other) {
       if (other == null) {
         return;
@@ -4299,7 +3898,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4340,43 +3938,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetHatchedEggsMessage : pb::IMessage<GetHatchedEggsMessage> {
     private static readonly pb::MessageParser<GetHatchedEggsMessage> _parser = new pb::MessageParser<GetHatchedEggsMessage>(() => new GetHatchedEggsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetHatchedEggsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[26]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetHatchedEggsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetHatchedEggsMessage(GetHatchedEggsMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetHatchedEggsMessage Clone() {
       return new GetHatchedEggsMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetHatchedEggsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetHatchedEggsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4387,35 +3978,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetHatchedEggsMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4429,35 +4014,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetIncensePokemonMessage : pb::IMessage<GetIncensePokemonMessage> {
     private static readonly pb::MessageParser<GetIncensePokemonMessage> _parser = new pb::MessageParser<GetIncensePokemonMessage>(() => new GetIncensePokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetIncensePokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[27]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetIncensePokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetIncensePokemonMessage(GetIncensePokemonMessage other) : this() {
       playerLatitude_ = other.playerLatitude_;
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetIncensePokemonMessage Clone() {
       return new GetIncensePokemonMessage(this);
     }
@@ -4465,7 +4045,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 1;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -4476,7 +4055,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 2;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -4484,12 +4062,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetIncensePokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetIncensePokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4502,7 +4078,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PlayerLatitude != 0D) hash ^= PlayerLatitude.GetHashCode();
@@ -4510,12 +4085,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PlayerLatitude != 0D) {
         output.WriteRawTag(9);
@@ -4527,7 +4100,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PlayerLatitude != 0D) {
@@ -4539,7 +4111,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetIncensePokemonMessage other) {
       if (other == null) {
         return;
@@ -4552,7 +4123,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4574,35 +4144,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetInventoryMessage : pb::IMessage<GetInventoryMessage> {
     private static readonly pb::MessageParser<GetInventoryMessage> _parser = new pb::MessageParser<GetInventoryMessage>(() => new GetInventoryMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetInventoryMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[28]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetInventoryMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetInventoryMessage(GetInventoryMessage other) : this() {
       lastTimestampMs_ = other.lastTimestampMs_;
       itemBeenSeen_ = other.itemBeenSeen_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetInventoryMessage Clone() {
       return new GetInventoryMessage(this);
     }
@@ -4610,7 +4175,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "last_timestamp_ms" field.</summary>
     public const int LastTimestampMsFieldNumber = 1;
     private long lastTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long LastTimestampMs {
       get { return lastTimestampMs_; }
       set {
@@ -4624,7 +4188,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>
     ///  TODO: Find out what this is.
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ItemBeenSeen {
       get { return itemBeenSeen_; }
       set {
@@ -4632,12 +4195,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetInventoryMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetInventoryMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4650,7 +4211,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (LastTimestampMs != 0L) hash ^= LastTimestampMs.GetHashCode();
@@ -4658,12 +4218,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (LastTimestampMs != 0L) {
         output.WriteRawTag(8);
@@ -4675,7 +4233,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (LastTimestampMs != 0L) {
@@ -4687,7 +4244,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetInventoryMessage other) {
       if (other == null) {
         return;
@@ -4700,7 +4256,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4722,29 +4277,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetMapObjectsMessage : pb::IMessage<GetMapObjectsMessage> {
     private static readonly pb::MessageParser<GetMapObjectsMessage> _parser = new pb::MessageParser<GetMapObjectsMessage>(() => new GetMapObjectsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetMapObjectsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[29]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetMapObjectsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetMapObjectsMessage(GetMapObjectsMessage other) : this() {
       cellId_ = other.cellId_.Clone();
       sinceTimestampMs_ = other.sinceTimestampMs_.Clone();
@@ -4752,7 +4303,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       longitude_ = other.longitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetMapObjectsMessage Clone() {
       return new GetMapObjectsMessage(this);
     }
@@ -4762,7 +4312,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     private static readonly pb::FieldCodec<ulong> _repeated_cellId_codec
         = pb::FieldCodec.ForUInt64(10);
     private readonly pbc::RepeatedField<ulong> cellId_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<ulong> CellId {
       get { return cellId_; }
     }
@@ -4772,7 +4321,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     private static readonly pb::FieldCodec<long> _repeated_sinceTimestampMs_codec
         = pb::FieldCodec.ForInt64(18);
     private readonly pbc::RepeatedField<long> sinceTimestampMs_ = new pbc::RepeatedField<long>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<long> SinceTimestampMs {
       get { return sinceTimestampMs_; }
     }
@@ -4780,7 +4328,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 3;
     private double latitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -4791,7 +4338,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 4;
     private double longitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -4799,12 +4345,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetMapObjectsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetMapObjectsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4819,7 +4363,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= cellId_.GetHashCode();
@@ -4829,12 +4372,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       cellId_.WriteTo(output, _repeated_cellId_codec);
       sinceTimestampMs_.WriteTo(output, _repeated_sinceTimestampMs_codec);
@@ -4848,7 +4389,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += cellId_.CalculateSize(_repeated_cellId_codec);
@@ -4862,7 +4402,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetMapObjectsMessage other) {
       if (other == null) {
         return;
@@ -4877,7 +4416,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4909,34 +4447,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetPlayerMessage : pb::IMessage<GetPlayerMessage> {
     private static readonly pb::MessageParser<GetPlayerMessage> _parser = new pb::MessageParser<GetPlayerMessage>(() => new GetPlayerMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetPlayerMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[30]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerMessage(GetPlayerMessage other) : this() {
       PlayerLocale = other.playerLocale_ != null ? other.PlayerLocale.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerMessage Clone() {
       return new GetPlayerMessage(this);
     }
@@ -4944,7 +4477,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_locale" field.</summary>
     public const int PlayerLocaleFieldNumber = 1;
     private global::POGOProtos.Networking.Requests.Messages.GetPlayerMessage.Types.PlayerLocale playerLocale_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Requests.Messages.GetPlayerMessage.Types.PlayerLocale PlayerLocale {
       get { return playerLocale_; }
       set {
@@ -4952,12 +4484,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetPlayerMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetPlayerMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4969,19 +4499,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (playerLocale_ != null) hash ^= PlayerLocale.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (playerLocale_ != null) {
         output.WriteRawTag(10);
@@ -4989,7 +4516,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (playerLocale_ != null) {
@@ -4998,7 +4524,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetPlayerMessage other) {
       if (other == null) {
         return;
@@ -5011,7 +4536,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5032,37 +4556,32 @@ namespace POGOProtos.Networking.Requests.Messages {
 
     #region Nested types
     /// <summary>Container for nested types declared in the GetPlayerMessage message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       public sealed partial class PlayerLocale : pb::IMessage<PlayerLocale> {
         private static readonly pb::MessageParser<PlayerLocale> _parser = new pb::MessageParser<PlayerLocale>(() => new PlayerLocale());
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<PlayerLocale> Parser { get { return _parser; } }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::POGOProtos.Networking.Requests.Messages.GetPlayerMessage.Descriptor.NestedTypes[0]; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public PlayerLocale() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public PlayerLocale(PlayerLocale other) : this() {
           country_ = other.country_;
           language_ = other.language_;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public PlayerLocale Clone() {
           return new PlayerLocale(this);
         }
@@ -5070,7 +4589,6 @@ namespace POGOProtos.Networking.Requests.Messages {
         /// <summary>Field number for the "country" field.</summary>
         public const int CountryFieldNumber = 1;
         private string country_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string Country {
           get { return country_; }
           set {
@@ -5081,7 +4599,6 @@ namespace POGOProtos.Networking.Requests.Messages {
         /// <summary>Field number for the "language" field.</summary>
         public const int LanguageFieldNumber = 2;
         private string language_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string Language {
           get { return language_; }
           set {
@@ -5089,12 +4606,10 @@ namespace POGOProtos.Networking.Requests.Messages {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as PlayerLocale);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(PlayerLocale other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5107,7 +4622,6 @@ namespace POGOProtos.Networking.Requests.Messages {
           return true;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (Country.Length != 0) hash ^= Country.GetHashCode();
@@ -5115,12 +4629,10 @@ namespace POGOProtos.Networking.Requests.Messages {
           return hash;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (Country.Length != 0) {
             output.WriteRawTag(10);
@@ -5132,7 +4644,6 @@ namespace POGOProtos.Networking.Requests.Messages {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (Country.Length != 0) {
@@ -5144,7 +4655,6 @@ namespace POGOProtos.Networking.Requests.Messages {
           return size;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(PlayerLocale other) {
           if (other == null) {
             return;
@@ -5157,7 +4667,6 @@ namespace POGOProtos.Networking.Requests.Messages {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5184,34 +4693,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetPlayerProfileMessage : pb::IMessage<GetPlayerProfileMessage> {
     private static readonly pb::MessageParser<GetPlayerProfileMessage> _parser = new pb::MessageParser<GetPlayerProfileMessage>(() => new GetPlayerProfileMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetPlayerProfileMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[31]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerProfileMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerProfileMessage(GetPlayerProfileMessage other) : this() {
       playerName_ = other.playerName_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetPlayerProfileMessage Clone() {
       return new GetPlayerProfileMessage(this);
     }
@@ -5219,7 +4723,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_name" field.</summary>
     public const int PlayerNameFieldNumber = 1;
     private string playerName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PlayerName {
       get { return playerName_; }
       set {
@@ -5227,12 +4730,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetPlayerProfileMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetPlayerProfileMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5244,19 +4745,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PlayerName.Length != 0) {
         output.WriteRawTag(10);
@@ -5264,7 +4762,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PlayerName.Length != 0) {
@@ -5273,7 +4770,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetPlayerProfileMessage other) {
       if (other == null) {
         return;
@@ -5283,7 +4779,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5304,43 +4799,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetSuggestedCodenamesMessage : pb::IMessage<GetSuggestedCodenamesMessage> {
     private static readonly pb::MessageParser<GetSuggestedCodenamesMessage> _parser = new pb::MessageParser<GetSuggestedCodenamesMessage>(() => new GetSuggestedCodenamesMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetSuggestedCodenamesMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[32]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetSuggestedCodenamesMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetSuggestedCodenamesMessage(GetSuggestedCodenamesMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetSuggestedCodenamesMessage Clone() {
       return new GetSuggestedCodenamesMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetSuggestedCodenamesMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetSuggestedCodenamesMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5351,35 +4839,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetSuggestedCodenamesMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5393,35 +4875,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class IncenseEncounterMessage : pb::IMessage<IncenseEncounterMessage> {
     private static readonly pb::MessageParser<IncenseEncounterMessage> _parser = new pb::MessageParser<IncenseEncounterMessage>(() => new IncenseEncounterMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<IncenseEncounterMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[33]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IncenseEncounterMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IncenseEncounterMessage(IncenseEncounterMessage other) : this() {
       encounterId_ = other.encounterId_;
       encounterLocation_ = other.encounterLocation_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public IncenseEncounterMessage Clone() {
       return new IncenseEncounterMessage(this);
     }
@@ -5429,7 +4906,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 1;
     private ulong encounterId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -5440,7 +4916,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "encounter_location" field.</summary>
     public const int EncounterLocationFieldNumber = 2;
     private string encounterLocation_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string EncounterLocation {
       get { return encounterLocation_; }
       set {
@@ -5448,12 +4923,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as IncenseEncounterMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(IncenseEncounterMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5466,7 +4939,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (EncounterId != 0UL) hash ^= EncounterId.GetHashCode();
@@ -5474,12 +4946,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncounterId != 0UL) {
         output.WriteRawTag(8);
@@ -5491,7 +4961,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (EncounterId != 0UL) {
@@ -5503,7 +4972,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(IncenseEncounterMessage other) {
       if (other == null) {
         return;
@@ -5516,7 +4984,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5538,34 +5005,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class LevelUpRewardsMessage : pb::IMessage<LevelUpRewardsMessage> {
     private static readonly pb::MessageParser<LevelUpRewardsMessage> _parser = new pb::MessageParser<LevelUpRewardsMessage>(() => new LevelUpRewardsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<LevelUpRewardsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[34]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelUpRewardsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelUpRewardsMessage(LevelUpRewardsMessage other) : this() {
       level_ = other.level_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LevelUpRewardsMessage Clone() {
       return new LevelUpRewardsMessage(this);
     }
@@ -5573,7 +5035,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "level" field.</summary>
     public const int LevelFieldNumber = 1;
     private int level_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Level {
       get { return level_; }
       set {
@@ -5581,12 +5042,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as LevelUpRewardsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(LevelUpRewardsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5598,19 +5057,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Level != 0) hash ^= Level.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Level != 0) {
         output.WriteRawTag(8);
@@ -5618,7 +5074,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Level != 0) {
@@ -5627,7 +5082,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(LevelUpRewardsMessage other) {
       if (other == null) {
         return;
@@ -5637,7 +5091,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5655,36 +5108,31 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class MarkTutorialCompleteMessage : pb::IMessage<MarkTutorialCompleteMessage> {
     private static readonly pb::MessageParser<MarkTutorialCompleteMessage> _parser = new pb::MessageParser<MarkTutorialCompleteMessage>(() => new MarkTutorialCompleteMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MarkTutorialCompleteMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[35]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MarkTutorialCompleteMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MarkTutorialCompleteMessage(MarkTutorialCompleteMessage other) : this() {
       tutorialsCompleted_ = other.tutorialsCompleted_.Clone();
       sendMarketingEmails_ = other.sendMarketingEmails_;
       sendPushNotifications_ = other.sendPushNotifications_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MarkTutorialCompleteMessage Clone() {
       return new MarkTutorialCompleteMessage(this);
     }
@@ -5694,7 +5142,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     private static readonly pb::FieldCodec<global::POGOProtos.Enums.TutorialState> _repeated_tutorialsCompleted_codec
         = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::POGOProtos.Enums.TutorialState) x);
     private readonly pbc::RepeatedField<global::POGOProtos.Enums.TutorialState> tutorialsCompleted_ = new pbc::RepeatedField<global::POGOProtos.Enums.TutorialState>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Enums.TutorialState> TutorialsCompleted {
       get { return tutorialsCompleted_; }
     }
@@ -5702,7 +5149,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "send_marketing_emails" field.</summary>
     public const int SendMarketingEmailsFieldNumber = 2;
     private bool sendMarketingEmails_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool SendMarketingEmails {
       get { return sendMarketingEmails_; }
       set {
@@ -5713,7 +5159,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "send_push_notifications" field.</summary>
     public const int SendPushNotificationsFieldNumber = 3;
     private bool sendPushNotifications_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool SendPushNotifications {
       get { return sendPushNotifications_; }
       set {
@@ -5721,12 +5166,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MarkTutorialCompleteMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MarkTutorialCompleteMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5740,7 +5183,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= tutorialsCompleted_.GetHashCode();
@@ -5749,12 +5191,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       tutorialsCompleted_.WriteTo(output, _repeated_tutorialsCompleted_codec);
       if (SendMarketingEmails != false) {
@@ -5767,7 +5207,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += tutorialsCompleted_.CalculateSize(_repeated_tutorialsCompleted_codec);
@@ -5780,7 +5219,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MarkTutorialCompleteMessage other) {
       if (other == null) {
         return;
@@ -5794,7 +5232,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5821,35 +5258,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class NicknamePokemonMessage : pb::IMessage<NicknamePokemonMessage> {
     private static readonly pb::MessageParser<NicknamePokemonMessage> _parser = new pb::MessageParser<NicknamePokemonMessage>(() => new NicknamePokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<NicknamePokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[36]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NicknamePokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NicknamePokemonMessage(NicknamePokemonMessage other) : this() {
       pokemonId_ = other.pokemonId_;
       nickname_ = other.nickname_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NicknamePokemonMessage Clone() {
       return new NicknamePokemonMessage(this);
     }
@@ -5857,7 +5289,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -5868,7 +5299,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "nickname" field.</summary>
     public const int NicknameFieldNumber = 2;
     private string nickname_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Nickname {
       get { return nickname_; }
       set {
@@ -5876,12 +5306,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as NicknamePokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(NicknamePokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5894,7 +5322,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0UL) hash ^= PokemonId.GetHashCode();
@@ -5902,12 +5329,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0UL) {
         output.WriteRawTag(9);
@@ -5919,7 +5344,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0UL) {
@@ -5931,7 +5355,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(NicknamePokemonMessage other) {
       if (other == null) {
         return;
@@ -5944,7 +5367,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5966,35 +5388,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class PlayerUpdateMessage : pb::IMessage<PlayerUpdateMessage> {
     private static readonly pb::MessageParser<PlayerUpdateMessage> _parser = new pb::MessageParser<PlayerUpdateMessage>(() => new PlayerUpdateMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<PlayerUpdateMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[37]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerUpdateMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerUpdateMessage(PlayerUpdateMessage other) : this() {
       latitude_ = other.latitude_;
       longitude_ = other.longitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PlayerUpdateMessage Clone() {
       return new PlayerUpdateMessage(this);
     }
@@ -6002,7 +5419,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "latitude" field.</summary>
     public const int LatitudeFieldNumber = 1;
     private double latitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Latitude {
       get { return latitude_; }
       set {
@@ -6013,7 +5429,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "longitude" field.</summary>
     public const int LongitudeFieldNumber = 2;
     private double longitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Longitude {
       get { return longitude_; }
       set {
@@ -6021,12 +5436,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PlayerUpdateMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(PlayerUpdateMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6039,7 +5452,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Latitude != 0D) hash ^= Latitude.GetHashCode();
@@ -6047,12 +5459,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Latitude != 0D) {
         output.WriteRawTag(9);
@@ -6064,7 +5474,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Latitude != 0D) {
@@ -6076,7 +5485,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(PlayerUpdateMessage other) {
       if (other == null) {
         return;
@@ -6089,7 +5497,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6111,35 +5518,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class RecycleInventoryItemMessage : pb::IMessage<RecycleInventoryItemMessage> {
     private static readonly pb::MessageParser<RecycleInventoryItemMessage> _parser = new pb::MessageParser<RecycleInventoryItemMessage>(() => new RecycleInventoryItemMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<RecycleInventoryItemMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[38]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RecycleInventoryItemMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RecycleInventoryItemMessage(RecycleInventoryItemMessage other) : this() {
       itemId_ = other.itemId_;
       count_ = other.count_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RecycleInventoryItemMessage Clone() {
       return new RecycleInventoryItemMessage(this);
     }
@@ -6147,7 +5549,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -6158,7 +5559,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "count" field.</summary>
     public const int CountFieldNumber = 2;
     private int count_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Count {
       get { return count_; }
       set {
@@ -6166,12 +5566,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as RecycleInventoryItemMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(RecycleInventoryItemMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6184,7 +5582,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -6192,12 +5589,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -6209,7 +5604,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -6221,7 +5615,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(RecycleInventoryItemMessage other) {
       if (other == null) {
         return;
@@ -6234,7 +5627,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6256,34 +5648,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class ReleasePokemonMessage : pb::IMessage<ReleasePokemonMessage> {
     private static readonly pb::MessageParser<ReleasePokemonMessage> _parser = new pb::MessageParser<ReleasePokemonMessage>(() => new ReleasePokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<ReleasePokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[39]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReleasePokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReleasePokemonMessage(ReleasePokemonMessage other) : this() {
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ReleasePokemonMessage Clone() {
       return new ReleasePokemonMessage(this);
     }
@@ -6291,7 +5678,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -6299,12 +5685,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReleasePokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(ReleasePokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6316,19 +5700,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0UL) hash ^= PokemonId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0UL) {
         output.WriteRawTag(9);
@@ -6336,7 +5717,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0UL) {
@@ -6345,7 +5725,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(ReleasePokemonMessage other) {
       if (other == null) {
         return;
@@ -6355,7 +5734,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6373,34 +5751,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetAvatarMessage : pb::IMessage<SetAvatarMessage> {
     private static readonly pb::MessageParser<SetAvatarMessage> _parser = new pb::MessageParser<SetAvatarMessage>(() => new SetAvatarMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetAvatarMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[40]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetAvatarMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetAvatarMessage(SetAvatarMessage other) : this() {
       PlayerAvatar = other.playerAvatar_ != null ? other.PlayerAvatar.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetAvatarMessage Clone() {
       return new SetAvatarMessage(this);
     }
@@ -6408,7 +5781,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_avatar" field.</summary>
     public const int PlayerAvatarFieldNumber = 2;
     private global::POGOProtos.Data.Player.PlayerAvatar playerAvatar_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.PlayerAvatar PlayerAvatar {
       get { return playerAvatar_; }
       set {
@@ -6416,12 +5788,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetAvatarMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetAvatarMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6433,19 +5803,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (playerAvatar_ != null) hash ^= PlayerAvatar.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (playerAvatar_ != null) {
         output.WriteRawTag(18);
@@ -6453,7 +5820,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (playerAvatar_ != null) {
@@ -6462,7 +5828,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetAvatarMessage other) {
       if (other == null) {
         return;
@@ -6475,7 +5840,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6496,34 +5860,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetBuddyPokemonMessage : pb::IMessage<SetBuddyPokemonMessage> {
     private static readonly pb::MessageParser<SetBuddyPokemonMessage> _parser = new pb::MessageParser<SetBuddyPokemonMessage>(() => new SetBuddyPokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetBuddyPokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[41]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetBuddyPokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetBuddyPokemonMessage(SetBuddyPokemonMessage other) : this() {
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetBuddyPokemonMessage Clone() {
       return new SetBuddyPokemonMessage(this);
     }
@@ -6531,7 +5890,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -6539,12 +5897,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetBuddyPokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetBuddyPokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6556,19 +5912,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0UL) hash ^= PokemonId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0UL) {
         output.WriteRawTag(9);
@@ -6576,7 +5929,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0UL) {
@@ -6585,7 +5937,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetBuddyPokemonMessage other) {
       if (other == null) {
         return;
@@ -6595,7 +5946,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6613,34 +5963,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetContactSettingsMessage : pb::IMessage<SetContactSettingsMessage> {
     private static readonly pb::MessageParser<SetContactSettingsMessage> _parser = new pb::MessageParser<SetContactSettingsMessage>(() => new SetContactSettingsMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetContactSettingsMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[42]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetContactSettingsMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetContactSettingsMessage(SetContactSettingsMessage other) : this() {
       ContactSettings = other.contactSettings_ != null ? other.ContactSettings.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetContactSettingsMessage Clone() {
       return new SetContactSettingsMessage(this);
     }
@@ -6648,7 +5993,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "contact_settings" field.</summary>
     public const int ContactSettingsFieldNumber = 1;
     private global::POGOProtos.Data.Player.ContactSettings contactSettings_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.ContactSettings ContactSettings {
       get { return contactSettings_; }
       set {
@@ -6656,12 +6000,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetContactSettingsMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetContactSettingsMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6673,19 +6015,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (contactSettings_ != null) hash ^= ContactSettings.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (contactSettings_ != null) {
         output.WriteRawTag(10);
@@ -6693,7 +6032,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (contactSettings_ != null) {
@@ -6702,7 +6040,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetContactSettingsMessage other) {
       if (other == null) {
         return;
@@ -6715,7 +6052,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6736,35 +6072,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetFavoritePokemonMessage : pb::IMessage<SetFavoritePokemonMessage> {
     private static readonly pb::MessageParser<SetFavoritePokemonMessage> _parser = new pb::MessageParser<SetFavoritePokemonMessage>(() => new SetFavoritePokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetFavoritePokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[43]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetFavoritePokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetFavoritePokemonMessage(SetFavoritePokemonMessage other) : this() {
       pokemonId_ = other.pokemonId_;
       isFavorite_ = other.isFavorite_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetFavoritePokemonMessage Clone() {
       return new SetFavoritePokemonMessage(this);
     }
@@ -6775,7 +6106,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>
     ///  Do not change https://github.com/AeonLucid/POGOProtos/pull/126
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long PokemonId {
       get { return pokemonId_; }
       set {
@@ -6786,7 +6116,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "is_favorite" field.</summary>
     public const int IsFavoriteFieldNumber = 2;
     private bool isFavorite_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsFavorite {
       get { return isFavorite_; }
       set {
@@ -6794,12 +6123,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetFavoritePokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetFavoritePokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6812,7 +6139,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0L) hash ^= PokemonId.GetHashCode();
@@ -6820,12 +6146,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0L) {
         output.WriteRawTag(8);
@@ -6837,7 +6161,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0L) {
@@ -6849,7 +6172,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetFavoritePokemonMessage other) {
       if (other == null) {
         return;
@@ -6862,7 +6184,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -6884,34 +6205,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SetPlayerTeamMessage : pb::IMessage<SetPlayerTeamMessage> {
     private static readonly pb::MessageParser<SetPlayerTeamMessage> _parser = new pb::MessageParser<SetPlayerTeamMessage>(() => new SetPlayerTeamMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SetPlayerTeamMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[44]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetPlayerTeamMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetPlayerTeamMessage(SetPlayerTeamMessage other) : this() {
       team_ = other.team_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SetPlayerTeamMessage Clone() {
       return new SetPlayerTeamMessage(this);
     }
@@ -6919,7 +6235,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "team" field.</summary>
     public const int TeamFieldNumber = 1;
     private global::POGOProtos.Enums.TeamColor team_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.TeamColor Team {
       get { return team_; }
       set {
@@ -6927,12 +6242,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SetPlayerTeamMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SetPlayerTeamMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -6944,19 +6257,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Team != 0) hash ^= Team.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Team != 0) {
         output.WriteRawTag(8);
@@ -6964,7 +6274,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Team != 0) {
@@ -6973,7 +6282,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SetPlayerTeamMessage other) {
       if (other == null) {
         return;
@@ -6983,7 +6291,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7004,43 +6311,36 @@ namespace POGOProtos.Networking.Requests.Messages {
   /// <summary>
   ///  No message needed.
   /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SfidaActionLogMessage : pb::IMessage<SfidaActionLogMessage> {
     private static readonly pb::MessageParser<SfidaActionLogMessage> _parser = new pb::MessageParser<SfidaActionLogMessage>(() => new SfidaActionLogMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SfidaActionLogMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[45]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SfidaActionLogMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SfidaActionLogMessage(SfidaActionLogMessage other) : this() {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SfidaActionLogMessage Clone() {
       return new SfidaActionLogMessage(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SfidaActionLogMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SfidaActionLogMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7051,35 +6351,29 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SfidaActionLogMessage other) {
       if (other == null) {
         return;
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7093,29 +6387,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class StartGymBattleMessage : pb::IMessage<StartGymBattleMessage> {
     private static readonly pb::MessageParser<StartGymBattleMessage> _parser = new pb::MessageParser<StartGymBattleMessage>(() => new StartGymBattleMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<StartGymBattleMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[46]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StartGymBattleMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StartGymBattleMessage(StartGymBattleMessage other) : this() {
       gymId_ = other.gymId_;
       attackingPokemonIds_ = other.attackingPokemonIds_.Clone();
@@ -7124,7 +6414,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StartGymBattleMessage Clone() {
       return new StartGymBattleMessage(this);
     }
@@ -7132,7 +6421,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "gym_id" field.</summary>
     public const int GymIdFieldNumber = 1;
     private string gymId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GymId {
       get { return gymId_; }
       set {
@@ -7145,7 +6433,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     private static readonly pb::FieldCodec<ulong> _repeated_attackingPokemonIds_codec
         = pb::FieldCodec.ForFixed64(18);
     private readonly pbc::RepeatedField<ulong> attackingPokemonIds_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<ulong> AttackingPokemonIds {
       get { return attackingPokemonIds_; }
     }
@@ -7156,7 +6443,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>
     ///  needs to be fixed64, tested by Grover
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong DefendingPokemonId {
       get { return defendingPokemonId_; }
       set {
@@ -7167,7 +6453,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 4;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -7178,7 +6463,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 5;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -7186,12 +6470,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as StartGymBattleMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(StartGymBattleMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7207,7 +6489,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (GymId.Length != 0) hash ^= GymId.GetHashCode();
@@ -7218,12 +6499,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (GymId.Length != 0) {
         output.WriteRawTag(10);
@@ -7244,7 +6523,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (GymId.Length != 0) {
@@ -7263,7 +6541,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(StartGymBattleMessage other) {
       if (other == null) {
         return;
@@ -7283,7 +6560,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7318,34 +6594,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UpgradePokemonMessage : pb::IMessage<UpgradePokemonMessage> {
     private static readonly pb::MessageParser<UpgradePokemonMessage> _parser = new pb::MessageParser<UpgradePokemonMessage>(() => new UpgradePokemonMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UpgradePokemonMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[47]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpgradePokemonMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpgradePokemonMessage(UpgradePokemonMessage other) : this() {
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UpgradePokemonMessage Clone() {
       return new UpgradePokemonMessage(this);
     }
@@ -7353,7 +6624,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 1;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -7361,12 +6631,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UpgradePokemonMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UpgradePokemonMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7378,19 +6646,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (PokemonId != 0UL) hash ^= PokemonId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (PokemonId != 0UL) {
         output.WriteRawTag(9);
@@ -7398,7 +6663,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (PokemonId != 0UL) {
@@ -7407,7 +6671,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UpgradePokemonMessage other) {
       if (other == null) {
         return;
@@ -7417,7 +6680,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7435,34 +6697,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseIncenseMessage : pb::IMessage<UseIncenseMessage> {
     private static readonly pb::MessageParser<UseIncenseMessage> _parser = new pb::MessageParser<UseIncenseMessage>(() => new UseIncenseMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseIncenseMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[48]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseIncenseMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseIncenseMessage(UseIncenseMessage other) : this() {
       incenseType_ = other.incenseType_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseIncenseMessage Clone() {
       return new UseIncenseMessage(this);
     }
@@ -7470,7 +6727,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "incense_type" field.</summary>
     public const int IncenseTypeFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId incenseType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId IncenseType {
       get { return incenseType_; }
       set {
@@ -7478,12 +6734,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseIncenseMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseIncenseMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7495,19 +6749,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (IncenseType != 0) hash ^= IncenseType.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (IncenseType != 0) {
         output.WriteRawTag(8);
@@ -7515,7 +6766,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (IncenseType != 0) {
@@ -7524,7 +6774,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseIncenseMessage other) {
       if (other == null) {
         return;
@@ -7534,7 +6783,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7552,36 +6800,31 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemCaptureMessage : pb::IMessage<UseItemCaptureMessage> {
     private static readonly pb::MessageParser<UseItemCaptureMessage> _parser = new pb::MessageParser<UseItemCaptureMessage>(() => new UseItemCaptureMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemCaptureMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[49]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemCaptureMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemCaptureMessage(UseItemCaptureMessage other) : this() {
       itemId_ = other.itemId_;
       encounterId_ = other.encounterId_;
       spawnPointId_ = other.spawnPointId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemCaptureMessage Clone() {
       return new UseItemCaptureMessage(this);
     }
@@ -7589,7 +6832,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -7600,7 +6842,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "encounter_id" field.</summary>
     public const int EncounterIdFieldNumber = 2;
     private ulong encounterId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong EncounterId {
       get { return encounterId_; }
       set {
@@ -7611,7 +6852,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "spawn_point_id" field.</summary>
     public const int SpawnPointIdFieldNumber = 3;
     private string spawnPointId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SpawnPointId {
       get { return spawnPointId_; }
       set {
@@ -7619,12 +6859,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemCaptureMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemCaptureMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7638,7 +6876,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -7647,12 +6884,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -7668,7 +6903,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -7683,7 +6917,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemCaptureMessage other) {
       if (other == null) {
         return;
@@ -7699,7 +6932,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7725,35 +6957,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemEggIncubatorMessage : pb::IMessage<UseItemEggIncubatorMessage> {
     private static readonly pb::MessageParser<UseItemEggIncubatorMessage> _parser = new pb::MessageParser<UseItemEggIncubatorMessage>(() => new UseItemEggIncubatorMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemEggIncubatorMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[50]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemEggIncubatorMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemEggIncubatorMessage(UseItemEggIncubatorMessage other) : this() {
       itemId_ = other.itemId_;
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemEggIncubatorMessage Clone() {
       return new UseItemEggIncubatorMessage(this);
     }
@@ -7761,7 +6988,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private string itemId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ItemId {
       get { return itemId_; }
       set {
@@ -7772,7 +6998,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 2;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -7780,12 +7005,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemEggIncubatorMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemEggIncubatorMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7798,7 +7021,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId.Length != 0) hash ^= ItemId.GetHashCode();
@@ -7806,12 +7028,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId.Length != 0) {
         output.WriteRawTag(10);
@@ -7823,7 +7043,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId.Length != 0) {
@@ -7835,7 +7054,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemEggIncubatorMessage other) {
       if (other == null) {
         return;
@@ -7848,7 +7066,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -7870,29 +7087,25 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemGymMessage : pb::IMessage<UseItemGymMessage> {
     private static readonly pb::MessageParser<UseItemGymMessage> _parser = new pb::MessageParser<UseItemGymMessage>(() => new UseItemGymMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemGymMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[51]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemGymMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemGymMessage(UseItemGymMessage other) : this() {
       itemId_ = other.itemId_;
       gymId_ = other.gymId_;
@@ -7900,7 +7113,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       playerLongitude_ = other.playerLongitude_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemGymMessage Clone() {
       return new UseItemGymMessage(this);
     }
@@ -7908,7 +7120,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -7919,7 +7130,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "gym_id" field.</summary>
     public const int GymIdFieldNumber = 2;
     private string gymId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GymId {
       get { return gymId_; }
       set {
@@ -7930,7 +7140,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_latitude" field.</summary>
     public const int PlayerLatitudeFieldNumber = 3;
     private double playerLatitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLatitude {
       get { return playerLatitude_; }
       set {
@@ -7941,7 +7150,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "player_longitude" field.</summary>
     public const int PlayerLongitudeFieldNumber = 4;
     private double playerLongitude_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double PlayerLongitude {
       get { return playerLongitude_; }
       set {
@@ -7949,12 +7157,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemGymMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemGymMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -7969,7 +7175,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -7979,12 +7184,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -8004,7 +7207,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -8022,7 +7224,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemGymMessage other) {
       if (other == null) {
         return;
@@ -8041,7 +7242,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8071,35 +7271,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemPotionMessage : pb::IMessage<UseItemPotionMessage> {
     private static readonly pb::MessageParser<UseItemPotionMessage> _parser = new pb::MessageParser<UseItemPotionMessage>(() => new UseItemPotionMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemPotionMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[52]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemPotionMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemPotionMessage(UseItemPotionMessage other) : this() {
       itemId_ = other.itemId_;
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemPotionMessage Clone() {
       return new UseItemPotionMessage(this);
     }
@@ -8107,7 +7302,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -8118,7 +7312,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 2;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -8126,12 +7319,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemPotionMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemPotionMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8144,7 +7335,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -8152,12 +7342,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -8169,7 +7357,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -8181,7 +7368,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemPotionMessage other) {
       if (other == null) {
         return;
@@ -8194,7 +7380,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8216,35 +7401,30 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemReviveMessage : pb::IMessage<UseItemReviveMessage> {
     private static readonly pb::MessageParser<UseItemReviveMessage> _parser = new pb::MessageParser<UseItemReviveMessage>(() => new UseItemReviveMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemReviveMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[53]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemReviveMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemReviveMessage(UseItemReviveMessage other) : this() {
       itemId_ = other.itemId_;
       pokemonId_ = other.pokemonId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemReviveMessage Clone() {
       return new UseItemReviveMessage(this);
     }
@@ -8252,7 +7432,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -8263,7 +7442,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "pokemon_id" field.</summary>
     public const int PokemonIdFieldNumber = 2;
     private ulong pokemonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -8271,12 +7449,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemReviveMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemReviveMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8289,7 +7465,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -8297,12 +7472,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -8314,7 +7487,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -8326,7 +7498,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemReviveMessage other) {
       if (other == null) {
         return;
@@ -8339,7 +7510,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8361,34 +7531,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class UseItemXpBoostMessage : pb::IMessage<UseItemXpBoostMessage> {
     private static readonly pb::MessageParser<UseItemXpBoostMessage> _parser = new pb::MessageParser<UseItemXpBoostMessage>(() => new UseItemXpBoostMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UseItemXpBoostMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[54]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemXpBoostMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemXpBoostMessage(UseItemXpBoostMessage other) : this() {
       itemId_ = other.itemId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UseItemXpBoostMessage Clone() {
       return new UseItemXpBoostMessage(this);
     }
@@ -8396,7 +7561,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -8404,12 +7568,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UseItemXpBoostMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UseItemXpBoostMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8421,19 +7583,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -8441,7 +7600,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -8450,7 +7608,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UseItemXpBoostMessage other) {
       if (other == null) {
         return;
@@ -8460,7 +7617,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -8478,34 +7634,29 @@ namespace POGOProtos.Networking.Requests.Messages {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class VerifyChallengeMessage : pb::IMessage<VerifyChallengeMessage> {
     private static readonly pb::MessageParser<VerifyChallengeMessage> _parser = new pb::MessageParser<VerifyChallengeMessage>(() => new VerifyChallengeMessage());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<VerifyChallengeMessage> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.Messages.POGOProtosNetworkingRequestsMessagesReflection.Descriptor.MessageTypes[55]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public VerifyChallengeMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public VerifyChallengeMessage(VerifyChallengeMessage other) : this() {
       token_ = other.token_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public VerifyChallengeMessage Clone() {
       return new VerifyChallengeMessage(this);
     }
@@ -8513,7 +7664,6 @@ namespace POGOProtos.Networking.Requests.Messages {
     /// <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 1;
     private string token_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Token {
       get { return token_; }
       set {
@@ -8521,12 +7671,10 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as VerifyChallengeMessage);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(VerifyChallengeMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -8538,19 +7686,16 @@ namespace POGOProtos.Networking.Requests.Messages {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Token.Length != 0) hash ^= Token.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Token.Length != 0) {
         output.WriteRawTag(10);
@@ -8558,7 +7703,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Token.Length != 0) {
@@ -8567,7 +7711,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(VerifyChallengeMessage other) {
       if (other == null) {
         return;
@@ -8577,7 +7720,6 @@ namespace POGOProtos.Networking.Requests.Messages {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

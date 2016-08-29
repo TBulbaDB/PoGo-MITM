@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Networking.Platform.Responses {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Networking.Platform.Responses.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosNetworkingPlatformResponsesReflection {
 
     #region Descriptor
@@ -64,35 +65,30 @@ namespace POGOProtos.Networking.Platform.Responses {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BuyItemAndroidResponse : pb::IMessage<BuyItemAndroidResponse> {
     private static readonly pb::MessageParser<BuyItemAndroidResponse> _parser = new pb::MessageParser<BuyItemAndroidResponse>(() => new BuyItemAndroidResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BuyItemAndroidResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Responses.POGOProtosNetworkingPlatformResponsesReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemAndroidResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemAndroidResponse(BuyItemAndroidResponse other) : this() {
       result_ = other.result_;
       purchaseToken_ = other.purchaseToken_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemAndroidResponse Clone() {
       return new BuyItemAndroidResponse(this);
     }
@@ -103,7 +99,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     ///  result
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Platform.Responses.BuyItemAndroidResponse.Types.Status Result {
       get { return result_; }
       set {
@@ -114,7 +109,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>Field number for the "purchase_token" field.</summary>
     public const int PurchaseTokenFieldNumber = 2;
     private string purchaseToken_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PurchaseToken {
       get { return purchaseToken_; }
       set {
@@ -122,12 +116,10 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BuyItemAndroidResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BuyItemAndroidResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -140,7 +132,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
@@ -148,12 +139,10 @@ namespace POGOProtos.Networking.Platform.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -165,7 +154,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -177,7 +165,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BuyItemAndroidResponse other) {
       if (other == null) {
         return;
@@ -190,7 +177,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -212,7 +198,7 @@ namespace POGOProtos.Networking.Platform.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the BuyItemAndroidResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       /// <summary>
       ///  THESE ARE SOMEWHAT SPECULATED, failed may be 2
@@ -227,34 +213,29 @@ namespace POGOProtos.Networking.Platform.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BuyItemPokeCoinsResponse : pb::IMessage<BuyItemPokeCoinsResponse> {
     private static readonly pb::MessageParser<BuyItemPokeCoinsResponse> _parser = new pb::MessageParser<BuyItemPokeCoinsResponse>(() => new BuyItemPokeCoinsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BuyItemPokeCoinsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Responses.POGOProtosNetworkingPlatformResponsesReflection.Descriptor.MessageTypes[1]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemPokeCoinsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemPokeCoinsResponse(BuyItemPokeCoinsResponse other) : this() {
       result_ = other.result_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemPokeCoinsResponse Clone() {
       return new BuyItemPokeCoinsResponse(this);
     }
@@ -265,7 +246,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     ///  result
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Platform.Responses.BuyItemPokeCoinsResponse.Types.Status Result {
       get { return result_; }
       set {
@@ -273,12 +253,10 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BuyItemPokeCoinsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BuyItemPokeCoinsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -290,19 +268,16 @@ namespace POGOProtos.Networking.Platform.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Result != 0) hash ^= Result.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Result != 0) {
         output.WriteRawTag(8);
@@ -310,7 +285,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Result != 0) {
@@ -319,7 +293,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BuyItemPokeCoinsResponse other) {
       if (other == null) {
         return;
@@ -329,7 +302,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -347,7 +319,7 @@ namespace POGOProtos.Networking.Platform.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the BuyItemPokeCoinsResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       /// <summary>
       ///  THESE ARE SOMEWHAT SPECULATED, should be a NOT ENOUGH ROOM status too for bag being full somewhere.
@@ -363,29 +335,25 @@ namespace POGOProtos.Networking.Platform.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class GetStoreItemsResponse : pb::IMessage<GetStoreItemsResponse> {
     private static readonly pb::MessageParser<GetStoreItemsResponse> _parser = new pb::MessageParser<GetStoreItemsResponse>(() => new GetStoreItemsResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GetStoreItemsResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Responses.POGOProtosNetworkingPlatformResponsesReflection.Descriptor.MessageTypes[2]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetStoreItemsResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetStoreItemsResponse(GetStoreItemsResponse other) : this() {
       status_ = other.status_;
       items_ = other.items_.Clone();
@@ -393,7 +361,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       unknown4_ = other.unknown4_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetStoreItemsResponse Clone() {
       return new GetStoreItemsResponse(this);
     }
@@ -404,7 +371,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     /// unconfirmed
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Platform.Responses.GetStoreItemsResponse.Types.Status Status {
       get { return status_; }
       set {
@@ -420,7 +386,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     ///  Items to show in the shop
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Networking.Platform.Responses.GetStoreItemsResponse.Types.StoreItem> Items {
       get { return items_; }
     }
@@ -433,7 +398,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     ///  currencies that player has at the moment
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Data.Player.Currency> PlayerCurrencies {
       get { return playerCurrencies_; }
     }
@@ -444,7 +408,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     ///  Some base64 encoded stuff... (Developer payload?)
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Unknown4 {
       get { return unknown4_; }
       set {
@@ -452,12 +415,10 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GetStoreItemsResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GetStoreItemsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -472,7 +433,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Status != 0) hash ^= Status.GetHashCode();
@@ -482,12 +442,10 @@ namespace POGOProtos.Networking.Platform.Responses {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Status != 0) {
         output.WriteRawTag(8);
@@ -501,7 +459,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Status != 0) {
@@ -515,7 +472,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GetStoreItemsResponse other) {
       if (other == null) {
         return;
@@ -530,7 +486,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -560,36 +515,32 @@ namespace POGOProtos.Networking.Platform.Responses {
 
     #region Nested types
     /// <summary>Container for nested types declared in the GetStoreItemsResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
       public enum Status {
         [pbr::OriginalName("UNDEFINED")] Undefined = 0,
         [pbr::OriginalName("OKAY")] Okay = 1,
       }
 
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       public sealed partial class StoreItem : pb::IMessage<StoreItem> {
         private static readonly pb::MessageParser<StoreItem> _parser = new pb::MessageParser<StoreItem>(() => new StoreItem());
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<StoreItem> Parser { get { return _parser; } }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::POGOProtos.Networking.Platform.Responses.GetStoreItemsResponse.Descriptor.NestedTypes[0]; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public StoreItem() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public StoreItem(StoreItem other) : this() {
           itemId_ = other.itemId_;
           isIap_ = other.isIap_;
@@ -600,7 +551,6 @@ namespace POGOProtos.Networking.Platform.Responses {
           unknown7_ = other.unknown7_;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public StoreItem Clone() {
           return new StoreItem(this);
         }
@@ -611,7 +561,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  Internal ID (probably for Google Play/App Store) example: "pgorelease.incenseordinary.1"
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string ItemId {
           get { return itemId_; }
           set {
@@ -625,7 +574,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  If true, this item is bought with real currency (USD, etc.) through the Play/App Store instead of Pokecoins
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsIap {
           get { return isIap_; }
           set {
@@ -639,7 +587,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  This defines how much the item costs (with the exception of items that cost real money like Pokecoins, that's defined in the respective store)
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Data.Player.Currency CurrencyToBuy {
           get { return currencyToBuy_; }
           set {
@@ -653,7 +600,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  When bought, this IAP will yield this much currency
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Data.Player.Currency YieldsCurrency {
           get { return yieldsCurrency_; }
           set {
@@ -667,7 +613,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  The item and count of such item that this IAP will yield
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::POGOProtos.Inventory.Item.ItemData YieldsItem {
           get { return yieldsItem_; }
           set {
@@ -683,7 +628,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  Stuff like SORT:12, CATEGORY:ITEMS
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::MapField<string, string> Tags {
           get { return tags_; }
         }
@@ -694,7 +638,6 @@ namespace POGOProtos.Networking.Platform.Responses {
         /// <summary>
         ///  Possibly something to toggle visibility in the store/purchasibility?
         /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Unknown7 {
           get { return unknown7_; }
           set {
@@ -702,12 +645,10 @@ namespace POGOProtos.Networking.Platform.Responses {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as StoreItem);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(StoreItem other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -725,7 +666,6 @@ namespace POGOProtos.Networking.Platform.Responses {
           return true;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (ItemId.Length != 0) hash ^= ItemId.GetHashCode();
@@ -738,12 +678,10 @@ namespace POGOProtos.Networking.Platform.Responses {
           return hash;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (ItemId.Length != 0) {
             output.WriteRawTag(10);
@@ -772,7 +710,6 @@ namespace POGOProtos.Networking.Platform.Responses {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (ItemId.Length != 0) {
@@ -797,7 +734,6 @@ namespace POGOProtos.Networking.Platform.Responses {
           return size;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(StoreItem other) {
           if (other == null) {
             return;
@@ -832,7 +768,6 @@ namespace POGOProtos.Networking.Platform.Responses {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -888,34 +823,29 @@ namespace POGOProtos.Networking.Platform.Responses {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SendEncryptedSignatureResponse : pb::IMessage<SendEncryptedSignatureResponse> {
     private static readonly pb::MessageParser<SendEncryptedSignatureResponse> _parser = new pb::MessageParser<SendEncryptedSignatureResponse>(() => new SendEncryptedSignatureResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SendEncryptedSignatureResponse> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Responses.POGOProtosNetworkingPlatformResponsesReflection.Descriptor.MessageTypes[3]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SendEncryptedSignatureResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SendEncryptedSignatureResponse(SendEncryptedSignatureResponse other) : this() {
       received_ = other.received_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SendEncryptedSignatureResponse Clone() {
       return new SendEncryptedSignatureResponse(this);
     }
@@ -926,7 +856,6 @@ namespace POGOProtos.Networking.Platform.Responses {
     /// <summary>
     ///  speculated, could be an enum
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Received {
       get { return received_; }
       set {
@@ -934,12 +863,10 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SendEncryptedSignatureResponse);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SendEncryptedSignatureResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -951,19 +878,16 @@ namespace POGOProtos.Networking.Platform.Responses {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Received != false) hash ^= Received.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Received != false) {
         output.WriteRawTag(8);
@@ -971,7 +895,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Received != false) {
@@ -980,7 +903,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SendEncryptedSignatureResponse other) {
       if (other == null) {
         return;
@@ -990,7 +912,6 @@ namespace POGOProtos.Networking.Platform.Responses {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

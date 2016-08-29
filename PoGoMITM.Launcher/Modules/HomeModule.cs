@@ -17,6 +17,7 @@ using PoGoMITM.Base.Models;
 using PoGoMITM.Base.Utils;
 using PoGoMITM.Launcher.Models;
 using POGOProtos.Networking.Envelopes;
+using PoGoMITM.Base.ProtoHelpers;
 
 namespace PoGoMITM.Launcher.Modules
 {
@@ -56,11 +57,12 @@ namespace PoGoMITM.Launcher.Modules
             {
                 var guid = (string)x.guid;
                 var context = await GetRequestContext(guid);
-                if (context?.RawDecodedRequestBody != null)
+                if (context == null) return new NotFoundResponse();
+                if (context.RawDecodedRequestBody == null)
                 {
-                    return Response.AsText(context.RawDecodedRequestBody).AsAttachment(guid + "-request.txt", "text/plain");
+                    context.RawDecodedRequestBody = await Protoc.DecodeRaw(context.RequestBody);
                 }
-                return new NotFoundResponse();
+                return Response.AsText(context.RawDecodedRequestBody).AsAttachment(guid + "-request.txt", "text/plain");
             };
 
 
@@ -91,11 +93,14 @@ namespace PoGoMITM.Launcher.Modules
             {
                 var guid = (string)x.guid;
                 var context = await GetRequestContext(guid);
-                if (context?.RawDecodedResponseBody != null)
+                if (context == null) return new NotFoundResponse();
+                if (context.RawDecodedResponseBody == null)
                 {
-                    return Response.AsText(context.RawDecodedResponseBody).AsAttachment(guid + "-response.txt", "text/plain");
+                    context.RawDecodedResponseBody = await Protoc.DecodeRaw(context.ResponseBody);
                 }
-                return new NotFoundResponse();
+
+                return Response.AsText(context.RawDecodedResponseBody).AsAttachment(guid + "-response.txt", "text/plain");
+
             };
 
             Get["/download/json/{guid}", true] = async (x, ct) =>
@@ -122,17 +127,17 @@ namespace PoGoMITM.Launcher.Modules
                 var sessionDump = RawDumpReader.GetSession(fileName);
                 if (sessionDump != null)
                 {
-                    foreach (var rawContext in sessionDump.Where(r=>r!=null))
+                    foreach (var rawContext in sessionDump.Where(r => r != null))
                     {
                         ContextCache.RawContexts.TryAdd(rawContext.Guid, rawContext);
                     }
                     var list = sessionDump.Where(r => r != null).Select(RequestContextListModel.FromRawContext).ToList();
-                    return Response.AsText(JsonConvert.SerializeObject(list),"text/json");
+                    return Response.AsText(JsonConvert.SerializeObject(list), "text/json");
                 }
                 return new NotFoundResponse();
             };
 
-            Post["/details/signature/{guid}",true ] = async (x, ct) =>
+            Post["/details/signature/{guid}", true] = async (x, ct) =>
             {
                 try
                 {

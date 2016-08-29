@@ -52,16 +52,21 @@
                     <thead>
                         <tr>
                             <th>Time</th>
-                            <th>Uri</th>
+                            <th>Host</th>
+                            <th>Methods</th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: rawContextListItems">
                         <tr data-bind="click: function(data, event) { $parent.loadRequestDetails(data, event) }, css: {activeRow: IsActive() == true}">
                             <td data-bind="text: new Date(RequestTime).toLocaleTimeString()">Failed</td>
                             <td data-bind="text: Host">failed</td>
+                            <td data-bind="text: Methods">failed</td>
                         </tr>
                     </tbody>
                 </table>
+                <div style="text-align: center">
+                    <button class="btn btn-default btn-xs" onclick="copyRawContextListItemsAsMarkdown()">Copy to clipboard as markdown</button>
+                </div>
             </div>
             <div class="col-xs-12 col-md-8">
                 <div class="jsonViewerToolbar clearfix">
@@ -86,10 +91,16 @@
     <script src="//cdn.rawgit.com/yesmeck/jquery-jsonview/master/dist/jquery.jsonview.min.js" type="text/javascript"></script>
     <script src="~/js/main.js" type="text/javascript"></script>
     <script src="~/js/buffer.js" type="text/javascript"></script>
+    <script src="~/js/to-markdown.js" type="text/javascript"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             pogoMITM.models.rawContextsList.loadItems('live');
         });
+        function copyRawContextListItemsAsMarkdown() {
+            var table = $(".rawContextsContainer > table");
+            pogoMITM.toClipboard(toMarkdown(table[0].outerHTML, { gfm: true }));
+        }
     </script>
+    <textarea id="clipboard-temp" style="display: none;"></textarea>
 </body>
 </html>

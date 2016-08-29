@@ -15,8 +15,8 @@ namespace PoGoMITM.Base.Models
     {
         public async Task ParseRequest(RequestContext result)
         {
-            result.RawDecodedRequestBody = await Protoc.DecodeRaw(result.RequestBody);
-            result.RawDecodedResponseBody = await Protoc.DecodeRaw(result.ResponseBody);
+            //result.RawDecodedRequestBody = await Protoc.DecodeRaw(result.RequestBody);
+            //result.RawDecodedResponseBody = await Protoc.DecodeRaw(result.ResponseBody);
 
             var codedRequest = new CodedInputStream(result.RequestBody);
             result.RequestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
