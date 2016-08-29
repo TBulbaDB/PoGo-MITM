@@ -12,32 +12,32 @@ namespace PoGoMITM.Base.Utils
 {
     public static partial class PCrypt
     {
-        public static byte[] Test()
-        {
-            var dumps = RawDumpReader.GetSession("RawContext20160829112905.log");
-            var dump = dumps[dumps.Count - 4];
-            if (dump != null)
-            {
-                RequestContext context = null;
-                Task.Run(async () =>
-                {
-                    context = await RequestContext.GetInstance(dump);
+        //public static byte[] Test()
+        //{
+        //    var dumps = RawDumpReader.GetSession("RawContext20160829215204.log");
+        //    var dump = dumps[0];
+        //    if (dump != null)
+        //    {
+        //        RequestContext context = null;
+        //        Task.Run(async () =>
+        //        {
+        //            context = await RequestContext.GetInstance(dump);
 
-                }).Wait();
-                var sig = context?.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
-                    pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
-                if (sig != null)
-                {
-                    //var bytes=sig.RequestMessageva
-                    var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
-                    req.MergeFrom(sig.RequestMessage);
-                    var bytes = req.EncryptedSignature.ToByteArray();
-                    return Decrypt(bytes);
-                }
-            }
+        //        }).Wait();
+        //        var sig = context?.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
+        //            pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
+        //        if (sig != null)
+        //        {
+        //            //var bytes=sig.RequestMessageva
+        //            var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
+        //            req.MergeFrom(sig.RequestMessage);
+        //            var bytes = req.EncryptedSignature.ToByteArray();
+        //            return Decrypt(bytes);
+        //        }
+        //    }
 
-            throw new Exception("Couldn't find a signature");
-        }
+        //    throw new Exception("Couldn't find a signature");
+        //}
 
         private static byte Rotl8(uint x, int n)
         {
@@ -60,53 +60,53 @@ namespace PoGoMITM.Base.Utils
 
         public static byte[] Decrypt(byte[] input)
         {
-
-            //// Sanity checks
-            //if (!(input instanceof Buffer)) {
-            //    throw new Error('Input must be Buffer');
-            //} else
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input));
+            }
             if (input.Length < 288 || (input.Length - 32) % 256 != 0)
             {
-                throw new Exception("Invalid input length");
+                throw new ArgumentException("Invalid input length", nameof(input));
             }
 
-            //// Allocate space for decrypted payload
             var output8 = input.Skip(32).ToArray();
 
             var output32 = new uint[output8.Length / 4];
-            Buffer.BlockCopy(output8, 0, output32, 0, output8.Length / 4);
+            Buffer.BlockCopy(output8, 0, output32, 0, output8.Length);
 
             var cipherSource = input.Take(32).ToArray();
-            var cipherBuffer = new uint[32];
-            Buffer.BlockCopy(cipherSource, 0, cipherBuffer, 0, 32);
+
 
             var cipher8 = Cipher8FromIv(cipherSource);
             var cipher32 = new uint[cipher8.Length / 4];
-            Buffer.BlockCopy(cipher8, 0, cipher32, 0, cipher8.Length );
-            //let outputBuffer = output8.buffer;
-            //let output32 = new Int32Array(outputBuffer);
+            Buffer.BlockCopy(cipher8, 0, cipher32, 0, cipher8.Length);
 
-            //// Initialize cipher
-            //let cipher32 = new Int32Array(cipher8FromIV(input.slice(0, 32)).buffer);
-
-            //// Decrypt in chunks of 256 bytes
-            for (var offset = 0; offset < output8.Length; offset += 256)
+            for (var offset = 0; offset < output32.Length; offset += 64)
             {
-                var tmp = output8.Skip(offset).Take(256).ToArray();
-                var shuffle32 = new uint[64];
-                Buffer.BlockCopy(output8, offset, shuffle32, 0, 256);
+                var tmp = output32.Skip(offset).Take(64).ToArray();
+                var shuffle32 = output32.Skip(offset).Take(64).ToArray();
+
+
 
                 var shuffled32 = Unshuffle(shuffle32);
+
+
+                for (var i = offset; i < offset + 64; i++)
+                {
+                    output32[i] = shuffled32[i - offset];
+                }
+
                 for (var ii = 0; ii < 64; ++ii)
                 {
-                    output32[offset / 4 + ii] ^= cipher32[ii];
+                    output32[offset + ii] ^= cipher32[ii];
                 }
-                cipher32 = new uint[64];
-                Buffer.BlockCopy(tmp, 0, cipher32, 0, 256);
-                //cipher32 = new Int32Array(tmp.buffer);
+                cipher32 = tmp;
+
             }
-            //return new Buffer(outputBuffer).slice(0, output8.length - output8[output8.length - 1]);
-            return new byte[1];
+
+            var tempResult = new byte[output32.Length * 4];
+            Buffer.BlockCopy(output32, 0, tempResult, 0, output32.Length * 4);
+            return tempResult.Take(tempResult.Length - tempResult.Last()).ToArray();
         }
     }
 }

@@ -2,8 +2,7 @@
 {
     public static partial class PCrypt
     {
-
-        public static uint[] Unshuffle(uint[] vector)
+        private static uint[] Unshuffle(uint[] vector)
         {
             var output = new uint[64];
             var tmp = new uint[205];

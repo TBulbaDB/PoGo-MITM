@@ -17,6 +17,7 @@ using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
 using PoGoMITM.Base.Utils;
 using PoGoMITM.Launcher.Models;
+using POGOProtos.Networking.Envelopes;
 
 namespace PoGoMITM.Launcher
 {
@@ -28,9 +29,6 @@ namespace PoGoMITM.Launcher
         {
             RequestContext.Parser = new POGOProtosRequestParser();
 
-            PCrypt.Test();
-
-            return;
             StaticConfiguration.DisableErrorTraces = false;
             JsonConvert.DefaultSettings = () =>
             {

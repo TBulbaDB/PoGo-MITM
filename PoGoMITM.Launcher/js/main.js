@@ -81,31 +81,31 @@ pogoMITM.models = new function () {
             })
                 .done(function (data) {
                     if (data) {
-                        try {
+                        //try {
 
-                            if (data.PlatformRequests &&
-                                data.PlatformRequests.SendEncryptedSignature) {
-                                var test = p.d(data.PlatformRequests.SendEncryptedSignature.EncryptedSignature);
-                                var test1 = new Uint8Array(test);
-                                var test2 = Array.from(test1);
+                        //    if (data.PlatformRequests &&
+                        //        data.PlatformRequests.SendEncryptedSignature) {
+                        //        var test = p.d(data.PlatformRequests.SendEncryptedSignature.EncryptedSignature);
+                        //        var test1 = new Uint8Array(test);
+                        //        var test2 = Array.from(test1);
 
-                                $.ajax({
-                                    url: "/details/signature/" + item.Guid,
-                                    data: { Bytes: JSON.stringify(test2) },
-                                    method: "POST"
-                                })
-                                    .done(function (result) {
-                                        if (result && result.success) {
-                                            data.DecryptedSignature = result.signature;
-                                            self.toolbarDownloadDecryptedRawSignatureEnabled(true);
-                                            $(".jsonViewer").JSONView(data, { collapsed: true });
-                                        }
-                                    });
-                            }
+                        //        $.ajax({
+                        //            url: "/details/signature/" + item.Guid,
+                        //            data: { Bytes: JSON.stringify(test2) },
+                        //            method: "POST"
+                        //        })
+                        //            .done(function (result) {
+                        //                if (result && result.success) {
+                        //                    data.DecryptedSignature = result.signature;
+                        //                    self.toolbarDownloadDecryptedRawSignatureEnabled(true);
+                        //                    $(".jsonViewer").JSONView(data, { collapsed: true });
+                        //                }
+                        //            });
+                        //    }
 
-                        } catch (e) {
+                        //} catch (e) {
 
-                        }
+                        //}
                         if (previousActiveItem) previousActiveItem.IsActive(false);
                         item.IsActive(true);
                         previousActiveItem = item;
@@ -129,7 +129,13 @@ pogoMITM.models = new function () {
                             self.toolbarDownloadDecodedResponseEnabled(false);
                         }
                         self.toolbarDownloadDecryptedRawSignature("/download/decryptedrawsignature/" + item.Guid);
-                        self.toolbarDownloadDecryptedRawSignatureEnabled(false);
+                        if (data.DecryptedSignature) {
+                            self.toolbarDownloadDecryptedRawSignatureEnabled(true);
+                        } else {
+                            self.toolbarDownloadDecryptedRawSignatureEnabled(false);
+                        }
+
+
                         self.toolbarDownloadJson("/download/json/" + item.Guid);
                         self.toolbarDownloadJsonEnabled(true);
                     } else {

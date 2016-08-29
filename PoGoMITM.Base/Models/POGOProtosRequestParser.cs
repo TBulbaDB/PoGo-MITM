@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using PoGoMITM.Base.ProtoHelpers;
+using PoGoMITM.Base.Utils;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Platform;
 using POGOProtos.Networking.Requests;
@@ -103,6 +104,16 @@ namespace PoGoMITM.Base.Models
                         result.PlatformResponses.Add(platformReturn.Type, platformReturn);
                     }
                 }
+            }
+            var sig = result.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
+                pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
+            if (sig != null)
+            {
+                var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
+                req.MergeFrom(sig.RequestMessage);
+                var bytes = req.EncryptedSignature.ToByteArray();
+                result.RawDecryptedSignature = PCrypt.Decrypt(bytes);
+                result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
             }
 
 
