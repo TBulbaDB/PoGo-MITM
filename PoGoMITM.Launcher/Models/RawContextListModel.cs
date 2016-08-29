@@ -11,25 +11,42 @@ using PoGoMITM.Launcher.ViewModels;
 
 namespace PoGoMITM.Launcher.Models
 {
-    public class RequestContextListModel
-    {
-        private static RequestContextListModel _instance;
+   public class RequestContextListModel
+   {
+      private static RequestContextListModel _instance;
 
-        public static RequestContextListItemViewModel FromRawContext(RawContext context)
-        {
-            RequestContext requestContext = null;
-            //Task.Run(async () => { requestContext = await RequestContext.GetInstance(context); }).Wait();
-            var model = new RequestContextListItemViewModel();
-            model.Guid = context.Guid.ToString();
-            model.RequestTime = context.RequestTime;
-            model.Host = context.RequestUri.Host;
+      public static RequestContextListItemViewModel FromRawContext(RawContext context)
+      {
+         RequestContext requestContext = null;
+         Task.Run(async () => { requestContext = await RequestContext.GetInstance(context); }).Wait();
+         var model = new RequestContextListItemViewModel();
+         model.Guid = context.Guid.ToString();
+         model.RequestTime = context.RequestTime;
+         model.Host = context.RequestUri.Host;
 
-            return model;
-        }
+         try
+         {
+            List<string> lsMethods = new List<string>();
 
-        public static RequestContextListModel Instance => _instance ?? (_instance = new RequestContextListModel());
+            foreach (var request in requestContext.Requests)
+            {
+               lsMethods.Add(request.Key.ToString());
+            }
 
-        public Dictionary<string, string> RawDumpSessions
-            => RawDumpReader.GetRawDumpSessions().ToDictionary(f => f.Replace("RawContext", string.Empty).Replace(".log", string.Empty));
-    }
+            model.Methods = string.Join(", ", lsMethods);
+
+         }
+         catch (Exception)
+         {
+            model.Methods = "n/a";
+         }
+
+         return model;
+      }
+
+      public static RequestContextListModel Instance => _instance ?? (_instance = new RequestContextListModel());
+
+      public Dictionary<string, string> RawDumpSessions
+          => RawDumpReader.GetRawDumpSessions().ToDictionary(f => f.Replace("RawContext", string.Empty).Replace(".log", string.Empty));
+   }
 }

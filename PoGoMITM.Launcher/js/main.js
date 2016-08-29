@@ -30,11 +30,12 @@ pogoMITM.models = new function () {
 
         self.rawContextListItems = ko.observableArray([]);
 
-        self.addItem = function (guid, requestTime, host) {
+        self.addItem = function (guid, requestTime, host, methods) {
             self.rawContextListItems.push({
                 Guid: guid,
                 RequestTime: requestTime,
                 Host: host,
+                Methods: methods,
                 IsActive: ko.observable(false)
             });
         };
@@ -68,7 +69,7 @@ pogoMITM.models = new function () {
         self.addRange = function (listOfItems) {
             for (var i = 0; i < listOfItems.length; i++) {
                 var item = listOfItems[i];
-                self.addItem(item.Guid, item.RequestTime, item.Host);
+                self.addItem(item.Guid, item.RequestTime, item.Host, item.Methods);
             }
         };
 
@@ -165,7 +166,7 @@ pogoMITM.signalR = {
         notifications.client.rc = function (vm) {
             //console.log(vm);
             if (pogoMITM.models.rawContextsList.isLiveSession) {
-                pogoMITM.models.rawContextsList.addItem(vm.Guid, vm.RequestTime, vm.Host);
+                pogoMITM.models.rawContextsList.addItem(vm.Guid, vm.RequestTime, vm.Host, vm.Methods);
             }
         };
         $.connection.hub.start()

@@ -52,13 +52,15 @@
                     <thead>
                         <tr>
                             <th>Time</th>
-                            <th>Uri</th>
+                            <th>Host</th>
+                            <th>Methods</th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: rawContextListItems">
                         <tr data-bind="click: function(data, event) { $parent.loadRequestDetails(data, event) }, css: {activeRow: IsActive() == true}">
                             <td data-bind="text: new Date(RequestTime).toLocaleTimeString()">Failed</td>
                             <td data-bind="text: Host">failed</td>
+                            <td data-bind="text: Methods">failed</td>
                         </tr>
                     </tbody>
                 </table>
