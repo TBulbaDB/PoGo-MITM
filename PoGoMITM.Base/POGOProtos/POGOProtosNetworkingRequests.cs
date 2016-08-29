@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Networking.Requests {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Networking.Requests.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosNetworkingRequestsReflection {
 
     #region Descriptor
@@ -362,35 +363,30 @@ namespace POGOProtos.Networking.Requests {
   #endregion
 
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class Request : pb::IMessage<Request> {
     private static readonly pb::MessageParser<Request> _parser = new pb::MessageParser<Request>(() => new Request());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<Request> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Requests.POGOProtosNetworkingRequestsReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Request() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Request(Request other) : this() {
       requestType_ = other.requestType_;
       requestMessage_ = other.requestMessage_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Request Clone() {
       return new Request(this);
     }
@@ -398,7 +394,6 @@ namespace POGOProtos.Networking.Requests {
     /// <summary>Field number for the "request_type" field.</summary>
     public const int RequestTypeFieldNumber = 1;
     private global::POGOProtos.Networking.Requests.RequestType requestType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Networking.Requests.RequestType RequestType {
       get { return requestType_; }
       set {
@@ -409,7 +404,6 @@ namespace POGOProtos.Networking.Requests {
     /// <summary>Field number for the "request_message" field.</summary>
     public const int RequestMessageFieldNumber = 2;
     private pb::ByteString requestMessage_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString RequestMessage {
       get { return requestMessage_; }
       set {
@@ -417,12 +411,10 @@ namespace POGOProtos.Networking.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Request);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(Request other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -435,7 +427,6 @@ namespace POGOProtos.Networking.Requests {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (RequestType != 0) hash ^= RequestType.GetHashCode();
@@ -443,12 +434,10 @@ namespace POGOProtos.Networking.Requests {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (RequestType != 0) {
         output.WriteRawTag(8);
@@ -460,7 +449,6 @@ namespace POGOProtos.Networking.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (RequestType != 0) {
@@ -472,7 +460,6 @@ namespace POGOProtos.Networking.Requests {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(Request other) {
       if (other == null) {
         return;
@@ -485,7 +472,6 @@ namespace POGOProtos.Networking.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Inventory {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Inventory.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosInventoryReflection {
 
     #region Descriptor
@@ -104,29 +105,25 @@ namespace POGOProtos.Inventory {
   #endregion
 
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class AppliedItem : pb::IMessage<AppliedItem> {
     private static readonly pb::MessageParser<AppliedItem> _parser = new pb::MessageParser<AppliedItem>(() => new AppliedItem());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<AppliedItem> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AppliedItem() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AppliedItem(AppliedItem other) : this() {
       itemId_ = other.itemId_;
       itemType_ = other.itemType_;
@@ -134,7 +131,6 @@ namespace POGOProtos.Inventory {
       appliedMs_ = other.appliedMs_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AppliedItem Clone() {
       return new AppliedItem(this);
     }
@@ -142,7 +138,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -153,7 +148,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "item_type" field.</summary>
     public const int ItemTypeFieldNumber = 2;
     private global::POGOProtos.Inventory.Item.ItemType itemType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemType ItemType {
       get { return itemType_; }
       set {
@@ -164,7 +158,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "expire_ms" field.</summary>
     public const int ExpireMsFieldNumber = 3;
     private long expireMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ExpireMs {
       get { return expireMs_; }
       set {
@@ -175,7 +168,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "applied_ms" field.</summary>
     public const int AppliedMsFieldNumber = 4;
     private long appliedMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long AppliedMs {
       get { return appliedMs_; }
       set {
@@ -183,12 +175,10 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AppliedItem);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(AppliedItem other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -203,7 +193,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -213,12 +202,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -238,7 +225,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -256,7 +242,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(AppliedItem other) {
       if (other == null) {
         return;
@@ -275,7 +260,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -305,34 +289,29 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class AppliedItems : pb::IMessage<AppliedItems> {
     private static readonly pb::MessageParser<AppliedItems> _parser = new pb::MessageParser<AppliedItems>(() => new AppliedItems());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<AppliedItems> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[1]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AppliedItems() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AppliedItems(AppliedItems other) : this() {
       item_ = other.item_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AppliedItems Clone() {
       return new AppliedItems(this);
     }
@@ -342,17 +321,14 @@ namespace POGOProtos.Inventory {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.AppliedItem> _repeated_item_codec
         = pb::FieldCodec.ForMessage(34, global::POGOProtos.Inventory.AppliedItem.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.AppliedItem> item_ = new pbc::RepeatedField<global::POGOProtos.Inventory.AppliedItem>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.AppliedItem> Item {
       get { return item_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AppliedItems);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(AppliedItems other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -364,31 +340,26 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= item_.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       item_.WriteTo(output, _repeated_item_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += item_.CalculateSize(_repeated_item_codec);
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(AppliedItems other) {
       if (other == null) {
         return;
@@ -396,7 +367,6 @@ namespace POGOProtos.Inventory {
       item_.Add(other.item_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -414,35 +384,30 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class Candy : pb::IMessage<Candy> {
     private static readonly pb::MessageParser<Candy> _parser = new pb::MessageParser<Candy>(() => new Candy());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<Candy> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[2]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Candy() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Candy(Candy other) : this() {
       familyId_ = other.familyId_;
       candy_ = other.candy_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Candy Clone() {
       return new Candy(this);
     }
@@ -450,7 +415,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "family_id" field.</summary>
     public const int FamilyIdFieldNumber = 1;
     private global::POGOProtos.Enums.PokemonFamilyId familyId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Enums.PokemonFamilyId FamilyId {
       get { return familyId_; }
       set {
@@ -461,7 +425,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "candy" field.</summary>
     public const int Candy_FieldNumber = 2;
     private int candy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Candy_ {
       get { return candy_; }
       set {
@@ -469,12 +432,10 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Candy);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(Candy other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -487,7 +448,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (FamilyId != 0) hash ^= FamilyId.GetHashCode();
@@ -495,12 +455,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (FamilyId != 0) {
         output.WriteRawTag(8);
@@ -512,7 +470,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (FamilyId != 0) {
@@ -524,7 +481,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(Candy other) {
       if (other == null) {
         return;
@@ -537,7 +493,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -559,29 +514,25 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EggIncubator : pb::IMessage<EggIncubator> {
     private static readonly pb::MessageParser<EggIncubator> _parser = new pb::MessageParser<EggIncubator>(() => new EggIncubator());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EggIncubator> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[3]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubator() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubator(EggIncubator other) : this() {
       id_ = other.id_;
       itemId_ = other.itemId_;
@@ -592,7 +543,6 @@ namespace POGOProtos.Inventory {
       targetKmWalked_ = other.targetKmWalked_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubator Clone() {
       return new EggIncubator(this);
     }
@@ -600,7 +550,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
       get { return id_; }
       set {
@@ -611,7 +560,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 2;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -622,7 +570,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "incubator_type" field.</summary>
     public const int IncubatorTypeFieldNumber = 3;
     private global::POGOProtos.Inventory.EggIncubatorType incubatorType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.EggIncubatorType IncubatorType {
       get { return incubatorType_; }
       set {
@@ -633,7 +580,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "uses_remaining" field.</summary>
     public const int UsesRemainingFieldNumber = 4;
     private int usesRemaining_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int UsesRemaining {
       get { return usesRemaining_; }
       set {
@@ -647,7 +593,6 @@ namespace POGOProtos.Inventory {
     /// <summary>
     ///  TODO: Check if is PokemonType
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PokemonId {
       get { return pokemonId_; }
       set {
@@ -658,7 +603,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "start_km_walked" field.</summary>
     public const int StartKmWalkedFieldNumber = 6;
     private double startKmWalked_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double StartKmWalked {
       get { return startKmWalked_; }
       set {
@@ -669,7 +613,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "target_km_walked" field.</summary>
     public const int TargetKmWalkedFieldNumber = 7;
     private double targetKmWalked_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double TargetKmWalked {
       get { return targetKmWalked_; }
       set {
@@ -677,12 +620,10 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EggIncubator);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EggIncubator other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -700,7 +641,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
@@ -713,12 +653,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Id.Length != 0) {
         output.WriteRawTag(10);
@@ -750,7 +688,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Id.Length != 0) {
@@ -777,7 +714,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EggIncubator other) {
       if (other == null) {
         return;
@@ -805,7 +741,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -847,34 +782,29 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class EggIncubators : pb::IMessage<EggIncubators> {
     private static readonly pb::MessageParser<EggIncubators> _parser = new pb::MessageParser<EggIncubators>(() => new EggIncubators());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EggIncubators> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[4]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubators() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubators(EggIncubators other) : this() {
       eggIncubator_ = other.eggIncubator_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EggIncubators Clone() {
       return new EggIncubators(this);
     }
@@ -884,17 +814,14 @@ namespace POGOProtos.Inventory {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.EggIncubator> _repeated_eggIncubator_codec
         = pb::FieldCodec.ForMessage(10, global::POGOProtos.Inventory.EggIncubator.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.EggIncubator> eggIncubator_ = new pbc::RepeatedField<global::POGOProtos.Inventory.EggIncubator>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.EggIncubator> EggIncubator {
       get { return eggIncubator_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EggIncubators);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EggIncubators other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -906,31 +833,26 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= eggIncubator_.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       eggIncubator_.WriteTo(output, _repeated_eggIncubator_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += eggIncubator_.CalculateSize(_repeated_eggIncubator_codec);
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EggIncubators other) {
       if (other == null) {
         return;
@@ -938,7 +860,6 @@ namespace POGOProtos.Inventory {
       eggIncubator_.Add(other.eggIncubator_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -956,36 +877,31 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class InventoryDelta : pb::IMessage<InventoryDelta> {
     private static readonly pb::MessageParser<InventoryDelta> _parser = new pb::MessageParser<InventoryDelta>(() => new InventoryDelta());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<InventoryDelta> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[5]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryDelta() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryDelta(InventoryDelta other) : this() {
       originalTimestampMs_ = other.originalTimestampMs_;
       newTimestampMs_ = other.newTimestampMs_;
       inventoryItems_ = other.inventoryItems_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryDelta Clone() {
       return new InventoryDelta(this);
     }
@@ -993,7 +909,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "original_timestamp_ms" field.</summary>
     public const int OriginalTimestampMsFieldNumber = 1;
     private long originalTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OriginalTimestampMs {
       get { return originalTimestampMs_; }
       set {
@@ -1004,7 +919,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "new_timestamp_ms" field.</summary>
     public const int NewTimestampMsFieldNumber = 2;
     private long newTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long NewTimestampMs {
       get { return newTimestampMs_; }
       set {
@@ -1017,17 +931,14 @@ namespace POGOProtos.Inventory {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.InventoryItem> _repeated_inventoryItems_codec
         = pb::FieldCodec.ForMessage(26, global::POGOProtos.Inventory.InventoryItem.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.InventoryItem> inventoryItems_ = new pbc::RepeatedField<global::POGOProtos.Inventory.InventoryItem>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.InventoryItem> InventoryItems {
       get { return inventoryItems_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InventoryDelta);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(InventoryDelta other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1041,7 +952,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (OriginalTimestampMs != 0L) hash ^= OriginalTimestampMs.GetHashCode();
@@ -1050,12 +960,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (OriginalTimestampMs != 0L) {
         output.WriteRawTag(8);
@@ -1068,7 +976,6 @@ namespace POGOProtos.Inventory {
       inventoryItems_.WriteTo(output, _repeated_inventoryItems_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (OriginalTimestampMs != 0L) {
@@ -1081,7 +988,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(InventoryDelta other) {
       if (other == null) {
         return;
@@ -1095,7 +1001,6 @@ namespace POGOProtos.Inventory {
       inventoryItems_.Add(other.inventoryItems_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1121,36 +1026,31 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class InventoryItem : pb::IMessage<InventoryItem> {
     private static readonly pb::MessageParser<InventoryItem> _parser = new pb::MessageParser<InventoryItem>(() => new InventoryItem());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<InventoryItem> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[6]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryItem() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryItem(InventoryItem other) : this() {
       modifiedTimestampMs_ = other.modifiedTimestampMs_;
       DeletedItem = other.deletedItem_ != null ? other.DeletedItem.Clone() : null;
       InventoryItemData = other.inventoryItemData_ != null ? other.InventoryItemData.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryItem Clone() {
       return new InventoryItem(this);
     }
@@ -1158,7 +1058,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "modified_timestamp_ms" field.</summary>
     public const int ModifiedTimestampMsFieldNumber = 1;
     private long modifiedTimestampMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ModifiedTimestampMs {
       get { return modifiedTimestampMs_; }
       set {
@@ -1169,7 +1068,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "deleted_item" field.</summary>
     public const int DeletedItemFieldNumber = 2;
     private global::POGOProtos.Inventory.InventoryItem.Types.DeletedItem deletedItem_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.InventoryItem.Types.DeletedItem DeletedItem {
       get { return deletedItem_; }
       set {
@@ -1180,7 +1078,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "inventory_item_data" field.</summary>
     public const int InventoryItemDataFieldNumber = 3;
     private global::POGOProtos.Inventory.InventoryItemData inventoryItemData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.InventoryItemData InventoryItemData {
       get { return inventoryItemData_; }
       set {
@@ -1188,12 +1085,10 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InventoryItem);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(InventoryItem other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1207,7 +1102,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ModifiedTimestampMs != 0L) hash ^= ModifiedTimestampMs.GetHashCode();
@@ -1216,12 +1110,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ModifiedTimestampMs != 0L) {
         output.WriteRawTag(8);
@@ -1237,7 +1129,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ModifiedTimestampMs != 0L) {
@@ -1252,7 +1143,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(InventoryItem other) {
       if (other == null) {
         return;
@@ -1274,7 +1164,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1306,36 +1195,31 @@ namespace POGOProtos.Inventory {
 
     #region Nested types
     /// <summary>Container for nested types declared in the InventoryItem message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public static partial class Types {
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       public sealed partial class DeletedItem : pb::IMessage<DeletedItem> {
         private static readonly pb::MessageParser<DeletedItem> _parser = new pb::MessageParser<DeletedItem>(() => new DeletedItem());
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<DeletedItem> Parser { get { return _parser; } }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::POGOProtos.Inventory.InventoryItem.Descriptor.NestedTypes[0]; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public DeletedItem() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public DeletedItem(DeletedItem other) : this() {
           pokemonId_ = other.pokemonId_;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public DeletedItem Clone() {
           return new DeletedItem(this);
         }
@@ -1343,7 +1227,6 @@ namespace POGOProtos.Inventory {
         /// <summary>Field number for the "pokemon_id" field.</summary>
         public const int PokemonIdFieldNumber = 1;
         private ulong pokemonId_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ulong PokemonId {
           get { return pokemonId_; }
           set {
@@ -1351,12 +1234,10 @@ namespace POGOProtos.Inventory {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as DeletedItem);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(DeletedItem other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1368,19 +1249,16 @@ namespace POGOProtos.Inventory {
           return true;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (PokemonId != 0UL) hash ^= PokemonId.GetHashCode();
           return hash;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (PokemonId != 0UL) {
             output.WriteRawTag(9);
@@ -1388,7 +1266,6 @@ namespace POGOProtos.Inventory {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (PokemonId != 0UL) {
@@ -1397,7 +1274,6 @@ namespace POGOProtos.Inventory {
           return size;
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(DeletedItem other) {
           if (other == null) {
             return;
@@ -1407,7 +1283,6 @@ namespace POGOProtos.Inventory {
           }
         }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1430,29 +1305,25 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class InventoryItemData : pb::IMessage<InventoryItemData> {
     private static readonly pb::MessageParser<InventoryItemData> _parser = new pb::MessageParser<InventoryItemData>(() => new InventoryItemData());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<InventoryItemData> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[7]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryItemData() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryItemData(InventoryItemData other) : this() {
       PokemonData = other.pokemonData_ != null ? other.PokemonData.Clone() : null;
       Item = other.item_ != null ? other.Item.Clone() : null;
@@ -1466,7 +1337,6 @@ namespace POGOProtos.Inventory {
       Candy = other.candy_ != null ? other.Candy.Clone() : null;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryItemData Clone() {
       return new InventoryItemData(this);
     }
@@ -1474,7 +1344,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "pokemon_data" field.</summary>
     public const int PokemonDataFieldNumber = 1;
     private global::POGOProtos.Data.PokemonData pokemonData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokemonData PokemonData {
       get { return pokemonData_; }
       set {
@@ -1485,7 +1354,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 2;
     private global::POGOProtos.Inventory.Item.ItemData item_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemData Item {
       get { return item_; }
       set {
@@ -1496,7 +1364,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "pokedex_entry" field.</summary>
     public const int PokedexEntryFieldNumber = 3;
     private global::POGOProtos.Data.PokedexEntry pokedexEntry_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.PokedexEntry PokedexEntry {
       get { return pokedexEntry_; }
       set {
@@ -1507,7 +1374,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "player_stats" field.</summary>
     public const int PlayerStatsFieldNumber = 4;
     private global::POGOProtos.Data.Player.PlayerStats playerStats_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.PlayerStats PlayerStats {
       get { return playerStats_; }
       set {
@@ -1518,7 +1384,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "player_currency" field.</summary>
     public const int PlayerCurrencyFieldNumber = 5;
     private global::POGOProtos.Data.Player.PlayerCurrency playerCurrency_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.PlayerCurrency PlayerCurrency {
       get { return playerCurrency_; }
       set {
@@ -1529,7 +1394,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "player_camera" field.</summary>
     public const int PlayerCameraFieldNumber = 6;
     private global::POGOProtos.Data.Player.PlayerCamera playerCamera_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Data.Player.PlayerCamera PlayerCamera {
       get { return playerCamera_; }
       set {
@@ -1540,7 +1404,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "inventory_upgrades" field.</summary>
     public const int InventoryUpgradesFieldNumber = 7;
     private global::POGOProtos.Inventory.InventoryUpgrades inventoryUpgrades_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.InventoryUpgrades InventoryUpgrades {
       get { return inventoryUpgrades_; }
       set {
@@ -1551,7 +1414,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "applied_items" field.</summary>
     public const int AppliedItemsFieldNumber = 8;
     private global::POGOProtos.Inventory.AppliedItems appliedItems_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.AppliedItems AppliedItems {
       get { return appliedItems_; }
       set {
@@ -1562,7 +1424,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "egg_incubators" field.</summary>
     public const int EggIncubatorsFieldNumber = 9;
     private global::POGOProtos.Inventory.EggIncubators eggIncubators_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.EggIncubators EggIncubators {
       get { return eggIncubators_; }
       set {
@@ -1573,7 +1434,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "candy" field.</summary>
     public const int CandyFieldNumber = 10;
     private global::POGOProtos.Inventory.Candy candy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Candy Candy {
       get { return candy_; }
       set {
@@ -1581,12 +1441,10 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InventoryItemData);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(InventoryItemData other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1607,7 +1465,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (pokemonData_ != null) hash ^= PokemonData.GetHashCode();
@@ -1623,12 +1480,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (pokemonData_ != null) {
         output.WriteRawTag(10);
@@ -1672,7 +1527,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (pokemonData_ != null) {
@@ -1708,7 +1562,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(InventoryItemData other) {
       if (other == null) {
         return;
@@ -1775,7 +1628,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1859,36 +1711,31 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class InventoryUpgrade : pb::IMessage<InventoryUpgrade> {
     private static readonly pb::MessageParser<InventoryUpgrade> _parser = new pb::MessageParser<InventoryUpgrade>(() => new InventoryUpgrade());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<InventoryUpgrade> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[8]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryUpgrade() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryUpgrade(InventoryUpgrade other) : this() {
       itemId_ = other.itemId_;
       upgradeType_ = other.upgradeType_;
       additionalStorage_ = other.additionalStorage_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryUpgrade Clone() {
       return new InventoryUpgrade(this);
     }
@@ -1896,7 +1743,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private global::POGOProtos.Inventory.Item.ItemId itemId_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.Item.ItemId ItemId {
       get { return itemId_; }
       set {
@@ -1907,7 +1753,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "upgrade_type" field.</summary>
     public const int UpgradeTypeFieldNumber = 2;
     private global::POGOProtos.Inventory.InventoryUpgradeType upgradeType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::POGOProtos.Inventory.InventoryUpgradeType UpgradeType {
       get { return upgradeType_; }
       set {
@@ -1918,7 +1763,6 @@ namespace POGOProtos.Inventory {
     /// <summary>Field number for the "additional_storage" field.</summary>
     public const int AdditionalStorageFieldNumber = 3;
     private int additionalStorage_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int AdditionalStorage {
       get { return additionalStorage_; }
       set {
@@ -1926,12 +1770,10 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InventoryUpgrade);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(InventoryUpgrade other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1945,7 +1787,6 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId != 0) hash ^= ItemId.GetHashCode();
@@ -1954,12 +1795,10 @@ namespace POGOProtos.Inventory {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId != 0) {
         output.WriteRawTag(8);
@@ -1975,7 +1814,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId != 0) {
@@ -1990,7 +1828,6 @@ namespace POGOProtos.Inventory {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(InventoryUpgrade other) {
       if (other == null) {
         return;
@@ -2006,7 +1843,6 @@ namespace POGOProtos.Inventory {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2032,34 +1868,29 @@ namespace POGOProtos.Inventory {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class InventoryUpgrades : pb::IMessage<InventoryUpgrades> {
     private static readonly pb::MessageParser<InventoryUpgrades> _parser = new pb::MessageParser<InventoryUpgrades>(() => new InventoryUpgrades());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<InventoryUpgrades> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Inventory.POGOProtosInventoryReflection.Descriptor.MessageTypes[9]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryUpgrades() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryUpgrades(InventoryUpgrades other) : this() {
       inventoryUpgrades_ = other.inventoryUpgrades_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InventoryUpgrades Clone() {
       return new InventoryUpgrades(this);
     }
@@ -2069,17 +1900,14 @@ namespace POGOProtos.Inventory {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.InventoryUpgrade> _repeated_inventoryUpgrades_codec
         = pb::FieldCodec.ForMessage(10, global::POGOProtos.Inventory.InventoryUpgrade.Parser);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.InventoryUpgrade> inventoryUpgrades_ = new pbc::RepeatedField<global::POGOProtos.Inventory.InventoryUpgrade>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.InventoryUpgrade> InventoryUpgrades_ {
       get { return inventoryUpgrades_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as InventoryUpgrades);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(InventoryUpgrades other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2091,31 +1919,26 @@ namespace POGOProtos.Inventory {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= inventoryUpgrades_.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       inventoryUpgrades_.WriteTo(output, _repeated_inventoryUpgrades_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += inventoryUpgrades_.CalculateSize(_repeated_inventoryUpgrades_codec);
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(InventoryUpgrades other) {
       if (other == null) {
         return;
@@ -2123,7 +1946,6 @@ namespace POGOProtos.Inventory {
       inventoryUpgrades_.Add(other.inventoryUpgrades_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

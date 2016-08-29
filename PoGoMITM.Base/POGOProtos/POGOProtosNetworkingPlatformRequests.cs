@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Networking.Platform.Requests {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Networking.Platform.Requests.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosNetworkingPlatformRequestsReflection {
 
     #region Descriptor
@@ -40,34 +41,29 @@ namespace POGOProtos.Networking.Platform.Requests {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BuyItemAndroidRequest : pb::IMessage<BuyItemAndroidRequest> {
     private static readonly pb::MessageParser<BuyItemAndroidRequest> _parser = new pb::MessageParser<BuyItemAndroidRequest>(() => new BuyItemAndroidRequest());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BuyItemAndroidRequest> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Requests.POGOProtosNetworkingPlatformRequestsReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemAndroidRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemAndroidRequest(BuyItemAndroidRequest other) : this() {
       buyItemIntent_ = other.buyItemIntent_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemAndroidRequest Clone() {
       return new BuyItemAndroidRequest(this);
     }
@@ -78,7 +74,6 @@ namespace POGOProtos.Networking.Platform.Requests {
     /// <summary>
     ///  see https://developer.android.com/google/play/billing/billing_reference.html table 4
     /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BuyItemIntent {
       get { return buyItemIntent_; }
       set {
@@ -86,12 +81,10 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BuyItemAndroidRequest);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BuyItemAndroidRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -103,19 +96,16 @@ namespace POGOProtos.Networking.Platform.Requests {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (BuyItemIntent.Length != 0) hash ^= BuyItemIntent.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (BuyItemIntent.Length != 0) {
         output.WriteRawTag(10);
@@ -123,7 +113,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (BuyItemIntent.Length != 0) {
@@ -132,7 +121,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BuyItemAndroidRequest other) {
       if (other == null) {
         return;
@@ -142,7 +130,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -160,34 +147,29 @@ namespace POGOProtos.Networking.Platform.Requests {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class BuyItemPokeCoinsRequest : pb::IMessage<BuyItemPokeCoinsRequest> {
     private static readonly pb::MessageParser<BuyItemPokeCoinsRequest> _parser = new pb::MessageParser<BuyItemPokeCoinsRequest>(() => new BuyItemPokeCoinsRequest());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<BuyItemPokeCoinsRequest> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Requests.POGOProtosNetworkingPlatformRequestsReflection.Descriptor.MessageTypes[1]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemPokeCoinsRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemPokeCoinsRequest(BuyItemPokeCoinsRequest other) : this() {
       itemId_ = other.itemId_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BuyItemPokeCoinsRequest Clone() {
       return new BuyItemPokeCoinsRequest(this);
     }
@@ -195,7 +177,6 @@ namespace POGOProtos.Networking.Platform.Requests {
     /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private string itemId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ItemId {
       get { return itemId_; }
       set {
@@ -203,12 +184,10 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as BuyItemPokeCoinsRequest);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(BuyItemPokeCoinsRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -220,19 +199,16 @@ namespace POGOProtos.Networking.Platform.Requests {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (ItemId.Length != 0) hash ^= ItemId.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (ItemId.Length != 0) {
         output.WriteRawTag(10);
@@ -240,7 +216,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (ItemId.Length != 0) {
@@ -249,7 +224,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(BuyItemPokeCoinsRequest other) {
       if (other == null) {
         return;
@@ -259,7 +233,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -277,34 +250,29 @@ namespace POGOProtos.Networking.Platform.Requests {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class SendEncryptedSignatureRequest : pb::IMessage<SendEncryptedSignatureRequest> {
     private static readonly pb::MessageParser<SendEncryptedSignatureRequest> _parser = new pb::MessageParser<SendEncryptedSignatureRequest>(() => new SendEncryptedSignatureRequest());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SendEncryptedSignatureRequest> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Networking.Platform.Requests.POGOProtosNetworkingPlatformRequestsReflection.Descriptor.MessageTypes[2]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SendEncryptedSignatureRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SendEncryptedSignatureRequest(SendEncryptedSignatureRequest other) : this() {
       encryptedSignature_ = other.encryptedSignature_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SendEncryptedSignatureRequest Clone() {
       return new SendEncryptedSignatureRequest(this);
     }
@@ -312,7 +280,6 @@ namespace POGOProtos.Networking.Platform.Requests {
     /// <summary>Field number for the "encrypted_signature" field.</summary>
     public const int EncryptedSignatureFieldNumber = 1;
     private pb::ByteString encryptedSignature_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString EncryptedSignature {
       get { return encryptedSignature_; }
       set {
@@ -320,12 +287,10 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SendEncryptedSignatureRequest);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SendEncryptedSignatureRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -337,19 +302,16 @@ namespace POGOProtos.Networking.Platform.Requests {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (EncryptedSignature.Length != 0) hash ^= EncryptedSignature.GetHashCode();
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (EncryptedSignature.Length != 0) {
         output.WriteRawTag(10);
@@ -357,7 +319,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (EncryptedSignature.Length != 0) {
@@ -366,7 +327,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SendEncryptedSignatureRequest other) {
       if (other == null) {
         return;
@@ -376,7 +336,6 @@ namespace POGOProtos.Networking.Platform.Requests {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {

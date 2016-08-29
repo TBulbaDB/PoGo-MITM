@@ -10,6 +10,7 @@ using scg = global::System.Collections.Generic;
 namespace POGOProtos.Data.Capture {
 
   /// <summary>Holder for reflection information generated from POGOProtos.Data.Capture.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class POGOProtosDataCaptureReflection {
 
     #region Descriptor
@@ -43,29 +44,25 @@ namespace POGOProtos.Data.Capture {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CaptureAward : pb::IMessage<CaptureAward> {
     private static readonly pb::MessageParser<CaptureAward> _parser = new pb::MessageParser<CaptureAward>(() => new CaptureAward());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CaptureAward> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Capture.POGOProtosDataCaptureReflection.Descriptor.MessageTypes[0]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CaptureAward() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CaptureAward(CaptureAward other) : this() {
       activityType_ = other.activityType_.Clone();
       xp_ = other.xp_.Clone();
@@ -73,7 +70,6 @@ namespace POGOProtos.Data.Capture {
       stardust_ = other.stardust_.Clone();
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CaptureAward Clone() {
       return new CaptureAward(this);
     }
@@ -83,7 +79,6 @@ namespace POGOProtos.Data.Capture {
     private static readonly pb::FieldCodec<global::POGOProtos.Enums.ActivityType> _repeated_activityType_codec
         = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::POGOProtos.Enums.ActivityType) x);
     private readonly pbc::RepeatedField<global::POGOProtos.Enums.ActivityType> activityType_ = new pbc::RepeatedField<global::POGOProtos.Enums.ActivityType>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Enums.ActivityType> ActivityType {
       get { return activityType_; }
     }
@@ -93,7 +88,6 @@ namespace POGOProtos.Data.Capture {
     private static readonly pb::FieldCodec<int> _repeated_xp_codec
         = pb::FieldCodec.ForInt32(18);
     private readonly pbc::RepeatedField<int> xp_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> Xp {
       get { return xp_; }
     }
@@ -103,7 +97,6 @@ namespace POGOProtos.Data.Capture {
     private static readonly pb::FieldCodec<int> _repeated_candy_codec
         = pb::FieldCodec.ForInt32(26);
     private readonly pbc::RepeatedField<int> candy_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> Candy {
       get { return candy_; }
     }
@@ -113,17 +106,14 @@ namespace POGOProtos.Data.Capture {
     private static readonly pb::FieldCodec<int> _repeated_stardust_codec
         = pb::FieldCodec.ForInt32(34);
     private readonly pbc::RepeatedField<int> stardust_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> Stardust {
       get { return stardust_; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CaptureAward);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CaptureAward other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -138,7 +128,6 @@ namespace POGOProtos.Data.Capture {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= activityType_.GetHashCode();
@@ -148,12 +137,10 @@ namespace POGOProtos.Data.Capture {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       activityType_.WriteTo(output, _repeated_activityType_codec);
       xp_.WriteTo(output, _repeated_xp_codec);
@@ -161,7 +148,6 @@ namespace POGOProtos.Data.Capture {
       stardust_.WriteTo(output, _repeated_stardust_codec);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += activityType_.CalculateSize(_repeated_activityType_codec);
@@ -171,7 +157,6 @@ namespace POGOProtos.Data.Capture {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CaptureAward other) {
       if (other == null) {
         return;
@@ -182,7 +167,6 @@ namespace POGOProtos.Data.Capture {
       stardust_.Add(other.stardust_);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -216,36 +200,31 @@ namespace POGOProtos.Data.Capture {
 
   }
 
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public sealed partial class CaptureProbability : pb::IMessage<CaptureProbability> {
     private static readonly pb::MessageParser<CaptureProbability> _parser = new pb::MessageParser<CaptureProbability>(() => new CaptureProbability());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CaptureProbability> Parser { get { return _parser; } }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::POGOProtos.Data.Capture.POGOProtosDataCaptureReflection.Descriptor.MessageTypes[1]; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CaptureProbability() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CaptureProbability(CaptureProbability other) : this() {
       pokeballType_ = other.pokeballType_.Clone();
       captureProbability_ = other.captureProbability_.Clone();
       reticleDifficultyScale_ = other.reticleDifficultyScale_;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CaptureProbability Clone() {
       return new CaptureProbability(this);
     }
@@ -255,7 +234,6 @@ namespace POGOProtos.Data.Capture {
     private static readonly pb::FieldCodec<global::POGOProtos.Inventory.Item.ItemId> _repeated_pokeballType_codec
         = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::POGOProtos.Inventory.Item.ItemId) x);
     private readonly pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId> pokeballType_ = new pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::POGOProtos.Inventory.Item.ItemId> PokeballType {
       get { return pokeballType_; }
     }
@@ -265,7 +243,6 @@ namespace POGOProtos.Data.Capture {
     private static readonly pb::FieldCodec<float> _repeated_captureProbability_codec
         = pb::FieldCodec.ForFloat(18);
     private readonly pbc::RepeatedField<float> captureProbability_ = new pbc::RepeatedField<float>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<float> CaptureProbability_ {
       get { return captureProbability_; }
     }
@@ -273,7 +250,6 @@ namespace POGOProtos.Data.Capture {
     /// <summary>Field number for the "reticle_difficulty_scale" field.</summary>
     public const int ReticleDifficultyScaleFieldNumber = 12;
     private double reticleDifficultyScale_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double ReticleDifficultyScale {
       get { return reticleDifficultyScale_; }
       set {
@@ -281,12 +257,10 @@ namespace POGOProtos.Data.Capture {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CaptureProbability);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(CaptureProbability other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -300,7 +274,6 @@ namespace POGOProtos.Data.Capture {
       return true;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= pokeballType_.GetHashCode();
@@ -309,12 +282,10 @@ namespace POGOProtos.Data.Capture {
       return hash;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       pokeballType_.WriteTo(output, _repeated_pokeballType_codec);
       captureProbability_.WriteTo(output, _repeated_captureProbability_codec);
@@ -324,7 +295,6 @@ namespace POGOProtos.Data.Capture {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += pokeballType_.CalculateSize(_repeated_pokeballType_codec);
@@ -335,7 +305,6 @@ namespace POGOProtos.Data.Capture {
       return size;
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(CaptureProbability other) {
       if (other == null) {
         return;
@@ -347,7 +316,6 @@ namespace POGOProtos.Data.Capture {
       }
     }
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
