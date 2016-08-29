@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using log4net;
 using log4net.Core;
 using Microsoft.AspNet.SignalR.Hubs;
@@ -14,6 +15,7 @@ using PoGoMITM.Base.Cache;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
+using PoGoMITM.Base.Utils;
 using PoGoMITM.Launcher.Models;
 
 namespace PoGoMITM.Launcher
@@ -25,6 +27,10 @@ namespace PoGoMITM.Launcher
         private static void Main()
         {
             RequestContext.Parser = new POGOProtosRequestParser();
+
+            PCrypt.Test();
+
+            return;
             StaticConfiguration.DisableErrorTraces = false;
             JsonConvert.DefaultSettings = () =>
             {

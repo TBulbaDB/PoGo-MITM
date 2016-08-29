@@ -116,8 +116,10 @@
     <Compile Include="ProxyHandler.cs" />
     <Compile Include="Utils\CertificateHelper.cs" />
     <Compile Include="Utils\ArrayBuffer.cs" />
+    <Compile Include="Utils\Crypto\Unshuffle.cs" />
     <Compile Include="Utils\DateHelpers.cs" />
     <Compile Include="Utils\FileAsync.cs" />
+    <Compile Include="Utils\PCrypt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
