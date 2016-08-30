@@ -77,6 +77,17 @@ namespace PoGoMITM.Launcher.Modules
                 return new NotFoundResponse();
             };
 
+            Get["/download/rawsignature/{guid}", true] = async (x, ct) =>
+            {
+                var guid = (string)x.guid;
+                var context = await GetRequestContext(guid);
+                if (context?.ResponseBody != null)
+                {
+                    return Response.FromStream(new MemoryStream(context.RawSignature), "application/binary").AsAttachment(guid + "-rawsignature.bin");
+                }
+                return new NotFoundResponse();
+            };
+
 
             Get["/download/decryptedrawsignature/{guid}", true] = async (x, ct) =>
             {

@@ -82,7 +82,6 @@
     <Compile Include="Dumpers\RawDumpReader.cs" />
     <Compile Include="Logging\Log4NetHelper.cs" />
     <Compile Include="Models\IRequestParser.cs" />
-    <Compile Include="Models\ISignatureDecryptor.cs" />
     <Compile Include="Models\MessageBlock.cs" />
     <Compile Include="Models\POGOProtosRequestParser.cs" />
     <Compile Include="Models\RawContext.cs" />

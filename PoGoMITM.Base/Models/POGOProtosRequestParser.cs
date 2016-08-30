@@ -107,7 +107,7 @@ namespace PoGoMITM.Base.Models
                 }
             }
 
-            if (SignatureDecryptor != null)
+            if (SignatureEncryption != null)
             {
                 var sig = result.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
                     pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
@@ -116,12 +116,13 @@ namespace PoGoMITM.Base.Models
                     var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
                     req.MergeFrom(sig.RequestMessage);
                     var bytes = req.EncryptedSignature.ToByteArray();
+                    result.RawSignature = bytes;
                     try
                     {
                         result.RawDecryptedSignature =
-                            SignatureDecryptor.GetType()
+                            SignatureEncryption.GetType()
                                 .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
-                                    SignatureDecryptor, new[] { bytes }) as byte[];
+                                    SignatureEncryption, new[] { bytes }) as byte[];
                         if (result.RawDecryptedSignature != null)
                         {
                             result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
@@ -165,6 +166,6 @@ namespace PoGoMITM.Base.Models
             }
         }
 
-        public object SignatureDecryptor { get; set; }
+        public object SignatureEncryption { get; set; }
     }
 }

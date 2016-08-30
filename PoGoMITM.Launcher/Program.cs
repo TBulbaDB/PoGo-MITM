@@ -23,30 +23,8 @@ namespace PoGoMITM.Launcher
 
         private static void Main()
         {
-            RequestContext.Parser = new POGOProtosRequestParser();
 
-            var decryptorPath = Path.Combine(Environment.CurrentDirectory, "PoGo.Crypt.dll");
-            if (File.Exists(decryptorPath))
-            {
-                var assembly = Assembly.LoadFile(decryptorPath);
-                var decryptorType = assembly.GetExportedTypes().FirstOrDefault(t => t.Name == "SignatureDecryptor");
-                if (decryptorType != null)
-                {
-                    RequestContext.Parser.SignatureDecryptor = Activator.CreateInstance(decryptorType);
-                }
-            }
-
-            StaticConfiguration.DisableErrorTraces = false;
-            JsonConvert.DefaultSettings = () =>
-            {
-                var settings = new JsonSerializerSettings();
-                settings.Converters.Add(new StringEnumConverter { CamelCaseText = true });
-                return settings;
-            };
-
-            Log4NetHelper.AddAppender(Log4NetHelper.ConsoleAppender(Level.All));
-            Log4NetHelper.AddAppender(Log4NetHelper.FileAppender(Level.All));
-
+            Startup.RegisterGlobals();
 
             var proxy = new ProxyHandler(AppConfig.ProxyIp, AppConfig.ProxyPort, Logger);
 

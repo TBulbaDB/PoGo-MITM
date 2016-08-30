@@ -52,6 +52,9 @@ namespace PoGoMITM.Base.Models
         [JsonIgnore]
         public byte[] RawDecryptedSignature { get; set; }
 
+        [JsonIgnore]
+        public byte[] RawSignature { get; set; }
+
         public static async Task<RequestContext> GetInstance(RawContext context)
         {
             RequestContext requestContext;
