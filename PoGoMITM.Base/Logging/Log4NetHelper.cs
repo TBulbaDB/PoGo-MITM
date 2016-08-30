@@ -67,7 +67,18 @@ namespace PoGoMITM.Base.Logging
 
         public static void LogException(this ILog logger, Exception ex)
         {
-            logger.Error($"[{ex.GetType().Name}] {ex.Message}");
+            if (ex is AggregateException)
+            {
+                foreach (var ex1 in ((AggregateException) ex).InnerExceptions)
+                {
+                    logger.Error($"[{ex1.GetType().Name}] {ex1.Message}\r\n{ex1.StackTrace}");
+                }
+            }
+            else
+            {
+                logger.Error($"[{ex.GetType().Name}] {ex.Message}\r\n{ex.StackTrace}");
+
+            }
         }
     }
 }

@@ -80,6 +80,10 @@ namespace PoGoMITM.Base.Models
 
             var codedResponse = new CodedInputStream(result.ResponseBody);
             result.ResponseEnvelope = ResponseEnvelope.Parser.ParseFrom(codedResponse);
+            if (result.ResponseEnvelope.StatusCode == ResponseEnvelope.Types.StatusCode.BadRequest)
+            {
+                Console.WriteLine("ERROR: StatusCode.BadRequest, possibly banned account.");
+            }
 
             if (result.ResponseEnvelope?.PlatformReturns != null && result.ResponseEnvelope?.PlatformReturns.Count > 0)
             {
