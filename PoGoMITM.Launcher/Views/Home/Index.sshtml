@@ -77,6 +77,7 @@
                         <a data-bind="attr: {href: toolbarDownloadDecodedResponse}, css:{disabled: toolbarDownloadDecodedResponseEnabled() == false}" class="btn btn-default btn-sm btn-success">Decoded Response</a>
                         <a data-bind="attr: {href: toolbarDownloadDecryptedRawSignature}, css:{disabled: toolbarDownloadDecryptedRawSignatureEnabled() == false}" class="btn btn-default btn-sm btn-success">Decrypted Raw Signature</a>
                         <a data-bind="attr: {href: toolbarDownloadJson}, css:{disabled: toolbarDownloadJsonEnabled() == false}" class="btn btn-default btn-sm">Download Json</a>
+                        <a data-bind="attr: {href: toolbarS2Map}, css:{disabled: toolbarS2MapEnabled() == false}" class="btn btn-default btn-sm" target="_blank">S2 Map</a>
                     </div>
                 </div>
                 <div class="jsonViewer"></div>
