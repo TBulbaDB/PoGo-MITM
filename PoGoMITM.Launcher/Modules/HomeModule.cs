@@ -83,7 +83,7 @@ namespace PoGoMITM.Launcher.Modules
                 var context = await GetRequestContext(guid);
                 if (context?.ResponseBody != null)
                 {
-                    return Response.FromStream(new MemoryStream(context.RawSignature), "application/binary").AsAttachment(guid + "-rawsignature.bin");
+                    return Response.FromStream(new MemoryStream(context.RawEncryptedSignature), "application/binary").AsAttachment(guid + "-rawsignature.bin");
                 }
                 return new NotFoundResponse();
             };

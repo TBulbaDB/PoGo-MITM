@@ -49,11 +49,11 @@ namespace PoGoMITM.Base.Models
 
         public Signature DecryptedSignature { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public byte[] RawDecryptedSignature { get; set; }
 
-        [JsonIgnore]
-        public byte[] RawSignature { get; set; }
+        //[JsonIgnore]
+        public byte[] RawEncryptedSignature { get; set; }
 
         public static async Task<RequestContext> GetInstance(RawContext context)
         {

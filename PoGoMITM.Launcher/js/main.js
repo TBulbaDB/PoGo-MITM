@@ -28,6 +28,9 @@ pogoMITM.models = new function () {
         self.toolbarDownloadJson = ko.observable("#");
         self.toolbarDownloadJsonEnabled = ko.observable(false);
 
+        self.toolbarS2Map = ko.observable("#");
+        self.toolbarS2MapEnabled = ko.observable(false);
+
         self.rawContextListItems = ko.observableArray([]);
 
         self.addItem = function (guid, requestTime, host, methods) {
@@ -138,6 +141,29 @@ pogoMITM.models = new function () {
 
                         self.toolbarDownloadJson("/download/json/" + item.Guid);
                         self.toolbarDownloadJsonEnabled(true);
+
+                        if (data.Responses &&
+                            data.Responses.GetMapObjects &&
+                            data.Responses.GetMapObjects.MapCells &&
+                            data.Responses.GetMapObjects.MapCells.length > 0) {
+                            var s2Uri = "http://s2map.com/#order=latlng&mode=polygon&s2=false&points=";
+                            var found = false;
+                            for (var i = 0; i < data.Responses.GetMapObjects.MapCells.length; i++) {
+                                var mapCell = data.Responses.GetMapObjects.MapCells[i];
+                                //console.log(mapCell);
+                                if (mapCell && mapCell.S2CellId) {
+                                    s2Uri += mapCell.S2CellId + ",";
+                                    found = true;
+                                }
+                            }
+                            if (found) {
+                                self.toolbarS2Map(s2Uri);
+                                self.toolbarS2MapEnabled(true);
+                            }
+                        } else {
+                            self.toolbarS2MapEnabled(false);
+                        }
+
                     } else {
                         $(".jsonViewer").html("An error occured");
                         self.toolbarDownloadRawRequestEnabled(false);
@@ -146,6 +172,7 @@ pogoMITM.models = new function () {
                         self.toolbarDownloadDecodedResponseEnabled(false);
                         self.toolbarDownloadDecryptedRawSignatureEnabled(false);
                         self.toolbarDownloadJsonEnabled(false);
+                        self.toolbarS2MapEnabled(false);
 
                     }
                 })
@@ -157,6 +184,7 @@ pogoMITM.models = new function () {
                     self.toolbarDownloadDecodedResponseEnabled(false);
                     self.toolbarDownloadDecryptedRawSignatureEnabled(false);
                     self.toolbarDownloadJsonEnabled(false);
+                    self.toolbarS2MapEnabled(false);
                 });
         }
     }

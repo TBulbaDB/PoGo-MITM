@@ -116,7 +116,7 @@ namespace PoGoMITM.Base.Models
                     var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
                     req.MergeFrom(sig.RequestMessage);
                     var bytes = req.EncryptedSignature.ToByteArray();
-                    result.RawSignature = bytes;
+                    result.RawEncryptedSignature = bytes;
                     try
                     {
                         result.RawDecryptedSignature =
