@@ -35,16 +35,16 @@ namespace PoGoMITM.Launcher
         {
             RequestContext.Parser = new POGOProtosRequestParser();
 
-            var decryptorPath = Path.Combine(Environment.CurrentDirectory, "PCrypt.dll");
-            if (File.Exists(decryptorPath))
-            {
-                var assembly = Assembly.LoadFile(decryptorPath);
-                var encryptionType = assembly.GetExportedTypes().FirstOrDefault(t => t.Name == "SignatureDecryptor");
-                if (encryptionType != null)
-                {
-                    RequestContext.Parser.SignatureEncryption = Activator.CreateInstance(encryptionType);
-                }
-            }
+            //var decryptorPath = Path.Combine(Environment.CurrentDirectory, "PCrypt.dll");
+            //if (File.Exists(decryptorPath))
+            //{
+            //    var assembly = Assembly.LoadFile(decryptorPath);
+            //    var encryptionType = assembly.GetExportedTypes().FirstOrDefault(t => t.Name == "SignatureDecryptor");
+            //    if (encryptionType != null)
+            //    {
+            //        RequestContext.Parser.SignatureEncryption = Activator.CreateInstance(encryptionType);
+            //    }
+            //}
 
             StaticConfiguration.DisableErrorTraces = false;
             JsonConvert.DefaultSettings = () =>

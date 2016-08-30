@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using PoGo.Crypt;
 using PoGoMITM.Base.ProtoHelpers;
 using PoGoMITM.Base.Utils;
 using POGOProtos.Networking.Envelopes;
@@ -107,8 +108,8 @@ namespace PoGoMITM.Base.Models
                 }
             }
 
-            if (SignatureEncryption != null)
-            {
+            //if (SignatureEncryption != null)
+            //{
                 var sig = result.RequestEnvelope?.PlatformRequests?.FirstOrDefault(
                     pr => pr.Type == PlatformRequestType.SendEncryptedSignature);
                 if (sig != null)
@@ -121,10 +122,11 @@ namespace PoGoMITM.Base.Models
                     {
                         if (bytes.Length > 0)
                         {
-                            result.RawDecryptedSignature =
-                                SignatureEncryption.GetType()
-                                    .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
-                                        SignatureEncryption, new[] {bytes}) as byte[];
+                            result.RawDecryptedSignature = SignatureDecryptor.Decrypt(bytes);
+                            //result.RawDecryptedSignature =
+                            //    SignatureEncryption.GetType()
+                            //        .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
+                            //            SignatureEncryption, new[] {bytes}) as byte[];
                             if (result.RawDecryptedSignature != null)
                             {
                                 result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
@@ -136,7 +138,7 @@ namespace PoGoMITM.Base.Models
 
                     }
                 }
-            }
+            //}
 
 
             if (result.ResponseEnvelope?.Returns != null && result.ResponseEnvelope.Returns.Count > 0)

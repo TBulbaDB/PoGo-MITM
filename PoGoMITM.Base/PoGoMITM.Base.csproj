@@ -119,6 +119,8 @@
     <Compile Include="Utils\ByteArrayConverter.cs" />
     <Compile Include="Utils\DateHelpers.cs" />
     <Compile Include="Utils\FileAsync.cs" />
+    <Compile Include="Utils\SignatureDecryptor.cs" />
+    <Compile Include="Utils\Unshuffle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
