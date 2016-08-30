@@ -35,7 +35,7 @@ namespace PoGoMITM.Launcher
         {
             RequestContext.Parser = new POGOProtosRequestParser();
 
-            var decryptorPath = Path.Combine(Environment.CurrentDirectory, "PoGo.Crypt.dll");
+            var decryptorPath = Path.Combine(Environment.CurrentDirectory, "PCrypt.dll");
             if (File.Exists(decryptorPath))
             {
                 var assembly = Assembly.LoadFile(decryptorPath);

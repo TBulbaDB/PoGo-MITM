@@ -116,6 +116,7 @@
     <Compile Include="ProxyHandler.cs" />
     <Compile Include="Utils\CertificateHelper.cs" />
     <Compile Include="Utils\ArrayBuffer.cs" />
+    <Compile Include="Utils\ByteArrayConverter.cs" />
     <Compile Include="Utils\DateHelpers.cs" />
     <Compile Include="Utils\FileAsync.cs" />
   </ItemGroup>

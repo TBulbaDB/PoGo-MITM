@@ -6,6 +6,7 @@ using Google.Protobuf;
 using Newtonsoft.Json;
 using PoGoMITM.Base.Cache;
 using PoGoMITM.Base.ProtoHelpers;
+using PoGoMITM.Base.Utils;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Platform;
 using POGOProtos.Networking.Requests;
@@ -50,9 +51,11 @@ namespace PoGoMITM.Base.Models
         public Signature DecryptedSignature { get; set; }
 
         [JsonIgnore]
+        //[JsonConverter(typeof(ByteArrayConverter))]
         public byte[] RawDecryptedSignature { get; set; }
 
         [JsonIgnore]
+        //[JsonConverter(typeof(ByteArrayConverter))]
         public byte[] RawEncryptedSignature { get; set; }
 
         public static async Task<RequestContext> GetInstance(RawContext context)

@@ -119,13 +119,16 @@ namespace PoGoMITM.Base.Models
                     result.RawEncryptedSignature = bytes;
                     try
                     {
-                        result.RawDecryptedSignature =
-                            SignatureEncryption.GetType()
-                                .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
-                                    SignatureEncryption, new[] { bytes }) as byte[];
-                        if (result.RawDecryptedSignature != null)
+                        if (bytes.Length > 0)
                         {
-                            result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
+                            result.RawDecryptedSignature =
+                                SignatureEncryption.GetType()
+                                    .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
+                                        SignatureEncryption, new[] {bytes}) as byte[];
+                            if (result.RawDecryptedSignature != null)
+                            {
+                                result.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
+                            }
                         }
                     }
                     catch

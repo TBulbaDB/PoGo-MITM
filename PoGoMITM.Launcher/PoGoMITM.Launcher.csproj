@@ -113,7 +113,9 @@
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="NotificationHub.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RawContextListViewModel.cs" />
   </ItemGroup>
