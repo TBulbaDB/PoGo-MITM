@@ -32,5 +32,64 @@ See https://github.com/rastapasta/pokemon-go-mitm#setting-up-your-device for mor
 
 All the settings are located in PoGoMITM.exe.config file (App.Config if you are using the source code)
 
+## Plugins
+
+Plugins are simple .cs files which are placed in Plugins folder. They should implement a supported plugin interface. (Currently, only [IModifierPlugin](https://github.com/TBulbaDB/PoGoMITM/blob/master/PoGoMITM.Base/Models/IModifier.cs) is supported.)
+
+Here is a sample that modifies GetInventoryResponse to insert IV value next to the each Pokemon's name.
+
+``` csharp
+using PoGoMITM.Base.Models;
+using POGOProtos.Networking.Requests;
+using POGOProtos.Networking.Responses;
+
+namespace PoGoMITM.Launcher.Plugins
+{
+    public class PokemonIVDisplay : IModifierPlugin
+    {
+        public bool Enabled => true;
+        public bool ModifyRequest(RequestContext requestContext)
+        {
+            return false;
+        }
+
+        public bool ModifyResponse(RequestContext requestContext)
+        {
+            var changed = false;
+            if (requestContext.ResponseData.Responses.ContainsKey(RequestType.GetInventory))
+            {
+                var getInventoryResponse = (GetInventoryResponse)requestContext.ResponseData.Responses[RequestType.GetInventory];
+                if (getInventoryResponse.Success)
+                {
+                    if (getInventoryResponse.InventoryDelta?.InventoryItems != null)
+                    {
+                        foreach (var inventoryItem in getInventoryResponse.InventoryDelta.InventoryItems)
+                        {
+                            if (inventoryItem.InventoryItemData?.PokemonData != null)
+                            {
+                                var data = inventoryItem.InventoryItemData.PokemonData;
+                                var iv =
+                                    (double)(data.IndividualAttack + data.IndividualDefense + data.IndividualStamina) /
+                                    45 * 100;
+                                var nickName = string.IsNullOrWhiteSpace(data.Nickname) ? data.PokemonId.ToString().Replace(" Male", "♂").Replace(" Female", "♀") : data.Nickname;
+                                data.Nickname = $"{nickName} {iv:F}%";
+                                changed = true;
+                            }
+                        }
+                    }
+                }
+
+            }
+            return changed;
+        }
+
+        public void ResetState()
+        {
+
+        }
+    }
+}
+
+```
 
 
