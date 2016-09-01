@@ -27,10 +27,10 @@ namespace PoGoMITM.Launcher.Modules
         {
             Get["/"] = x => View["Index", RequestContextListModel.Instance];
 
-            Get["/details/{guid}", true] = async (x, ct) =>
+            Get["/details/{guid}"] = x =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 return Response.AsText(JsonConvert.SerializeObject(context), "text/json");
             };
 
@@ -42,10 +42,10 @@ namespace PoGoMITM.Launcher.Modules
                 return Response.AsText(pem).AsAttachment($"{AppConfig.RootCertificateName}.cer", "application/x-x509-ca-cert");
             };
 
-            Get["/download/request/raw/{guid}", true] = async (x, ct) =>
+            Get["/download/request/raw/{guid}"] = x =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context?.RequestBody != null)
                 {
                     return Response.FromStream(new MemoryStream(context.RequestBody), "application/binary").AsAttachment(guid + "-request.bin");
@@ -56,7 +56,7 @@ namespace PoGoMITM.Launcher.Modules
             Get["/download/request/decoded/{guid}", true] = async (x, ct) =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context == null) return new NotFoundResponse();
                 if (context.RawDecodedRequestBody == null)
                 {
@@ -66,10 +66,10 @@ namespace PoGoMITM.Launcher.Modules
             };
 
 
-            Get["/download/response/raw/{guid}", true] = async (x, ct) =>
+            Get["/download/response/raw/{guid}"] = x =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context?.ResponseBody != null)
                 {
                     return Response.FromStream(new MemoryStream(context.ResponseBody), "application/binary").AsAttachment(guid + "-response.bin");
@@ -77,10 +77,10 @@ namespace PoGoMITM.Launcher.Modules
                 return new NotFoundResponse();
             };
 
-            Get["/download/rawsignature/{guid}", true] = async (x, ct) =>
+            Get["/download/rawsignature/{guid}"] = x =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context?.ResponseBody != null)
                 {
                     return Response.FromStream(new MemoryStream(context.RawEncryptedSignature), "application/binary").AsAttachment(guid + "-rawsignature.bin");
@@ -89,10 +89,10 @@ namespace PoGoMITM.Launcher.Modules
             };
 
 
-            Get["/download/decryptedrawsignature/{guid}", true] = async (x, ct) =>
+            Get["/download/decryptedrawsignature/{guid}"] = x =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context?.ResponseBody != null)
                 {
                     return Response.FromStream(new MemoryStream(context.RawDecryptedSignature), "application/binary").AsAttachment(guid + "-decryptedsignature.bin");
@@ -103,7 +103,7 @@ namespace PoGoMITM.Launcher.Modules
             Get["/download/response/decoded/{guid}", true] = async (x, ct) =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context == null) return new NotFoundResponse();
                 if (context.RawDecodedResponseBody == null)
                 {
@@ -114,10 +114,10 @@ namespace PoGoMITM.Launcher.Modules
 
             };
 
-            Get["/download/json/{guid}", true] = async (x, ct) =>
+            Get["/download/json/{guid}"] = x =>
             {
                 var guid = (string)x.guid;
-                var context = await GetRequestContext(guid);
+                var context = GetRequestContext(guid);
                 if (context != null)
                 {
                     return Response.AsText(JsonConvert.SerializeObject(context, Formatting.Indented)).AsAttachment(guid + ".json", "application/json");
@@ -148,12 +148,12 @@ namespace PoGoMITM.Launcher.Modules
                 return new NotFoundResponse();
             };
 
-            Post["/details/signature/{guid}", true] = async (x, ct) =>
+            Post["/details/signature/{guid}"] = x =>
             {
                 try
                 {
                     var guid = (string)x.guid;
-                    var context = await GetRequestContext(guid);
+                    var context = GetRequestContext(guid);
 
                     var post = this.Bind<DecryptedSignature>();
                     var trimmed = post.Bytes.Substring(1);
@@ -164,7 +164,7 @@ namespace PoGoMITM.Launcher.Modules
                     context.RawDecryptedSignature = arr;
 
                     var signature = Signature.Parser.ParseFrom(arr);
-                    context.DecryptedSignature = signature;
+                    context.RequestData.DecryptedSignature = signature;
                     return Response.AsText(JsonConvert.SerializeObject(new { success = true, signature = signature }), "text/json");
                 }
                 catch (Exception ex)
@@ -174,19 +174,14 @@ namespace PoGoMITM.Launcher.Modules
             };
         }
 
-        private static async Task<RequestContext> GetRequestContext(string guid)
+        private static RequestContext GetRequestContext(string guid)
         {
             var parsedGuid = Guid.Parse(guid);
-            RequestContext requestContext;
-            if (ContextCache.RequestContext.TryGetValue(parsedGuid, out requestContext))
-            {
-                return requestContext;
-            }
 
             RawContext rawContext;
             if (ContextCache.RawContexts.TryGetValue(parsedGuid, out rawContext))
             {
-                return await RequestContext.GetInstance(rawContext);
+                return RequestContext.GetInstance(rawContext.Guid) ?? RequestContext.Create(rawContext);
             }
             return null;
         }

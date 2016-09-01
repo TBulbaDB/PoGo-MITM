@@ -12,6 +12,7 @@ namespace PoGoMITM.Base.Models
         public Guid Guid { get; set; }
         public DateTime RequestTime { get; set; }
         public Uri RequestUri { get; set; }
+        public string ClientIp { get; set; }
 
         public List<HttpHeader> RequestHeaders { get; set; }
         public byte[] RequestBody { get; set; }
