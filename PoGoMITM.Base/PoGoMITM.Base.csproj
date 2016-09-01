@@ -111,7 +111,7 @@
     <Compile Include="Dumpers\IDataDumper.cs" />
     <Compile Include="Dumpers\RawDumpReader.cs" />
     <Compile Include="Logging\Log4NetHelper.cs" />
-    <Compile Include="Models\IRequestModifier.cs" />
+    <Compile Include="Models\IModifier.cs" />
     <Compile Include="Models\IResponsePacker.cs" />
     <Compile Include="Models\IResponseModifier.cs" />
     <Compile Include="Models\IRequestPacker.cs" />

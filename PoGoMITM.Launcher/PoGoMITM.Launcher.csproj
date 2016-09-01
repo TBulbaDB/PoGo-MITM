@@ -36,8 +36,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -122,14 +121,12 @@
     <Compile Include="Modules\ApplicationBootstrapper.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="NotificationHub.cs" />
-    <Compile Include="Plugins\LocationModifier.cs">
+    <Content Include="Plugins\LocationModifier.cs" />
+    <Content Include="Plugins\TestModifier.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Plugins\TestModifier.cs" />
+    </Content>
     <Compile Include="Startup.cs" />
-    <Compile Include="Program.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RawContextListViewModel.cs" />
   </ItemGroup>
@@ -151,6 +148,8 @@
     <Content Include="css\main.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="icon.ico" />
     <Content Include="js\main.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -160,6 +159,9 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(ProjectDir)app.manifest $(TargetDir)$(TargetFileName).manifest</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

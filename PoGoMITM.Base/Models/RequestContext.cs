@@ -42,8 +42,7 @@ namespace PoGoMITM.Base.Models
         public bool ResponseParsed { get; set; }
 
         public static IProtoParser Parser { get; set; }
-        public static List<IRequestModifier> RequestModifiers { get; set; }
-        public static List<IResponseModifier> ResponseModifiers { get; set; }
+        public static List<IModifierPlugin> Modifiers { get; set; }
         public static IRequestPacker RequestPacker { get; set; }
         public static IResponsePacker ResponsePacker { get; set; }
 
@@ -51,6 +50,7 @@ namespace PoGoMITM.Base.Models
         public Guid Guid { get; set; }
         public DateTime RequestTime { get; set; }
         public Uri RequestUri { get; set; }
+        public string ClientIp { get; set; }
 
         // Request
         public List<HttpHeader> RequestHeaders { get; set; }
@@ -100,6 +100,7 @@ namespace PoGoMITM.Base.Models
             result.Guid = context.Guid;
             result.RequestTime = context.RequestTime;
             result.RequestUri = context.RequestUri;
+            result.ClientIp = context.ClientIp;
 
             ContextCache.RequestContext.AddOrUpdate(context.Guid, result, (g, r) => result);
             return result;
@@ -155,9 +156,9 @@ namespace PoGoMITM.Base.Models
 
         public void ModifyRequest()
         {
-            if (RequestModifiers != null && RequestBody != null && RequestBody.Length != 0)
+            if (Modifiers != null && RequestBody != null && RequestBody.Length != 0)
             {
-                foreach (var requestModifier in RequestModifiers.Where(r=>r.Enabled))
+                foreach (var requestModifier in Modifiers.Where(r=>r.Enabled))
                 {
                     if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
                     {
@@ -165,7 +166,7 @@ namespace PoGoMITM.Base.Models
                         Debug.WriteLine(string.Join(",", ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
                     }
 
-                    if (requestModifier.ModifyRequest(RequestData))
+                    if (requestModifier.ModifyRequest(this))
                     {
                         if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
                         {
@@ -188,16 +189,16 @@ namespace PoGoMITM.Base.Models
 
         public void ModifyResponse()
         {
-            if (ResponseModifiers != null && ResponseBody != null && ResponseBody.Length != 0)
+            if (Modifiers != null && ResponseBody != null && ResponseBody.Length != 0)
             {
-                foreach (var responseModifier in ResponseModifiers.Where(r => r.Enabled))
+                foreach (var responseModifier in Modifiers.Where(r => r.Enabled))
                 {
                     if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
                     {
                         Debug.WriteLine("Server Response");
                         Debug.WriteLine(string.Join(",", ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells.Select(m => m.S2CellId).OrderBy(c => c).ToList()));
                     }
-                    if (responseModifier.ModifyResponse(ResponseData))
+                    if (responseModifier.ModifyResponse(this))
                     {
                         if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
                         {

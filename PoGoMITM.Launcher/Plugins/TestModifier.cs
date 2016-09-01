@@ -9,7 +9,7 @@ using POGOProtos.Networking.Responses;
 
 namespace PoGoMITM.Launcher.Plugins
 {
-    public class TestModifier: IRequestModifier, IResponseModifier
+    public class TestModifier: IModifierPlugin
     {
         public bool Enabled => true;
 
@@ -32,6 +32,10 @@ namespace PoGoMITM.Launcher.Plugins
                 }
             }
             return changed;
+        }
+
+        public void ResetState()
+        {
         }
     }
 }

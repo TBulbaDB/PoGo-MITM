@@ -82,7 +82,8 @@ namespace PoGoMITM.Base
                     RequestHeaders = e.WebSession.Request.RequestHeaders.Values.ToList(),
                     Guid = uid,
                     RequestUri = e.WebSession.Request.RequestUri,
-                    RequestTime = DateTime.UtcNow
+                    RequestTime = DateTime.UtcNow,
+                    ClientIp = e.ClientEndPoint.Address.ToString()
                 };
                 _contexts.Add(uid.ToString(), context);
                 e.WebSession.Response.ResponseHeaders.Add("POGO_UID", new HttpHeader("POGO_UID", uid.ToString()));

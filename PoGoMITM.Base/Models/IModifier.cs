@@ -2,9 +2,11 @@
 
 namespace PoGoMITM.Base.Models
 {
-    public interface IRequestModifier
+    public interface IModifierPlugin
     {
         bool Enabled { get; }
         bool ModifyRequest(RequestContext requestContext);
+        bool ModifyResponse(RequestContext requestContext);
+        void ResetState();
     }
 }

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using Google.Common.Geometry;
-using Google.Protobuf.Collections;
 using log4net;
-using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Models;
 using POGOProtos.Networking.Requests;
 using POGOProtos.Networking.Requests.Messages;
@@ -16,7 +10,9 @@ using POGOProtos.Networking.Responses;
 
 namespace PoGoMITM.Launcher.Plugins
 {
-    public class LocationModifier : IRequestModifier, IResponseModifier
+
+    // INCOMPLETE - DO NOT USE
+    public class LocationModifier : IModifierPlugin
     {
         public bool Enabled => false;
 
@@ -483,6 +479,10 @@ namespace PoGoMITM.Launcher.Plugins
             return changed;
         }
 
+        public void ResetState()
+        {
+        }
+
         private static double _startingLatitude;
         private static double _startingLongitude;
         private static double _offsetLatitude;
@@ -588,6 +588,29 @@ namespace PoGoMITM.Launcher.Plugins
             return cellIds;
         }
 
+        public static List<ulong> GetCellIds(double latitude, double longitude)
+        {
+            var kEarthCircumferenceMeters = 1000 * 40075.017d;
+            var radius = 500;
+            var radiusInRadians = (2 * Math.PI) * (radius / kEarthCircumferenceMeters);
+
+            var centerPoint = S2LatLng.FromDegrees(latitude, longitude).Normalized.ToPoint();
+
+            var cap = S2Cap.FromAxisHeight(centerPoint, (radiusInRadians * radiusInRadians) / 2);
+            var coverer = new S2RegionCoverer()
+            {
+                MaxLevel = 15,
+                MinLevel = 15,
+                LevelMod = 1,
+                MaxCells = 1000,
+            };
+
+            var list = new List<S2CellId>();
+            coverer.GetCovering(cap, list);
+
+            return list.Select(x => x.Id).OrderBy(c => c).ToList();
+        }
+
         private static Dictionary<Guid, CellIdConversion> _cellIdConversions = new Dictionary<Guid, CellIdConversion>();
         private class CellIdConversion
         {
@@ -598,7 +621,7 @@ namespace PoGoMITM.Launcher.Plugins
 
             public ulong GetOriginalCellId(ulong calculatedCellId)
             {
-                var calculatedCell=new S2CellId(calculatedCellId);
+                var calculatedCell = new S2CellId(calculatedCellId);
                 var calculatedCellLocation = calculatedCell.ToLatLng();
                 var originalLat = GetOriginalLatitude(calculatedCellLocation.LatDegrees);
                 var originalLon = GetOriginalLongitude(calculatedCellLocation.LngDegrees);

@@ -10,8 +10,8 @@ using Owin;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
+using PoGoMITM.Base.Plugins;
 using PoGoMITM.Base.Utils;
-using PoGoMITM.Launcher.Plugins;
 
 namespace PoGoMITM.Launcher
 {
@@ -36,34 +36,33 @@ namespace PoGoMITM.Launcher
 
             RequestContext.Parser = new POGOProtosProtoParser();
             AppConfig.Logger.Info("Attempting to load the plugins");
-            RequestContext.RequestModifiers = new List<IRequestModifier> { new LocationModifier(), new TestModifier() };
-            RequestContext.ResponseModifiers = new List<IResponseModifier> { new LocationModifier(), new TestModifier() };
-            //RequestContext.RequestModifiers = PluginLoader.LoadPlugins<IRequestModifier>();
+            //RequestContext.Modifiers = new List<IModifierPlugin> { new LocationModifier(), new TestModifier() };
+            RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
             //RequestContext.ResponseModifiers = PluginLoader.LoadPlugins<IResponseModifier>();
-            if (RequestContext.RequestModifiers != null && RequestContext.RequestModifiers.Count > 0)
+            if (RequestContext.Modifiers != null && RequestContext.Modifiers.Count > 0)
             {
                 AppConfig.Logger.Info(
-                    $"Loaded Request Modifier Plugins: {string.Join(", ", RequestContext.RequestModifiers.Select(m => m.GetType().Name))}");
+                    $"Loaded Modifier Plugins: {string.Join(", ", RequestContext.Modifiers.Select(m => m.GetType().Name))}");
             }
 
 
             RequestContext.RequestPacker = new POGOProtosRequestPacker();
-            RequestContext.ResponsePacker=new POGOProtosResponsePacker();
+            RequestContext.ResponsePacker = new POGOProtosResponsePacker();
 
-            var decryptorPath = FileLocation.GetFileLocation("pcrypt.dll");
-            if (decryptorPath != null)
-            {
-                var assembly = Assembly.LoadFile(decryptorPath);
-                var encryptionType = assembly.GetExportedTypes().FirstOrDefault(t => t.Name == "SignatureDecryptor");
-                if (encryptionType != null)
-                {
-                    RequestContext.Parser.SignatureEncryption = Activator.CreateInstance(encryptionType);
-                }
-            }
-            else
-            {
+            //var decryptorPath = FileLocation.GetFileLocation("pcrypt.dll");
+            //if (decryptorPath != null)
+            //{
+            //    var assembly = Assembly.LoadFile(decryptorPath);
+            //    var encryptionType = assembly.GetExportedTypes().FirstOrDefault(t => t.Name == "SignatureDecryptor");
+            //    if (encryptionType != null)
+            //    {
+            //        RequestContext.Parser.SignatureEncryption = Activator.CreateInstance(encryptionType);
+            //    }
+            //}
+            //else
+            //{
 
-            }
+            //}
 
             StaticConfiguration.DisableErrorTraces = false;
             JsonConvert.DefaultSettings = () =>
