@@ -1,6 +1,6 @@
-﻿namespace PoGo.Crypt
+﻿namespace PoGoMITM.Base.Utils.Crypt
 {
-    public partial class SignatureDecryptor
+    public partial class Encryption
     {
         private static uint[] Unshuffle(uint[] vector)
         {

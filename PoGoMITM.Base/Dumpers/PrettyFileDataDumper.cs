@@ -27,7 +27,7 @@ namespace PoGoMITM.Base.Dumpers
                 var requestList = "";
                 if (context is RequestContext)
                 {
-                    foreach (var request in (context as RequestContext).RequestEnvelope.Requests)
+                    foreach (var request in (context as RequestContext).RequestData.RequestEnvelope.Requests)
                     {
                         requestList += (requestList == "" ? "" : ", ") + request.RequestType.ToString();
                     }

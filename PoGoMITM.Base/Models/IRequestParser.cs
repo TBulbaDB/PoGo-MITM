@@ -2,9 +2,10 @@
 
 namespace PoGoMITM.Base.Models
 {
-    public interface IRequestParser
+    public interface IProtoParser
     {
-        Task ParseRequest(RequestContext requestContext);
+        void ParseRequest(RequestContext requestContext, RequestData requestData);
+        void ParseResponse(RequestContext requestContext, ResponseData responseData);
         object SignatureEncryption { get; set; }
     }
 }

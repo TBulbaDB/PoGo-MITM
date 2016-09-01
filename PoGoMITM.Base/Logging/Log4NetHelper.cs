@@ -42,10 +42,10 @@ namespace PoGoMITM.Base.Logging
 
         public static IAppender FileAppender(Level threshhold)
         {
-            var appender=new FileAppender();
+            var appender = new FileAppender();
             appender.Name = "FileAppender";
             appender.AppendToFile = true;
-            appender.Encoding=Encoding.UTF8;
+            appender.Encoding = Encoding.UTF8;
             appender.ImmediateFlush = true;
             appender.File = GenerateLogFileName();
             appender.Threshold = threshhold;
@@ -67,17 +67,18 @@ namespace PoGoMITM.Base.Logging
 
         public static void LogException(this ILog logger, Exception ex)
         {
-            if (ex is AggregateException)
+            logger.Error($"[{ex.GetType().Name}] {ex.Message}\r\n{ex.StackTrace}");
+            if (ex.InnerException != null)
             {
-                foreach (var ex1 in ((AggregateException) ex).InnerExceptions)
-                {
-                    logger.Error($"[{ex1.GetType().Name}] {ex1.Message}\r\n{ex1.StackTrace}");
-                }
+                logger.LogException(ex.InnerException);
             }
-            else
+            var aggregateException = ex as AggregateException;
+            if (aggregateException != null)
             {
-                logger.Error($"[{ex.GetType().Name}] {ex.Message}\r\n{ex.StackTrace}");
-
+                foreach (var ex1 in aggregateException.InnerExceptions)
+                {
+                    logger.LogException(ex1);
+                }
             }
         }
     }

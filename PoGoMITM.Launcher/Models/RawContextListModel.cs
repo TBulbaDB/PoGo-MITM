@@ -1,52 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using PoGoMITM.Base.Cache;
 using PoGoMITM.Base.Dumpers;
 using PoGoMITM.Base.Models;
 using PoGoMITM.Launcher.ViewModels;
 
 namespace PoGoMITM.Launcher.Models
 {
-   public class RequestContextListModel
-   {
-      private static RequestContextListModel _instance;
+    public class RequestContextListModel
+    {
+        private static RequestContextListModel _instance;
 
-      public static RequestContextListItemViewModel FromRawContext(RawContext context)
-      {
-         RequestContext requestContext = null;
-         Task.Run(async () => { requestContext = await RequestContext.GetInstance(context); }).Wait();
-         var model = new RequestContextListItemViewModel();
-         model.Guid = context.Guid.ToString();
-         model.RequestTime = context.RequestTime;
-         model.Host = context.RequestUri.Host;
+        public static RequestContextListItemViewModel FromRawContext(RawContext context)
+        {
+            var model = new RequestContextListItemViewModel();
+            model.Guid = context.Guid.ToString();
+            model.RequestTime = context.RequestTime;
+            model.Host = context.RequestUri.Host;
 
-         try
-         {
-            List<string> lsMethods = new List<string>();
 
-            foreach (var request in requestContext.Requests)
+            var requestContext = RequestContext.GetInstance(context.Guid) ?? RequestContext.Create(context);
+            requestContext.CopyRequestData(context);
+            requestContext.CopyResponseData(context);
+            if (!requestContext.RequestParsed)
             {
-               lsMethods.Add(request.Key.ToString());
+                requestContext.ParseRequest();
+            }
+            if (!requestContext.ResponseParsed)
+            {
+                requestContext.ParseResponse();
             }
 
-            model.Methods = string.Join(", ", lsMethods);
+            try
+            {
+                var lsMethods = new List<string>();
 
-         }
-         catch (Exception)
-         {
-            model.Methods = "n/a";
-         }
+                foreach (var request in requestContext.RequestData.Requests)
+                {
+                    lsMethods.Add(request.Key.ToString());
+                }
 
-         return model;
-      }
+                model.Methods = string.Join(", ", lsMethods);
 
-      public static RequestContextListModel Instance => _instance ?? (_instance = new RequestContextListModel());
+            }
+            catch (Exception)
+            {
+                model.Methods = "n/a";
+            }
 
-      public Dictionary<string, string> RawDumpSessions
-          => RawDumpReader.GetRawDumpSessions().ToDictionary(f => f.Replace("RawContext", string.Empty).Replace(".log", string.Empty));
-   }
+            return model;
+        }
+
+        public static RequestContextListModel Instance => _instance ?? (_instance = new RequestContextListModel());
+
+        public Dictionary<string, string> RawDumpSessions
+            => RawDumpReader.GetRawDumpSessions().ToDictionary(f => f.Replace("RawContext", string.Empty).Replace(".log", string.Empty));
+    }
 }
