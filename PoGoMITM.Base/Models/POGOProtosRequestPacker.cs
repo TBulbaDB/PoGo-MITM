@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
+using Newtonsoft.Json;
 using PoGoMITM.Base.Utils.Crypt;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Platform;
@@ -17,45 +14,53 @@ namespace PoGoMITM.Base.Models
     {
         public byte[] GenerateRequestBody(RequestData requestData)
         {
-            var requestEnvelope = new RequestEnvelope(requestData.RequestEnvelope);
-            requestEnvelope.Requests.Clear();
+            requestData.RequestEnvelope.Requests.Clear();
             foreach (var request in requestData.Requests)
             {
                 var requestItem = new Request();
                 requestItem.RequestType = request.Key;
                 requestItem.RequestMessage = request.Value.ToByteString();
-                requestEnvelope.Requests.Add(requestItem);
+                requestData.RequestEnvelope.Requests.Add(requestItem);
             }
+
 
             var signatureRequest = GetSignatureRequest(requestData);
-            requestEnvelope.PlatformRequests.Clear();
-            foreach (var platformRequest in requestData.RequestEnvelope.PlatformRequests)
+            //requestEnvelope.PlatformRequests.Clear();
+            for (int i = 0; i < requestData.RequestEnvelope.PlatformRequests.Count; i++)
             {
+                var platformRequest = requestData.RequestEnvelope.PlatformRequests[i];
                 if (platformRequest.Type == PlatformRequestType.SendEncryptedSignature)
                 {
-                    requestEnvelope.PlatformRequests.Add(signatureRequest);
+                    requestData.RequestEnvelope.PlatformRequests[i] = signatureRequest;
+                    //requestEnvelope.PlatformRequests.Add(signatureRequest);
                 }
-                else
-                {
-                    requestEnvelope.PlatformRequests.Add(platformRequest);
-                }
+                //else
+                //{
+                //    requestEnvelope.PlatformRequests.Add(platformRequest);
+                //}
             }
 
-            return requestEnvelope.ToByteArray();
+            return requestData.RequestEnvelope.ToByteArray();
         }
 
 
         private RequestEnvelope.Types.PlatformRequest GetSignatureRequest(RequestData requestData)
         {
+
             var serializedTicket = requestData.RequestEnvelope.AuthTicket != null ? requestData.RequestEnvelope.AuthTicket.ToByteArray() : requestData.RequestEnvelope.AuthInfo.ToByteArray();
-            var firstHash = CalculateHash32(serializedTicket, 0x61656632);
+            var locationSeed = CalculateHash32(serializedTicket, 0x61656632);
             var locationBytes = BitConverter.GetBytes(requestData.RequestEnvelope.Latitude).Reverse()
-                .Concat(BitConverter.GetBytes(requestData.RequestEnvelope.Latitude).Reverse())
+                .Concat(BitConverter.GetBytes(requestData.RequestEnvelope.Longitude).Reverse())
                 .Concat(BitConverter.GetBytes(requestData.RequestEnvelope.Accuracy).Reverse()).ToArray();
 
-            requestData.DecryptedSignature.LocationHash1 = CalculateHash32(locationBytes, firstHash);
+
+            //    sig.LocationHash1 = BitConverter.ToUInt32(locationHasher.ComputeHash(locationBytes), 0);
+
+            //    sig.LocationHash2 = BitConverter.ToUInt32(_locationSeedHasher.ComputeHash(locationBytes), 0);
+            requestData.DecryptedSignature.LocationHash1 = xxHash32.CalculateHash(locationBytes, locationSeed);
             requestData.DecryptedSignature.LocationHash2 = CalculateHash32(locationBytes, 0x61656632);
             var seed = xxHash64.CalculateHash(serializedTicket, serializedTicket.Length, 0x61656632);
+            requestData.DecryptedSignature.RequestHash.Clear();
             foreach (var req in requestData.RequestEnvelope.Requests)
             {
                 var reqBytes = req.ToByteArray();

@@ -1,20 +1,14 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using log4net;
-using log4net.Core;
 using Microsoft.Owin.Hosting;
-using Nancy;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using PoGoMITM.Base;
 using PoGoMITM.Base.Cache;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
+using PoGoMITM.Base.Plugins;
 using PoGoMITM.Launcher.Models;
+using PoGoMITM.Launcher.Tests;
 using Titanium.Web.Proxy.EventArguments;
 
 namespace PoGoMITM.Launcher
@@ -64,26 +58,30 @@ namespace PoGoMITM.Launcher
 
         private static async void ProxyBeforeRequest(RawContext rawContext, SessionEventArgs e)
         {
-            try
-            {
-                if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
+            //try
+            //{
+            if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
 
-                var requestContext = RequestContext.Create(rawContext);
-                requestContext.CopyRequestData(rawContext);
-                requestContext.ParseRequest();
+            var requestContext = RequestContext.Create(rawContext);
+            requestContext.CopyRequestData(rawContext);
+
+            requestContext.ParseRequest();
+            if (requestContext.RequestData != null)
+            {
                 requestContext.ModifyRequest();
                 if (requestContext.RequestModified)
                 {
                     requestContext.ParseRequest();
                     await e.SetRequestBody(requestContext.RequestBody);
                 }
+            }
 
-                Logger.Info(rawContext.RequestUri.AbsoluteUri + " Request Sent.");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogException(ex);
-            }
+            Logger.Info(rawContext.RequestUri.AbsoluteUri + " Request Sent.");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Logger.LogException(ex);
+            //}
         }
 
         private static async void ProxyBeforeResponse(RawContext rawContext, SessionEventArgs e)
@@ -105,11 +103,14 @@ namespace PoGoMITM.Launcher
                 }
                 requestContext.CopyResponseData(rawContext);
                 requestContext.ParseResponse();
-                requestContext.ModifyResponse();
-                if (requestContext.ResponseModified)
+                if (requestContext.RequestData != null)
                 {
-                    requestContext.ParseResponse();
-                    await e.SetResponseBody(requestContext.ResponseBody);
+                    requestContext.ModifyResponse();
+                    if (requestContext.ResponseModified)
+                    {
+                        requestContext.ParseResponse();
+                        await e.SetResponseBody(requestContext.ResponseBody);
+                    }
                 }
 
                 NotificationHub.SendRawContext(RequestContextListModel.FromRawContext(rawContext));

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
-using Google.Protobuf;
+﻿using Google.Protobuf;
 using POGOProtos.Networking.Envelopes;
-using POGOProtos.Networking.Requests;
 
 namespace PoGoMITM.Base.Models
 {

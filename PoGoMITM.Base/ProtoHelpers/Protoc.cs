@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using log4net.Repository.Hierarchy;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Utils;
 

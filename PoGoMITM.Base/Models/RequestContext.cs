@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Google.Protobuf;
 using Newtonsoft.Json;
 using PoGoMITM.Base.Cache;
-using PoGoMITM.Base.Config;
-using POGOProtos.Map;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Platform;
 using POGOProtos.Networking.Requests;
@@ -62,6 +59,7 @@ namespace PoGoMITM.Base.Models
 
         public bool RequestModified { get; set; }
         public RequestData RequestData { get; set; }
+        public RequestData ModifiedRequestData { get; set; }
 
         // Response
         public List<HttpHeader> ResponseHeaders { get; set; }
@@ -73,6 +71,7 @@ namespace PoGoMITM.Base.Models
 
         public bool ResponseModified { get; set; }
         public ResponseData ResponseData { get; set; }
+        public ResponseData ModifiedResponseData { get; set; }
 
         [JsonIgnore]
         public byte[] RawDecryptedSignature { get; set; }
@@ -120,12 +119,20 @@ namespace PoGoMITM.Base.Models
             ResponseHeaders = rawContext.ResponseHeaders;
         }
 
-        public void ParseRequest()
+        public void ParseRequest(bool isModified = false)
         {
             if (RequestUri.Host == "pgorelease.nianticlabs.com")
             {
-                RequestData = new RequestData();
-                Parser?.ParseRequest(this, RequestData);
+                if (!isModified)
+                {
+                    RequestData = new RequestData();
+                    Parser?.ParseRequest(this, RequestData);
+                }
+                else
+                {
+                    ModifiedRequestData = new RequestData();
+                    Parser?.ParseRequest(this, ModifiedRequestData);
+                }
             }
             else
             {
@@ -136,12 +143,20 @@ namespace PoGoMITM.Base.Models
 
         }
 
-        public void ParseResponse()
+        public void ParseResponse(bool isModified = false)
         {
             if (RequestUri.Host == "pgorelease.nianticlabs.com")
             {
-                ResponseData = new ResponseData();
-                Parser?.ParseResponse(this, ResponseData);
+                if (!isModified)
+                {
+                    ResponseData = new ResponseData();
+                    Parser?.ParseResponse(this, ResponseData);
+                }
+                else
+                {
+                    ModifiedResponseData = new ResponseData();
+                    Parser?.ParseResponse(this, ModifiedResponseData);
+                }
             }
             else
             {
@@ -156,24 +171,24 @@ namespace PoGoMITM.Base.Models
 
         public void ModifyRequest()
         {
-            if (Modifiers != null && RequestBody != null && RequestBody.Length != 0)
+            if (Modifiers != null && RequestBody != null && RequestData != null && RequestBody.Length != 0)
             {
-                foreach (var requestModifier in Modifiers.Where(r=>r.Enabled))
+                foreach (var requestModifier in Modifiers.Where(r => r.Enabled))
                 {
-                    //if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
-                    //{
-                    //    Debug.WriteLine("Client Request");
-                    //    Debug.WriteLine(string.Join(",", ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
-                    //}
+                    if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
+                    {
+                        Debug.WriteLine("Client Request");
+                        Debug.WriteLine(string.Join(",", ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
+                    }
 
                     if (requestModifier.ModifyRequest(this))
                     {
-                        //if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
-                        //{
-                        //    Debug.WriteLine("Modified Request");
-                        //    Debug.WriteLine(string.Join(",",
-                        //        ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
-                        //}
+                        if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
+                        {
+                            Debug.WriteLine("Modified Request");
+                            Debug.WriteLine(string.Join(",",
+                                ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
+                        }
                         RequestModified = true;
                     }
 
@@ -183,30 +198,30 @@ namespace PoGoMITM.Base.Models
             if (RequestPacker != null && RequestModified)
             {
                 RequestBody = RequestPacker.GenerateRequestBody(this.RequestData);
-                ParseRequest();
+                ParseRequest(true);
             }
         }
 
         public void ModifyResponse()
         {
-            if (Modifiers != null && ResponseBody != null && ResponseBody.Length != 0)
+            if (Modifiers != null && ResponseBody != null && RequestData != null && ResponseBody.Length != 0)
             {
                 foreach (var responseModifier in Modifiers.Where(r => r.Enabled))
                 {
-                    //if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
-                    //{
-                    //    Debug.WriteLine("Server Response");
-                    //    Debug.WriteLine(string.Join(",", ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells.Select(m => m.S2CellId).OrderBy(c => c).ToList()));
-                    //}
+                    if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
+                    {
+                        Debug.WriteLine("Server Response");
+                        Debug.WriteLine(string.Join(",", ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells.Select(m => m.S2CellId).OrderBy(c => c).ToList()));
+                    }
                     if (responseModifier.ModifyResponse(this))
                     {
-                        //if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
-                        //{
-                        //    Debug.WriteLine("Modified Response");
-                        //    Debug.WriteLine(string.Join(",",
-                        //        ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells
-                        //            .Select(m => m.S2CellId).OrderBy(c=>c).ToList()));
-                        //}
+                        if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
+                        {
+                            Debug.WriteLine("Modified Response");
+                            Debug.WriteLine(string.Join(",",
+                                ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells
+                                    .Select(m => m.S2CellId).OrderBy(c => c).ToList()));
+                        }
                         ResponseModified = true;
                     }
 
@@ -216,7 +231,7 @@ namespace PoGoMITM.Base.Models
             if (ResponsePacker != null && ResponseModified)
             {
                 ResponseBody = ResponsePacker.GenerateResponseBody(this.ResponseData);
-                ParseResponse();
+                ParseResponse(true);
             }
         }
 

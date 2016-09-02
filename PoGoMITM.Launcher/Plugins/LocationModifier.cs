@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Google.Common.Geometry;
 using log4net;
@@ -14,7 +16,7 @@ namespace PoGoMITM.Launcher.Plugins
     // INCOMPLETE - DO NOT USE
     public class LocationModifier : IModifierPlugin
     {
-        public bool Enabled => false;
+        public bool Enabled => true;
 
         public const string PluginName = "LocationModifier";
         private const double DestinationLatitude = 38.450242;
@@ -60,8 +62,7 @@ namespace PoGoMITM.Launcher.Plugins
                     }
                 }
             }
-
-
+            
 
             if (requestData.Requests == null) return false;
             foreach (var request in requestData.Requests)
@@ -72,24 +73,42 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.MethodUnset:
                         break;
                     case RequestType.PlayerUpdate:
+                        var playerUpdate = (PlayerUpdateMessage)request.Value;
+                        playerUpdate.Latitude = GetModifiedLatitude(playerUpdate.Latitude);
+                        playerUpdate.Longitude = GetModifiedLongitude(playerUpdate.Longitude);
+                        changed = true;
+
                         break;
                     case RequestType.GetPlayer:
+                        var getPlayer = (GetPlayerMessage)request.Value;
                         break;
                     case RequestType.GetInventory:
+                        var getInventory = (GetInventoryMessage)request.Value;
                         break;
                     case RequestType.DownloadSettings:
+                        var downloadSettings = (DownloadSettingsMessage)request.Value;
                         break;
                     case RequestType.DownloadItemTemplates:
+                        var downloadItemTemplates = (DownloadItemTemplatesMessage)request.Value;
                         break;
                     case RequestType.DownloadRemoteConfigVersion:
+                        var downloadRemoteConfigVersion = (DownloadRemoteConfigVersionMessage)request.Value;
                         break;
                     case RequestType.FortSearch:
+                        var fortSearch = (FortSearchMessage)request.Value;
+                        fortSearch.FortLatitude = GetModifiedLatitude(fortSearch.FortLatitude);
+                        fortSearch.FortLongitude = GetModifiedLongitude(fortSearch.FortLongitude);
+                        fortSearch.PlayerLatitude = GetModifiedLatitude(fortSearch.PlayerLatitude);
+                        fortSearch.PlayerLongitude = GetModifiedLongitude(fortSearch.PlayerLongitude);
                         break;
                     case RequestType.Encounter:
+                        var encounter = (EncounterMessage)request.Value;
                         break;
                     case RequestType.CatchPokemon:
+                        var catchPokemon = (CatchPokemonMessage)request.Value;
                         break;
                     case RequestType.FortDetails:
+                        var fortDetails = (FortDetailsMessage)request.Value;
                         break;
                     case RequestType.ItemUse:
                         break;
@@ -97,27 +116,31 @@ namespace PoGoMITM.Launcher.Plugins
                         var mapObjectsRequest = (GetMapObjectsMessage)request.Value;
                         mapObjectsRequest.Latitude = GetModifiedLatitude(mapObjectsRequest.Latitude);
                         mapObjectsRequest.Longitude = GetModifiedLongitude(mapObjectsRequest.Longitude);
-                        var calculatedCells = GetCellIdsForLatLong(mapObjectsRequest.Latitude,
-                            mapObjectsRequest.Longitude);
                         var originalCellIds = mapObjectsRequest.CellId.ToList();
-                        _cellIdConversions.Add(requestContext.Guid, new CellIdConversion { OriginalCellIds = originalCellIds, CalculatedCellIds = calculatedCells });
+                        var calculatedCells = originalCellIds.Select(GetModifiedS2Cell).ToList();
                         mapObjectsRequest.CellId.Clear();
                         mapObjectsRequest.CellId.AddRange(calculatedCells);
                         changed = true;
                         break;
                     case RequestType.FortDeployPokemon:
+                        var fortDeployPokemon = (FortDeployPokemonMessage)request.Value;
                         break;
                     case RequestType.FortRecallPokemon:
+                        var fortRecallPokemon = (FortRecallPokemonMessage)request.Value;
                         break;
                     case RequestType.ReleasePokemon:
+                        var releasePokemon = (ReleasePokemonMessage)request.Value;
                         break;
                     case RequestType.UseItemPotion:
+                        var useItemPotion = (UseItemPotionMessage)request.Value;
                         break;
                     case RequestType.UseItemCapture:
+                        var useItemCapture = (UseItemCaptureMessage)request.Value;
                         break;
                     case RequestType.UseItemFlee:
                         break;
                     case RequestType.UseItemRevive:
+                        var useItemRevive = (UseItemReviveMessage)request.Value;
                         break;
                     case RequestType.TradeSearch:
                         break;
@@ -128,6 +151,7 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.TradeResult:
                         break;
                     case RequestType.GetPlayerProfile:
+                        var getPlayerProfile = (GetPlayerProfileMessage)request.Value;
                         break;
                     case RequestType.GetItemPack:
                         break;
@@ -136,80 +160,117 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.BuyGemPack:
                         break;
                     case RequestType.EvolvePokemon:
+                        var evolvePokemon = (EvolvePokemonMessage)request.Value;
                         break;
                     case RequestType.GetHatchedEggs:
+                        var getHatchedEggs = (GetHatchedEggsMessage)request.Value;
                         break;
                     case RequestType.EncounterTutorialComplete:
+                        var encounterTutorialComplete = (EncounterTutorialCompleteMessage)request.Value;
                         break;
                     case RequestType.LevelUpRewards:
+                        var levelUpRewards = (LevelUpRewardsMessage)request.Value;
                         break;
                     case RequestType.CheckAwardedBadges:
+                        var checkAwardedBadges = (CheckAwardedBadgesMessage)request.Value;
                         break;
                     case RequestType.UseItemGym:
+                        var useItemGym = (UseItemGymMessage)request.Value;
                         break;
                     case RequestType.GetGymDetails:
+                        var getGymDetails = (GetGymDetailsMessage)request.Value;
                         break;
                     case RequestType.StartGymBattle:
+                        var startGymBattle = (StartGymBattleMessage)request.Value;
                         break;
                     case RequestType.AttackGym:
+                        var attackGym = (AttackGymMessage)request.Value;
                         break;
                     case RequestType.RecycleInventoryItem:
+                        var recycleInventoryItem = (RecycleInventoryItemMessage)request.Value;
                         break;
                     case RequestType.CollectDailyBonus:
+                        var collectDailyBonus = (CollectDailyBonusMessage)request.Value;
                         break;
                     case RequestType.UseItemXpBoost:
+                        var useItemXpBoost = (UseItemXpBoostMessage)request.Value;
                         break;
                     case RequestType.UseItemEggIncubator:
+                        var useItemEggIncubator = (UseItemEggIncubatorMessage)request.Value;
                         break;
                     case RequestType.UseIncense:
+                        var useIncense = (UseIncenseMessage)request.Value;
                         break;
                     case RequestType.GetIncensePokemon:
+                        var getIncensePokemon = (GetIncensePokemonMessage)request.Value;
                         break;
                     case RequestType.IncenseEncounter:
+                        var incenseEncounter = (IncenseEncounterMessage)request.Value;
                         break;
                     case RequestType.AddFortModifier:
+                        var addFortModifier = (AddFortModifierMessage)request.Value;
                         break;
                     case RequestType.DiskEncounter:
+                        var diskEncounter = (DiskEncounterMessage)request.Value;
                         break;
                     case RequestType.CollectDailyDefenderBonus:
+                        var collectDailyDefenderBonus = (CollectDailyDefenderBonusMessage)request.Value;
                         break;
                     case RequestType.UpgradePokemon:
+                        var upgradePokemon = (UpgradePokemonMessage)request.Value;
                         break;
                     case RequestType.SetFavoritePokemon:
+                        var setFavoritePokemon = (SetFavoritePokemonMessage)request.Value;
                         break;
                     case RequestType.NicknamePokemon:
+                        var nicknamePokemon = (NicknamePokemonMessage)request.Value;
                         break;
                     case RequestType.EquipBadge:
+                        var equipBadge = (EquipBadgeMessage)request.Value;
                         break;
                     case RequestType.SetContactSettings:
+                        var setContactSettings = (SetContactSettingsMessage)request.Value;
                         break;
                     case RequestType.SetBuddyPokemon:
+                        var setBuddyPokemon = (SetBuddyPokemonMessage)request.Value;
                         break;
                     case RequestType.GetBuddyWalked:
+                        var getBuddyWalked = (GetBuddyWalkedMessage)request.Value;
                         break;
                     case RequestType.GetAssetDigest:
+                        var getAssetDigest = (GetAssetDigestMessage)request.Value;
                         break;
                     case RequestType.GetDownloadUrls:
+                        var getDownloadUrls = (GetDownloadUrlsMessage)request.Value;
                         break;
                     case RequestType.GetSuggestedCodenames:
+                        var getSuggestedCodenames = (GetSuggestedCodenamesMessage)request.Value;
                         break;
                     case RequestType.CheckCodenameAvailable:
+                        var checkCodenameAvailable = (CheckCodenameAvailableMessage)request.Value;
                         break;
                     case RequestType.ClaimCodename:
+                        var claimCodename = (ClaimCodenameMessage)request.Value;
                         break;
                     case RequestType.SetAvatar:
+                        var setAvatar = (SetAvatarMessage)request.Value;
                         break;
                     case RequestType.SetPlayerTeam:
+                        var setPlayerTeam = (SetPlayerTeamMessage)request.Value;
                         break;
                     case RequestType.MarkTutorialComplete:
+                        var markTutorialComplete = (MarkTutorialCompleteMessage)request.Value;
                         break;
                     case RequestType.LoadSpawnPoints:
                         break;
                     case RequestType.CheckChallenge:
+                        var checkChallenge = (CheckChallengeMessage)request.Value;
                         break;
                     case RequestType.VerifyChallenge:
+                        var verifyChallenge = (VerifyChallengeMessage)request.Value;
                         break;
                     case RequestType.Echo:
+                        var echo = (EchoMessage)request.Value;
                         break;
                     case RequestType.DebugUpdateInventory:
                         break;
@@ -218,6 +279,7 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.SfidaRegistration:
                         break;
                     case RequestType.SfidaActionLog:
+                        var sfidaActionLog = (SfidaActionLogMessage)request.Value;
                         break;
                     case RequestType.SfidaCertification:
                         break;
@@ -229,6 +291,9 @@ namespace PoGoMITM.Launcher.Plugins
                         break;
                     case RequestType.SfidaCapture:
                         break;
+
+
+
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -284,24 +349,34 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.MethodUnset:
                         break;
                     case RequestType.PlayerUpdate:
+                        var playerUpdate = (PlayerUpdateResponse)response.Value;
                         break;
                     case RequestType.GetPlayer:
+                        var getPlayer = (GetPlayerResponse)response.Value;
                         break;
                     case RequestType.GetInventory:
+                        var getInventory = (GetInventoryResponse)response.Value;
                         break;
                     case RequestType.DownloadSettings:
+                        var downloadSettings = (DownloadSettingsResponse)response.Value;
                         break;
                     case RequestType.DownloadItemTemplates:
+                        var downloadItemTemplates = (DownloadItemTemplatesResponse)response.Value;
                         break;
                     case RequestType.DownloadRemoteConfigVersion:
+                        var downloadRemoteConfigVersion = (DownloadRemoteConfigVersionResponse)response.Value;
                         break;
                     case RequestType.FortSearch:
+                        var fortSearch = (FortSearchResponse)response.Value;
                         break;
                     case RequestType.Encounter:
+                        var encounter = (EncounterResponse)response.Value;
                         break;
                     case RequestType.CatchPokemon:
+                        var catchPokemon = (CatchPokemonResponse)response.Value;
                         break;
                     case RequestType.FortDetails:
+                        var fortDetails = (FortDetailsResponse)response.Value;
                         break;
                     case RequestType.ItemUse:
                         break;
@@ -312,7 +387,7 @@ namespace PoGoMITM.Launcher.Plugins
                         mapObjectsResponse.MapCells.Clear();
                         foreach (var mapCell in mapCells)
                         {
-                            //mapCell.S2CellId = GetOriginalS2Cell(requestContext.Guid, mapCell.S2CellId);
+                            mapCell.S2CellId = GetOriginalS2Cell(mapCell.S2CellId);
                             foreach (var spawnPoint in mapCell.SpawnPoints)
                             {
                                 spawnPoint.Latitude = GetOriginalLatitude(spawnPoint.Latitude);
@@ -349,18 +424,24 @@ namespace PoGoMITM.Launcher.Plugins
 
                         break;
                     case RequestType.FortDeployPokemon:
+                        var fortDeployPokemon = (FortDeployPokemonResponse)response.Value;
                         break;
                     case RequestType.FortRecallPokemon:
+                        var fortRecallPokemon = (FortRecallPokemonResponse)response.Value;
                         break;
                     case RequestType.ReleasePokemon:
+                        var releasePokemon = (ReleasePokemonResponse)response.Value;
                         break;
                     case RequestType.UseItemPotion:
+                        var useItemPotion = (UseItemPotionResponse)response.Value;
                         break;
                     case RequestType.UseItemCapture:
+                        var useItemCapture = (UseItemCaptureResponse)response.Value;
                         break;
                     case RequestType.UseItemFlee:
                         break;
                     case RequestType.UseItemRevive:
+                        var useItemRevive = (UseItemReviveResponse)response.Value;
                         break;
                     case RequestType.TradeSearch:
                         break;
@@ -371,6 +452,7 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.TradeResult:
                         break;
                     case RequestType.GetPlayerProfile:
+                        var getPlayerProfile = (GetPlayerProfileResponse)response.Value;
                         break;
                     case RequestType.GetItemPack:
                         break;
@@ -379,80 +461,117 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.BuyGemPack:
                         break;
                     case RequestType.EvolvePokemon:
+                        var evolvePokemon = (EvolvePokemonResponse)response.Value;
                         break;
                     case RequestType.GetHatchedEggs:
+                        var getHatchedEggs = (GetHatchedEggsResponse)response.Value;
                         break;
                     case RequestType.EncounterTutorialComplete:
+                        var encounterTutorialComplete = (EncounterTutorialCompleteResponse)response.Value;
                         break;
                     case RequestType.LevelUpRewards:
+                        var levelUpRewards = (LevelUpRewardsResponse)response.Value;
                         break;
                     case RequestType.CheckAwardedBadges:
+                        var checkAwardedBadges = (CheckAwardedBadgesResponse)response.Value;
                         break;
                     case RequestType.UseItemGym:
+                        var useItemGym = (UseItemGymResponse)response.Value;
                         break;
                     case RequestType.GetGymDetails:
+                        var getGymDetails = (GetGymDetailsResponse)response.Value;
                         break;
                     case RequestType.StartGymBattle:
+                        var startGymBattle = (StartGymBattleResponse)response.Value;
                         break;
                     case RequestType.AttackGym:
+                        var attackGym = (AttackGymResponse)response.Value;
                         break;
                     case RequestType.RecycleInventoryItem:
+                        var recycleInventoryItem = (RecycleInventoryItemResponse)response.Value;
                         break;
                     case RequestType.CollectDailyBonus:
+                        var collectDailyBonus = (CollectDailyBonusResponse)response.Value;
                         break;
                     case RequestType.UseItemXpBoost:
+                        var useItemXpBoost = (UseItemXpBoostResponse)response.Value;
                         break;
                     case RequestType.UseItemEggIncubator:
+                        var useItemEggIncubator = (UseItemEggIncubatorResponse)response.Value;
                         break;
                     case RequestType.UseIncense:
+                        var useIncense = (UseIncenseResponse)response.Value;
                         break;
                     case RequestType.GetIncensePokemon:
+                        var getIncensePokemon = (GetIncensePokemonResponse)response.Value;
                         break;
                     case RequestType.IncenseEncounter:
+                        var incenseEncounter = (IncenseEncounterResponse)response.Value;
                         break;
                     case RequestType.AddFortModifier:
+                        var addFortModifier = (AddFortModifierResponse)response.Value;
                         break;
                     case RequestType.DiskEncounter:
+                        var diskEncounter = (DiskEncounterResponse)response.Value;
                         break;
                     case RequestType.CollectDailyDefenderBonus:
+                        var collectDailyDefenderBonus = (CollectDailyDefenderBonusResponse)response.Value;
                         break;
                     case RequestType.UpgradePokemon:
+                        var upgradePokemon = (UpgradePokemonResponse)response.Value;
                         break;
                     case RequestType.SetFavoritePokemon:
+                        var setFavoritePokemon = (SetFavoritePokemonResponse)response.Value;
                         break;
                     case RequestType.NicknamePokemon:
+                        var nicknamePokemon = (NicknamePokemonResponse)response.Value;
                         break;
                     case RequestType.EquipBadge:
+                        var equipBadge = (EquipBadgeResponse)response.Value;
                         break;
                     case RequestType.SetContactSettings:
+                        var setContactSettings = (SetContactSettingsResponse)response.Value;
                         break;
                     case RequestType.SetBuddyPokemon:
+                        var setBuddyPokemon = (SetBuddyPokemonResponse)response.Value;
                         break;
                     case RequestType.GetBuddyWalked:
+                        var getBuddyWalked = (GetBuddyWalkedResponse)response.Value;
                         break;
                     case RequestType.GetAssetDigest:
+                        var getAssetDigest = (GetAssetDigestResponse)response.Value;
                         break;
                     case RequestType.GetDownloadUrls:
+                        var getDownloadUrls = (GetDownloadUrlsResponse)response.Value;
                         break;
                     case RequestType.GetSuggestedCodenames:
+                        var getSuggestedCodenames = (GetSuggestedCodenamesResponse)response.Value;
                         break;
                     case RequestType.CheckCodenameAvailable:
+                        var checkCodenameAvailable = (CheckCodenameAvailableResponse)response.Value;
                         break;
                     case RequestType.ClaimCodename:
+                        var claimCodename = (ClaimCodenameResponse)response.Value;
                         break;
                     case RequestType.SetAvatar:
+                        var setAvatar = (SetAvatarResponse)response.Value;
                         break;
                     case RequestType.SetPlayerTeam:
+                        var setPlayerTeam = (SetPlayerTeamResponse)response.Value;
                         break;
                     case RequestType.MarkTutorialComplete:
+                        var markTutorialComplete = (MarkTutorialCompleteResponse)response.Value;
                         break;
                     case RequestType.LoadSpawnPoints:
                         break;
                     case RequestType.CheckChallenge:
+                        var checkChallenge = (CheckChallengeResponse)response.Value;
                         break;
                     case RequestType.VerifyChallenge:
+                        var verifyChallenge = (VerifyChallengeResponse)response.Value;
                         break;
                     case RequestType.Echo:
+                        var echo = (EchoResponse)response.Value;
                         break;
                     case RequestType.DebugUpdateInventory:
                         break;
@@ -461,6 +580,7 @@ namespace PoGoMITM.Launcher.Plugins
                     case RequestType.SfidaRegistration:
                         break;
                     case RequestType.SfidaActionLog:
+                        var sfidaActionLog = (SfidaActionLogResponse)response.Value;
                         break;
                     case RequestType.SfidaCertification:
                         break;
@@ -494,6 +614,7 @@ namespace PoGoMITM.Launcher.Plugins
             set
             {
                 _offsetLatitude = DestinationLatitude - value;
+                //_offsetLatitude = 0;
                 _startingLatitude = value;
             }
         }
@@ -504,6 +625,7 @@ namespace PoGoMITM.Launcher.Plugins
             set
             {
                 _offsetLongitude = DestinationLongitude - value;
+                //_offsetLongitude = 0;
                 _startingLongitude = value;
             }
         }
@@ -528,120 +650,35 @@ namespace PoGoMITM.Launcher.Plugins
             return longitude - _offsetLongitude;
         }
 
-        //private static Dictionary<ulong, ulong> _cellConversion = new Dictionary<ulong, ulong>();
+        private static readonly ConcurrentDictionary<ulong, ulong> CellConversion = new ConcurrentDictionary<ulong, ulong>();
 
-        //private static ulong GetModifiedS2Cell(ulong cellId)
-        //{
-        //    var s2Cell = new S2CellId(cellId);
-        //    var latlng = s2Cell.ToLatLng();
-
-        //    var lat = GetModifiedLatitude(latlng.LatDegrees);
-        //    var lng = GetModifiedLongitude(latlng.LngDegrees);
-
-
-        //    var latLong = S2LatLng.FromDegrees(lat, lng);
-        //    var cell = S2CellId.FromLatLng(latLong);
-        //    var newCellId = cell.ParentForLevel(s2Cell.Level);
-        //    if (!_cellConversion.ContainsKey(newCellId.Id))
-        //    {
-        //        _cellConversion.Add(newCellId.Id, cellId);
-        //    }
-        //    return newCellId.Id;
-        //}
-
-        private static S2CellId GetOriginalS2Cell(ulong cellId)
+        private static ulong GetModifiedS2Cell(ulong cellId)
         {
             var s2Cell = new S2CellId(cellId);
             var latlng = s2Cell.ToLatLng();
 
-            var lat = GetOriginalLatitude(latlng.LatDegrees);
-            var lng = GetOriginalLongitude(latlng.LngDegrees);
+            var latLong = S2LatLng.FromDegrees(GetModifiedLatitude(latlng.LatDegrees), GetModifiedLongitude(latlng.LngDegrees)).Normalized.ToPoint();
 
-
-            var latLong = S2LatLng.FromDegrees(lat, lng);
-            var cell = S2CellId.FromLatLng(latLong);
+            var cell = S2CellId.FromPoint(latLong);
             var newCellId = cell.ParentForLevel(s2Cell.Level);
-            return newCellId;
+
+            CellConversion.TryAdd(newCellId.Id, cellId);
+
+            return newCellId.Id;
         }
 
-        private static List<ulong> GetCellIdsForLatLong(double latitude, double longitude)
+        private static ulong GetOriginalS2Cell(ulong cellId)
         {
-            var latLong = S2LatLng.FromDegrees(latitude, longitude);
-            var cell = S2CellId.FromLatLng(latLong);
-            var cellId = cell.ParentForLevel(15);
-            var cells = cellId.GetEdgeNeighbors();
-            var cellIds = new List<ulong>
-            {
-                cellId.Id
-            };
+            ulong result;
 
-            foreach (var cellEdge1 in cells)
+            if (CellConversion.TryGetValue(cellId, out result))
             {
-                if (!cellIds.Contains(cellEdge1.Id)) cellIds.Add(cellEdge1.Id);
-
-                foreach (var cellEdge2 in cellEdge1.GetEdgeNeighbors())
-                {
-                    if (!cellIds.Contains(cellEdge2.Id)) cellIds.Add(cellEdge2.Id);
-                }
+                return result;
             }
+            throw new Exception("Cell conversion is not cached, shouldn't have happened.");
 
-            return cellIds;
         }
 
-        public static List<ulong> GetCellIds(double latitude, double longitude)
-        {
-            var kEarthCircumferenceMeters = 1000 * 40075.017d;
-            var radius = 500;
-            var radiusInRadians = (2 * Math.PI) * (radius / kEarthCircumferenceMeters);
 
-            var centerPoint = S2LatLng.FromDegrees(latitude, longitude).Normalized.ToPoint();
-
-            var cap = S2Cap.FromAxisHeight(centerPoint, (radiusInRadians * radiusInRadians) / 2);
-            var coverer = new S2RegionCoverer()
-            {
-                MaxLevel = 15,
-                MinLevel = 15,
-                LevelMod = 1,
-                MaxCells = 1000,
-            };
-
-            var list = new List<S2CellId>();
-            coverer.GetCovering(cap, list);
-
-            return list.Select(x => x.Id).OrderBy(c => c).ToList();
-        }
-
-        private static Dictionary<Guid, CellIdConversion> _cellIdConversions = new Dictionary<Guid, CellIdConversion>();
-        private class CellIdConversion
-        {
-            private List<S2CellId> _s2OriginalIds;
-            private List<S2CellId> _s2CalculatedIds;
-            public List<ulong> OriginalCellIds { get; set; }
-            public List<ulong> CalculatedCellIds { get; set; }
-
-            public ulong GetOriginalCellId(ulong calculatedCellId)
-            {
-                var calculatedCell = new S2CellId(calculatedCellId);
-                var calculatedCellLocation = calculatedCell.ToLatLng();
-                var originalLat = GetOriginalLatitude(calculatedCellLocation.LatDegrees);
-                var originalLon = GetOriginalLongitude(calculatedCellLocation.LngDegrees);
-
-                //var coords=new GeoCoordinate
-
-                if (_s2OriginalIds == null || _s2CalculatedIds == null)
-                {
-                    GenerateCellIds();
-                }
-
-                //var nearestOriginalCellId=_s2OriginalIds.Where(c=>c.)
-                return 0;
-            }
-
-            private void GenerateCellIds()
-            {
-                _s2OriginalIds = OriginalCellIds.Select(c => new S2CellId(c)).ToList();
-                _s2CalculatedIds = CalculatedCellIds.Select(c => new S2CellId(c)).ToList();
-            }
-        }
     }
 }

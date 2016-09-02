@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace PoGoMITM.Base.Models
+﻿namespace PoGoMITM.Base.Models
 {
     public interface IRequestPacker
     {

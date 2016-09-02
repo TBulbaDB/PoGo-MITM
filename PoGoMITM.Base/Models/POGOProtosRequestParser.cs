@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Google.Protobuf;
-using PoGoMITM.Base.ProtoHelpers;
-using PoGoMITM.Base.Utils;
 using PoGoMITM.Base.Utils.Crypt;
 using POGOProtos.Networking.Envelopes;
 using POGOProtos.Networking.Platform;

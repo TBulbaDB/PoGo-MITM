@@ -11,7 +11,7 @@ namespace PoGoMITM.Launcher.Plugins
 {
     public class TestModifier: IModifierPlugin
     {
-        public bool Enabled => true;
+        public bool Enabled => false;
 
         public bool ModifyRequest(RequestContext requestContext)
         {
