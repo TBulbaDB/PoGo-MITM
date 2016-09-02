@@ -163,7 +163,6 @@
     <Compile Include="Utils\ULongConverter.cs" />
     <Compile Include="Utils\LongConverter.cs" />
     <Compile Include="Utils\CertificateHelper.cs" />
-    <Compile Include="Utils\ArrayBuffer.cs" />
     <Compile Include="Utils\ByteArrayConverter.cs" />
     <Compile Include="Utils\Crypt\Encryption2.cs" />
     <Compile Include="Utils\Crypt\xxHash32.cs" />
