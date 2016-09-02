@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using log4net.Core;
 using Nancy;
 using Newtonsoft.Json;
@@ -12,6 +10,7 @@ using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
 using PoGoMITM.Base.Plugins;
 using PoGoMITM.Base.Utils;
+using PoGoMITM.Launcher.Plugins;
 
 namespace PoGoMITM.Launcher
 {
@@ -36,8 +35,8 @@ namespace PoGoMITM.Launcher
 
             RequestContext.Parser = new POGOProtosProtoParser();
             AppConfig.Logger.Info("Attempting to load the plugins");
-            //RequestContext.Modifiers = new List<IModifierPlugin> { new LocationModifier(), new TestModifier() };
-            RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
+            RequestContext.Modifiers = new List<IModifierPlugin> { new LocationModifier()};
+            //RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
             //RequestContext.ResponseModifiers = PluginLoader.LoadPlugins<IResponseModifier>();
             if (RequestContext.Modifiers != null && RequestContext.Modifiers.Count > 0)
             {

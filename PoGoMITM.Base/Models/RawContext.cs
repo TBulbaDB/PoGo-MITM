@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
 using Titanium.Web.Proxy.Models;
 
@@ -8,7 +7,6 @@ namespace PoGoMITM.Base.Models
 {
     public class RawContext
     {
-        [BsonId]
         public Guid Guid { get; set; }
         public DateTime RequestTime { get; set; }
         public Uri RequestUri { get; set; }

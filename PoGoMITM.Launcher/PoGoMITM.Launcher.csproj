@@ -95,25 +95,21 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="S2Geometry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\S2Geometry.1.0.3\lib\portable-net45+wp8+win8\S2Geometry.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Titanium.Web.Proxy, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Titanium.Web.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.3.9.0\lib\net35\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -121,22 +117,25 @@
     <Compile Include="Modules\ApplicationBootstrapper.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="NotificationHub.cs" />
-    <Content Include="Plugins\LocationModifier.cs" />
     <Content Include="Plugins\TestModifier.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Plugins\PokemonIVDisplay.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Compile Include="Plugins\PluginTemplate.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\LocationHashCalculatorTests.cs" />
     <Compile Include="ViewModels\RawContextListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="app.manifest" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Views\Home\Index.sshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
