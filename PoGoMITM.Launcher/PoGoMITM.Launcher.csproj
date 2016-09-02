@@ -117,9 +117,6 @@
     <Compile Include="Modules\ApplicationBootstrapper.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="NotificationHub.cs" />
-    <Compile Include="Plugins\LocationModifier.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Content Include="Plugins\TestModifier.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
