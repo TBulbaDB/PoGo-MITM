@@ -175,20 +175,20 @@ namespace PoGoMITM.Base.Models
             {
                 foreach (var requestModifier in Modifiers.Where(r => r.Enabled))
                 {
-                    if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
-                    {
-                        Debug.WriteLine("Client Request");
-                        Debug.WriteLine(string.Join(",", ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
-                    }
+                    //if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
+                    //{
+                    //    Debug.WriteLine("Client Request");
+                    //    Debug.WriteLine(string.Join(",", ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
+                    //}
 
                     if (requestModifier.ModifyRequest(this))
                     {
-                        if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
-                        {
-                            Debug.WriteLine("Modified Request");
-                            Debug.WriteLine(string.Join(",",
-                                ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
-                        }
+                        //if (RequestData.Requests.ContainsKey(RequestType.GetMapObjects))
+                        //{
+                        //    Debug.WriteLine("Modified Request");
+                        //    Debug.WriteLine(string.Join(",",
+                        //        ((GetMapObjectsMessage)RequestData.Requests[RequestType.GetMapObjects]).CellId.OrderBy(c => c)));
+                        //}
                         RequestModified = true;
                     }
 
@@ -208,20 +208,20 @@ namespace PoGoMITM.Base.Models
             {
                 foreach (var responseModifier in Modifiers.Where(r => r.Enabled))
                 {
-                    if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
-                    {
-                        Debug.WriteLine("Server Response");
-                        Debug.WriteLine(string.Join(",", ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells.Select(m => m.S2CellId).OrderBy(c => c).ToList()));
-                    }
+                    //if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
+                    //{
+                    //    Debug.WriteLine("Server Response");
+                    //    Debug.WriteLine(string.Join(",", ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells.Select(m => m.S2CellId).OrderBy(c => c).ToList()));
+                    //}
                     if (responseModifier.ModifyResponse(this))
                     {
-                        if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
-                        {
-                            Debug.WriteLine("Modified Response");
-                            Debug.WriteLine(string.Join(",",
-                                ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells
-                                    .Select(m => m.S2CellId).OrderBy(c => c).ToList()));
-                        }
+                        //if (ResponseData.Responses.ContainsKey(RequestType.GetMapObjects))
+                        //{
+                        //    Debug.WriteLine("Modified Response");
+                        //    Debug.WriteLine(string.Join(",",
+                        //        ((GetMapObjectsResponse)ResponseData.Responses[RequestType.GetMapObjects]).MapCells
+                        //            .Select(m => m.S2CellId).OrderBy(c => c).ToList()));
+                        //}
                         ResponseModified = true;
                     }
 

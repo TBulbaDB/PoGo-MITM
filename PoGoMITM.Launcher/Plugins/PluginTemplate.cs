@@ -22,211 +22,230 @@ namespace PoGoMITM.Launcher.Plugins
 
                 switch (request.Key)
                 {
-                    case RequestType.MethodUnset:
-                        break;
-                    case RequestType.PlayerUpdate:
-                        var playerUpdate = (PlayerUpdateMessage)request.Value;
-                        break;
-                    case RequestType.GetPlayer:
-                        var getPlayer = (GetPlayerMessage)request.Value;
-                        break;
-                    case RequestType.GetInventory:
-                        var getInventory = (GetInventoryMessage)request.Value;
-                        break;
-                    case RequestType.DownloadSettings:
-                        var downloadSettings = (DownloadSettingsMessage)request.Value;
-                        break;
-                    case RequestType.DownloadItemTemplates:
-                        var downloadItemTemplates = (DownloadItemTemplatesMessage)request.Value;
-                        break;
-                    case RequestType.DownloadRemoteConfigVersion:
-                        var downloadRemoteConfigVersion = (DownloadRemoteConfigVersionMessage)request.Value;
-                        break;
-                    case RequestType.FortSearch:
-                        var fortSearch = (FortSearchMessage)request.Value;
-                        break;
-                    case RequestType.Encounter:
-                        var encounter = (EncounterMessage)request.Value;
-                        break;
-                    case RequestType.CatchPokemon:
-                        var catchPokemon = (CatchPokemonMessage)request.Value;
-                        break;
-                    case RequestType.FortDetails:
-                        var fortDetails = (FortDetailsMessage)request.Value;
-                        break;
-                    case RequestType.ItemUse:
-                        break;
-                    case RequestType.GetMapObjects:
-                        var mapObjectsRequest = (GetMapObjectsMessage)request.Value;
-                        break;
-                    case RequestType.FortDeployPokemon:
-                        var fortDeployPokemon = (FortDeployPokemonMessage)request.Value;
-                        break;
-                    case RequestType.FortRecallPokemon:
-                        var fortRecallPokemon = (FortRecallPokemonMessage)request.Value;
-                        break;
-                    case RequestType.ReleasePokemon:
-                        var releasePokemon = (ReleasePokemonMessage)request.Value;
-                        break;
-                    case RequestType.UseItemPotion:
-                        var useItemPotion = (UseItemPotionMessage)request.Value;
-                        break;
-                    case RequestType.UseItemCapture:
-                        var useItemCapture = (UseItemCaptureMessage)request.Value;
-                        break;
-                    case RequestType.UseItemFlee:
-                        break;
-                    case RequestType.UseItemRevive:
-                        var useItemRevive = (UseItemReviveMessage)request.Value;
-                        break;
-                    case RequestType.TradeSearch:
-                        break;
-                    case RequestType.TradeOffer:
-                        break;
-                    case RequestType.TradeResponse:
-                        break;
-                    case RequestType.TradeResult:
-                        break;
-                    case RequestType.GetPlayerProfile:
-                        var getPlayerProfile = (GetPlayerProfileMessage)request.Value;
-                        break;
-                    case RequestType.GetItemPack:
-                        break;
-                    case RequestType.BuyItemPack:
-                        break;
-                    case RequestType.BuyGemPack:
-                        break;
-                    case RequestType.EvolvePokemon:
-                        var evolvePokemon = (EvolvePokemonMessage)request.Value;
-                        break;
-                    case RequestType.GetHatchedEggs:
-                        var getHatchedEggs = (GetHatchedEggsMessage)request.Value;
-                        break;
-                    case RequestType.EncounterTutorialComplete:
-                        var encounterTutorialComplete = (EncounterTutorialCompleteMessage)request.Value;
-                        break;
-                    case RequestType.LevelUpRewards:
-                        var levelUpRewards = (LevelUpRewardsMessage)request.Value;
-                        break;
-                    case RequestType.CheckAwardedBadges:
-                        var checkAwardedBadges = (CheckAwardedBadgesMessage)request.Value;
-                        break;
-                    case RequestType.UseItemGym:
-                        var useItemGym = (UseItemGymMessage)request.Value;
-                        break;
-                    case RequestType.GetGymDetails:
-                        var getGymDetails = (GetGymDetailsMessage)request.Value;
-                        break;
-                    case RequestType.StartGymBattle:
-                        var startGymBattle = (StartGymBattleMessage)request.Value;
+                    case RequestType.AddFortModifier:
+                        var addFortModifierMessage = (AddFortModifierMessage)request.Value;
                         break;
                     case RequestType.AttackGym:
-                        var attackGym = (AttackGymMessage)request.Value;
+                        var attackGymMessage = (AttackGymMessage)request.Value;
                         break;
-                    case RequestType.RecycleInventoryItem:
-                        var recycleInventoryItem = (RecycleInventoryItemMessage)request.Value;
+                    case RequestType.BuyGemPack:
+                        //var buyGemPackMessage = (BuyGemPackMessage)request.Value;
                         break;
-                    case RequestType.CollectDailyBonus:
-                        var collectDailyBonus = (CollectDailyBonusMessage)request.Value;
+                    case RequestType.BuyItemPack:
+                        //var buyItemPackMessage = (BuyItemPackMessage)request.Value;
                         break;
-                    case RequestType.UseItemXpBoost:
-                        var useItemXpBoost = (UseItemXpBoostMessage)request.Value;
+                    case RequestType.CatchPokemon:
+                        var catchPokemonMessage = (CatchPokemonMessage)request.Value;
                         break;
-                    case RequestType.UseItemEggIncubator:
-                        var useItemEggIncubator = (UseItemEggIncubatorMessage)request.Value;
-                        break;
-                    case RequestType.UseIncense:
-                        var useIncense = (UseIncenseMessage)request.Value;
-                        break;
-                    case RequestType.GetIncensePokemon:
-                        var getIncensePokemon = (GetIncensePokemonMessage)request.Value;
-                        break;
-                    case RequestType.IncenseEncounter:
-                        var incenseEncounter = (IncenseEncounterMessage)request.Value;
-                        break;
-                    case RequestType.AddFortModifier:
-                        var addFortModifier = (AddFortModifierMessage)request.Value;
-                        break;
-                    case RequestType.DiskEncounter:
-                        var diskEncounter = (DiskEncounterMessage)request.Value;
-                        break;
-                    case RequestType.CollectDailyDefenderBonus:
-                        var collectDailyDefenderBonus = (CollectDailyDefenderBonusMessage)request.Value;
-                        break;
-                    case RequestType.UpgradePokemon:
-                        var upgradePokemon = (UpgradePokemonMessage)request.Value;
-                        break;
-                    case RequestType.SetFavoritePokemon:
-                        var setFavoritePokemon = (SetFavoritePokemonMessage)request.Value;
-                        break;
-                    case RequestType.NicknamePokemon:
-                        var nicknamePokemon = (NicknamePokemonMessage)request.Value;
-                        break;
-                    case RequestType.EquipBadge:
-                        var equipBadge = (EquipBadgeMessage)request.Value;
-                        break;
-                    case RequestType.SetContactSettings:
-                        var setContactSettings = (SetContactSettingsMessage)request.Value;
-                        break;
-                    case RequestType.SetBuddyPokemon:
-                        var setBuddyPokemon = (SetBuddyPokemonMessage)request.Value;
-                        break;
-                    case RequestType.GetBuddyWalked:
-                        var getBuddyWalked = (GetBuddyWalkedMessage)request.Value;
-                        break;
-                    case RequestType.GetAssetDigest:
-                        var getAssetDigest = (GetAssetDigestMessage)request.Value;
-                        break;
-                    case RequestType.GetDownloadUrls:
-                        var getDownloadUrls = (GetDownloadUrlsMessage)request.Value;
-                        break;
-                    case RequestType.GetSuggestedCodenames:
-                        var getSuggestedCodenames = (GetSuggestedCodenamesMessage)request.Value;
-                        break;
-                    case RequestType.CheckCodenameAvailable:
-                        var checkCodenameAvailable = (CheckCodenameAvailableMessage)request.Value;
-                        break;
-                    case RequestType.ClaimCodename:
-                        var claimCodename = (ClaimCodenameMessage)request.Value;
-                        break;
-                    case RequestType.SetAvatar:
-                        var setAvatar = (SetAvatarMessage)request.Value;
-                        break;
-                    case RequestType.SetPlayerTeam:
-                        var setPlayerTeam = (SetPlayerTeamMessage)request.Value;
-                        break;
-                    case RequestType.MarkTutorialComplete:
-                        var markTutorialComplete = (MarkTutorialCompleteMessage)request.Value;
-                        break;
-                    case RequestType.LoadSpawnPoints:
+                    case RequestType.CheckAwardedBadges:
+                        var checkAwardedBadgesMessage = (CheckAwardedBadgesMessage)request.Value;
                         break;
                     case RequestType.CheckChallenge:
-                        var checkChallenge = (CheckChallengeMessage)request.Value;
+                        var checkChallengeMessage = (CheckChallengeMessage)request.Value;
                         break;
-                    case RequestType.VerifyChallenge:
-                        var verifyChallenge = (VerifyChallengeMessage)request.Value;
+                    case RequestType.CheckCodenameAvailable:
+                        var checkCodenameAvailableMessage = (CheckCodenameAvailableMessage)request.Value;
                         break;
-                    case RequestType.Echo:
-                        var echo = (EchoMessage)request.Value;
+                    case RequestType.ClaimCodename:
+                        var claimCodenameMessage = (ClaimCodenameMessage)request.Value;
                         break;
-                    case RequestType.DebugUpdateInventory:
+                    case RequestType.CollectDailyBonus:
+                        var collectDailyBonusMessage = (CollectDailyBonusMessage)request.Value;
+                        break;
+                    case RequestType.CollectDailyDefenderBonus:
+                        var collectDailyDefenderBonusMessage = (CollectDailyDefenderBonusMessage)request.Value;
                         break;
                     case RequestType.DebugDeletePlayer:
+                        //var debugDeletePlayerMessage = (DebugDeletePlayerMessage)request.Value;
                         break;
-                    case RequestType.SfidaRegistration:
+                    case RequestType.DebugUpdateInventory:
+                        //var debugUpdateInventoryMessage = (DebugUpdateInventoryMessage)request.Value;
                         break;
-                    case RequestType.SfidaActionLog:
-                        var sfidaActionLog = (SfidaActionLogMessage)request.Value;
+                    case RequestType.DiskEncounter:
+                        var diskEncounterMessage = (DiskEncounterMessage)request.Value;
                         break;
-                    case RequestType.SfidaCertification:
+                    case RequestType.DownloadItemTemplates:
+                        var downloadItemTemplatesMessage = (DownloadItemTemplatesMessage)request.Value;
                         break;
-                    case RequestType.SfidaUpdate:
+                    case RequestType.DownloadRemoteConfigVersion:
+                        var downloadRemoteConfigVersionMessage = (DownloadRemoteConfigVersionMessage)request.Value;
+                        break;
+                    case RequestType.DownloadSettings:
+                        var downloadSettingsMessage = (DownloadSettingsMessage)request.Value;
+                        break;
+                    case RequestType.Echo:
+                        var echoMessage = (EchoMessage)request.Value;
+                        break;
+                    case RequestType.Encounter:
+                        var encounterMessage = (EncounterMessage)request.Value;
+                        break;
+                    case RequestType.EncounterTutorialComplete:
+                        var encounterTutorialCompleteMessage = (EncounterTutorialCompleteMessage)request.Value;
+                        break;
+                    case RequestType.EquipBadge:
+                        var equipBadgeMessage = (EquipBadgeMessage)request.Value;
+                        break;
+                    case RequestType.EvolvePokemon:
+                        var evolvePokemonMessage = (EvolvePokemonMessage)request.Value;
+                        break;
+                    case RequestType.FortDeployPokemon:
+                        var fortDeployPokemonMessage = (FortDeployPokemonMessage)request.Value;
+                        break;
+                    case RequestType.FortDetails:
+                        var fortDetailsMessage = (FortDetailsMessage)request.Value;
+                        break;
+                    case RequestType.FortRecallPokemon:
+                        var fortRecallPokemonMessage = (FortRecallPokemonMessage)request.Value;
+                        break;
+                    case RequestType.FortSearch:
+                        var fortSearchMessage = (FortSearchMessage)request.Value;
+                        break;
+                    case RequestType.GetAssetDigest:
+                        var getAssetDigestMessage = (GetAssetDigestMessage)request.Value;
+                        break;
+                    case RequestType.GetBuddyWalked:
+                        var getBuddyWalkedMessage = (GetBuddyWalkedMessage)request.Value;
+                        break;
+                    case RequestType.GetDownloadUrls:
+                        var getDownloadUrlsMessage = (GetDownloadUrlsMessage)request.Value;
+                        break;
+                    case RequestType.GetGymDetails:
+                        var getGymDetailsMessage = (GetGymDetailsMessage)request.Value;
+                        break;
+                    case RequestType.GetHatchedEggs:
+                        var getHatchedEggsMessage = (GetHatchedEggsMessage)request.Value;
+                        break;
+                    case RequestType.GetIncensePokemon:
+                        var getIncensePokemonMessage = (GetIncensePokemonMessage)request.Value;
+                        break;
+                    case RequestType.GetInventory:
+                        var getInventoryMessage = (GetInventoryMessage)request.Value;
+                        break;
+                    case RequestType.GetItemPack:
+                        //var getItemPackMessage = (GetItemPackMessage)request.Value;
+                        break;
+                    case RequestType.GetMapObjects:
+                        var getMapObjectsMessage = (GetMapObjectsMessage)request.Value;
+                        break;
+                    case RequestType.GetPlayer:
+                        var getPlayerMessage = (GetPlayerMessage)request.Value;
+                        break;
+                    case RequestType.GetPlayerProfile:
+                        var getPlayerProfileMessage = (GetPlayerProfileMessage)request.Value;
+                        break;
+                    case RequestType.GetSuggestedCodenames:
+                        var getSuggestedCodenamesMessage = (GetSuggestedCodenamesMessage)request.Value;
+                        break;
+                    case RequestType.IncenseEncounter:
+                        var incenseEncounterMessage = (IncenseEncounterMessage)request.Value;
+                        break;
+                    case RequestType.ItemUse:
+                        //var itemUseMessage = (ItemUseMessage)request.Value;
+                        break;
+                    case RequestType.LevelUpRewards:
+                        var levelUpRewardsMessage = (LevelUpRewardsMessage)request.Value;
+                        break;
+                    case RequestType.LoadSpawnPoints:
+                        //var loadSpawnPointsMessage = (LoadSpawnPointsMessage)request.Value;
+                        break;
+                    case RequestType.MarkTutorialComplete:
+                        var markTutorialCompleteMessage = (MarkTutorialCompleteMessage)request.Value;
+                        break;
+                    case RequestType.MethodUnset:
+                        //var methodUnsetMessage = (MethodUnsetMessage)request.Value;
+                        break;
+                    case RequestType.NicknamePokemon:
+                        var nicknamePokemonMessage = (NicknamePokemonMessage)request.Value;
+                        break;
+                    case RequestType.PlayerUpdate:
+                        var playerUpdateMessage = (PlayerUpdateMessage)request.Value;
+                        break;
+                    case RequestType.RecycleInventoryItem:
+                        var recycleInventoryItemMessage = (RecycleInventoryItemMessage)request.Value;
+                        break;
+                    case RequestType.ReleasePokemon:
+                        var releasePokemonMessage = (ReleasePokemonMessage)request.Value;
+                        break;
+                    case RequestType.SetAvatar:
+                        var setAvatarMessage = (SetAvatarMessage)request.Value;
+                        break;
+                    case RequestType.SetBuddyPokemon:
+                        var setBuddyPokemonMessage = (SetBuddyPokemonMessage)request.Value;
+                        break;
+                    case RequestType.SetContactSettings:
+                        var setContactSettingsMessage = (SetContactSettingsMessage)request.Value;
+                        break;
+                    case RequestType.SetFavoritePokemon:
+                        var setFavoritePokemonMessage = (SetFavoritePokemonMessage)request.Value;
+                        break;
+                    case RequestType.SetPlayerTeam:
+                        var setPlayerTeamMessage = (SetPlayerTeamMessage)request.Value;
                         break;
                     case RequestType.SfidaAction:
+                        //var sfidaActionMessage = (SfidaActionMessage)request.Value;
                         break;
-                    case RequestType.SfidaDowser:
+                    case RequestType.SfidaActionLog:
+                        var sfidaActionLogMessage = (SfidaActionLogMessage)request.Value;
                         break;
                     case RequestType.SfidaCapture:
+                        //var sfidaCaptureMessage = (SfidaCaptureMessage)request.Value;
+                        break;
+                    case RequestType.SfidaCertification:
+                        //var sfidaCertificationMessage = (SfidaCertificationMessage)request.Value;
+                        break;
+                    case RequestType.SfidaDowser:
+                        //var sfidaDowserMessage = (SfidaDowserMessage)request.Value;
+                        break;
+                    case RequestType.SfidaRegistration:
+                        //var sfidaRegistrationMessage = (SfidaRegistrationMessage)request.Value;
+                        break;
+                    case RequestType.SfidaUpdate:
+                        //var sfidaUpdateMessage = (SfidaUpdateMessage)request.Value;
+                        break;
+                    case RequestType.StartGymBattle:
+                        var startGymBattleMessage = (StartGymBattleMessage)request.Value;
+                        break;
+                    case RequestType.TradeOffer:
+                        //var tradeOfferMessage = (TradeOfferMessage)request.Value;
+                        break;
+                    case RequestType.TradeResponse:
+                        //var tradeResponseMessage = (TradeResponseMessage)request.Value;
+                        break;
+                    case RequestType.TradeResult:
+                        //var tradeResultMessage = (TradeResultMessage)request.Value;
+                        break;
+                    case RequestType.TradeSearch:
+                        //var tradeSearchMessage = (TradeSearchMessage)request.Value;
+                        break;
+                    case RequestType.UpgradePokemon:
+                        var upgradePokemonMessage = (UpgradePokemonMessage)request.Value;
+                        break;
+                    case RequestType.UseIncense:
+                        var useIncenseMessage = (UseIncenseMessage)request.Value;
+                        break;
+                    case RequestType.UseItemCapture:
+                        var useItemCaptureMessage = (UseItemCaptureMessage)request.Value;
+                        break;
+                    case RequestType.UseItemEggIncubator:
+                        var useItemEggIncubatorMessage = (UseItemEggIncubatorMessage)request.Value;
+                        break;
+                    case RequestType.UseItemFlee:
+                        //var useItemFleeMessage = (UseItemFleeMessage)request.Value;
+                        break;
+                    case RequestType.UseItemGym:
+                        var useItemGymMessage = (UseItemGymMessage)request.Value;
+                        break;
+                    case RequestType.UseItemPotion:
+                        var useItemPotionMessage = (UseItemPotionMessage)request.Value;
+                        break;
+                    case RequestType.UseItemRevive:
+                        var useItemReviveMessage = (UseItemReviveMessage)request.Value;
+                        break;
+                    case RequestType.UseItemXpBoost:
+                        var useItemXpBoostMessage = (UseItemXpBoostMessage)request.Value;
+                        break;
+                    case RequestType.VerifyChallenge:
+                        var verifyChallengeMessage = (VerifyChallengeMessage)request.Value;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -242,212 +261,234 @@ namespace PoGoMITM.Launcher.Plugins
             {
                 switch (response.Key)
                 {
-                    case RequestType.MethodUnset:
-                        break;
-                    case RequestType.PlayerUpdate:
-                        var playerUpdate = (PlayerUpdateResponse)response.Value;
-                        break;
-                    case RequestType.GetPlayer:
-                        var getPlayer = (GetPlayerResponse)response.Value;
-                        break;
-                    case RequestType.GetInventory:
-                        var getInventory = (GetInventoryResponse)response.Value;
-                        break;
-                    case RequestType.DownloadSettings:
-                        var downloadSettings = (DownloadSettingsResponse)response.Value;
-                        break;
-                    case RequestType.DownloadItemTemplates:
-                        var downloadItemTemplates = (DownloadItemTemplatesResponse)response.Value;
-                        break;
-                    case RequestType.DownloadRemoteConfigVersion:
-                        var downloadRemoteConfigVersion = (DownloadRemoteConfigVersionResponse)response.Value;
-                        break;
-                    case RequestType.FortSearch:
-                        var fortSearch = (FortSearchResponse)response.Value;
-                        break;
-                    case RequestType.Encounter:
-                        var encounter = (EncounterResponse)response.Value;
-                        break;
-                    case RequestType.CatchPokemon:
-                        var catchPokemon = (CatchPokemonResponse)response.Value;
-                        break;
-                    case RequestType.FortDetails:
-                        var fortDetails = (FortDetailsResponse)response.Value;
-                        break;
-                    case RequestType.ItemUse:
-                        break;
-                    case RequestType.GetMapObjects:
-                        var getMapObjects = (GetMapObjectsResponse)response.Value;
-                        break;
-                    case RequestType.FortDeployPokemon:
-                        var fortDeployPokemon = (FortDeployPokemonResponse)response.Value;
-                        break;
-                    case RequestType.FortRecallPokemon:
-                        var fortRecallPokemon = (FortRecallPokemonResponse)response.Value;
-                        break;
-                    case RequestType.ReleasePokemon:
-                        var releasePokemon = (ReleasePokemonResponse)response.Value;
-                        break;
-                    case RequestType.UseItemPotion:
-                        var useItemPotion = (UseItemPotionResponse)response.Value;
-                        break;
-                    case RequestType.UseItemCapture:
-                        var useItemCapture = (UseItemCaptureResponse)response.Value;
-                        break;
-                    case RequestType.UseItemFlee:
-                        break;
-                    case RequestType.UseItemRevive:
-                        var useItemRevive = (UseItemReviveResponse)response.Value;
-                        break;
-                    case RequestType.TradeSearch:
-                        break;
-                    case RequestType.TradeOffer:
-                        break;
-                    case RequestType.TradeResponse:
-                        break;
-                    case RequestType.TradeResult:
-                        break;
-                    case RequestType.GetPlayerProfile:
-                        var getPlayerProfile = (GetPlayerProfileResponse)response.Value;
-                        break;
-                    case RequestType.GetItemPack:
-                        break;
-                    case RequestType.BuyItemPack:
-                        break;
-                    case RequestType.BuyGemPack:
-                        break;
-                    case RequestType.EvolvePokemon:
-                        var evolvePokemon = (EvolvePokemonResponse)response.Value;
-                        break;
-                    case RequestType.GetHatchedEggs:
-                        var getHatchedEggs = (GetHatchedEggsResponse)response.Value;
-                        break;
-                    case RequestType.EncounterTutorialComplete:
-                        var encounterTutorialComplete = (EncounterTutorialCompleteResponse)response.Value;
-                        break;
-                    case RequestType.LevelUpRewards:
-                        var levelUpRewards = (LevelUpRewardsResponse)response.Value;
-                        break;
-                    case RequestType.CheckAwardedBadges:
-                        var checkAwardedBadges = (CheckAwardedBadgesResponse)response.Value;
-                        break;
-                    case RequestType.UseItemGym:
-                        var useItemGym = (UseItemGymResponse)response.Value;
-                        break;
-                    case RequestType.GetGymDetails:
-                        var getGymDetails = (GetGymDetailsResponse)response.Value;
-                        break;
-                    case RequestType.StartGymBattle:
-                        var startGymBattle = (StartGymBattleResponse)response.Value;
+                    case RequestType.AddFortModifier:
+                        var addFortModifierResponse = (AddFortModifierResponse)response.Value;
                         break;
                     case RequestType.AttackGym:
-                        var attackGym = (AttackGymResponse)response.Value;
+                        var attackGymResponse = (AttackGymResponse)response.Value;
                         break;
-                    case RequestType.RecycleInventoryItem:
-                        var recycleInventoryItem = (RecycleInventoryItemResponse)response.Value;
+                    case RequestType.BuyGemPack:
+                        //var buyGemPackResponse = (BuyGemPackResponse)response.Value;
                         break;
-                    case RequestType.CollectDailyBonus:
-                        var collectDailyBonus = (CollectDailyBonusResponse)response.Value;
+                    case RequestType.BuyItemPack:
+                        //var buyItemPackResponse = (BuyItemPackResponse)response.Value;
                         break;
-                    case RequestType.UseItemXpBoost:
-                        var useItemXpBoost = (UseItemXpBoostResponse)response.Value;
+                    case RequestType.CatchPokemon:
+                        var catchPokemonResponse = (CatchPokemonResponse)response.Value;
                         break;
-                    case RequestType.UseItemEggIncubator:
-                        var useItemEggIncubator = (UseItemEggIncubatorResponse)response.Value;
-                        break;
-                    case RequestType.UseIncense:
-                        var useIncense = (UseIncenseResponse)response.Value;
-                        break;
-                    case RequestType.GetIncensePokemon:
-                        var getIncensePokemon = (GetIncensePokemonResponse)response.Value;
-                        break;
-                    case RequestType.IncenseEncounter:
-                        var incenseEncounter = (IncenseEncounterResponse)response.Value;
-                        break;
-                    case RequestType.AddFortModifier:
-                        var addFortModifier = (AddFortModifierResponse)response.Value;
-                        break;
-                    case RequestType.DiskEncounter:
-                        var diskEncounter = (DiskEncounterResponse)response.Value;
-                        break;
-                    case RequestType.CollectDailyDefenderBonus:
-                        var collectDailyDefenderBonus = (CollectDailyDefenderBonusResponse)response.Value;
-                        break;
-                    case RequestType.UpgradePokemon:
-                        var upgradePokemon = (UpgradePokemonResponse)response.Value;
-                        break;
-                    case RequestType.SetFavoritePokemon:
-                        var setFavoritePokemon = (SetFavoritePokemonResponse)response.Value;
-                        break;
-                    case RequestType.NicknamePokemon:
-                        var nicknamePokemon = (NicknamePokemonResponse)response.Value;
-                        break;
-                    case RequestType.EquipBadge:
-                        var equipBadge = (EquipBadgeResponse)response.Value;
-                        break;
-                    case RequestType.SetContactSettings:
-                        var setContactSettings = (SetContactSettingsResponse)response.Value;
-                        break;
-                    case RequestType.SetBuddyPokemon:
-                        var setBuddyPokemon = (SetBuddyPokemonResponse)response.Value;
-                        break;
-                    case RequestType.GetBuddyWalked:
-                        var getBuddyWalked = (GetBuddyWalkedResponse)response.Value;
-                        break;
-                    case RequestType.GetAssetDigest:
-                        var getAssetDigest = (GetAssetDigestResponse)response.Value;
-                        break;
-                    case RequestType.GetDownloadUrls:
-                        var getDownloadUrls = (GetDownloadUrlsResponse)response.Value;
-                        break;
-                    case RequestType.GetSuggestedCodenames:
-                        var getSuggestedCodenames = (GetSuggestedCodenamesResponse)response.Value;
-                        break;
-                    case RequestType.CheckCodenameAvailable:
-                        var checkCodenameAvailable = (CheckCodenameAvailableResponse)response.Value;
-                        break;
-                    case RequestType.ClaimCodename:
-                        var claimCodename = (ClaimCodenameResponse)response.Value;
-                        break;
-                    case RequestType.SetAvatar:
-                        var setAvatar = (SetAvatarResponse)response.Value;
-                        break;
-                    case RequestType.SetPlayerTeam:
-                        var setPlayerTeam = (SetPlayerTeamResponse)response.Value;
-                        break;
-                    case RequestType.MarkTutorialComplete:
-                        var markTutorialComplete = (MarkTutorialCompleteResponse)response.Value;
-                        break;
-                    case RequestType.LoadSpawnPoints:
+                    case RequestType.CheckAwardedBadges:
+                        var checkAwardedBadgesResponse = (CheckAwardedBadgesResponse)response.Value;
                         break;
                     case RequestType.CheckChallenge:
-                        var checkChallenge = (CheckChallengeResponse)response.Value;
+                        var checkChallengeResponse = (CheckChallengeResponse)response.Value;
                         break;
-                    case RequestType.VerifyChallenge:
-                        var verifyChallenge = (VerifyChallengeResponse)response.Value;
+                    case RequestType.CheckCodenameAvailable:
+                        var checkCodenameAvailableResponse = (CheckCodenameAvailableResponse)response.Value;
                         break;
-                    case RequestType.Echo:
-                        var echo = (EchoResponse)response.Value;
+                    case RequestType.ClaimCodename:
+                        var claimCodenameResponse = (ClaimCodenameResponse)response.Value;
                         break;
-                    case RequestType.DebugUpdateInventory:
+                    case RequestType.CollectDailyBonus:
+                        var collectDailyBonusResponse = (CollectDailyBonusResponse)response.Value;
+                        break;
+                    case RequestType.CollectDailyDefenderBonus:
+                        var collectDailyDefenderBonusResponse = (CollectDailyDefenderBonusResponse)response.Value;
                         break;
                     case RequestType.DebugDeletePlayer:
+                        //var debugDeletePlayerResponse = (DebugDeletePlayerResponse)response.Value;
                         break;
-                    case RequestType.SfidaRegistration:
+                    case RequestType.DebugUpdateInventory:
+                        //var debugUpdateInventoryResponse = (DebugUpdateInventoryResponse)response.Value;
                         break;
-                    case RequestType.SfidaActionLog:
-                        var sfidaActionLog = (SfidaActionLogResponse)response.Value;
+                    case RequestType.DiskEncounter:
+                        var diskEncounterResponse = (DiskEncounterResponse)response.Value;
                         break;
-                    case RequestType.SfidaCertification:
+                    case RequestType.DownloadItemTemplates:
+                        var downloadItemTemplatesResponse = (DownloadItemTemplatesResponse)response.Value;
                         break;
-                    case RequestType.SfidaUpdate:
+                    case RequestType.DownloadRemoteConfigVersion:
+                        var downloadRemoteConfigVersionResponse = (DownloadRemoteConfigVersionResponse)response.Value;
+                        break;
+                    case RequestType.DownloadSettings:
+                        var downloadSettingsResponse = (DownloadSettingsResponse)response.Value;
+                        break;
+                    case RequestType.Echo:
+                        var echoResponse = (EchoResponse)response.Value;
+                        break;
+                    case RequestType.Encounter:
+                        var encounterResponse = (EncounterResponse)response.Value;
+                        break;
+                    case RequestType.EncounterTutorialComplete:
+                        var encounterTutorialCompleteResponse = (EncounterTutorialCompleteResponse)response.Value;
+                        break;
+                    case RequestType.EquipBadge:
+                        var equipBadgeResponse = (EquipBadgeResponse)response.Value;
+                        break;
+                    case RequestType.EvolvePokemon:
+                        var evolvePokemonResponse = (EvolvePokemonResponse)response.Value;
+                        break;
+                    case RequestType.FortDeployPokemon:
+                        var fortDeployPokemonResponse = (FortDeployPokemonResponse)response.Value;
+                        break;
+                    case RequestType.FortDetails:
+                        var fortDetailsResponse = (FortDetailsResponse)response.Value;
+                        break;
+                    case RequestType.FortRecallPokemon:
+                        var fortRecallPokemonResponse = (FortRecallPokemonResponse)response.Value;
+                        break;
+                    case RequestType.FortSearch:
+                        var fortSearchResponse = (FortSearchResponse)response.Value;
+                        break;
+                    case RequestType.GetAssetDigest:
+                        var getAssetDigestResponse = (GetAssetDigestResponse)response.Value;
+                        break;
+                    case RequestType.GetBuddyWalked:
+                        var getBuddyWalkedResponse = (GetBuddyWalkedResponse)response.Value;
+                        break;
+                    case RequestType.GetDownloadUrls:
+                        var getDownloadUrlsResponse = (GetDownloadUrlsResponse)response.Value;
+                        break;
+                    case RequestType.GetGymDetails:
+                        var getGymDetailsResponse = (GetGymDetailsResponse)response.Value;
+                        break;
+                    case RequestType.GetHatchedEggs:
+                        var getHatchedEggsResponse = (GetHatchedEggsResponse)response.Value;
+                        break;
+                    case RequestType.GetIncensePokemon:
+                        var getIncensePokemonResponse = (GetIncensePokemonResponse)response.Value;
+                        break;
+                    case RequestType.GetInventory:
+                        var getInventoryResponse = (GetInventoryResponse)response.Value;
+                        break;
+                    case RequestType.GetItemPack:
+                        //var getItemPackResponse = (GetItemPackResponse)response.Value;
+                        break;
+                    case RequestType.GetMapObjects:
+                        var getMapObjectsResponse = (GetMapObjectsResponse)response.Value;
+                        break;
+                    case RequestType.GetPlayer:
+                        var getPlayerResponse = (GetPlayerResponse)response.Value;
+                        break;
+                    case RequestType.GetPlayerProfile:
+                        var getPlayerProfileResponse = (GetPlayerProfileResponse)response.Value;
+                        break;
+                    case RequestType.GetSuggestedCodenames:
+                        var getSuggestedCodenamesResponse = (GetSuggestedCodenamesResponse)response.Value;
+                        break;
+                    case RequestType.IncenseEncounter:
+                        var incenseEncounterResponse = (IncenseEncounterResponse)response.Value;
+                        break;
+                    case RequestType.ItemUse:
+                        //var itemUseResponse = (ItemUseResponse)response.Value;
+                        break;
+                    case RequestType.LevelUpRewards:
+                        var levelUpRewardsResponse = (LevelUpRewardsResponse)response.Value;
+                        break;
+                    case RequestType.LoadSpawnPoints:
+                        //var loadSpawnPointsResponse = (LoadSpawnPointsResponse)response.Value;
+                        break;
+                    case RequestType.MarkTutorialComplete:
+                        var markTutorialCompleteResponse = (MarkTutorialCompleteResponse)response.Value;
+                        break;
+                    case RequestType.MethodUnset:
+                        //var methodUnsetResponse = (MethodUnsetResponse)response.Value;
+                        break;
+                    case RequestType.NicknamePokemon:
+                        var nicknamePokemonResponse = (NicknamePokemonResponse)response.Value;
+                        break;
+                    case RequestType.PlayerUpdate:
+                        var playerUpdateResponse = (PlayerUpdateResponse)response.Value;
+                        break;
+                    case RequestType.RecycleInventoryItem:
+                        var recycleInventoryItemResponse = (RecycleInventoryItemResponse)response.Value;
+                        break;
+                    case RequestType.ReleasePokemon:
+                        var releasePokemonResponse = (ReleasePokemonResponse)response.Value;
+                        break;
+                    case RequestType.SetAvatar:
+                        var setAvatarResponse = (SetAvatarResponse)response.Value;
+                        break;
+                    case RequestType.SetBuddyPokemon:
+                        var setBuddyPokemonResponse = (SetBuddyPokemonResponse)response.Value;
+                        break;
+                    case RequestType.SetContactSettings:
+                        var setContactSettingsResponse = (SetContactSettingsResponse)response.Value;
+                        break;
+                    case RequestType.SetFavoritePokemon:
+                        var setFavoritePokemonResponse = (SetFavoritePokemonResponse)response.Value;
+                        break;
+                    case RequestType.SetPlayerTeam:
+                        var setPlayerTeamResponse = (SetPlayerTeamResponse)response.Value;
                         break;
                     case RequestType.SfidaAction:
+                        //var sfidaActionResponse = (SfidaActionResponse)response.Value;
                         break;
-                    case RequestType.SfidaDowser:
+                    case RequestType.SfidaActionLog:
+                        var sfidaActionLogResponse = (SfidaActionLogResponse)response.Value;
                         break;
                     case RequestType.SfidaCapture:
+                        //var sfidaCaptureResponse = (SfidaCaptureResponse)response.Value;
                         break;
+                    case RequestType.SfidaCertification:
+                        //var sfidaCertificationResponse = (SfidaCertificationResponse)response.Value;
+                        break;
+                    case RequestType.SfidaDowser:
+                        //var sfidaDowserResponse = (SfidaDowserResponse)response.Value;
+                        break;
+                    case RequestType.SfidaRegistration:
+                        //var sfidaRegistrationResponse = (SfidaRegistrationResponse)response.Value;
+                        break;
+                    case RequestType.SfidaUpdate:
+                        //var sfidaUpdateResponse = (SfidaUpdateResponse)response.Value;
+                        break;
+                    case RequestType.StartGymBattle:
+                        var startGymBattleResponse = (StartGymBattleResponse)response.Value;
+                        break;
+                    case RequestType.TradeOffer:
+                        //var tradeOfferResponse = (TradeOfferResponse)response.Value;
+                        break;
+                    case RequestType.TradeResponse:
+                        //var tradeResponseResponse = (TradeResponseResponse)response.Value;
+                        break;
+                    case RequestType.TradeResult:
+                        //var tradeResultResponse = (TradeResultResponse)response.Value;
+                        break;
+                    case RequestType.TradeSearch:
+                        //var tradeSearchResponse = (TradeSearchResponse)response.Value;
+                        break;
+                    case RequestType.UpgradePokemon:
+                        var upgradePokemonResponse = (UpgradePokemonResponse)response.Value;
+                        break;
+                    case RequestType.UseIncense:
+                        var useIncenseResponse = (UseIncenseResponse)response.Value;
+                        break;
+                    case RequestType.UseItemCapture:
+                        var useItemCaptureResponse = (UseItemCaptureResponse)response.Value;
+                        break;
+                    case RequestType.UseItemEggIncubator:
+                        var useItemEggIncubatorResponse = (UseItemEggIncubatorResponse)response.Value;
+                        break;
+                    case RequestType.UseItemFlee:
+                        //var useItemFleeResponse = (UseItemFleeResponse)response.Value;
+                        break;
+                    case RequestType.UseItemGym:
+                        var useItemGymResponse = (UseItemGymResponse)response.Value;
+                        break;
+                    case RequestType.UseItemPotion:
+                        var useItemPotionResponse = (UseItemPotionResponse)response.Value;
+                        break;
+                    case RequestType.UseItemRevive:
+                        var useItemReviveResponse = (UseItemReviveResponse)response.Value;
+                        break;
+                    case RequestType.UseItemXpBoost:
+                        var useItemXpBoostResponse = (UseItemXpBoostResponse)response.Value;
+                        break;
+                    case RequestType.VerifyChallenge:
+                        var verifyChallengeResponse = (VerifyChallengeResponse)response.Value;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+
                 }
 
             }

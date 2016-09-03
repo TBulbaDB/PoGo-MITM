@@ -20,7 +20,7 @@ It will create a root certificate and ask you if you want to install it. Click t
 
 ## Setting up your Android Phone to use the proxy
 
-After making sure that the Proxy and Web UI running (see the console output for detailed info), go to your Phone Settings / WiFi, find your WiFi connection. Tap on it and wait a bit till you see the menu with Modify Network option. In Modify Network, you should see Advanced options, and a Proxy option under it. Select Manual as Proxy, then enter the ip address of your Proxy Server (the local ip of the computer you are running the Proxy server) and 61221 as port. *It's important that you add storage.google.com to Proxy Bypass List on your WIFI connection's settings.*
+After making sure that the Proxy and Web UI running (see the console output for detailed info), go to your Phone Settings / WiFi, find your WiFi connection. Tap on it and wait a bit till you see the menu with Modify Network option. In Modify Network, you should see Advanced options, and a Proxy option under it. Select Manual as Proxy, then enter the ip address of your Proxy Server (the local ip of the computer you are running the Proxy server) and 61221 as port. *It's important that you add the following hosts to Proxy Bypass List on your WIFI connection's settings: graph.facebook.com,lh4.ggpht.com,storage.googleapis.com,storage.google.com,lh3.ggpht.com,www.google.com,android.clients.google.com,www.googleapis.com,clients3.google.com,portal.fb.com*
 
 Then open a web browser on your phone and enter http://proxyip:61222. You should see the Web UI. There click to Download Root Certificate link at the top right corner and follow the instructions to install the certificate.
 
