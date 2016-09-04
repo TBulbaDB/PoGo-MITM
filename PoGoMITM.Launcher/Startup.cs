@@ -10,7 +10,7 @@ using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
 using PoGoMITM.Base.Plugins;
 using PoGoMITM.Base.Utils;
-using PoGoMITM.Launcher.Plugins;
+
 
 
 namespace PoGoMITM.Launcher
@@ -36,10 +36,11 @@ namespace PoGoMITM.Launcher
 
             RequestContext.Parser = new POGOProtosProtoParser();
             AppConfig.Logger.Info("Attempting to load the plugins");
-            RequestContext.Modifiers = new List<IModifierPlugin> { new LocationModifier(), new BetterThrow() };
-            //RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
+            //RequestContext.Modifiers = new List<IModifierPlugin> { new LocationModifier(), new PokemonIVDisplay() };
+            RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
             if (RequestContext.Modifiers != null && RequestContext.Modifiers.Count > 0)
             {
+                RequestContext.Modifiers = RequestContext.Modifiers.ToList();
                 AppConfig.Logger.Info(
                     $"Loaded Modifier Plugins: {string.Join(", ", RequestContext.Modifiers.Where(m => m.Enabled).Select(m => m.GetType().Name))}");
             }
