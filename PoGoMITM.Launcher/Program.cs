@@ -23,6 +23,8 @@ namespace PoGoMITM.Launcher
             AppConfig.Logger = Logger;
 
             Startup.RegisterGlobals();
+            //CellIdCalculationTests.Test();
+            
 
             var proxy = new ProxyHandler(AppConfig.ProxyIp, AppConfig.ProxyPort, Logger);
 

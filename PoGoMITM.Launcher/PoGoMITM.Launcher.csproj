@@ -126,9 +126,16 @@
     <Content Include="Plugins\PluginTemplate.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Compile Include="Plugins\BetterThrow.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Plugins\LocationModifier.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\CellIdCalculationTests.cs" />
     <Compile Include="Tests\LocationHashCalculatorTests.cs" />
     <Compile Include="ViewModels\RawContextListViewModel.cs" />
   </ItemGroup>

@@ -59,7 +59,7 @@ namespace PoGoMITM.Base.Plugins
                 var plugin = LoadPlugin<T>(file);
                 if (plugin != null)
                 {
-                    plugins.Add(LoadPlugin<T>(file));
+                    plugins.Add(plugin);
                 }
             }
             return plugins;
