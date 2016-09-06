@@ -14,7 +14,7 @@ namespace PoGoMITM.Launcher.Plugins
     {
         private const float TOLERANCE = 0.001f;
         private static readonly Random Randomizer = new Random();
-        public bool Enabled => true;
+        public bool Enabled => false;
 
         public bool ModifyRequest(RequestContext requestContext)
         {
