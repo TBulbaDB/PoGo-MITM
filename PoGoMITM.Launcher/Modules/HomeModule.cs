@@ -40,9 +40,9 @@ namespace PoGoMITM.Launcher.Modules
             {
                 var guid = (string)x.guid;
                 var context = GetRequestContext(guid);
-                if (context?.RequestBody != null)
+                if (context?.RequestData.RequestBody != null)
                 {
-                    return Response.FromStream(new MemoryStream(context.RequestBody), "application/binary").AsAttachment(guid + "-request.bin");
+                    return Response.FromStream(new MemoryStream(context.RequestData.RequestBody), "application/binary").AsAttachment(guid + "-request.bin");
                 }
                 return new NotFoundResponse();
             };
@@ -52,11 +52,11 @@ namespace PoGoMITM.Launcher.Modules
                 var guid = (string)x.guid;
                 var context = GetRequestContext(guid);
                 if (context == null) return new NotFoundResponse();
-                if (context.RawDecodedRequestBody == null)
+                if (context.RequestData.RawDecodedRequestBody == null)
                 {
-                    context.RawDecodedRequestBody = await Protoc.DecodeRaw(context.RequestBody);
+                    context.RequestData.RawDecodedRequestBody = await Protoc.DecodeRaw(context.RequestData.RequestBody);
                 }
-                return Response.AsText(context.RawDecodedRequestBody).AsAttachment(guid + "-request.txt", "text/plain");
+                return Response.AsText(context.RequestData.RawDecodedRequestBody).AsAttachment(guid + "-request.txt", "text/plain");
             };
 
 
@@ -64,9 +64,9 @@ namespace PoGoMITM.Launcher.Modules
             {
                 var guid = (string)x.guid;
                 var context = GetRequestContext(guid);
-                if (context?.ResponseBody != null)
+                if (context?.ResponseData.ResponseBody != null)
                 {
-                    return Response.FromStream(new MemoryStream(context.ResponseBody), "application/binary").AsAttachment(guid + "-response.bin");
+                    return Response.FromStream(new MemoryStream(context.ResponseData.ResponseBody), "application/binary").AsAttachment(guid + "-response.bin");
                 }
                 return new NotFoundResponse();
             };
@@ -75,9 +75,9 @@ namespace PoGoMITM.Launcher.Modules
             {
                 var guid = (string)x.guid;
                 var context = GetRequestContext(guid);
-                if (context?.ResponseBody != null)
+                if (context?.RequestData.RequestBody != null)
                 {
-                    return Response.FromStream(new MemoryStream(context.RawEncryptedSignature), "application/binary").AsAttachment(guid + "-rawsignature.bin");
+                    return Response.FromStream(new MemoryStream(context.RequestData.RawEncryptedSignature), "application/binary").AsAttachment(guid + "-rawsignature.bin");
                 }
                 return new NotFoundResponse();
             };
@@ -87,9 +87,9 @@ namespace PoGoMITM.Launcher.Modules
             {
                 var guid = (string)x.guid;
                 var context = GetRequestContext(guid);
-                if (context?.ResponseBody != null)
+                if (context?.RequestData.RequestBody != null)
                 {
-                    return Response.FromStream(new MemoryStream(context.RawDecryptedSignature), "application/binary").AsAttachment(guid + "-decryptedsignature.bin");
+                    return Response.FromStream(new MemoryStream(context.RequestData.RawDecryptedSignature), "application/binary").AsAttachment(guid + "-decryptedsignature.bin");
                 }
                 return new NotFoundResponse();
             };
@@ -99,12 +99,12 @@ namespace PoGoMITM.Launcher.Modules
                 var guid = (string)x.guid;
                 var context = GetRequestContext(guid);
                 if (context == null) return new NotFoundResponse();
-                if (context.RawDecodedResponseBody == null)
+                if (context.ResponseData.RawDecodedResponseBody == null)
                 {
-                    context.RawDecodedResponseBody = await Protoc.DecodeRaw(context.ResponseBody);
+                    context.ResponseData.RawDecodedResponseBody = await Protoc.DecodeRaw(context.ResponseData.ResponseBody);
                 }
 
-                return Response.AsText(context.RawDecodedResponseBody).AsAttachment(guid + "-response.txt", "text/plain");
+                return Response.AsText(context.ResponseData.RawDecodedResponseBody).AsAttachment(guid + "-response.txt", "text/plain");
 
             };
 
@@ -155,7 +155,7 @@ namespace PoGoMITM.Launcher.Modules
                     var res = trimmed.Split(',');
                     var arr = new byte[res.Length];
                     arr = res.Select(byte.Parse).ToArray();
-                    context.RawDecryptedSignature = arr;
+                    context.RequestData.RawDecryptedSignature = arr;
 
                     var signature = Signature.Parser.ParseFrom(arr);
                     context.RequestData.DecryptedSignature = signature;
@@ -175,7 +175,7 @@ namespace PoGoMITM.Launcher.Modules
             RawContext rawContext;
             if (ContextCache.RawContexts.TryGetValue(parsedGuid, out rawContext))
             {
-                return RequestContext.GetInstance(rawContext.Guid) ?? RequestContext.Create(rawContext);
+                return RequestContext.GetInstance(rawContext);
             }
             return null;
         }

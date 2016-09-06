@@ -6,7 +6,7 @@ namespace PoGoMITM.Launcher.Plugins
 {
     public class PokemonIVDisplay : IModifierPlugin
     {
-        public bool Enabled => false;
+        public bool Enabled => true;
         public bool ModifyRequest(RequestContext requestContext)
         {
             return false;
@@ -15,29 +15,21 @@ namespace PoGoMITM.Launcher.Plugins
         public bool ModifyResponse(RequestContext requestContext)
         {
             var changed = false;
-            if (requestContext.ResponseData.Responses.ContainsKey(RequestType.GetInventory))
+            var responseData = requestContext.ModifiedResponseData ?? requestContext.ResponseData;
+            if (!responseData.Responses.ContainsKey(RequestType.GetInventory)) return false;
+            var getInventoryResponse = (GetInventoryResponse)responseData.Responses[RequestType.GetInventory];
+            if (!getInventoryResponse.Success) return false;
+            if (getInventoryResponse.InventoryDelta?.InventoryItems == null) return false;
+            foreach (var inventoryItem in getInventoryResponse.InventoryDelta.InventoryItems)
             {
-                var getInventoryResponse = (GetInventoryResponse)requestContext.ResponseData.Responses[RequestType.GetInventory];
-                if (getInventoryResponse.Success)
-                {
-                    if (getInventoryResponse.InventoryDelta?.InventoryItems != null)
-                    {
-                        foreach (var inventoryItem in getInventoryResponse.InventoryDelta.InventoryItems)
-                        {
-                            if (inventoryItem.InventoryItemData?.PokemonData != null)
-                            {
-                                var data = inventoryItem.InventoryItemData.PokemonData;
-                                var iv =
-                                    (double)(data.IndividualAttack + data.IndividualDefense + data.IndividualStamina) /
-                                    45 * 100;
-                                var nickName = string.IsNullOrWhiteSpace(data.Nickname) ? data.PokemonId.ToString().Replace(" Male", "♂").Replace(" Female", "♀") : data.Nickname;
-                                data.Nickname = $"{nickName} {iv:F}%";
-                                changed = true;
-                            }
-                        }
-                    }
-                }
-
+                if (inventoryItem.InventoryItemData?.PokemonData == null) continue;
+                var data = inventoryItem.InventoryItemData.PokemonData;
+                var iv =
+                    (double)(data.IndividualAttack + data.IndividualDefense + data.IndividualStamina) /
+                    45 * 100;
+                var nickName = string.IsNullOrWhiteSpace(data.Nickname) ? data.PokemonId.ToString().Replace("Male", "♂").Replace("Female", "♀") : data.Nickname;
+                data.Nickname = $"{nickName} {iv:F}%";
+                changed = true;
             }
             return changed;
         }

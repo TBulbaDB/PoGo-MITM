@@ -100,7 +100,6 @@
     <Compile Include="Models\POGOProtosRequestParser.cs" />
     <Compile Include="Models\RawContext.cs" />
     <Compile Include="Models\RequestContext.cs" />
-    <Compile Include="Plugins\LocationModifierBase.cs" />
     <Compile Include="Plugins\PluginLoader.cs" />
     <Compile Include="Plugins\RequestTypeSwitchGenerator.cs" />
     <Compile Include="POGOProtos\POGOProtosData.cs" />

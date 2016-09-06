@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Google.Protobuf;
 using PoGoMITM.Base.Utils.Crypt;
@@ -15,11 +16,12 @@ namespace PoGoMITM.Base.Models
             //result.RawDecodedRequestBody = await Protoc.DecodeRaw(result.RequestBody);
             //result.RawDecodedResponseBody = await Protoc.DecodeRaw(result.ResponseBody);
 
-            if (result.RequestBody != null && result.RequestBody.Length > 0)
+            if (requestData.RequestBody != null && requestData.RequestBody.Length > 0)
             {
-                var codedRequest = new CodedInputStream(result.RequestBody);
+                var codedRequest = new CodedInputStream(requestData.RequestBody);
                 requestData.RequestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
 
+                requestData.PlatformRequests=new Dictionary<PlatformRequestType, IMessage>();
                 if (requestData.RequestEnvelope?.PlatformRequests != null &&
                     requestData.RequestEnvelope?.PlatformRequests.Count > 0)
                 {
@@ -48,6 +50,8 @@ namespace PoGoMITM.Base.Models
                         }
                     }
                 }
+
+                requestData.Requests=new Dictionary<RequestType, IMessage>();
 
                 if (requestData.RequestEnvelope?.Requests != null && requestData.RequestEnvelope.Requests.Count > 0)
                 {
@@ -84,19 +88,19 @@ namespace PoGoMITM.Base.Models
                     var req = new POGOProtos.Networking.Platform.Requests.SendEncryptedSignatureRequest();
                     req.MergeFrom(sig.RequestMessage);
                     var bytes = req.EncryptedSignature.ToByteArray();
-                    result.RawEncryptedSignature = bytes;
+                    requestData.RawEncryptedSignature = bytes;
                     try
                     {
                         if (bytes.Length > 0)
                         {
-                            result.RawDecryptedSignature = Encryption.Decrypt(bytes);
+                            requestData.RawDecryptedSignature = Encryption.Decrypt(bytes);
                             //result.RawDecryptedSignature =
                             //    SignatureEncryption.GetType()
                             //        .InvokeMember("Decrypt", BindingFlags.Default | BindingFlags.InvokeMethod, null,
                             //            SignatureEncryption, new[] {bytes}) as byte[];
-                            if (result.RawDecryptedSignature != null)
+                            if (requestData.RawDecryptedSignature != null)
                             {
-                                requestData.DecryptedSignature = Signature.Parser.ParseFrom(result.RawDecryptedSignature);
+                                requestData.DecryptedSignature = Signature.Parser.ParseFrom(requestData.RawDecryptedSignature);
                             }
                         }
                     }
@@ -112,15 +116,16 @@ namespace PoGoMITM.Base.Models
 
         public void ParseResponse(RequestContext result, ResponseData responseData)
         {
-            if (result.ResponseBody != null && result.RequestBody.Length > 0)
+            if (responseData.ResponseBody != null && responseData.ResponseBody.Length > 0)
             {
-                var codedResponse = new CodedInputStream(result.ResponseBody);
+                var codedResponse = new CodedInputStream(responseData.ResponseBody);
                 responseData.ResponseEnvelope = ResponseEnvelope.Parser.ParseFrom(codedResponse);
                 if (responseData.ResponseEnvelope.StatusCode == ResponseEnvelope.Types.StatusCode.BadRequest)
                 {
                     Console.WriteLine("ERROR: StatusCode.BadRequest, possibly banned account.");
                 }
 
+                responseData.PlatformResponses=new Dictionary<PlatformRequestType, IMessage>();
                 if (responseData.ResponseEnvelope?.PlatformReturns != null &&
                     responseData.ResponseEnvelope?.PlatformReturns.Count > 0)
                 {
@@ -152,6 +157,7 @@ namespace PoGoMITM.Base.Models
             }
 
 
+            responseData.Responses=new Dictionary<RequestType, IMessage>();
 
             if (responseData.ResponseEnvelope?.Returns != null && responseData.ResponseEnvelope.Returns.Count > 0 &&
                 responseData.ResponseEnvelope.Returns.Any(r => !r.IsEmpty))

@@ -14,9 +14,11 @@ namespace PoGoMITM.Base.Models
 
         public List<HttpHeader> RequestHeaders { get; set; }
         public byte[] RequestBody { get; set; }
+        public byte[] ModifiedRequestBody { get; set; }
 
         public List<HttpHeader> ResponseHeaders { get; set; }
         public byte[] ResponseBody { get; set; }
+        public byte[] ModifiedResponseBody { get; set; }
 
         [JsonIgnore]
         public bool IsLive { get; set; }

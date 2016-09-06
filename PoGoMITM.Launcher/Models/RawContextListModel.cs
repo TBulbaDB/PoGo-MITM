@@ -19,17 +19,7 @@ namespace PoGoMITM.Launcher.Models
             model.Host = context.RequestUri.Host;
 
 
-            var requestContext = RequestContext.GetInstance(context.Guid) ?? RequestContext.Create(context);
-            requestContext.CopyRequestData(context);
-            requestContext.CopyResponseData(context);
-            if (!requestContext.RequestParsed)
-            {
-                requestContext.ParseRequest();
-            }
-            if (!requestContext.ResponseParsed)
-            {
-                requestContext.ParseResponse();
-            }
+            var requestContext = RequestContext.GetInstance(context);
 
             try
             {

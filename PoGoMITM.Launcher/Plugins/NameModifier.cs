@@ -9,9 +9,9 @@ using POGOProtos.Networking.Responses;
 
 namespace PoGoMITM.Launcher.Plugins
 {
-    public class TestModifier: IModifierPlugin
+    public class NameModifier: IModifierPlugin
     {
-        public bool Enabled => false;
+        public bool Enabled => true;
 
         public bool ModifyRequest(RequestContext requestContext)
         {
@@ -22,9 +22,12 @@ namespace PoGoMITM.Launcher.Plugins
         public bool ModifyResponse(RequestContext requestContext)
         {
             var changed = false;
-            if (requestContext.ResponseData.Responses.ContainsKey(RequestType.GetPlayer))
+
+            var responseData = requestContext.ModifiedResponseData ?? requestContext.ResponseData;
+
+            if (responseData.Responses.ContainsKey(RequestType.GetPlayer))
             {
-                var playerDataResponse = (GetPlayerResponse)requestContext.ResponseData.Responses[RequestType.GetPlayer];
+                var playerDataResponse = (GetPlayerResponse)responseData.Responses[RequestType.GetPlayer];
                 if (playerDataResponse.Success)
                 {
                     playerDataResponse.PlayerData.Username = "Tortuga";

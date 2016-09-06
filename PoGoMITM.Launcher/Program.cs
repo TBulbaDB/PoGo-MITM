@@ -8,7 +8,6 @@ using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
 using PoGoMITM.Base.Plugins;
 using PoGoMITM.Launcher.Models;
-using PoGoMITM.Launcher.Tests;
 using Titanium.Web.Proxy.EventArguments;
 
 namespace PoGoMITM.Launcher
@@ -23,8 +22,6 @@ namespace PoGoMITM.Launcher
             AppConfig.Logger = Logger;
 
             Startup.RegisterGlobals();
-            //CellIdCalculationTests.Test();
-            
 
             var proxy = new ProxyHandler(AppConfig.ProxyIp, AppConfig.ProxyPort, Logger);
 
@@ -64,18 +61,11 @@ namespace PoGoMITM.Launcher
             //{
             if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
 
-            var requestContext = RequestContext.Create(rawContext);
-            requestContext.CopyRequestData(rawContext);
-
-            requestContext.ParseRequest();
-            if (requestContext.RequestData != null)
+            var requestContext = RequestContext.GetInstance(rawContext);
+            requestContext.ModifyRequest();
+            if (requestContext.RequestModified)
             {
-                requestContext.ModifyRequest();
-                if (requestContext.RequestModified)
-                {
-                    requestContext.ParseRequest();
-                    await e.SetRequestBody(requestContext.RequestBody);
-                }
+                await e.SetRequestBody(requestContext.ModifiedRequestData.RequestBody);
             }
 
             Logger.Info(rawContext.RequestUri.AbsoluteUri + " Request Sent.");
@@ -89,58 +79,53 @@ namespace PoGoMITM.Launcher
         private static async void ProxyBeforeResponse(RawContext rawContext, SessionEventArgs e)
         {
 
-            try
+            //try
+            //{
+
+            if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
+            rawContext.IsLive = true;
+            ContextCache.RawContexts.TryAdd(rawContext.Guid, rawContext);
+
+            var requestContext = RequestContext.GetInstance(rawContext);
+
+            if (requestContext?.ResponseData == null)
             {
+                Logger.Error("Could not find the request context in cache or there is no response data, it shouldn't happen.");
+                return;
+            }
+            requestContext.CopyResponseData(rawContext);
+            requestContext.ModifyResponse();
+            if (requestContext.ResponseModified)
+            {
+                await e.SetResponseBody(requestContext.ModifiedResponseData.ResponseBody);
+            }
 
-                if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
-                rawContext.IsLive = true;
-                ContextCache.RawContexts.TryAdd(rawContext.Guid, rawContext);
+            NotificationHub.SendRawContext(RequestContextListModel.FromRawContext(rawContext));
 
-                var requestContext = RequestContext.GetInstance(rawContext.Guid);
 
-                if (requestContext == null)
+            Logger.Info(rawContext.RequestUri.AbsoluteUri + " Request Completed.");
+
+            if (AppConfig.DumpRaw)
+            {
+                foreach (var dumper in AppConfig.DataDumpers)
                 {
-                    Logger.Error("Could not find the request context in cache, it shouldn't happen.");
-                    return;
-                }
-                requestContext.CopyResponseData(rawContext);
-                requestContext.ParseResponse();
-                if (requestContext.RequestData != null)
-                {
-                    requestContext.ModifyResponse();
-                    if (requestContext.ResponseModified)
-                    {
-                        requestContext.ParseResponse();
-                        await e.SetResponseBody(requestContext.ResponseBody);
-                    }
-                }
+                    await dumper.Dump(rawContext);
 
-                NotificationHub.SendRawContext(RequestContextListModel.FromRawContext(rawContext));
-
-
-                Logger.Info(rawContext.RequestUri.AbsoluteUri + " Request Completed.");
-
-                if (AppConfig.DumpRaw)
-                {
-                    foreach (var dumper in AppConfig.DataDumpers)
-                    {
-                        await dumper.Dump(rawContext);
-
-                    }
-                }
-                if (AppConfig.DumpProcessed)
-                {
-                    foreach (var dumper in AppConfig.DataDumpers)
-                    {
-                        await dumper.Dump(requestContext);
-
-                    }
                 }
             }
-            catch (Exception ex)
+            if (AppConfig.DumpProcessed)
             {
-                Logger.LogException(ex);
+                foreach (var dumper in AppConfig.DataDumpers)
+                {
+                    await dumper.Dump(requestContext);
+
+                }
             }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Logger.LogException(ex);
+            //}
         }
     }
 }

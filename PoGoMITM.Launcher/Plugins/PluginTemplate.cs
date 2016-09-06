@@ -17,7 +17,9 @@ namespace PoGoMITM.Launcher.Plugins
         public bool ModifyRequest(RequestContext requestContext)
         {
             var changed = false;
-            foreach (var request in requestContext.RequestData.Requests)
+
+            var requestData = requestContext.ModifiedRequestData ?? requestContext.RequestData;
+            foreach (var request in requestData.Requests)
             {
 
                 switch (request.Key)
@@ -257,7 +259,10 @@ namespace PoGoMITM.Launcher.Plugins
         public bool ModifyResponse(RequestContext requestContext)
         {
             var changed = false;
-            foreach (var response in requestContext.ResponseData.Responses)
+
+            var responseData = requestContext.ModifiedResponseData ?? requestContext.ResponseData;
+
+            foreach (var response in responseData.Responses)
             {
                 switch (response.Key)
                 {
