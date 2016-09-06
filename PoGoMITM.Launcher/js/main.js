@@ -113,7 +113,7 @@ pogoMITM.models = new function () {
                         item.IsActive(true);
                         previousActiveItem = item;
                         $(".jsonViewer").JSONView(data, { collapsed: true });
-                        if (data.RequestBodyLength > 0) {
+                        if (data.RequestData && data.RequestData.RequestLength > 0) {
                             self.toolbarDownloadRawRequest("/download/request/raw/" + item.Guid);
                             self.toolbarDownloadRawRequestEnabled(true);
                             self.toolbarDownloadDecodedRequest("/download/request/decoded/" + item.Guid);
@@ -122,7 +122,7 @@ pogoMITM.models = new function () {
                             self.toolbarDownloadRawRequestEnabled(false);
                             self.toolbarDownloadDecodedRequestEnabled(false);
                         }
-                        if (data.ResponseBodyLength > 0) {
+                        if (data.ResponseData && data.ResponseData.ResponseLength > 0) {
                             self.toolbarDownloadRawResponse("/download/response/raw/" + item.Guid);
                             self.toolbarDownloadRawResponseEnabled(true);
                             self.toolbarDownloadDecodedResponse("/download/response/decoded/" + item.Guid);
@@ -132,7 +132,7 @@ pogoMITM.models = new function () {
                             self.toolbarDownloadDecodedResponseEnabled(false);
                         }
                         self.toolbarDownloadDecryptedRawSignature("/download/decryptedrawsignature/" + item.Guid);
-                        if (data.DecryptedSignature) {
+                        if (data.RequestData.DecryptedSignature) {
                             self.toolbarDownloadDecryptedRawSignatureEnabled(true);
                         } else {
                             self.toolbarDownloadDecryptedRawSignatureEnabled(false);
@@ -142,14 +142,14 @@ pogoMITM.models = new function () {
                         self.toolbarDownloadJson("/download/json/" + item.Guid);
                         self.toolbarDownloadJsonEnabled(true);
 
-                        if (data.Responses &&
-                            data.Responses.GetMapObjects &&
-                            data.Responses.GetMapObjects.MapCells &&
-                            data.Responses.GetMapObjects.MapCells.length > 0) {
+                        if (data.ResponseData.Responses &&
+                            data.ResponseData.Responses.GetMapObjects &&
+                            data.ResponseData.Responses.GetMapObjects.MapCells &&
+                            data.ResponseData.Responses.GetMapObjects.MapCells.length > 0) {
                             var s2Uri = "http://s2map.com/#order=latlng&mode=polygon&s2=false&points=";
                             var found = false;
-                            for (var i = 0; i < data.Responses.GetMapObjects.MapCells.length; i++) {
-                                var mapCell = data.Responses.GetMapObjects.MapCells[i];
+                            for (var i = 0; i < data.ResponseData.Responses.GetMapObjects.MapCells.length; i++) {
+                                var mapCell = data.ResponseData.Responses.GetMapObjects.MapCells[i];
                                 //console.log(mapCell);
                                 if (mapCell && mapCell.S2CellId) {
                                     s2Uri += mapCell.S2CellId + ",";

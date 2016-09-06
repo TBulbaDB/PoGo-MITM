@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
 using log4net;
 using Microsoft.Owin.Hosting;
 using PoGoMITM.Base;
@@ -59,6 +62,11 @@ namespace PoGoMITM.Launcher
         {
             try
             {
+                if (await HandleGoogleLogin(rawContext, e))
+                {
+                    Logger.Info("Fixed app signature for Google");
+                    return;
+                }
                 if (!AppConfig.HostsToDump.Contains(rawContext.RequestUri.Host)) return;
 
                 var requestContext = RequestContext.GetInstance(rawContext);
@@ -126,6 +134,38 @@ namespace PoGoMITM.Launcher
             {
                 Logger.LogException(ex);
             }
+        }
+
+        private static async Task<bool> HandleGoogleLogin(RawContext rawContext, SessionEventArgs e)
+        {
+            if (e.WebSession.Request.RequestUri.AbsoluteUri != "https://android.clients.google.com/auth") return false;
+            if (rawContext.RequestBody == null || rawContext.RequestBody.Length == 0) return false;
+            var data = Encoding.UTF8.GetString(rawContext.RequestBody);
+            if (!data.Contains("com.nianticlabs.pokemongo")) return false;
+            var dataArr = data.Split('&');
+            var newDataList = new List<string>();
+            var changed = false;
+            foreach (var currentData in dataArr)
+            {
+                if (currentData.StartsWith("callerSig="))
+                {
+                    newDataList.Add("callerSig=321187995bc7cdc2b5fc91b11a96e2baa8602c62");
+                    changed = true;
+                }
+                else if (currentData.StartsWith("client_sig="))
+                {
+                    newDataList.Add("client_sig=321187995bc7cdc2b5fc91b11a96e2baa8602c62");
+                    changed = true;
+                }
+                else
+                {
+                    newDataList.Add(currentData);
+                }
+            }
+            if (!changed) return false;
+            var newData = string.Join("&", newDataList);
+            await e.SetRequestBody(Encoding.UTF8.GetBytes(newData));
+            return true;
         }
     }
 }
