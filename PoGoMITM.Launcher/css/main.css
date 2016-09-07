@@ -13,6 +13,7 @@
 
 .rawContextsContainer {
     overflow: auto;
+    font-size: 12px;
 }
 
     .rawContextsContainer tbody {

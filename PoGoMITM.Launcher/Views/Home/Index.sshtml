@@ -23,8 +23,16 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#" onclick="return false">Live Feed</a>
+                    <li class="active" data-bind="css:{active: activeMenuItem() == 'live'}">
+                        <a href="#" onclick="pogoMITM.models.rawContextsList.loadItems('live');return false;">Live Feed</a>
+                    </li>
+                    <li class="dropdown" data-bind="css:{active: activeMenuItem() == 'previous'}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Previous Sessions <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @Each.RawDumpSessions
+                            <li><a href="#" onclick="pogoMITM.models.rawContextsList.loadItems('@Current.Value');return false;">@Current.Key</a></li>
+                            @EndEach
+                        </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -44,25 +52,32 @@
                     <thead>
                         <tr>
                             <th>Time</th>
-                            <th>Uri</th>
+                            <th>Host</th>
+                            <th>Methods</th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: rawContextListItems">
                         <tr data-bind="click: function(data, event) { $parent.loadRequestDetails(data, event) }, css: {activeRow: IsActive() == true}">
                             <td data-bind="text: new Date(RequestTime).toLocaleTimeString()">Failed</td>
                             <td data-bind="text: Host">failed</td>
+                            <td data-bind="text: Methods">failed</td>
                         </tr>
                     </tbody>
                 </table>
+                <div style="text-align: center">
+                    <button class="btn btn-default btn-xs" onclick="copyRawContextListItemsAsMarkdown()">Copy to clipboard as markdown</button>
+                </div>
             </div>
             <div class="col-xs-12 col-md-8">
                 <div class="jsonViewerToolbar clearfix">
                     <div class="btn-toolbar pull-right" role="toolbar">
-                        <a data-bind="attr: {href: toolbarDownloadRawRequest}, css:{disabled: toolbarDownloadRawRequestEnabled() == false}" class="btn btn-default btn-sm btn-success">Download Raw Request</a>
-                        <a data-bind="attr: {href: toolbarDownloadDecodedRequest}, css:{disabled: toolbarDownloadDecodedRequestEnabled() == false}" class="btn btn-default btn-sm btn-success">Download Decoded Request</a>
-                        <a data-bind="attr: {href: toolbarDownloadRawResponse}, css:{disabled: toolbarDownloadRawResponseEnabled() == false}" class="btn btn-default btn-sm btn-success">Download Raw Response</a>
-                        <a data-bind="attr: {href: toolbarDownloadDecodedResponse}, css:{disabled: toolbarDownloadDecodedResponseEnabled() == false}" class="btn btn-default btn-sm btn-success">Download Decoded Response</a>
-                        <a data-bind="attr: {href: toolbarDownloadJson}, css:{disabled: toolbarDownloadJsonEnabled() == false}" class="btn btn-default btn-sm">Download Json</a>
+                        <a data-bind="attr: {href: toolbarDownloadRawRequest}, css:{disabled: toolbarDownloadRawRequestEnabled() == false}" class="btn btn-default btn-xs btn-success">Raw Request</a>
+                        <a data-bind="attr: {href: toolbarDownloadDecodedRequest}, css:{disabled: toolbarDownloadDecodedRequestEnabled() == false}" class="btn btn-default btn-xs btn-success">Decoded Request</a>
+                        <a data-bind="attr: {href: toolbarDownloadRawResponse}, css:{disabled: toolbarDownloadRawResponseEnabled() == false}" class="btn btn-default btn-xs btn-success">Raw Response</a>
+                        <a data-bind="attr: {href: toolbarDownloadDecodedResponse}, css:{disabled: toolbarDownloadDecodedResponseEnabled() == false}" class="btn btn-default btn-xs btn-success">Decoded Response</a>
+                        <a data-bind="attr: {href: toolbarDownloadDecryptedRawSignature}, css:{disabled: toolbarDownloadDecryptedRawSignatureEnabled() == false}" class="btn btn-default btn-xs btn-success">Decrypted Raw Signature</a>
+                        <a data-bind="attr: {href: toolbarDownloadJson}, css:{disabled: toolbarDownloadJsonEnabled() == false}" class="btn btn-default btn-xs">Download Json</a>
+                        <a data-bind="attr: {href: toolbarS2Map}, css:{disabled: toolbarS2MapEnabled() == false}" class="btn btn-default btn-xs" target="_blank">S2 Map</a>
                     </div>
                 </div>
                 <div class="jsonViewer"></div>
@@ -76,11 +91,16 @@
     <script src="~/signalr/hubs"></script>
     <script src="//cdn.rawgit.com/yesmeck/jquery-jsonview/master/dist/jquery.jsonview.min.js" type="text/javascript"></script>
     <script src="~/js/main.js" type="text/javascript"></script>
+    <script src="~/js/to-markdown.js" type="text/javascript"></script>
     <script type="text/javascript">
-        $(function() {
-            var currentItems=@Model.ContextListAsJson;
-            pogoMITM.models.rawContextsList.addRange(currentItems);
+        $(function () {
+            pogoMITM.models.rawContextsList.loadItems('live');
         });
+        function copyRawContextListItemsAsMarkdown() {
+            var table = $(".rawContextsContainer > table");
+            pogoMITM.toClipboard(toMarkdown(table[0].outerHTML, { gfm: true }));
+        }
     </script>
+    <textarea id="clipboard-temp" style="display: none;"></textarea>
 </body>
 </html>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using log4net;
 using PoGoMITM.Base.Dumpers;
 
 namespace PoGoMITM.Base.Config
@@ -11,8 +12,9 @@ namespace PoGoMITM.Base.Config
     {
         private static readonly int _bindPort;
         private static readonly int _webServerPort;
-        private static readonly bool _dumpRaw;
         private static readonly bool _dumpProcessed;
+
+        public static ILog Logger { get; set; }
 
         public static string ProxyIp { get; private set; }
         public static int ProxyPort => _bindPort;
@@ -24,7 +26,11 @@ namespace PoGoMITM.Base.Config
         public static string TempFolder { get; private set; }
         public static List<IDataDumper> DataDumpers { get; private set; }
 
-        public static bool DumpRaw => _dumpRaw;
+        public static double InitialLatitude { get; set; }
+        public static double InitialLongitude { get; set; }
+
+        public static bool DumpRaw { get; }
+
         public static bool DumpProcessed => _dumpProcessed;
 
         public static HashSet<string> HostsToDump { get; private set; }
@@ -61,29 +67,12 @@ namespace PoGoMITM.Base.Config
                 TempFolder = Path.Combine(Environment.CurrentDirectory, TempFolder);
             }
 
-            var dumpRaw = ConfigurationManager.AppSettings["DumpRaw"] ?? "true";
-            bool.TryParse(dumpRaw, out _dumpRaw);
+            DumpRaw = true;
+
             var dumpProcessed = ConfigurationManager.AppSettings["DumpProcessed"] ?? "true";
             bool.TryParse(dumpProcessed, out _dumpProcessed);
 
-            DataDumpers = new List<IDataDumper>();
-            var dumpers = ConfigurationManager.AppSettings["DataDumpers"];
-            if (!string.IsNullOrWhiteSpace(dumpers))
-            {
-                var dumpersArr = dumpers.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (var dumper in dumpersArr.Select(d => d.Trim()))
-                {
-                    switch (dumper.ToLowerInvariant())
-                    {
-                        case "filedumper":
-                            DataDumpers.Add(new FileDataDumper());
-                            break;
-                        case "mongodumper":
-                            DataDumpers.Add(new MongoDataDumper());
-                            break;
-                    }
-                }
-            }
+            DataDumpers = new List<IDataDumper> {new FileDataDumper()};
 
             HostsToDump = new HashSet<string>();
             var hosts = ConfigurationManager.AppSettings["HostsToDump"];

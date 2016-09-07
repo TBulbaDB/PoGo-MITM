@@ -3,12 +3,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Utils;
 
 namespace PoGoMITM.Base.ProtoHelpers
 {
     public static class Protoc
     {
+
+        private static readonly string ProtocPath;
         static Protoc()
         {
             var tempFolder = Path.Combine(Environment.CurrentDirectory, "Temp");
@@ -18,21 +21,16 @@ namespace PoGoMITM.Base.ProtoHelpers
             {
                 File.Delete(file);
             }
+            ProtocPath = FileLocation.GetFileLocation("protoc.exe");
+            if (ProtocPath == null)
+            {
+                AppConfig.Logger.Error("Could not find protoc.exe in the application directory, won't be able to raw decode protos.");
+            }
         }
-
-        //var outputs = new List<string>();
-        //var allRequests = PoGoWebRequest.GetAllRequests();
-        //foreach (var request in allRequests.Where(r => r.RequestBody != null))
-        //{
-        //    var b = Protoc.DecodeRaw(request.RequestBody);
-        //    if (b != null)
-        //        outputs.Add(b.ToString());
-        //}
-
 
         public static async Task<string> DecodeRaw(byte[] data)
         {
-
+            if (ProtocPath == null) return null;
             if (data == null || data.Length == 0) return null;
             var guid = Guid.NewGuid().ToString();
             var inPath = Path.Combine("Temp", guid + "-in");

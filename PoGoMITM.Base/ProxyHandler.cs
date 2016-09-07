@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using log4net;
 using PoGoMITM.Base.Config;
 using PoGoMITM.Base.Logging;
 using PoGoMITM.Base.Models;
 using Titanium.Web.Proxy;
+using Titanium.Web.Proxy.EventArguments;
 using Titanium.Web.Proxy.Exceptions;
 using Titanium.Web.Proxy.Models;
 
@@ -16,8 +16,8 @@ namespace PoGoMITM.Base
 {
     public class ProxyHandler : IDisposable
     {
-        public delegate void RequestSentEventHandler(RawContext rawContext);
-        public delegate void RequestCompletedEventHandler(RawContext rawContext);
+        public delegate void BeforeRequestEventHandler(RawContext rawContext, SessionEventArgs e);
+        public delegate void BeforeResponseEventHandler(RawContext rawContext, SessionEventArgs e);
 
         private readonly ProxyServer _proxyServer;
         private readonly Dictionary<string, RawContext> _contexts = new Dictionary<string, RawContext>();
@@ -26,8 +26,8 @@ namespace PoGoMITM.Base
         private readonly int _port;
         private readonly ILog _logger;
 
-        public event RequestSentEventHandler RequestSent;
-        public event RequestCompletedEventHandler RequestCompleted;
+        public event BeforeRequestEventHandler BeforeRequest;
+        public event BeforeResponseEventHandler BeforeResponse;
 
         public ProxyHandler(string ipAddress, int port, ILog logger)
         {
@@ -41,10 +41,10 @@ namespace PoGoMITM.Base
         {
             // Link up handlers
             _proxyServer.Enable100ContinueBehaviour = true;
-            _proxyServer.BeforeRequest += ProxyServer_BeforeRequest; ;
-            _proxyServer.BeforeResponse += ProxyServer_BeforeResponse; ;
-            _proxyServer.ServerCertificateValidationCallback += ProxyServer_ServerCertificateValidationCallback; ;
-            _proxyServer.ClientCertificateSelectionCallback += ProxyServer_ClientCertificateSelectionCallback; ;
+            _proxyServer.BeforeRequest += ProxyServer_BeforeRequest;
+            _proxyServer.BeforeResponse += ProxyServer_BeforeResponse;
+            _proxyServer.ServerCertificateValidationCallback += ProxyServer_ServerCertificateValidationCallback;
+            _proxyServer.ClientCertificateSelectionCallback += ProxyServer_ClientCertificateSelectionCallback;
 
             // Set ip and port to monitor
             var explicitEndPoint = new ExplicitProxyEndPoint(IPAddress.Parse(_ip), _port, true);
@@ -68,7 +68,7 @@ namespace PoGoMITM.Base
         }
 
 
-        private async Task ProxyServer_BeforeRequest(object sender, Titanium.Web.Proxy.EventArguments.SessionEventArgs e)
+        private async Task ProxyServer_BeforeRequest(object sender, SessionEventArgs e)
         {
             try
             {
@@ -82,7 +82,8 @@ namespace PoGoMITM.Base
                     RequestHeaders = e.WebSession.Request.RequestHeaders.Values.ToList(),
                     Guid = uid,
                     RequestUri = e.WebSession.Request.RequestUri,
-                    RequestTime = DateTime.UtcNow
+                    RequestTime = DateTime.UtcNow,
+                    ClientIp = e.ClientEndPoint.Address.ToString()
                 };
                 _contexts.Add(uid.ToString(), context);
                 e.WebSession.Response.ResponseHeaders.Add("POGO_UID", new HttpHeader("POGO_UID", uid.ToString()));
@@ -95,8 +96,25 @@ namespace PoGoMITM.Base
                 catch (BodyNotFoundException)
                 {
                 }
-
-                OnRequestSent(context);
+                //if (e.WebSession.Request.RequestUri.Host == "pgorelease.nianticlabs.com")
+                //{
+                //    var codedRequest = new CodedInputStream(context.RequestBody);
+                //    var requestEnvelope = RequestEnvelope.Parser.ParseFrom(codedRequest);
+                //    for (int i = 0; i < requestEnvelope.Requests.Count; i++)
+                //    {
+                //        var request = requestEnvelope.Requests[i];
+                //        if (request.RequestType == RequestType.CheckChallenge)
+                //        {
+                //            var message = CheckChallengeMessage.Parser.ParseFrom(request.RequestMessage);
+                //            message.DebugRequest = true;
+                //            request.RequestMessage = message.ToByteString();
+                //            var newEnvelope = PrepareRequestEnvelope(requestEnvelope);
+                //            context.RequestBody = await newEnvelope.ReadAsByteArrayAsync();
+                //            await e.SetRequestBody(context.RequestBody);
+                //        }
+                //    }
+                //}
+                OnBeforeRequest(context, e);
             }
             catch (Exception ex)
             {
@@ -105,9 +123,7 @@ namespace PoGoMITM.Base
 
         }
 
-
-
-        private async Task ProxyServer_BeforeResponse(object sender, Titanium.Web.Proxy.EventArguments.SessionEventArgs e)
+        private async Task ProxyServer_BeforeResponse(object sender, SessionEventArgs e)
         {
             try
             {
@@ -141,7 +157,7 @@ namespace PoGoMITM.Base
 
                 _contexts.Remove(context.Guid.ToString());
 
-                OnRequestCompleted(context);
+                OnBeforeResponse(context, e);
             }
             catch (Exception ex)
             {
@@ -150,27 +166,27 @@ namespace PoGoMITM.Base
 
         }
 
-        private void OnRequestCompleted(RawContext context)
+        private void OnBeforeResponse(RawContext context, SessionEventArgs e)
         {
             if (context == null) return;
-            RequestCompleted?.Invoke(context);
+            BeforeResponse?.Invoke(context, e);
         }
 
-        private void OnRequestSent(RawContext context)
+        private void OnBeforeRequest(RawContext context, SessionEventArgs e)
         {
             if (context == null) return;
-            RequestSent?.Invoke(context);
+            BeforeRequest?.Invoke(context, e);
         }
 
 
 
 
-        private static Task ProxyServer_ClientCertificateSelectionCallback(object arg1, Titanium.Web.Proxy.EventArguments.CertificateSelectionEventArgs e)
+        private static Task ProxyServer_ClientCertificateSelectionCallback(object arg1, CertificateSelectionEventArgs e)
         {
             return Task.FromResult(0);
         }
 
-        private static Task ProxyServer_ServerCertificateValidationCallback(object arg1, Titanium.Web.Proxy.EventArguments.CertificateValidationEventArgs e)
+        private static Task ProxyServer_ServerCertificateValidationCallback(object arg1, CertificateValidationEventArgs e)
         {
             //set IsValid to true/false based on Certificate Errors
             if (e.SslPolicyErrors == System.Net.Security.SslPolicyErrors.None)

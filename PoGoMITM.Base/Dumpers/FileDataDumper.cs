@@ -10,6 +10,12 @@ namespace PoGoMITM.Base.Dumpers
 {
     public class FileDataDumper : IDataDumper
     {
+        private static string filenameTemplate;
+
+        static FileDataDumper()
+        {
+            filenameTemplate = $"{{0}}{DateTime.Now.ToString("yyyyMMddHHmmss")}.log";
+        }
         public async Task Dump<T>(T context)
         {
             try
@@ -19,6 +25,7 @@ namespace PoGoMITM.Base.Dumpers
                 sb.AppendLine();
 
                 sb.AppendLine(JsonConvert.SerializeObject(context, Formatting.Indented));
+                sb.AppendLine("/*** === ***/");
                 await FileAsync.WriteTextAsync(logFilePath, sb.ToString(), Encoding.ASCII);
 
             }
@@ -30,7 +37,7 @@ namespace PoGoMITM.Base.Dumpers
 
         private string GenerateLogFileName(string name)
         {
-            var fileName = $"{name}{DateTime.Now.ToString("yyyyMMddHHmmss")}.log";
+            var fileName = string.Format(filenameTemplate, name);
             Directory.CreateDirectory(AppConfig.DumpsFolder);
             return Path.Combine(AppConfig.DumpsFolder, fileName);
         }

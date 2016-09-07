@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+PoGoMITM.Launcher/Plugins/LocationModifier.cs
