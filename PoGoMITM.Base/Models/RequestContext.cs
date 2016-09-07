@@ -27,6 +27,7 @@ namespace PoGoMITM.Base.Models
         public byte[] RawDecryptedSignature { get; set; }
         [JsonIgnore]
         public byte[] RawEncryptedSignature { get; set; }
+        public int RequestLength => RequestBody?.Length ?? 0;
     }
 
     public class ResponseData
@@ -38,6 +39,7 @@ namespace PoGoMITM.Base.Models
         public ResponseEnvelope ResponseEnvelope { get; set; }
         public Dictionary<RequestType, IMessage> Responses { get; set; } = new Dictionary<RequestType, IMessage>();
         public Dictionary<PlatformRequestType, IMessage> PlatformResponses { get; set; } = new Dictionary<PlatformRequestType, IMessage>();
+        public int ResponseLength => ResponseBody?.Length ?? 0;
     }
 
     public class RequestContext

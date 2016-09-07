@@ -1,4 +1,5 @@
-﻿using PoGoMITM.Base.Models;
+﻿using PoGoMITM.Base.DataHelpers;
+using PoGoMITM.Base.Models;
 using POGOProtos.Networking.Requests;
 using POGOProtos.Networking.Responses;
 
@@ -24,9 +25,7 @@ namespace PoGoMITM.Launcher.Plugins
             {
                 if (inventoryItem.InventoryItemData?.PokemonData == null) continue;
                 var data = inventoryItem.InventoryItemData.PokemonData;
-                var iv =
-                    (double)(data.IndividualAttack + data.IndividualDefense + data.IndividualStamina) /
-                    45 * 100;
+                var iv = data.CalculateIV();
                 var nickName = string.IsNullOrWhiteSpace(data.Nickname) ? data.PokemonId.ToString().Replace("Male", "♂").Replace("Female", "♀") : data.Nickname;
                 data.Nickname = $"{nickName} {iv:F}%";
                 changed = true;
