@@ -116,6 +116,7 @@
     <Compile Include="Models\RawContextListModel.cs" />
     <Compile Include="Modules\ApplicationBootstrapper.cs" />
     <Compile Include="Modules\HomeModule.cs" />
+    <Compile Include="Modules\NancyGzipCompression.cs" />
     <Compile Include="NotificationHub.cs" />
     <Content Include="Plugins\NameModifier.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -88,31 +88,6 @@ pogoMITM.models = new function () {
             })
                 .done(function (data) {
                     if (data) {
-                        //try {
-
-                        //    if (data.PlatformRequests &&
-                        //        data.PlatformRequests.SendEncryptedSignature) {
-                        //        var test = p.d(data.PlatformRequests.SendEncryptedSignature.EncryptedSignature);
-                        //        var test1 = new Uint8Array(test);
-                        //        var test2 = Array.from(test1);
-
-                        //        $.ajax({
-                        //            url: "/details/signature/" + item.Guid,
-                        //            data: { Bytes: JSON.stringify(test2) },
-                        //            method: "POST"
-                        //        })
-                        //            .done(function (result) {
-                        //                if (result && result.success) {
-                        //                    data.DecryptedSignature = result.signature;
-                        //                    self.toolbarDownloadDecryptedRawSignatureEnabled(true);
-                        //                    $(".jsonViewer").JSONView(data, { collapsed: true });
-                        //                }
-                        //            });
-                        //    }
-
-                        //} catch (e) {
-
-                        //}
                         if (previousActiveItem) previousActiveItem.IsActive(false);
                         item.IsActive(true);
                         previousActiveItem = item;
@@ -146,15 +121,14 @@ pogoMITM.models = new function () {
                         self.toolbarDownloadJson("/download/json/" + item.Guid);
                         self.toolbarDownloadJsonEnabled(true);
 
-                        if (data.Requests &&
-                            data.Requests.GetMapObjects &&
-                            data.Requests.GetMapObjects.CellId &&
-                            data.Requests.GetMapObjects.CellId.length > 0) {
+                        if (data.RequestData.Requests &&
+                            data.RequestData.Requests.GetMapObjects &&
+                            data.RequestData.Requests.GetMapObjects.CellId &&
+                            data.RequestData.Requests.GetMapObjects.CellId.length > 0) {
                             var s2Uri = "http://s2map.com/#order=latlng&mode=polygon&s2=false&points=";
                             var found = false;
-                            for (var i = 0; i < data.Requests.GetMapObjects.CellId.length; i++) {
-                                var mapCell = data.Requests.GetMapObjects.CellId[i];
-                                //console.log(mapCell);
+                            for (var i = 0; i < data.RequestData.Requests.GetMapObjects.CellId.length; i++) {
+                                var mapCell = data.RequestData.Requests.GetMapObjects.CellId[i];
                                 if (mapCell) {
                                     s2Uri += mapCell.replace("ulong: ","") + ",";
                                     found = true;
