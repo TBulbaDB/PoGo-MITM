@@ -154,7 +154,6 @@
     <Content Include="css\main.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
     <Content Include="js\main.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

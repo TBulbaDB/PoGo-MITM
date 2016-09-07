@@ -43,6 +43,10 @@ pogoMITM.models = new function () {
             });
         };
 
+        self.loadSessions = function() {
+            
+        },
+
         self.loadItems = function (session) {
             $(".jsonViewer").html("");
             if (session == "live") {
@@ -142,17 +146,17 @@ pogoMITM.models = new function () {
                         self.toolbarDownloadJson("/download/json/" + item.Guid);
                         self.toolbarDownloadJsonEnabled(true);
 
-                        if (data.Responses &&
-                            data.Responses.GetMapObjects &&
-                            data.Responses.GetMapObjects.MapCells &&
-                            data.Responses.GetMapObjects.MapCells.length > 0) {
+                        if (data.Requests &&
+                            data.Requests.GetMapObjects &&
+                            data.Requests.GetMapObjects.CellId &&
+                            data.Requests.GetMapObjects.CellId.length > 0) {
                             var s2Uri = "http://s2map.com/#order=latlng&mode=polygon&s2=false&points=";
                             var found = false;
-                            for (var i = 0; i < data.Responses.GetMapObjects.MapCells.length; i++) {
-                                var mapCell = data.Responses.GetMapObjects.MapCells[i];
+                            for (var i = 0; i < data.Requests.GetMapObjects.CellId.length; i++) {
+                                var mapCell = data.Requests.GetMapObjects.CellId[i];
                                 //console.log(mapCell);
-                                if (mapCell && mapCell.S2CellId) {
-                                    s2Uri += mapCell.S2CellId + ",";
+                                if (mapCell) {
+                                    s2Uri += mapCell.replace("ulong: ","") + ",";
                                     found = true;
                                 }
                             }
