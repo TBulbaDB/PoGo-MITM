@@ -7,7 +7,7 @@ namespace PoGoMITM.Launcher.Plugins
 {
     public class PokemonIVDisplay : IModifierPlugin
     {
-        public bool Enabled => false;
+        public bool Enabled => true;
         public bool ModifyRequest(RequestContext requestContext)
         {
             return false;
@@ -26,8 +26,9 @@ namespace PoGoMITM.Launcher.Plugins
                 if (inventoryItem.InventoryItemData?.PokemonData == null) continue;
                 var data = inventoryItem.InventoryItemData.PokemonData;
                 var iv = data.CalculateIV();
+                var level = data.CalculateLevel();
                 var nickName = string.IsNullOrWhiteSpace(data.Nickname) ? data.PokemonId.ToString().Replace("Male", "♂").Replace("Female", "♀") : data.Nickname;
-                data.Nickname = $"{nickName} {iv:F}%";
+                data.Nickname = $"{nickName} IV:{iv:F}% LVL:{level}";
                 changed = true;
             }
             return changed;

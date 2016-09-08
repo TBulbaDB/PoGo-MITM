@@ -13,5 +13,10 @@ namespace PoGoMITM.Base.DataHelpers
         {
             return IVCalculator.Calculate(pokemonData);
         }
+
+        public static double CalculateLevel(this PokemonData pokemonData)
+        {
+            return LevelCalculator.Calculate(pokemonData);
+        }
     }
 }
