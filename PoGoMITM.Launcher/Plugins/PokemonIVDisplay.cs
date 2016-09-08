@@ -7,7 +7,7 @@ namespace PoGoMITM.Launcher.Plugins
 {
     public class PokemonIVDisplay : IModifierPlugin
     {
-        public bool Enabled => true;
+        public bool Enabled => false;
         public bool ModifyRequest(RequestContext requestContext)
         {
             return false;

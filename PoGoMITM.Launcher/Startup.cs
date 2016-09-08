@@ -11,8 +11,6 @@ using PoGoMITM.Base.Models;
 using PoGoMITM.Base.Plugins;
 using PoGoMITM.Base.Utils;
 
-
-
 namespace PoGoMITM.Launcher
 {
     public class Startup
@@ -36,7 +34,7 @@ namespace PoGoMITM.Launcher
 
             RequestContext.Parser = new POGOProtosProtoParser();
             AppConfig.Logger.Info("Attempting to load the plugins");
-            //RequestContext.Modifiers = new List<IModifierPlugin> { new LocationModifier(), new PokemonIVDisplay() };
+            //RequestContext.Modifiers = new List<IModifierPlugin> { new GetMyIP()};
             RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
             if (RequestContext.Modifiers != null && RequestContext.Modifiers.Count > 0)
             {

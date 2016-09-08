@@ -15,9 +15,18 @@ namespace PoGoMITM.Launcher.Plugins
 		
 		public GetMyIP() 
 		{
-			Logger.Info("Current IP: " + GetLocalIPAddress());
-		}
-		
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            Logger.Info("Local IP Address(es): ");
+            foreach (var ip in host.AddressList)
+            {
+
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    Logger.Info(ip.ToString());
+                }
+            }
+        }
+
         public bool ModifyRequest(RequestContext requestContext)
         {
             return false;
@@ -33,17 +42,5 @@ namespace PoGoMITM.Launcher.Plugins
 
         }
 
-		private static string GetLocalIPAddress()
-		{
-			var host = Dns.GetHostEntry(Dns.GetHostName());
-			foreach (var ip in host.AddressList)
-			{
-				if (ip.AddressFamily == AddressFamily.InterNetwork)
-				{
-					return ip.ToString();
-				}
-			}
-			throw new Exception("Local IP Address Not Found!");
-		}
     }
 }
