@@ -1,6 +1,7 @@
 # PoGoMITM [![Build status](https://ci.appveyor.com/api/projects/status/iipbt2ftxv7w49dh/branch/master?svg=true)](https://ci.appveyor.com/project/TBulbaDB/pogomitm/branch/master)
 
 This project is a .net MITM proxy designed to read all the API messages sent between the Pokemon Go device and the Pokemon Go servers. 
+** Due to 0.37 changes, PoGoMITM is not working at the moment. 
 
 ![PoGoMITM WebUI Screenshot](https://raw.githubusercontent.com/TBulbaDB/PoGoMITM/master/PoGoMITM-WebUI.png)
 
