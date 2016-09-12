@@ -43,6 +43,11 @@ namespace PoGoMITM.Launcher
                     $"Loaded Modifier Plugins: {string.Join(", ", RequestContext.Modifiers.Where(m => m.Enabled).Select(m => m.GetType().Name))}");
             }
 
+            PluginLoader.PluginChanged += (file, plugin) =>
+            {
+                // get all plugin back from loader
+                RequestContext.Modifiers = PluginLoader.LoadPlugins<IModifierPlugin>();
+            };
 
             RequestContext.RequestPacker = new POGOProtosRequestPacker();
             RequestContext.ResponsePacker = new POGOProtosResponsePacker();

@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Newtonsoft.Json;
 using PoGoMITM.Base.Utils;
+using PoGoMITM.Base.Models;
 
 namespace PoGoMITM.Base.Plugins
 {
@@ -18,6 +19,12 @@ namespace PoGoMITM.Base.Plugins
 
         private static readonly ILog Logger = LogManager.GetLogger("PluginLoader");
         private static readonly string PluginsFolder;
+        private static FileSystemWatcher Watcher = null;
+        private static Dictionary<string, IPlugin> AllPlugins = null;
+
+        public delegate void PluginChangeDelegate(string name, IPlugin plugin);
+        public static PluginChangeDelegate PluginChanged;
+
         static PluginLoader()
         {
             PluginsFolder = FileLocation.GetFolderLocation("Plugins");
@@ -50,29 +57,50 @@ namespace PoGoMITM.Base.Plugins
 
             Refererences = referencesList.Select(l => MetadataReference.CreateFromFile(l)).ToArray();
         }
-        public static List<T> LoadPlugins<T>() where T : class
+
+        public static void LoadAllPlugins()
         {
-            var plugins = new List<T>();
-            if (PluginsFolder == null) return plugins;
-            foreach (var file in Directory.GetFiles(PluginsFolder).Where(f => f.EndsWith(".cs")))
+            AllPlugins = new Dictionary<string, IPlugin>();
+            if (PluginsFolder == null) return;
+
+            foreach (var file in new DirectoryInfo(PluginsFolder).GetFiles("*.cs"))
             {
-                var plugin = LoadPlugin<T>(file);
+                var plugin = LoadPlugin(file.FullName);
                 if (plugin != null)
                 {
-                    plugins.Add(plugin);
+                    AllPlugins[file.Name] = plugin;
                 }
             }
-            return plugins;
+
+            Watcher = new FileSystemWatcher();
+            Watcher.Path = PluginsFolder;
+            Watcher.NotifyFilter = NotifyFilters.LastWrite;
+            Watcher.Filter = "*.cs";
+            Watcher.IncludeSubdirectories = false;
+            Watcher.Changed += (source, e) =>
+            {
+                Logger.Info("Plugin changed: " + e.Name);
+
+                var plugin = LoadPlugin(e.FullPath);
+                AllPlugins[e.Name] = plugin;
+                PluginChanged?.Invoke(e.Name, plugin);
+            };
+            Watcher.EnableRaisingEvents = true;
         }
 
-        private static T LoadPlugin<T>(string filename) where T : class
+        public static List<T> LoadPlugins<T>()
+        {
+            if (AllPlugins == null) LoadAllPlugins();
+            return AllPlugins.Values.Where(p => p is T).Select(p => (T)p).ToList<T>();
+        }
+        
+        private static IPlugin LoadPlugin(string filename)
         {
             var source = File.ReadAllText(filename);
             if (string.IsNullOrWhiteSpace(source))
             {
                 Logger.Error($"Could not load the source for {filename}");
-
-                return default(T);
+                return null;
             }
 
             var syntaxTree = CSharpSyntaxTree.ParseText(source);
@@ -108,16 +136,16 @@ namespace PoGoMITM.Base.Plugins
                     var assembly = Assembly.Load(ms.ToArray());
 
                     var pluginType =
-                        assembly.DefinedTypes.FirstOrDefault(t => t.ImplementedInterfaces.Any(i => i == typeof(T)));
+                        assembly.DefinedTypes.FirstOrDefault(t => t.ImplementedInterfaces.Any(i => i == typeof(IPlugin)));
                     if (pluginType != null)
                     {
                         var instance = assembly.CreateInstance(pluginType.FullName);
-                        return (T)instance;
+                        return (IPlugin)instance;
                     }
                 }
             }
 
-            return default(T);
+            return null;
         }
     }
 }
