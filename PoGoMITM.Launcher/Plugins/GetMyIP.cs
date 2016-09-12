@@ -16,7 +16,7 @@ namespace PoGoMITM.Launcher.Plugins
 		public GetMyIP() 
 		{
             var host = Dns.GetHostEntry(Dns.GetHostName());
-            Logger.Info("Local IP Address(es)::");
+            Logger.Info("Local IP Address(es):");
             foreach (var ip in host.AddressList)
             {
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
