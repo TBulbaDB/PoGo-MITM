@@ -3,12 +3,8 @@
     /// <summary>
     /// Allows third party developers to create plugins which can modify the requests and responses of pogo servers. Each plugin's instance is created once during the startup sequence and same instance is used till the end of the application.
     /// </summary>
-    public interface IModifierPlugin
+    public interface IModifierPlugin : IPlugin
     {
-        /// <summary>
-        /// Controls whether the plugin is enabled or not
-        /// </summary>
-        bool Enabled { get; }
         /// <summary>
         /// Allows modifications on the request data which is sent to pogo servers
         /// </summary>
